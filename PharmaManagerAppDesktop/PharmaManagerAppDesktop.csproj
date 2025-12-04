@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84DF19B5-637C-4D45-941F-E0E8175D19A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PharmaManagerAppDesktop</RootNamespace>
+    <AssemblyName>PharmaManagerAppDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaginaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaginaInicial.Designer.cs">
+      <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UserControlClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlClientes.Designer.cs">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlConfiguracoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlConfiguracoes.Designer.cs">
+      <DependentUpon>UserControlConfiguracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlDashboard.Designer.cs">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlEstoque.Designer.cs">
+      <DependentUpon>UserControlEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlFacturas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlFacturas.Designer.cs">
+      <DependentUpon>UserControlFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlFornecedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlFornecedores.Designer.cs">
+      <DependentUpon>UserControlFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlFuncionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlFuncionarios.Designer.cs">
+      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificacoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificacoes.Designer.cs">
+      <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlVendas.Designer.cs">
+      <DependentUpon>UserControlVendas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaginaInicial.resx">
+      <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\UserControlClientes.resx">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlConfiguracoes.resx">
+      <DependentUpon>UserControlConfiguracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlDashboard.resx">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlEstoque.resx">
+      <DependentUpon>UserControlEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlFacturas.resx">
+      <DependentUpon>UserControlFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlFornecedores.resx">
+      <DependentUpon>UserControlFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlFuncionarios.resx">
+      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificacoes.resx">
+      <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlVendas.resx">
+      <DependentUpon>UserControlVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-logo-oficial-1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-logo-oficial-2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-manager-logo-1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-manager-logo-2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-manager-text-1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharma-manager-text-2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grupo 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-keyhole %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout-dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout-dashboard %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase-business.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem0011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users-round.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
