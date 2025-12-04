@@ -267,5 +267,29 @@
   <ItemGroup>
     <None Include="Resources\users-round.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\identification-card-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-key-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree-palm-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-pin-fill.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,22 +17,18 @@ namespace PharmaManagerAppDesktop.UserControls
             InitializeComponent();
         }
 
-        private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkUsuario_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkUsuario.Checked == true)
+            // Checar se o funcionário possuirá uma conta de Login
+            if (checkUsuario.Checked == true)
+            {
                 panelDadosDeAcesso.Visible = true;
+            }
             else
+            {
                 panelDadosDeAcesso.Visible = false;
+                tbSenha.Clear();
+            }
         }
     }
 }

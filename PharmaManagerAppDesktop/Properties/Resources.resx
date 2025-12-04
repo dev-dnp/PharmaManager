@@ -136,6 +136,9 @@
   <data name="pharma-manager-logo-1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pharma-manager-logo-1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phone-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="boxes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boxes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,6 +169,12 @@
   <data name="briefcase-business" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\briefcase-business.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="envelope-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envelope-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imagem001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagem001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,8 +184,14 @@
   <data name="shopping-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="identification-card-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\identification-card-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="layout-dashboard (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-dashboard (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users-round" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users-round.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Grupo 12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grupo 12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +220,16 @@
   <data name="bell (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bell (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users-round" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users-round.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lock-key-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-key-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="house-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\house-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tree-palm-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tree-palm-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map-pin-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-pin-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
