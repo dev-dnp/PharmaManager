@@ -1,6 +1,6 @@
 ﻿namespace PharmaManagerAppDesktop.UserControls
 {
-    partial class UserControlFuncionarios
+    partial class UserControlCadastroFuncionarios
     {
         /// <summary> 
         /// Variável de designer necessária.

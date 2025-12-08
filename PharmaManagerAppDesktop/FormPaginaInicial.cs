@@ -69,8 +69,8 @@ namespace PharmaManagerAppDesktop
 
         private void btnMenuFuncionarios_Click(object sender, EventArgs e)
         {
-            CarregarControleDeUsuario(new UserControlFuncionarios());
-            labelTituloPainelAtual.Text = "Funcionários";
+            CarregarControleDeUsuario(new UserControlListaFuncionarios());
+            labelTituloPainelAtual.Text = "Lista de funcionários";
         }
 
         private void btnMenuNotificacoes_Click(object sender, EventArgs e)
