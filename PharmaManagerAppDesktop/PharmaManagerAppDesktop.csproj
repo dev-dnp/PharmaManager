@@ -102,11 +102,17 @@
     <Compile Include="UserControls\UserControlFornecedores.Designer.cs">
       <DependentUpon>UserControlFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlFuncionarios.cs">
+    <Compile Include="UserControls\UserControlCadastroFuncionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlFuncionarios.Designer.cs">
-      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlCadastroFuncionarios.Designer.cs">
+      <DependentUpon>UserControlCadastroFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlListaFuncionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlListaFuncionarios.Designer.cs">
+      <DependentUpon>UserControlListaFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlNotificacoes.cs">
       <SubType>UserControl</SubType>
@@ -154,8 +160,11 @@
     <EmbeddedResource Include="UserControls\UserControlFornecedores.resx">
       <DependentUpon>UserControlFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlFuncionarios.resx">
-      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlCadastroFuncionarios.resx">
+      <DependentUpon>UserControlCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlListaFuncionarios.resx">
+      <DependentUpon>UserControlListaFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificacoes.resx">
       <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
@@ -290,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\map-pin-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass-fill %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

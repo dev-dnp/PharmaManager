@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.UserControls
 {
-    public partial class UserControlFuncionarios : UserControl
+    public partial class UserControlCadastroFuncionarios : UserControl
     {
-        public UserControlFuncionarios()
+        public UserControlCadastroFuncionarios()
         {
             InitializeComponent();
         }
