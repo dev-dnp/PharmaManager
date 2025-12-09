@@ -26,9 +26,9 @@ namespace PharmaManagerAppDesktop
         {
             panelConteudoPrincipal.Controls.Clear();
             
-            uc.Dock = DockStyle.Fill;
-
             panelConteudoPrincipal.Controls.Add(uc);
+
+            uc.Dock = DockStyle.Fill;
         }
 
         private void btnMenuInicio_Click(object sender, EventArgs e)
@@ -83,6 +83,17 @@ namespace PharmaManagerAppDesktop
         {
             CarregarControleDeUsuario(new UserControlConfiguracoes());
             labelTituloPainelAtual.Text = "Configurações";
+        }
+
+        private void panelConteudoPrincipal_Resize(object sender, EventArgs e)
+        {
+            if (panelConteudoPrincipal.Controls.Count > 0)
+            {
+                Control uc = panelConteudoPrincipal.Controls[0];
+
+                uc.Size = panelConteudoPrincipal.ClientSize;
+                uc.Location = new Point(0, 0);
+            }
         }
     }
 }

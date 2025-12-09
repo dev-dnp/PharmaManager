@@ -21,5 +21,12 @@ namespace PharmaManagerAppDesktop.UserControls
         {
 
         }
+
+        private void btnAbrirFrmAdicionarFuncionario_Click(object sender, EventArgs e)
+        {
+            frmAdicionarFuncionario frmAddFuncionario = new frmAdicionarFuncionario();
+            frmAddFuncionario.ShowDialog();
+
+        }
     }
 }
