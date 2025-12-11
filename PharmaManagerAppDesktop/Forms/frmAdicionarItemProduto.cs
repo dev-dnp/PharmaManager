@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmaManagerAppDesktop.UserControls
+namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class UserControlFacturas : UserControl
+    public partial class frmAdicionarItemProduto : Form
     {
-        public UserControlFacturas()
+        public frmAdicionarItemProduto()
         {
             InitializeComponent();
         }
 
-        private void userControlVendas1_Load(object sender, EventArgs e)
+        private void frmAdicionarItemProduto_Load(object sender, EventArgs e)
         {
 
         }

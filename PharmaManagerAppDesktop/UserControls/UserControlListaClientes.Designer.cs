@@ -29,66 +29,64 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAbrirFrmAdicionarFuncionario = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAdicionarCliente = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbNomeCompleto = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAdicionarItemProduto = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enderecoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEditarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnEliminarCliente = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvListaItemProduto = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.codigoProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enderecoFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminarFuncionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEditarFuncionario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnAbrirFrmAdicionarFuncionario);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Controls.Add(this.btnAdicionarCliente);
+            this.panel2.Controls.Add(this.guna2Panel3);
+            this.panel2.Controls.Add(this.btnAdicionarItemProduto);
+            this.panel2.Controls.Add(this.guna2Separator1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1384, 100);
-            this.panel2.TabIndex = 78;
+            this.panel2.Size = new System.Drawing.Size(1384, 137);
+            this.panel2.TabIndex = 135;
             // 
-            // btnAbrirFrmAdicionarFuncionario
+            // btnAdicionarCliente
             // 
-            this.btnAbrirFrmAdicionarFuncionario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAbrirFrmAdicionarFuncionario.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAbrirFrmAdicionarFuncionario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAbrirFrmAdicionarFuncionario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAbrirFrmAdicionarFuncionario.Location = new System.Drawing.Point(1118, 33);
-            this.btnAbrirFrmAdicionarFuncionario.Name = "btnAbrirFrmAdicionarFuncionario";
-            this.btnAbrirFrmAdicionarFuncionario.Size = new System.Drawing.Size(246, 49);
-            this.btnAbrirFrmAdicionarFuncionario.TabIndex = 76;
-            this.btnAbrirFrmAdicionarFuncionario.Text = "Adicionar cliente";
-            this.btnAbrirFrmAdicionarFuncionario.UseVisualStyleBackColor = false;
-            this.btnAbrirFrmAdicionarFuncionario.Click += new System.EventHandler(this.btnAbrirFrmAdicionarFuncionario_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.guna2Panel3);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 43);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(745, 51);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.btnAdicionarCliente.BorderRadius = 4;
+            this.btnAdicionarCliente.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdicionarCliente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdicionarCliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdicionarCliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdicionarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnAdicionarCliente.Location = new System.Drawing.Point(377, 65);
+            this.btnAdicionarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionarCliente.Name = "btnAdicionarCliente";
+            this.btnAdicionarCliente.Size = new System.Drawing.Size(130, 53);
+            this.btnAdicionarCliente.TabIndex = 135;
+            this.btnAdicionarCliente.Text = "Procurar";
             // 
             // guna2Panel3
             // 
@@ -101,11 +99,10 @@
             this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel3.Controls.Add(this.tbNomeCompleto);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(3, 2);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel3.Location = new System.Drawing.Point(20, 65);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(423, 42);
-            this.guna2Panel3.TabIndex = 71;
+            this.guna2Panel3.Size = new System.Drawing.Size(350, 53);
+            this.guna2Panel3.TabIndex = 134;
             // 
             // guna2PictureBox2
             // 
@@ -113,8 +110,7 @@
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(10, 12);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(14, 17);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,155 +135,202 @@
             this.tbNomeCompleto.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbNomeCompleto.ForeColor = System.Drawing.Color.Black;
             this.tbNomeCompleto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNomeCompleto.Location = new System.Drawing.Point(37, 4);
+            this.tbNomeCompleto.Location = new System.Drawing.Point(38, 4);
             this.tbNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbNomeCompleto.Name = "tbNomeCompleto";
             this.tbNomeCompleto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbNomeCompleto.PlaceholderText = "Pesquisar clientes...";
+            this.tbNomeCompleto.PlaceholderText = "Pesquisar cliente";
             this.tbNomeCompleto.SelectedText = "";
-            this.tbNomeCompleto.Size = new System.Drawing.Size(382, 33);
+            this.tbNomeCompleto.Size = new System.Drawing.Size(308, 44);
             this.tbNomeCompleto.TabIndex = 62;
             // 
-            // button1
+            // btnAdicionarItemProduto
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(432, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 43);
-            this.button1.TabIndex = 75;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdicionarItemProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdicionarItemProduto.BorderRadius = 4;
+            this.btnAdicionarItemProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdicionarItemProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdicionarItemProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdicionarItemProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdicionarItemProduto.FillColor = System.Drawing.Color.MediumAquamarine;
+            this.btnAdicionarItemProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAdicionarItemProduto.ForeColor = System.Drawing.Color.Black;
+            this.btnAdicionarItemProduto.Image = global::PharmaManagerAppDesktop.Properties.Resources.user_plus;
+            this.btnAdicionarItemProduto.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdicionarItemProduto.Location = new System.Drawing.Point(1121, 65);
+            this.btnAdicionarItemProduto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdicionarItemProduto.Name = "btnAdicionarItemProduto";
+            this.btnAdicionarItemProduto.Size = new System.Drawing.Size(243, 52);
+            this.btnAdicionarItemProduto.TabIndex = 131;
+            this.btnAdicionarItemProduto.Text = "Adicionar cliente";
+            this.btnAdicionarItemProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdicionarItemProduto.Click += new System.EventHandler(this.btnAdicionarItemProduto_Click);
             // 
-            // button2
+            // guna2Separator1
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(568, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 43);
-            this.button2.TabIndex = 76;
-            this.button2.Text = "Remover filtro";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator1.Location = new System.Drawing.Point(20, 124);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(1344, 10);
+            this.guna2Separator1.TabIndex = 133;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(13, 15);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(14, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 23);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "Pesquisar clientes";
+            this.label2.Size = new System.Drawing.Size(198, 32);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Lista dos clientes";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvListaItemProduto);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 100);
+            this.panel1.Location = new System.Drawing.Point(0, 137);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(1384, 507);
-            this.panel1.TabIndex = 79;
+            this.panel1.Size = new System.Drawing.Size(1384, 470);
+            this.panel1.TabIndex = 136;
             // 
-            // dataGridView1
+            // dgvListaItemProduto
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCliente,
-            this.nomeCliente,
-            this.telefoneCliente,
-            this.emailCliente,
-            this.enderecoCliente,
-            this.btnEditarCliente,
-            this.btnEliminarCliente});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1344, 467);
-            this.dataGridView1.TabIndex = 1;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaItemProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaItemProduto.ColumnHeadersHeight = 77;
+            this.dgvListaItemProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvListaItemProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoProdutoItem,
+            this.quantidadeProdutoItem,
+            this.telefoneFuncionario,
+            this.emailFuncionario,
+            this.enderecoFuncionario,
+            this.btnEliminarFuncionar,
+            this.btnEditarFuncionario});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaItemProduto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvListaItemProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListaItemProduto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaItemProduto.Location = new System.Drawing.Point(20, 20);
+            this.dgvListaItemProduto.Name = "dgvListaItemProduto";
+            this.dgvListaItemProduto.RowHeadersVisible = false;
+            this.dgvListaItemProduto.RowHeadersWidth = 51;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.dgvListaItemProduto.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvListaItemProduto.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaItemProduto.RowTemplate.Height = 40;
+            this.dgvListaItemProduto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvListaItemProduto.Size = new System.Drawing.Size(1344, 430);
+            this.dgvListaItemProduto.TabIndex = 133;
+            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvListaItemProduto.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.Height = 77;
+            this.dgvListaItemProduto.ThemeStyle.ReadOnly = false;
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // idCliente
+            // codigoProdutoItem
             // 
-            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idCliente.FillWeight = 80F;
-            this.idCliente.HeaderText = "ID";
-            this.idCliente.MinimumWidth = 6;
-            this.idCliente.Name = "idCliente";
-            this.idCliente.ReadOnly = true;
-            this.idCliente.Width = 80;
+            this.codigoProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.codigoProdutoItem.FillWeight = 200F;
+            this.codigoProdutoItem.HeaderText = "ID";
+            this.codigoProdutoItem.MinimumWidth = 6;
+            this.codigoProdutoItem.Name = "codigoProdutoItem";
+            this.codigoProdutoItem.Width = 57;
             // 
-            // nomeCliente
+            // quantidadeProdutoItem
             // 
-            this.nomeCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeCliente.HeaderText = "Nome";
-            this.nomeCliente.MinimumWidth = 6;
-            this.nomeCliente.Name = "nomeCliente";
-            this.nomeCliente.ReadOnly = true;
+            this.quantidadeProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantidadeProdutoItem.DefaultCellStyle = dataGridViewCellStyle3;
+            this.quantidadeProdutoItem.FillWeight = 200F;
+            this.quantidadeProdutoItem.HeaderText = "Nome";
+            this.quantidadeProdutoItem.MinimumWidth = 6;
+            this.quantidadeProdutoItem.Name = "quantidadeProdutoItem";
             // 
-            // telefoneCliente
+            // telefoneFuncionario
             // 
-            this.telefoneCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.telefoneCliente.HeaderText = "Telefone";
-            this.telefoneCliente.MinimumWidth = 6;
-            this.telefoneCliente.Name = "telefoneCliente";
-            this.telefoneCliente.ReadOnly = true;
+            this.telefoneFuncionario.HeaderText = "Telefone";
+            this.telefoneFuncionario.MinimumWidth = 6;
+            this.telefoneFuncionario.Name = "telefoneFuncionario";
             // 
-            // emailCliente
+            // emailFuncionario
             // 
-            this.emailCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailCliente.HeaderText = "Email";
-            this.emailCliente.MinimumWidth = 6;
-            this.emailCliente.Name = "emailCliente";
-            this.emailCliente.ReadOnly = true;
+            this.emailFuncionario.HeaderText = "Email";
+            this.emailFuncionario.MinimumWidth = 6;
+            this.emailFuncionario.Name = "emailFuncionario";
             // 
-            // enderecoCliente
+            // enderecoFuncionario
             // 
-            this.enderecoCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.enderecoCliente.HeaderText = "Endereço";
-            this.enderecoCliente.MinimumWidth = 6;
-            this.enderecoCliente.Name = "enderecoCliente";
-            this.enderecoCliente.ReadOnly = true;
+            this.enderecoFuncionario.HeaderText = "Endereço";
+            this.enderecoFuncionario.MinimumWidth = 6;
+            this.enderecoFuncionario.Name = "enderecoFuncionario";
             // 
-            // btnEditarCliente
+            // btnEliminarFuncionar
             // 
-            this.btnEditarCliente.HeaderText = "Ação";
-            this.btnEditarCliente.MinimumWidth = 6;
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.ReadOnly = true;
-            this.btnEditarCliente.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnEditarCliente.Text = "Editar";
-            this.btnEditarCliente.UseColumnTextForButtonValue = true;
-            this.btnEditarCliente.Width = 125;
+            this.btnEliminarFuncionar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnEliminarFuncionar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.btnEliminarFuncionar.HeaderText = "Ações";
+            this.btnEliminarFuncionar.MinimumWidth = 6;
+            this.btnEliminarFuncionar.Name = "btnEliminarFuncionar";
+            this.btnEliminarFuncionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEliminarFuncionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEliminarFuncionar.Text = "Eliminar";
+            this.btnEliminarFuncionar.UseColumnTextForButtonValue = true;
+            this.btnEliminarFuncionar.Width = 87;
             // 
-            // btnEliminarCliente
+            // btnEditarFuncionario
             // 
-            this.btnEliminarCliente.HeaderText = "Ação";
-            this.btnEliminarCliente.MinimumWidth = 6;
-            this.btnEliminarCliente.Name = "btnEliminarCliente";
-            this.btnEliminarCliente.ReadOnly = true;
-            this.btnEliminarCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEliminarCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEliminarCliente.Text = "Eliminar";
-            this.btnEliminarCliente.Width = 125;
+            this.btnEditarFuncionario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnEditarFuncionario.DefaultCellStyle = dataGridViewCellStyle5;
+            this.btnEditarFuncionario.HeaderText = "Ações";
+            this.btnEditarFuncionario.MinimumWidth = 6;
+            this.btnEditarFuncionario.Name = "btnEditarFuncionario";
+            this.btnEditarFuncionario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnEditarFuncionario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEditarFuncionario.Text = "Editar";
+            this.btnEditarFuncionario.UseColumnTextForButtonValue = true;
+            this.btnEditarFuncionario.Width = 87;
             // 
             // UserControlListaClientes
             // 
@@ -298,14 +341,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlListaClientes";
             this.Size = new System.Drawing.Size(1384, 607);
+            this.Load += new System.EventHandler(this.UserControlListaClientes_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,22 +355,21 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAbrirFrmAdicionarFuncionario;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnAdicionarCliente;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox tbNomeCompleto;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private Guna.UI2.WinForms.Guna2Button btnAdicionarItemProduto;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoCliente;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditarCliente;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEliminarCliente;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvListaItemProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProdutoItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProdutoItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneFuncionario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailFuncionario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoFuncionario;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEliminarFuncionar;
+        private System.Windows.Forms.DataGridViewButtonColumn btnEditarFuncionario;
     }
 }

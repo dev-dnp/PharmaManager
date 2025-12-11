@@ -23,5 +23,20 @@ namespace PharmaManagerAppDesktop.UserControls
             frmAdicionarCliente frmAddCliente = new frmAdicionarCliente();
             frmAddCliente.ShowDialog();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserControlListaClientes_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAdicionarItemProduto_Click(object sender, EventArgs e)
+        {
+            frmAdicionarCliente frmAddCliente = new frmAdicionarCliente();
+            frmAddCliente.ShowDialog();
+        }
     }
 }

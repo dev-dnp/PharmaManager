@@ -70,6 +70,18 @@
     <Compile Include="Forms\frmAdicionarCliente.Designer.cs">
       <DependentUpon>frmAdicionarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmAdicionarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdicionarFornecedor.Designer.cs">
+      <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdicionarItemProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdicionarItemProduto.Designer.cs">
+      <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\frmAdicionarFuncionario.cs">
@@ -146,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdicionarCliente.resx">
       <DependentUpon>frmAdicionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdicionarFornecedor.resx">
+      <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdicionarItemProduto.resx">
+      <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -320,6 +338,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\magnifying-glass-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hash-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seal-percent-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_5897717562248727455_y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-circle-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-circle-fill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

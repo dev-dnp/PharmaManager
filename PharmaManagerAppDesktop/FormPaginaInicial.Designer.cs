@@ -46,7 +46,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelTituloPainelAtual = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -57,6 +56,9 @@
             this.ImagemLogotipo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelConteudoPrincipal = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -66,6 +68,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -394,49 +397,37 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.PictureFotoDePerfil);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.guna2VSeparator1);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.labelTituloPainelAtual);
             this.panel2.Controls.Add(this.flowLayoutPanel3);
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(312, 0);
+            this.panel2.Location = new System.Drawing.Point(361, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1288, 73);
+            this.panel2.Size = new System.Drawing.Size(1239, 73);
             this.panel2.TabIndex = 9;
             // 
             // PictureFotoDePerfil
             // 
-            this.PictureFotoDePerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureFotoDePerfil.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PictureFotoDePerfil.BackColor = System.Drawing.Color.Transparent;
             this.PictureFotoDePerfil.Image = global::PharmaManagerAppDesktop.Properties.Resources.imagem0012;
             this.PictureFotoDePerfil.ImageRotate = 0F;
-            this.PictureFotoDePerfil.Location = new System.Drawing.Point(815, 13);
+            this.PictureFotoDePerfil.Location = new System.Drawing.Point(4, 7);
             this.PictureFotoDePerfil.Margin = new System.Windows.Forms.Padding(4);
             this.PictureFotoDePerfil.Name = "PictureFotoDePerfil";
             this.PictureFotoDePerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PictureFotoDePerfil.Size = new System.Drawing.Size(40, 40);
-            this.PictureFotoDePerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureFotoDePerfil.Size = new System.Drawing.Size(42, 40);
+            this.PictureFotoDePerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureFotoDePerfil.TabIndex = 3;
             this.PictureFotoDePerfil.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(877, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Olá, bem-vindo!";
             // 
             // labelTituloPainelAtual
             // 
             this.labelTituloPainelAtual.AutoSize = true;
             this.labelTituloPainelAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.labelTituloPainelAtual.Location = new System.Drawing.Point(42, 20);
+            this.labelTituloPainelAtual.Location = new System.Drawing.Point(18, 20);
             this.labelTituloPainelAtual.Name = "labelTituloPainelAtual";
             this.labelTituloPainelAtual.Size = new System.Drawing.Size(84, 37);
             this.labelTituloPainelAtual.TabIndex = 8;
@@ -450,7 +441,7 @@
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1156, 22);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1107, 22);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(108, 33);
             this.flowLayoutPanel3.TabIndex = 6;
@@ -505,7 +496,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 73);
+            this.panel1.Size = new System.Drawing.Size(361, 73);
             this.panel1.TabIndex = 8;
             // 
             // ImagemLogotipo
@@ -528,17 +519,45 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 73);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(312, 789);
+            this.guna2Panel1.Size = new System.Drawing.Size(361, 789);
             this.guna2Panel1.TabIndex = 0;
             // 
             // panelConteudoPrincipal
             // 
             this.panelConteudoPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelConteudoPrincipal.Location = new System.Drawing.Point(312, 73);
+            this.panelConteudoPrincipal.Location = new System.Drawing.Point(361, 73);
             this.panelConteudoPrincipal.Name = "panelConteudoPrincipal";
-            this.panelConteudoPrincipal.Size = new System.Drawing.Size(1288, 789);
+            this.panelConteudoPrincipal.Size = new System.Drawing.Size(1239, 789);
             this.panelConteudoPrincipal.TabIndex = 2;
             this.panelConteudoPrincipal.Resize += new System.EventHandler(this.panelConteudoPrincipal_Resize);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.PictureFotoDePerfil);
+            this.panel3.Location = new System.Drawing.Point(763, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(297, 51);
+            this.panel3.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Olá, Domingos Pedro!";
+            // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(1066, 22);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 36);
+            this.guna2VSeparator1.TabIndex = 0;
             // 
             // FormJanelaInicial
             // 
@@ -567,6 +586,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -594,12 +615,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTituloPainelAtual;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Button btnSairSistema;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private System.Windows.Forms.Panel panelConteudoPrincipal;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
     }
 }
