@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnMenuDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuVendas = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFaturas = new Guna.UI2.WinForms.Guna2Button();
@@ -40,31 +41,30 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnMenuNotificacoes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuConfiguracoes = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ImagemLogotipo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelTituloPainelAtual = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSairSistema = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.btnSairSistema = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelTituloPainelAtual = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ImagemLogotipo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelConteudoPrincipal = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,16 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(265, 578);
             this.flowLayoutPanel1.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "MENU";
             // 
             // btnMenuDashboard
             // 
@@ -336,156 +346,13 @@
             this.btnMenuConfiguracoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenuConfiguracoes.Click += new System.EventHandler(this.btnMenuConfiguracoes_Click);
             // 
-            // guna2Panel2
+            // guna2Separator1
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.panel2);
-            this.guna2Panel2.Controls.Add(this.panel1);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1600, 73);
-            this.guna2Panel2.TabIndex = 1;
-            // 
-            // ImagemLogotipo
-            // 
-            this.ImagemLogotipo.Image = global::PharmaManagerAppDesktop.Properties.Resources.pharma_logo_oficial_2x;
-            this.ImagemLogotipo.ImageRotate = 0F;
-            this.ImagemLogotipo.Location = new System.Drawing.Point(23, 11);
-            this.ImagemLogotipo.Margin = new System.Windows.Forms.Padding(4);
-            this.ImagemLogotipo.Name = "ImagemLogotipo";
-            this.ImagemLogotipo.Size = new System.Drawing.Size(183, 50);
-            this.ImagemLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ImagemLogotipo.TabIndex = 3;
-            this.ImagemLogotipo.TabStop = false;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(76, 4);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(28, 25);
-            this.guna2ControlBox1.TabIndex = 4;
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Silver;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(4, 4);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(28, 25);
-            this.guna2ControlBox2.TabIndex = 5;
-            // 
-            // PictureFotoDePerfil
-            // 
-            this.PictureFotoDePerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureFotoDePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.PictureFotoDePerfil.Image = global::PharmaManagerAppDesktop.Properties.Resources.imagem0012;
-            this.PictureFotoDePerfil.ImageRotate = 0F;
-            this.PictureFotoDePerfil.Location = new System.Drawing.Point(815, 13);
-            this.PictureFotoDePerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.PictureFotoDePerfil.Name = "PictureFotoDePerfil";
-            this.PictureFotoDePerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PictureFotoDePerfil.Size = new System.Drawing.Size(40, 40);
-            this.PictureFotoDePerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureFotoDePerfil.TabIndex = 3;
-            this.PictureFotoDePerfil.TabStop = false;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(961, 13);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.flowLayoutPanel3.AutoSize = true;
-            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
-            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
-            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1156, 22);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(108, 33);
-            this.flowLayoutPanel3.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ImagemLogotipo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 73);
-            this.panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.PictureFotoDePerfil);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.labelTituloPainelAtual);
-            this.panel2.Controls.Add(this.flowLayoutPanel3);
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(312, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1288, 73);
-            this.panel2.TabIndex = 9;
-            // 
-            // labelTituloPainelAtual
-            // 
-            this.labelTituloPainelAtual.AutoSize = true;
-            this.labelTituloPainelAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.labelTituloPainelAtual.Location = new System.Drawing.Point(42, 20);
-            this.labelTituloPainelAtual.Name = "labelTituloPainelAtual";
-            this.labelTituloPainelAtual.Size = new System.Drawing.Size(84, 37);
-            this.labelTituloPainelAtual.TabIndex = 8;
-            this.labelTituloPainelAtual.Text = "Início";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(877, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Olá, bem-vindo!";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 23);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "MENU";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.flowLayoutPanel1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 73);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(312, 789);
-            this.guna2Panel1.TabIndex = 0;
+            this.guna2Separator1.Location = new System.Drawing.Point(4, 494);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(257, 12);
+            this.guna2Separator1.TabIndex = 0;
             // 
             // btnSairSistema
             // 
@@ -511,13 +378,94 @@
             this.btnSairSistema.Text = "Sair";
             this.btnSairSistema.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // guna2Separator1
+            // guna2Panel2
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(4, 494);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(257, 12);
-            this.guna2Separator1.TabIndex = 0;
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.panel2);
+            this.guna2Panel2.Controls.Add(this.panel1);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1600, 73);
+            this.guna2Panel2.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.PictureFotoDePerfil);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.labelTituloPainelAtual);
+            this.panel2.Controls.Add(this.flowLayoutPanel3);
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(312, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1288, 73);
+            this.panel2.TabIndex = 9;
+            // 
+            // PictureFotoDePerfil
+            // 
+            this.PictureFotoDePerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureFotoDePerfil.BackColor = System.Drawing.Color.Transparent;
+            this.PictureFotoDePerfil.Image = global::PharmaManagerAppDesktop.Properties.Resources.imagem0012;
+            this.PictureFotoDePerfil.ImageRotate = 0F;
+            this.PictureFotoDePerfil.Location = new System.Drawing.Point(815, 13);
+            this.PictureFotoDePerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.PictureFotoDePerfil.Name = "PictureFotoDePerfil";
+            this.PictureFotoDePerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PictureFotoDePerfil.Size = new System.Drawing.Size(40, 40);
+            this.PictureFotoDePerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureFotoDePerfil.TabIndex = 3;
+            this.PictureFotoDePerfil.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(877, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Olá, bem-vindo!";
+            // 
+            // labelTituloPainelAtual
+            // 
+            this.labelTituloPainelAtual.AutoSize = true;
+            this.labelTituloPainelAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelTituloPainelAtual.Location = new System.Drawing.Point(42, 20);
+            this.labelTituloPainelAtual.Name = "labelTituloPainelAtual";
+            this.labelTituloPainelAtual.Size = new System.Drawing.Size(84, 37);
+            this.labelTituloPainelAtual.TabIndex = 8;
+            this.labelTituloPainelAtual.Text = "Início";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
+            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
+            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox1);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1156, 22);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(108, 33);
+            this.flowLayoutPanel3.TabIndex = 6;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Silver;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(4, 4);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(28, 25);
+            this.guna2ControlBox2.TabIndex = 5;
             // 
             // guna2ControlBox3
             // 
@@ -530,6 +478,58 @@
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(28, 25);
             this.guna2ControlBox3.TabIndex = 6;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(76, 4);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(28, 25);
+            this.guna2ControlBox1.TabIndex = 4;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(961, 13);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ImagemLogotipo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(312, 73);
+            this.panel1.TabIndex = 8;
+            // 
+            // ImagemLogotipo
+            // 
+            this.ImagemLogotipo.Image = global::PharmaManagerAppDesktop.Properties.Resources.pharma_logo_oficial_2x;
+            this.ImagemLogotipo.ImageRotate = 0F;
+            this.ImagemLogotipo.Location = new System.Drawing.Point(23, 11);
+            this.ImagemLogotipo.Margin = new System.Windows.Forms.Padding(4);
+            this.ImagemLogotipo.Name = "ImagemLogotipo";
+            this.ImagemLogotipo.Size = new System.Drawing.Size(183, 50);
+            this.ImagemLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImagemLogotipo.TabIndex = 3;
+            this.ImagemLogotipo.TabStop = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 73);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(312, 789);
+            this.guna2Panel1.TabIndex = 0;
             // 
             // panelConteudoPrincipal
             // 
@@ -554,17 +554,18 @@
             this.Name = "FormJanelaInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel Inicial | Pharma Manager";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

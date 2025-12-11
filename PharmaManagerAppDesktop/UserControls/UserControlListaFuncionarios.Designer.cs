@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbNomeCompleto = new Guna.UI2.WinForms.Guna2TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAbrirFrmAdicionarFuncionario = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,14 +46,13 @@
             this.emailFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargoFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAbrirFrmAdicionarFuncionario = new System.Windows.Forms.Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -59,9 +61,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(13, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 23);
+            this.label2.Size = new System.Drawing.Size(173, 23);
             this.label2.TabIndex = 72;
-            this.label2.Text = "Pesquisar";
+            this.label2.Text = "Pesquisar funcionário";
             // 
             // guna2Panel3
             // 
@@ -79,6 +81,20 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(423, 42);
             this.guna2Panel3.TabIndex = 71;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(10, 12);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 60;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // tbNomeCompleto
             // 
@@ -111,12 +127,15 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(432, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 43);
             this.button1.TabIndex = 75;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -129,13 +148,28 @@
             this.panel2.Size = new System.Drawing.Size(1384, 100);
             this.panel2.TabIndex = 77;
             // 
+            // btnAbrirFrmAdicionarFuncionario
+            // 
+            this.btnAbrirFrmAdicionarFuncionario.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAbrirFrmAdicionarFuncionario.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAbrirFrmAdicionarFuncionario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAbrirFrmAdicionarFuncionario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAbrirFrmAdicionarFuncionario.Location = new System.Drawing.Point(1118, 33);
+            this.btnAbrirFrmAdicionarFuncionario.Name = "btnAbrirFrmAdicionarFuncionario";
+            this.btnAbrirFrmAdicionarFuncionario.Size = new System.Drawing.Size(246, 49);
+            this.btnAbrirFrmAdicionarFuncionario.TabIndex = 76;
+            this.btnAbrirFrmAdicionarFuncionario.Text = "Adicionar funcionário";
+            this.btnAbrirFrmAdicionarFuncionario.UseVisualStyleBackColor = false;
+            this.btnAbrirFrmAdicionarFuncionario.Click += new System.EventHandler(this.btnAbrirFrmAdicionarFuncionario_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.guna2Panel3);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 43);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(572, 51);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(745, 51);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -150,7 +184,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFuncionario,
             this.nomeFuncionario,
@@ -159,10 +194,18 @@
             this.emailFuncionario,
             this.telefoneFuncionario,
             this.cargoFuncionario});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1344, 467);
             this.dataGridView1.TabIndex = 1;
@@ -216,31 +259,19 @@
             this.cargoFuncionario.MinimumWidth = 6;
             this.cargoFuncionario.Name = "cargoFuncionario";
             // 
-            // btnAbrirFrmAdicionarFuncionario
+            // button2
             // 
-            this.btnAbrirFrmAdicionarFuncionario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAbrirFrmAdicionarFuncionario.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAbrirFrmAdicionarFuncionario.Location = new System.Drawing.Point(1192, 39);
-            this.btnAbrirFrmAdicionarFuncionario.Name = "btnAbrirFrmAdicionarFuncionario";
-            this.btnAbrirFrmAdicionarFuncionario.Size = new System.Drawing.Size(172, 43);
-            this.btnAbrirFrmAdicionarFuncionario.TabIndex = 76;
-            this.btnAbrirFrmAdicionarFuncionario.Text = "Adicionar funcionário";
-            this.btnAbrirFrmAdicionarFuncionario.UseVisualStyleBackColor = false;
-            this.btnAbrirFrmAdicionarFuncionario.Click += new System.EventHandler(this.btnAbrirFrmAdicionarFuncionario_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(10, 12);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 60;
-            this.guna2PictureBox2.TabStop = false;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(568, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 43);
+            this.button2.TabIndex = 76;
+            this.button2.Text = "Remover filtro";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             // 
             // UserControlListaFuncionarios
             // 
@@ -253,13 +284,13 @@
             this.Name = "UserControlListaFuncionarios";
             this.Size = new System.Drawing.Size(1384, 607);
             this.guna2Panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +314,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneFuncionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargoFuncionario;
         private System.Windows.Forms.Button btnAbrirFrmAdicionarFuncionario;
+        private System.Windows.Forms.Button button2;
     }
 }

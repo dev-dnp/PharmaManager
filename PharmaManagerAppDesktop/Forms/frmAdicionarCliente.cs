@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmaManagerAppDesktop.UserControls
+namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class UserControlClientes : UserControl
+    public partial class frmAdicionarCliente : Form
     {
-        public UserControlClientes()
+        public frmAdicionarCliente()
         {
             InitializeComponent();
         }
