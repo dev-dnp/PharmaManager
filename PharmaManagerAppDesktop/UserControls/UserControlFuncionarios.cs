@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PharmaManagerAppDesktop.Forms;
 
 namespace PharmaManagerAppDesktop.UserControls
 {
-    public partial class UserControlFornecedores : UserControl
+    public partial class UserControlFuncionarios : UserControl
     {
-        public UserControlFornecedores()
+        public UserControlFuncionarios()
         {
             InitializeComponent();
         }
 
-        private void btnAdicionarFornecedor_Click(object sender, EventArgs e)
+        private void btnAdicionarFuncionario_Click(object sender, EventArgs e)
         {
-            frmAdicionarFornecedor frmAddFornecedor = new frmAdicionarFornecedor();
-            frmAddFornecedor.ShowDialog();
+            frmAdicionarFuncionario frmAddFuncionario = new frmAdicionarFuncionario();
+            frmAddFuncionario.ShowDialog();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace PharmaManagerAppDesktop.UserControls
         public UserControlEstoque()
         {
             InitializeComponent();
+        }
+
+        private void btnRegistarProdutoNoEstoque_Click(object sender, EventArgs e)
+        {
+            frmRegistarProduto frmRegistarProduto = new frmRegistarProduto();
+            frmRegistarProduto.ShowDialog();
         }
     }
 }

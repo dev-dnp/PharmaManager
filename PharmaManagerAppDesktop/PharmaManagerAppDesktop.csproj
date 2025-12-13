@@ -64,11 +64,11 @@
     <Compile Include="FormPaginaInicial.Designer.cs">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAdicionarCliente.cs">
+    <Compile Include="Forms\frmFaturaAdicionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAdicionarCliente.Designer.cs">
-      <DependentUpon>frmAdicionarCliente.cs</DependentUpon>
+    <Compile Include="Forms\frmFaturaAdicionarCliente.Designer.cs">
+      <DependentUpon>frmFaturaAdicionarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAdicionarFornecedor.cs">
       <SubType>Form</SubType>
@@ -81,6 +81,42 @@
     </Compile>
     <Compile Include="Forms\frmAdicionarItemProduto.Designer.cs">
       <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAlterarSenha.Designer.cs">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAtivarDesativarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAtivarDesativarUsuario.Designer.cs">
+      <DependentUpon>frmAtivarDesativarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAtribuirUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAtribuirUsuario.Designer.cs">
+      <DependentUpon>frmAtribuirUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDadosOrganizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDadosOrganizacao.Designer.cs">
+      <DependentUpon>frmDadosOrganizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEditarRegistroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEditarRegistroProduto.Designer.cs">
+      <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistarProduto.Designer.cs">
+      <DependentUpon>frmRegistarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,17 +162,11 @@
     <Compile Include="UserControls\UserControlFornecedores.Designer.cs">
       <DependentUpon>UserControlFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlCadastroFuncionarios.cs">
+    <Compile Include="UserControls\UserControlFuncionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlCadastroFuncionarios.Designer.cs">
-      <DependentUpon>UserControlCadastroFuncionarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlListaFuncionarios.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlListaFuncionarios.Designer.cs">
-      <DependentUpon>UserControlListaFuncionarios.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlFuncionarios.Designer.cs">
+      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlNotificacoes.cs">
       <SubType>UserControl</SubType>
@@ -156,14 +186,32 @@
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAdicionarCliente.resx">
-      <DependentUpon>frmAdicionarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmFaturaAdicionarCliente.resx">
+      <DependentUpon>frmFaturaAdicionarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdicionarFornecedor.resx">
       <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdicionarItemProduto.resx">
       <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAlterarSenha.resx">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAtivarDesativarUsuario.resx">
+      <DependentUpon>frmAtivarDesativarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAtribuirUsuario.resx">
+      <DependentUpon>frmAtribuirUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDadosOrganizacao.resx">
+      <DependentUpon>frmDadosOrganizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEditarRegistroProduto.resx">
+      <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistarProduto.resx">
+      <DependentUpon>frmRegistarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,11 +244,8 @@
     <EmbeddedResource Include="UserControls\UserControlFornecedores.resx">
       <DependentUpon>UserControlFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlCadastroFuncionarios.resx">
-      <DependentUpon>UserControlCadastroFuncionarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlListaFuncionarios.resx">
-      <DependentUpon>UserControlListaFuncionarios.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlFuncionarios.resx">
+      <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificacoes.resx">
       <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
@@ -368,6 +413,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\check-circle-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anaflam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\first-aid-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat-teardrop-text-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-simple-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-circle-fill %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-counter-clockwise-fill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-padrao.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-switch-fill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

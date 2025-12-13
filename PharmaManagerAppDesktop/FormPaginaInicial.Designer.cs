@@ -35,7 +35,6 @@
             this.btnMenuFaturas = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuEstoque = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFornecedores = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMenuClientes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFuncionarios = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,6 +44,9 @@
             this.btnSairSistema = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.labelTituloPainelAtual = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,19 +58,16 @@
             this.ImagemLogotipo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelConteudoPrincipal = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -79,7 +78,6 @@
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFaturas);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuEstoque);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFornecedores);
-            this.flowLayoutPanel1.Controls.Add(this.btnMenuClientes);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFuncionarios);
             this.flowLayoutPanel1.Controls.Add(this.guna2Panel3);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuConfiguracoes);
@@ -225,31 +223,6 @@
             this.btnMenuFornecedores.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenuFornecedores.Click += new System.EventHandler(this.btnMenuFornecedores_Click);
             // 
-            // btnMenuClientes
-            // 
-            this.btnMenuClientes.BackColor = System.Drawing.Color.White;
-            this.btnMenuClientes.BorderColor = System.Drawing.Color.White;
-            this.btnMenuClientes.BorderRadius = 4;
-            this.btnMenuClientes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuClientes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuClientes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenuClientes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenuClientes.FillColor = System.Drawing.Color.White;
-            this.btnMenuClientes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnMenuClientes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.btnMenuClientes.Image = global::PharmaManagerAppDesktop.Properties.Resources.users;
-            this.btnMenuClientes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuClientes.Location = new System.Drawing.Point(4, 282);
-            this.btnMenuClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMenuClientes.Name = "btnMenuClientes";
-            this.btnMenuClientes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnMenuClientes.Size = new System.Drawing.Size(248, 43);
-            this.btnMenuClientes.TabIndex = 8;
-            this.btnMenuClientes.Text = "Clientes";
-            this.btnMenuClientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuClientes.Click += new System.EventHandler(this.btnMenuClientes_Click);
-            // 
             // btnMenuFuncionarios
             // 
             this.btnMenuFuncionarios.BackColor = System.Drawing.Color.White;
@@ -265,7 +238,7 @@
             this.btnMenuFuncionarios.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuFuncionarios.Image = global::PharmaManagerAppDesktop.Properties.Resources.briefcase_business;
             this.btnMenuFuncionarios.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuFuncionarios.Location = new System.Drawing.Point(4, 333);
+            this.btnMenuFuncionarios.Location = new System.Drawing.Point(4, 282);
             this.btnMenuFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuFuncionarios.Name = "btnMenuFuncionarios";
             this.btnMenuFuncionarios.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -281,7 +254,7 @@
             this.guna2Panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel3.Controls.Add(this.btnMenuNotificacoes);
-            this.guna2Panel3.Location = new System.Drawing.Point(4, 384);
+            this.guna2Panel3.Location = new System.Drawing.Point(4, 333);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(252, 51);
@@ -339,7 +312,7 @@
             this.btnMenuConfiguracoes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuConfiguracoes.Image = global::PharmaManagerAppDesktop.Properties.Resources.settings;
             this.btnMenuConfiguracoes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuConfiguracoes.Location = new System.Drawing.Point(4, 443);
+            this.btnMenuConfiguracoes.Location = new System.Drawing.Point(4, 392);
             this.btnMenuConfiguracoes.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuConfiguracoes.Name = "btnMenuConfiguracoes";
             this.btnMenuConfiguracoes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -351,7 +324,7 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(4, 494);
+            this.guna2Separator1.Location = new System.Drawing.Point(4, 443);
             this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(257, 12);
@@ -372,7 +345,7 @@
             this.btnSairSistema.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnSairSistema.Image = global::PharmaManagerAppDesktop.Properties.Resources.power;
             this.btnSairSistema.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSairSistema.Location = new System.Drawing.Point(4, 514);
+            this.btnSairSistema.Location = new System.Drawing.Point(4, 463);
             this.btnSairSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btnSairSistema.Name = "btnSairSistema";
             this.btnSairSistema.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -407,6 +380,34 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1239, 73);
             this.panel2.TabIndex = 9;
+            // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(1066, 22);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 36);
+            this.guna2VSeparator1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.PictureFotoDePerfil);
+            this.panel3.Location = new System.Drawing.Point(763, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(297, 51);
+            this.panel3.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Olá, Domingos Pedro!";
             // 
             // PictureFotoDePerfil
             // 
@@ -524,40 +525,14 @@
             // 
             // panelConteudoPrincipal
             // 
+            this.panelConteudoPrincipal.BackColor = System.Drawing.Color.White;
             this.panelConteudoPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteudoPrincipal.Location = new System.Drawing.Point(361, 73);
             this.panelConteudoPrincipal.Name = "panelConteudoPrincipal";
+            this.panelConteudoPrincipal.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.panelConteudoPrincipal.Size = new System.Drawing.Size(1239, 789);
             this.panelConteudoPrincipal.TabIndex = 2;
             this.panelConteudoPrincipal.Resize += new System.EventHandler(this.panelConteudoPrincipal_Resize);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.PictureFotoDePerfil);
-            this.panel3.Location = new System.Drawing.Point(763, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(297, 51);
-            this.panel3.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Olá, Domingos Pedro!";
-            // 
-            // guna2VSeparator1
-            // 
-            this.guna2VSeparator1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(1066, 22);
-            this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 36);
-            this.guna2VSeparator1.TabIndex = 0;
             // 
             // FormJanelaInicial
             // 
@@ -581,13 +556,13 @@
             this.guna2Panel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -596,7 +571,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnMenuDashboard;
         private Guna.UI2.WinForms.Guna2Button btnMenuFuncionarios;
-        private Guna.UI2.WinForms.Guna2Button btnMenuClientes;
         private Guna.UI2.WinForms.Guna2Button btnMenuFornecedores;
         private Guna.UI2.WinForms.Guna2Button btnMenuEstoque;
         private Guna.UI2.WinForms.Guna2Button btnMenuFaturas;

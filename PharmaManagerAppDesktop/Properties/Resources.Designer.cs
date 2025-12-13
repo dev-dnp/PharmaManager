@@ -73,6 +73,36 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anaflam {
+            get {
+                object obj = ResourceManager.GetObject("anaflam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_counter_clockwise_fill__1_ {
+            get {
+                object obj = ResourceManager.GetObject("arrow-counter-clockwise-fill (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_fill {
+            get {
+                object obj = ResourceManager.GetObject("barcode-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bell__1_ {
             get {
                 object obj = ResourceManager.GetObject("bell (1)", resourceCulture);
@@ -113,6 +143,16 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chat_teardrop_text_fill {
+            get {
+                object obj = ResourceManager.GetObject("chat-teardrop-text-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_circle_fill {
             get {
                 object obj = ResourceManager.GetObject("check-circle-fill", resourceCulture);
@@ -133,6 +173,16 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_circle_fill__2_ {
+            get {
+                object obj = ResourceManager.GetObject("check-circle-fill (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap envelope_fill {
             get {
                 object obj = ResourceManager.GetObject("envelope-fill", resourceCulture);
@@ -146,6 +196,16 @@ namespace PharmaManagerAppDesktop.Properties {
         internal static System.Drawing.Bitmap file_text {
             get {
                 object obj = ResourceManager.GetObject("file-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap first_aid_fill {
+            get {
+                object obj = ResourceManager.GetObject("first-aid-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +303,16 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images_fill {
+            get {
+                object obj = ResourceManager.GetObject("images-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap key_round {
             get {
                 object obj = ResourceManager.GetObject("key-round", resourceCulture);
@@ -286,6 +356,16 @@ namespace PharmaManagerAppDesktop.Properties {
         internal static System.Drawing.Bitmap lock_keyhole__1_ {
             get {
                 object obj = ResourceManager.GetObject("lock-keyhole (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_padrao {
+            get {
+                object obj = ResourceManager.GetObject("logo-padrao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +533,16 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search__1_ {
+            get {
+                object obj = ResourceManager.GetObject("search (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
@@ -503,6 +593,26 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap truck_fill__1_ {
+            get {
+                object obj = ResourceManager.GetObject("truck-fill (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upload_simple_fill {
+            get {
+                object obj = ResourceManager.GetObject("upload-simple-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user__1_ {
             get {
                 object obj = ResourceManager.GetObject("user (1)", resourceCulture);
@@ -526,6 +636,16 @@ namespace PharmaManagerAppDesktop.Properties {
         internal static System.Drawing.Bitmap user_plus {
             get {
                 object obj = ResourceManager.GetObject("user-plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_switch_fill {
+            get {
+                object obj = ResourceManager.GetObject("user-switch-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

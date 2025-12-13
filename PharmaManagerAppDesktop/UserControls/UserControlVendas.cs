@@ -18,15 +18,15 @@ namespace PharmaManagerAppDesktop.UserControls
             InitializeComponent();
         }
 
-        private void btnAdicionarItemProduto_Click(object sender, EventArgs e)
+        private void btnFaturaAdicionarItemProduto_Click(object sender, EventArgs e)
         {
             frmAdicionarItemProduto frmAddItemProduto = new frmAdicionarItemProduto();
             frmAddItemProduto.ShowDialog();
         }
 
-        private void btnAdicionarCliente_Click(object sender, EventArgs e)
+        private void btnFaturaAdicionarCliente_Click(object sender, EventArgs e)
         {
-            frmAdicionarCliente frmAddCliente = new frmAdicionarCliente();
+            frmFaturaAdicionarCliente frmAddCliente = new frmFaturaAdicionarCliente();
             frmAddCliente.ShowDialog();
         }
     }
