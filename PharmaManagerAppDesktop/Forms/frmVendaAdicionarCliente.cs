@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmAdicionarItemProduto : Form
+    public partial class frmVendaAdicionarCliente : Form
     {
-        public frmAdicionarItemProduto()
+        public frmVendaAdicionarCliente()
         {
             InitializeComponent();
-        }
-
-        private void frmAdicionarItemProduto_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

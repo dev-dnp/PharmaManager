@@ -45,5 +45,11 @@ namespace PharmaManagerAppDesktop.UserControls
         {
 
         }
+
+        private void btnConfiguracaoAtivarDesativarUsuario_Click(object sender, EventArgs e)
+        {
+            frmAtivarDesativarUsuario frmAddDesativarAtivarUsuario = new frmAtivarDesativarUsuario();
+            frmAddDesativarAtivarUsuario.ShowDialog();
+        }
     }
 }

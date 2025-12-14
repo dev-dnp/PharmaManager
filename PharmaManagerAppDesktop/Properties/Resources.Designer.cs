@@ -223,6 +223,16 @@ namespace PharmaManagerAppDesktop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gif_luz_vermelha_alerta {
+            get {
+                object obj = ResourceManager.GetObject("gif-luz-vermelha-alerta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grupo_12 {
             get {
                 object obj = ResourceManager.GetObject("Grupo 12", resourceCulture);

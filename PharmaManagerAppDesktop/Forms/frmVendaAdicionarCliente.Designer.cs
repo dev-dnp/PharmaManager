@@ -1,6 +1,6 @@
 ﻿namespace PharmaManagerAppDesktop.Forms
 {
-    partial class frmFaturaAdicionarCliente
+    partial class frmVendaAdicionarCliente
     {
         /// <summary>
         /// Required designer variable.

@@ -64,11 +64,11 @@
     <Compile Include="FormPaginaInicial.Designer.cs">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmFaturaAdicionarCliente.cs">
+    <Compile Include="Forms\frmVendaAdicionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFaturaAdicionarCliente.Designer.cs">
-      <DependentUpon>frmFaturaAdicionarCliente.cs</DependentUpon>
+    <Compile Include="Forms\frmVendaAdicionarCliente.Designer.cs">
+      <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAdicionarFornecedor.cs">
       <SubType>Form</SubType>
@@ -76,11 +76,11 @@
     <Compile Include="Forms\frmAdicionarFornecedor.Designer.cs">
       <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAdicionarItemProduto.cs">
+    <Compile Include="Forms\frmVendaAdicionarItemProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAdicionarItemProduto.Designer.cs">
-      <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
+    <Compile Include="Forms\frmVendaAdicionarItemProduto.Designer.cs">
+      <DependentUpon>frmVendaAdicionarItemProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -117,6 +117,18 @@
     </Compile>
     <Compile Include="Forms\frmRegistarProduto.Designer.cs">
       <DependentUpon>frmRegistarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVendaConcluirVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVendaConcluirVenda.Designer.cs">
+      <DependentUpon>frmVendaConcluirVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVendaEditarItemProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVendaEditarItemProduto.Designer.cs">
+      <DependentUpon>frmVendaEditarItemProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -186,14 +198,14 @@
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFaturaAdicionarCliente.resx">
-      <DependentUpon>frmFaturaAdicionarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmVendaAdicionarCliente.resx">
+      <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdicionarFornecedor.resx">
       <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAdicionarItemProduto.resx">
-      <DependentUpon>frmAdicionarItemProduto.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmVendaAdicionarItemProduto.resx">
+      <DependentUpon>frmVendaAdicionarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAlterarSenha.resx">
       <DependentUpon>frmAlterarSenha.cs</DependentUpon>
@@ -212,6 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistarProduto.resx">
       <DependentUpon>frmRegistarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVendaConcluirVenda.resx">
+      <DependentUpon>frmVendaConcluirVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVendaEditarItemProduto.resx">
+      <DependentUpon>frmVendaEditarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -449,6 +467,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-switch-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif-luz-vermelha-alerta.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

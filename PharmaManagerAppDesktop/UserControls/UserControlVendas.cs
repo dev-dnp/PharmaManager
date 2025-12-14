@@ -20,14 +20,26 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnFaturaAdicionarItemProduto_Click(object sender, EventArgs e)
         {
-            frmAdicionarItemProduto frmAddItemProduto = new frmAdicionarItemProduto();
+            frmVendaAdicionarItemProduto frmAddItemProduto = new frmVendaAdicionarItemProduto();
             frmAddItemProduto.ShowDialog();
         }
 
         private void btnFaturaAdicionarCliente_Click(object sender, EventArgs e)
         {
-            frmFaturaAdicionarCliente frmAddCliente = new frmFaturaAdicionarCliente();
+            frmVendaAdicionarCliente frmAddCliente = new frmVendaAdicionarCliente();
             frmAddCliente.ShowDialog();
+        }
+
+        private void btnVendaEditarItemProduto_Click(object sender, EventArgs e)
+        {
+            frmVendaEditarItemProduto janela = new frmVendaEditarItemProduto();
+            janela.ShowDialog();
+        }
+
+        private void btnVendaFinalizar_Click(object sender, EventArgs e)
+        {
+            frmVendaConcluirVenda janela = new frmVendaConcluirVenda();
+            janela.ShowDialog();
         }
     }
 }

@@ -29,10 +29,5 @@ namespace PharmaManagerAppDesktop.UserControls
                 tbSenha.Clear();
             }
         }
-
-        private void guna2Panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -20,7 +20,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAbrirFrmAdicionarFuncionario_Click(object sender, EventArgs e)
         {
-            frmFaturaAdicionarCliente frmAddCliente = new frmFaturaAdicionarCliente();
+            frmVendaAdicionarCliente frmAddCliente = new frmVendaAdicionarCliente();
             frmAddCliente.ShowDialog();
         }
 
@@ -35,7 +35,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAdicionarItemProduto_Click(object sender, EventArgs e)
         {
-            frmFaturaAdicionarCliente frmAddCliente = new frmFaturaAdicionarCliente();
+            frmVendaAdicionarCliente frmAddCliente = new frmVendaAdicionarCliente();
             frmAddCliente.ShowDialog();
         }
     }
