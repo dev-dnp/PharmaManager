@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,17 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.UserControls
 {
-    public partial class UserControlDashboard : UserControl
+    public partial class UserControlProdutos : UserControl
     {
-        public UserControlDashboard()
+        public UserControlProdutos()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnProdutoNovo_Click(object sender, EventArgs e)
         {
-
+            frmProdutoAdicionarProduto janela = new frmProdutoAdicionarProduto();
+            janela.ShowDialog();
         }
     }
 }

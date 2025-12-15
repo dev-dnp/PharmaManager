@@ -58,38 +58,33 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbVendaMetodoPagamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnVendaAdicionarCliente = new Guna.UI2.WinForms.Guna2Button();
             this.btnVendaAdicionarItemProduto = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvListaItemProduto = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvVendaListaProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
             this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codigoProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoUnitarioProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loteProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descontoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxaImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorImposto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnFaturaEliminarItemSelecionado = new Guna.UI2.WinForms.Guna2Button();
             this.btnVendaEditarItemProduto = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendaListaProdutos)).BeginInit();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -111,9 +106,9 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.btnVendaFinalizar);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(630, 25);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(589, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(618, 160);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(659, 160);
             this.flowLayoutPanel1.TabIndex = 139;
             // 
             // panel1
@@ -127,15 +122,16 @@
             this.panel1.Controls.Add(this.lbVendaTotalSemDescontos);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 154);
+            this.panel1.Size = new System.Drawing.Size(416, 154);
             this.panel1.TabIndex = 138;
             // 
             // lbVendaValorImposto
             // 
             this.lbVendaValorImposto.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbVendaValorImposto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbVendaValorImposto.Location = new System.Drawing.Point(250, 36);
+            this.lbVendaValorImposto.Location = new System.Drawing.Point(264, 42);
             this.lbVendaValorImposto.Name = "lbVendaValorImposto";
             this.lbVendaValorImposto.Size = new System.Drawing.Size(150, 36);
             this.lbVendaValorImposto.TabIndex = 146;
@@ -146,7 +142,7 @@
             // 
             this.lbVendaTotalPagar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbVendaTotalPagar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lbVendaTotalPagar.Location = new System.Drawing.Point(249, 112);
+            this.lbVendaTotalPagar.Location = new System.Drawing.Point(263, 118);
             this.lbVendaTotalPagar.Name = "lbVendaTotalPagar";
             this.lbVendaTotalPagar.Size = new System.Drawing.Size(150, 36);
             this.lbVendaTotalPagar.TabIndex = 148;
@@ -167,7 +163,7 @@
             // 
             this.lbVendaTotalDesconto.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbVendaTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbVendaTotalDesconto.Location = new System.Drawing.Point(249, 74);
+            this.lbVendaTotalDesconto.Location = new System.Drawing.Point(263, 80);
             this.lbVendaTotalDesconto.Name = "lbVendaTotalDesconto";
             this.lbVendaTotalDesconto.Size = new System.Drawing.Size(150, 36);
             this.lbVendaTotalDesconto.TabIndex = 147;
@@ -198,7 +194,7 @@
             // 
             this.lbVendaTotalSemDescontos.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbVendaTotalSemDescontos.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbVendaTotalSemDescontos.Location = new System.Drawing.Point(250, -2);
+            this.lbVendaTotalSemDescontos.Location = new System.Drawing.Point(264, 4);
             this.lbVendaTotalSemDescontos.Name = "lbVendaTotalSemDescontos";
             this.lbVendaTotalSemDescontos.Size = new System.Drawing.Size(150, 36);
             this.lbVendaTotalSemDescontos.TabIndex = 145;
@@ -225,7 +221,7 @@
             this.btnVendaFinalizar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
             this.btnVendaFinalizar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVendaFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnVendaFinalizar.Location = new System.Drawing.Point(412, 4);
+            this.btnVendaFinalizar.Location = new System.Drawing.Point(453, 4);
             this.btnVendaFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVendaFinalizar.Name = "btnVendaFinalizar";
             this.btnVendaFinalizar.Size = new System.Drawing.Size(202, 149);
@@ -361,49 +357,12 @@
             this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.guna2Panel9);
             this.flowLayoutPanel2.Controls.Add(this.btnVendaAdicionarCliente);
             this.flowLayoutPanel2.Controls.Add(this.btnVendaAdicionarItemProduto);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(452, 53);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(827, 53);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(803, 61);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(428, 61);
             this.flowLayoutPanel2.TabIndex = 150;
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.BackColor = System.Drawing.Color.White;
-            this.guna2Panel9.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel9.BorderRadius = 3;
-            this.guna2Panel9.BorderThickness = 1;
-            this.guna2Panel9.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel9.Controls.Add(this.cbVendaMetodoPagamento);
-            this.guna2Panel9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel9.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(369, 53);
-            this.guna2Panel9.TabIndex = 226;
-            // 
-            // cbVendaMetodoPagamento
-            // 
-            this.cbVendaMetodoPagamento.BackColor = System.Drawing.Color.Transparent;
-            this.cbVendaMetodoPagamento.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.cbVendaMetodoPagamento.BorderRadius = 3;
-            this.cbVendaMetodoPagamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbVendaMetodoPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVendaMetodoPagamento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.cbVendaMetodoPagamento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbVendaMetodoPagamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbVendaMetodoPagamento.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cbVendaMetodoPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.cbVendaMetodoPagamento.ItemHeight = 30;
-            this.cbVendaMetodoPagamento.Items.AddRange(new object[] {
-            "Método de pagamento"});
-            this.cbVendaMetodoPagamento.Location = new System.Drawing.Point(42, 8);
-            this.cbVendaMetodoPagamento.Margin = new System.Windows.Forms.Padding(4);
-            this.cbVendaMetodoPagamento.Name = "cbVendaMetodoPagamento";
-            this.cbVendaMetodoPagamento.Size = new System.Drawing.Size(323, 36);
-            this.cbVendaMetodoPagamento.StartIndex = 0;
-            this.cbVendaMetodoPagamento.TabIndex = 31;
             // 
             // btnVendaAdicionarCliente
             // 
@@ -415,7 +374,7 @@
             this.btnVendaAdicionarCliente.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
             this.btnVendaAdicionarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVendaAdicionarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnVendaAdicionarCliente.Location = new System.Drawing.Point(379, 4);
+            this.btnVendaAdicionarCliente.Location = new System.Drawing.Point(4, 4);
             this.btnVendaAdicionarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnVendaAdicionarCliente.Name = "btnVendaAdicionarCliente";
             this.btnVendaAdicionarCliente.Size = new System.Drawing.Size(202, 53);
@@ -434,7 +393,7 @@
             this.btnVendaAdicionarItemProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(154)))), ((int)(((byte)(112)))));
             this.btnVendaAdicionarItemProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnVendaAdicionarItemProduto.ForeColor = System.Drawing.Color.White;
-            this.btnVendaAdicionarItemProduto.Location = new System.Drawing.Point(589, 4);
+            this.btnVendaAdicionarItemProduto.Location = new System.Drawing.Point(214, 4);
             this.btnVendaAdicionarItemProduto.Margin = new System.Windows.Forms.Padding(4);
             this.btnVendaAdicionarItemProduto.Name = "btnVendaAdicionarItemProduto";
             this.btnVendaAdicionarItemProduto.Size = new System.Drawing.Size(210, 53);
@@ -444,7 +403,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dgvListaItemProduto);
+            this.panel4.Controls.Add(this.dgvVendaListaProdutos);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 137);
@@ -453,10 +412,10 @@
             this.panel4.Size = new System.Drawing.Size(1275, 444);
             this.panel4.TabIndex = 138;
             // 
-            // dgvListaItemProduto
+            // dgvVendaListaProdutos
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVendaListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -464,18 +423,18 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaItemProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListaItemProduto.ColumnHeadersHeight = 77;
-            this.dgvListaItemProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvListaItemProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVendaListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVendaListaProdutos.ColumnHeadersHeight = 77;
+            this.dgvVendaListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvVendaListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selecionarLinhaProduto,
-            this.codigoProdutoItem,
-            this.quantidadeProdutoItem,
+            this.codProduto,
+            this.nomeProduto,
             this.quantidadeProduto,
             this.precoUnitarioProduto,
-            this.loteProduto,
+            this.descontoProduto,
             this.taxaImpostoProduto,
-            this.valorImposto,
+            this.valorImpostoProduto,
             this.subtotalProduto});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -484,43 +443,43 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaItemProduto.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvListaItemProduto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListaItemProduto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaItemProduto.Location = new System.Drawing.Point(20, 20);
-            this.dgvListaItemProduto.Name = "dgvListaItemProduto";
-            this.dgvListaItemProduto.RowHeadersVisible = false;
-            this.dgvListaItemProduto.RowHeadersWidth = 51;
+            this.dgvVendaListaProdutos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVendaListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVendaListaProdutos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvVendaListaProdutos.Location = new System.Drawing.Point(20, 20);
+            this.dgvVendaListaProdutos.Name = "dgvVendaListaProdutos";
+            this.dgvVendaListaProdutos.RowHeadersVisible = false;
+            this.dgvVendaListaProdutos.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.dgvListaItemProduto.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvListaItemProduto.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaItemProduto.RowTemplate.Height = 40;
-            this.dgvListaItemProduto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvListaItemProduto.Size = new System.Drawing.Size(1235, 329);
-            this.dgvListaItemProduto.TabIndex = 134;
-            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvListaItemProduto.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvListaItemProduto.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvListaItemProduto.ThemeStyle.HeaderStyle.Height = 77;
-            this.dgvListaItemProduto.ThemeStyle.ReadOnly = false;
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvVendaListaProdutos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvVendaListaProdutos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVendaListaProdutos.RowTemplate.Height = 40;
+            this.dgvVendaListaProdutos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvVendaListaProdutos.Size = new System.Drawing.Size(1235, 329);
+            this.dgvVendaListaProdutos.TabIndex = 134;
+            this.dgvVendaListaProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvVendaListaProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvVendaListaProdutos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvVendaListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvVendaListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvVendaListaProdutos.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvVendaListaProdutos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.Height = 77;
+            this.dgvVendaListaProdutos.ThemeStyle.ReadOnly = false;
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // selecionarLinhaProduto
             // 
@@ -531,24 +490,24 @@
             this.selecionarLinhaProduto.Name = "selecionarLinhaProduto";
             this.selecionarLinhaProduto.Width = 23;
             // 
-            // codigoProdutoItem
+            // codProduto
             // 
-            this.codigoProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.codigoProdutoItem.FillWeight = 108.4522F;
-            this.codigoProdutoItem.HeaderText = "Cód.";
-            this.codigoProdutoItem.MinimumWidth = 6;
-            this.codigoProdutoItem.Name = "codigoProdutoItem";
-            this.codigoProdutoItem.Width = 76;
+            this.codProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.codProduto.FillWeight = 108.4522F;
+            this.codProduto.HeaderText = "Cód.";
+            this.codProduto.MinimumWidth = 6;
+            this.codProduto.Name = "codProduto";
+            this.codProduto.Width = 76;
             // 
-            // quantidadeProdutoItem
+            // nomeProduto
             // 
-            this.quantidadeProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantidadeProdutoItem.DefaultCellStyle = dataGridViewCellStyle3;
-            this.quantidadeProdutoItem.FillWeight = 150F;
-            this.quantidadeProdutoItem.HeaderText = "Produto";
-            this.quantidadeProdutoItem.MinimumWidth = 6;
-            this.quantidadeProdutoItem.Name = "quantidadeProdutoItem";
+            this.nomeProduto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nomeProduto.FillWeight = 150F;
+            this.nomeProduto.HeaderText = "Produto";
+            this.nomeProduto.MinimumWidth = 6;
+            this.nomeProduto.Name = "nomeProduto";
             // 
             // quantidadeProduto
             // 
@@ -565,12 +524,12 @@
             this.precoUnitarioProduto.MinimumWidth = 6;
             this.precoUnitarioProduto.Name = "precoUnitarioProduto";
             // 
-            // loteProduto
+            // descontoProduto
             // 
-            this.loteProduto.FillWeight = 77.14286F;
-            this.loteProduto.HeaderText = "Desconto";
-            this.loteProduto.MinimumWidth = 6;
-            this.loteProduto.Name = "loteProduto";
+            this.descontoProduto.FillWeight = 77.14286F;
+            this.descontoProduto.HeaderText = "Desconto";
+            this.descontoProduto.MinimumWidth = 6;
+            this.descontoProduto.Name = "descontoProduto";
             // 
             // taxaImpostoProduto
             // 
@@ -578,11 +537,11 @@
             this.taxaImpostoProduto.MinimumWidth = 6;
             this.taxaImpostoProduto.Name = "taxaImpostoProduto";
             // 
-            // valorImposto
+            // valorImpostoProduto
             // 
-            this.valorImposto.HeaderText = "Valor do Imposto";
-            this.valorImposto.MinimumWidth = 6;
-            this.valorImposto.Name = "valorImposto";
+            this.valorImpostoProduto.HeaderText = "Valor do Imposto";
+            this.valorImpostoProduto.MinimumWidth = 6;
+            this.valorImpostoProduto.Name = "valorImpostoProduto";
             // 
             // subtotalProduto
             // 
@@ -636,7 +595,7 @@
             this.btnVendaEditarItemProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVendaEditarItemProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnVendaEditarItemProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnVendaEditarItemProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnVendaEditarItemProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(151)))), ((int)(((byte)(34)))));
             this.btnVendaEditarItemProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVendaEditarItemProduto.ForeColor = System.Drawing.Color.White;
             this.btnVendaEditarItemProduto.Location = new System.Drawing.Point(142, 4);
@@ -646,19 +605,6 @@
             this.btnVendaEditarItemProduto.TabIndex = 138;
             this.btnVendaEditarItemProduto.Text = "Editar";
             this.btnVendaEditarItemProduto.Click += new System.EventHandler(this.btnVendaEditarItemProduto_Click);
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2PictureBox6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox6.Image = global::PharmaManagerAppDesktop.Properties.Resources.money_fill;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(14, 16);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(20, 20);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 60;
-            this.guna2PictureBox6.TabStop = false;
             // 
             // UserControlVendas
             // 
@@ -681,13 +627,11 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.guna2Panel9.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendaListaProdutos)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,22 +665,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2ComboBox cbVendaMetodoPagamento;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvListaItemProduto;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvVendaListaProdutos;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selecionarLinhaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProdutoItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProdutoItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoUnitarioProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loteProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taxaImpostoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorImposto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalProduto;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private Guna.UI2.WinForms.Guna2Button btnFaturaEliminarItemSelecionado;
         private Guna.UI2.WinForms.Guna2Button btnVendaEditarItemProduto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selecionarLinhaProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoUnitarioProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descontoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxaImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalProduto;
     }
 }

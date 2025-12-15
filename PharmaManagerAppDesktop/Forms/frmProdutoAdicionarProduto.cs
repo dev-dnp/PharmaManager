@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmRegistarProduto : Form
+    public partial class frmProdutoAdicionarProduto : Form
     {
-        public frmRegistarProduto()
+        public frmProdutoAdicionarProduto()
         {
             InitializeComponent();
         }

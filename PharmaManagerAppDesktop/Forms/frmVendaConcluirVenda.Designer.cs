@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVendaConcluirOperacao = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbVendaValorImposto = new System.Windows.Forms.Label();
@@ -80,29 +80,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Controls.Add(this.btnVendaConcluirOperacao);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 589);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 86);
             this.panel1.TabIndex = 181;
             // 
-            // guna2Button2
+            // btnVendaConcluirOperacao
             // 
-            this.guna2Button2.BorderRadius = 4;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(30, 10);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(410, 55);
-            this.guna2Button2.TabIndex = 172;
-            this.guna2Button2.Text = "Concluir";
+            this.btnVendaConcluirOperacao.BorderRadius = 4;
+            this.btnVendaConcluirOperacao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVendaConcluirOperacao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVendaConcluirOperacao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVendaConcluirOperacao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVendaConcluirOperacao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnVendaConcluirOperacao.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendaConcluirOperacao.ForeColor = System.Drawing.Color.White;
+            this.btnVendaConcluirOperacao.Location = new System.Drawing.Point(30, 10);
+            this.btnVendaConcluirOperacao.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVendaConcluirOperacao.Name = "btnVendaConcluirOperacao";
+            this.btnVendaConcluirOperacao.Size = new System.Drawing.Size(410, 55);
+            this.btnVendaConcluirOperacao.TabIndex = 172;
+            this.btnVendaConcluirOperacao.Text = "Concluir";
             // 
             // label13
             // 
@@ -385,7 +385,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label13);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmVendaConcluirVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resumo";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -404,7 +407,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnVendaConcluirOperacao;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbVendaValorImposto;

@@ -64,6 +64,18 @@
     <Compile Include="FormPaginaInicial.Designer.cs">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmEstoqueAdicionarQuantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEstoqueAdicionarQuantidade.Designer.cs">
+      <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFacturaDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFacturaDetalhes.Designer.cs">
+      <DependentUpon>frmFacturaDetalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmVendaAdicionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +124,11 @@
     <Compile Include="Forms\frmEditarRegistroProduto.Designer.cs">
       <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmRegistarProduto.cs">
+    <Compile Include="Forms\frmProdutoAdicionarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmRegistarProduto.Designer.cs">
-      <DependentUpon>frmRegistarProduto.cs</DependentUpon>
+    <Compile Include="Forms\frmProdutoAdicionarProduto.Designer.cs">
+      <DependentUpon>frmProdutoAdicionarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmVendaConcluirVenda.cs">
       <SubType>Form</SubType>
@@ -150,11 +162,11 @@
     <Compile Include="UserControls\UserControlConfiguracoes.Designer.cs">
       <DependentUpon>UserControlConfiguracoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlDashboard.cs">
+    <Compile Include="UserControls\UserControlPainel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlDashboard.Designer.cs">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlPainel.Designer.cs">
+      <DependentUpon>UserControlPainel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlEstoque.cs">
       <SubType>UserControl</SubType>
@@ -180,6 +192,12 @@
     <Compile Include="UserControls\UserControlFuncionarios.Designer.cs">
       <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlProdutos.Designer.cs">
+      <DependentUpon>UserControlProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlNotificacoes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
+      <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFacturaDetalhes.resx">
+      <DependentUpon>frmFacturaDetalhes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaAdicionarCliente.resx">
       <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>
@@ -222,8 +246,8 @@
     <EmbeddedResource Include="Forms\frmEditarRegistroProduto.resx">
       <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmRegistarProduto.resx">
-      <DependentUpon>frmRegistarProduto.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmProdutoAdicionarProduto.resx">
+      <DependentUpon>frmProdutoAdicionarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaConcluirVenda.resx">
       <DependentUpon>frmVendaConcluirVenda.cs</DependentUpon>
@@ -250,8 +274,8 @@
     <EmbeddedResource Include="UserControls\UserControlConfiguracoes.resx">
       <DependentUpon>UserControlConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlDashboard.resx">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlPainel.resx">
+      <DependentUpon>UserControlPainel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlEstoque.resx">
       <DependentUpon>UserControlEstoque.cs</DependentUpon>
@@ -264,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlFuncionarios.resx">
       <DependentUpon>UserControlFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlProdutos.resx">
+      <DependentUpon>UserControlProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificacoes.resx">
       <DependentUpon>UserControlNotificacoes.cs</DependentUpon>

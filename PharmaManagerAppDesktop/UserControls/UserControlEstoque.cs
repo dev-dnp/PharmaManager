@@ -18,10 +18,10 @@ namespace PharmaManagerAppDesktop.UserControls
             InitializeComponent();
         }
 
-        private void btnRegistarProdutoNoEstoque_Click(object sender, EventArgs e)
+        private void btnEstoqueNovoProduto_Click(object sender, EventArgs e)
         {
-            frmRegistarProduto frmRegistarProduto = new frmRegistarProduto();
-            frmRegistarProduto.ShowDialog();
+            frmEstoqueAdicionarQuantidade janela = new frmEstoqueAdicionarQuantidade();
+            janela.ShowDialog();
         }
     }
 }

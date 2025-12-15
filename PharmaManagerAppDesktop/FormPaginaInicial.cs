@@ -33,7 +33,7 @@ namespace PharmaManagerAppDesktop
 
         private void btnMenuInicio_Click(object sender, EventArgs e)
         {
-            CarregarControleDeUsuario(new UserControlDashboard());
+            CarregarControleDeUsuario(new UserControlPainel());
             labelTituloPainelAtual.Text = "Dashboad";
         }
 
@@ -94,6 +94,12 @@ namespace PharmaManagerAppDesktop
                 uc.Size = panelConteudoPrincipal.ClientSize;
                 uc.Location = new Point(0, 0);
             }
+        }
+
+        private void btnMenuProdutos_Click(object sender, EventArgs e)
+        {
+            CarregarControleDeUsuario(new UserControlProdutos());
+            labelTituloPainelAtual.Text = "Produtos";
         }
     }
 }
