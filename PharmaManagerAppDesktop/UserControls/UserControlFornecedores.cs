@@ -20,8 +20,14 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAdicionarFornecedor_Click(object sender, EventArgs e)
         {
-            frmAdicionarFornecedor frmAddFornecedor = new frmAdicionarFornecedor();
+            frmFornecedorAdicionar frmAddFornecedor = new frmFornecedorAdicionar();
             frmAddFornecedor.ShowDialog();
+        }
+
+        private void btnEditarFornecedor_Click(object sender, EventArgs e)
+        {
+            frmFornecedorEditar janela = new frmFornecedorEditar();
+            janela.ShowDialog();
         }
     }
 }

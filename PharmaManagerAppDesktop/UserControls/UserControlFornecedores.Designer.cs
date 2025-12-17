@@ -36,17 +36,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbNomeCompleto = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdicionarCliente = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdicionarFornecedor = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditarFornecedor = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListaItemProduto = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -57,14 +55,16 @@
             this.loteProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataValidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -107,19 +107,6 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(350, 53);
             this.guna2Panel3.TabIndex = 134;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(14, 17);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 60;
-            this.guna2PictureBox2.TabStop = false;
             // 
             // tbNomeCompleto
             // 
@@ -164,26 +151,6 @@
             this.btnAdicionarCliente.Size = new System.Drawing.Size(130, 53);
             this.btnAdicionarCliente.TabIndex = 135;
             this.btnAdicionarCliente.Text = "Procurar";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.BackgroundImage = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
-            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2Button2.BorderRadius = 4;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(154)))), ((int)(((byte)(112)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::PharmaManagerAppDesktop.Properties.Resources.arrow_counter_clockwise_fill__1_;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button2.Location = new System.Drawing.Point(497, 3);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(60, 53);
-            this.guna2Button2.TabIndex = 149;
             // 
             // btnAdicionarFornecedor
             // 
@@ -237,7 +204,7 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this.guna2Button3);
-            this.flowLayoutPanel2.Controls.Add(this.guna2Button4);
+            this.flowLayoutPanel2.Controls.Add(this.btnEditarFornecedor);
             this.flowLayoutPanel2.Controls.Add(this.guna2Button5);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(789, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -262,22 +229,23 @@
             this.guna2Button3.TabIndex = 136;
             this.guna2Button3.Text = "Eliminar";
             // 
-            // guna2Button4
+            // btnEditarFornecedor
             // 
-            this.guna2Button4.BorderRadius = 4;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(142, 4);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(130, 53);
-            this.guna2Button4.TabIndex = 137;
-            this.guna2Button4.Text = "Editar";
+            this.btnEditarFornecedor.BorderRadius = 4;
+            this.btnEditarFornecedor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarFornecedor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarFornecedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditarFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditarFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(151)))), ((int)(((byte)(34)))));
+            this.btnEditarFornecedor.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnEditarFornecedor.Location = new System.Drawing.Point(142, 4);
+            this.btnEditarFornecedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarFornecedor.Name = "btnEditarFornecedor";
+            this.btnEditarFornecedor.Size = new System.Drawing.Size(130, 53);
+            this.btnEditarFornecedor.TabIndex = 137;
+            this.btnEditarFornecedor.Text = "Editar";
+            this.btnEditarFornecedor.Click += new System.EventHandler(this.btnEditarFornecedor_Click);
             // 
             // guna2Button5
             // 
@@ -430,6 +398,39 @@
             this.quantidadeProduto.Name = "quantidadeProduto";
             this.quantidadeProduto.Width = 87;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(14, 17);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 60;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.White;
+            this.guna2Button2.BackgroundImage = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
+            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guna2Button2.BorderRadius = 4;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(154)))), ((int)(((byte)(112)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = global::PharmaManagerAppDesktop.Properties.Resources.arrow_counter_clockwise_fill__1_;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2Button2.Location = new System.Drawing.Point(497, 3);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(60, 53);
+            this.guna2Button2.TabIndex = 149;
+            // 
             // UserControlFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,12 +446,12 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaItemProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,7 +471,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnEditarFornecedor;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvListaItemProduto;

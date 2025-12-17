@@ -38,7 +38,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnVendaFinalizar_Click(object sender, EventArgs e)
         {
-            frmVendaConcluirVenda janela = new frmVendaConcluirVenda();
+            frmVendaResumoVenda janela = new frmVendaResumoVenda();
             janela.ShowDialog();
         }
     }

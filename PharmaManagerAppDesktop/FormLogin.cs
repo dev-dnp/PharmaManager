@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PharmaManagerAppDesktop.BD;
 
 namespace PharmaManagerAppDesktop
 {
@@ -18,10 +19,29 @@ namespace PharmaManagerAppDesktop
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
-            FormJanelaInicial formJanelaInicial = new FormJanelaInicial();
-            formJanelaInicial.ShowDialog();
+            LoginBD login = new LoginBD();
+            var resultado = login.Autenticacao(txtEmail.Text, txtSenha.Text);
+
+            if (resultado == null)
+            {
+                MessageBox.Show("Email ou senha incorreta!");
+            } 
+            else
+            {
+                var dadosUsuario = (Dictionary<string, object>)resultado["usuario"];
+                var dadosFuncionario = (Dictionary<string, object>)resultado["funcionario"];
+
+                SessaoUsuario.Funcionario = dadosFuncionario;
+                SessaoUsuario.Usuario = dadosUsuario;
+
+                FormJanelaInicial formJanelaInicial = new FormJanelaInicial();
+                formJanelaInicial.ShowDialog();
+
+                
+            }
         }
+
     }
 }

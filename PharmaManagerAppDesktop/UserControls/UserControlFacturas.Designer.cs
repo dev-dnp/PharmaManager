@@ -259,6 +259,7 @@
             this.btnFacturaCancelar.Size = new System.Drawing.Size(130, 53);
             this.btnFacturaCancelar.TabIndex = 136;
             this.btnFacturaCancelar.Text = "Cancelar";
+            this.btnFacturaCancelar.Click += new System.EventHandler(this.btnFacturaCancelar_Click);
             // 
             // btnFacturaDetalhes
             // 
@@ -276,6 +277,7 @@
             this.btnFacturaDetalhes.Size = new System.Drawing.Size(130, 53);
             this.btnFacturaDetalhes.TabIndex = 138;
             this.btnFacturaDetalhes.Text = "Detalhes";
+            this.btnFacturaDetalhes.Click += new System.EventHandler(this.btnFacturaDetalhes_Click);
             // 
             // panel1
             // 

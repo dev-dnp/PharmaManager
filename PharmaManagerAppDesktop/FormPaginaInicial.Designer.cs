@@ -45,7 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnSairSistema = new Guna.UI2.WinForms.Guna2Button();
@@ -423,22 +423,22 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.lblNomeUsuario);
             this.panel3.Controls.Add(this.PictureFotoDePerfil);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(283, 51);
             this.panel3.TabIndex = 10;
             // 
-            // label3
+            // lblNomeUsuario
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Olá, Domingos Pedro!";
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeUsuario.Location = new System.Drawing.Point(65, 15);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(177, 23);
+            this.lblNomeUsuario.TabIndex = 4;
+            this.lblNomeUsuario.Text = "Olá, Domingos Pedro!";
             // 
             // PictureFotoDePerfil
             // 
@@ -605,6 +605,7 @@
             this.panelConteudoPrincipal.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.panelConteudoPrincipal.Size = new System.Drawing.Size(1239, 789);
             this.panelConteudoPrincipal.TabIndex = 2;
+            this.panelConteudoPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudoPrincipal_Paint);
             this.panelConteudoPrincipal.Resize += new System.EventHandler(this.panelConteudoPrincipal_Resize);
             // 
             // FormJanelaInicial
@@ -622,6 +623,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel Inicial | Pharma Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormJanelaInicial_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
@@ -669,7 +671,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private System.Windows.Forms.Panel panelConteudoPrincipal;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNomeUsuario;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;

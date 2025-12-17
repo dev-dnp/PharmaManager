@@ -1,6 +1,6 @@
 ﻿namespace PharmaManagerAppDesktop.Forms
 {
-    partial class frmAdicionarFornecedor
+    partial class frmFornecedorEditar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -68,7 +65,9 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbNomeCompleto = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -88,46 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.Teal;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(800, 55);
-            this.label13.TabIndex = 174;
-            this.label13.Text = "ADICIONAR FORNECEDOR";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 586);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 86);
-            this.panel1.TabIndex = 176;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 4;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(25, 4);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(750, 55);
-            this.guna2Button2.TabIndex = 172;
-            this.guna2Button2.Text = "Salvar";
             // 
             // panel2
             // 
@@ -152,8 +113,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 531);
-            this.panel2.TabIndex = 177;
+            this.panel2.Size = new System.Drawing.Size(800, 539);
+            this.panel2.TabIndex = 180;
             // 
             // label1
             // 
@@ -723,18 +684,55 @@
             this.tbNomeCompleto.Size = new System.Drawing.Size(708, 44);
             this.tbNomeCompleto.TabIndex = 62;
             // 
-            // frmAdicionarFornecedor
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 594);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 86);
+            this.panel1.TabIndex = 179;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 4;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(25, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(750, 55);
+            this.guna2Button2.TabIndex = 172;
+            this.guna2Button2.Text = "Guardar alterações";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Teal;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(800, 55);
+            this.label13.TabIndex = 178;
+            this.label13.Text = "EDITAR FORNECEDOR";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // frmFornecedorEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 672);
+            this.ClientSize = new System.Drawing.Size(800, 680);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label13);
-            this.Name = "frmAdicionarFornecedor";
+            this.Name = "frmFornecedorEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Fornecedor";
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
@@ -755,14 +753,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
@@ -800,5 +797,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox tbNomeCompleto;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.Label label13;
     }
 }

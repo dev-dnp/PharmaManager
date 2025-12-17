@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmFacturaDetalhes : Form
+    public partial class frmVendaResumoVenda : Form
     {
-        public frmFacturaDetalhes()
+        public frmVendaResumoVenda()
         {
             InitializeComponent();
         }
 
-        private void btnFecharDetalhesFactura_Click(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

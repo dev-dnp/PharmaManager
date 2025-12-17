@@ -23,5 +23,10 @@ namespace PharmaManagerAppDesktop.UserControls
             frmEstoqueAdicionarQuantidade janela = new frmEstoqueAdicionarQuantidade();
             janela.ShowDialog();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

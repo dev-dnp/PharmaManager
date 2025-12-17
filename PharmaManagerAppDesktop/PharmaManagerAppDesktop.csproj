@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\ConexaoBD.cs" />
+    <Compile Include="BD\FuncionarioBD.cs" />
+    <Compile Include="BD\LoginBD.cs" />
+    <Compile Include="BD\SessaoUsuario.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +74,23 @@
     <Compile Include="Forms\frmEstoqueAdicionarQuantidade.Designer.cs">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmFacturaCancelarFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFacturaCancelarFatura.Designer.cs">
+      <DependentUpon>frmFacturaCancelarFatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmFacturaDetalhes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmFacturaDetalhes.Designer.cs">
       <DependentUpon>frmFacturaDetalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFornecedorEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFornecedorEditar.Designer.cs">
+      <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmVendaAdicionarCliente.cs">
       <SubType>Form</SubType>
@@ -82,11 +98,11 @@
     <Compile Include="Forms\frmVendaAdicionarCliente.Designer.cs">
       <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAdicionarFornecedor.cs">
+    <Compile Include="Forms\frmFornecedorAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAdicionarFornecedor.Designer.cs">
-      <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
+    <Compile Include="Forms\frmFornecedorAdicionar.Designer.cs">
+      <DependentUpon>frmFornecedorAdicionar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmVendaAdicionarItemProduto.cs">
       <SubType>Form</SubType>
@@ -130,11 +146,11 @@
     <Compile Include="Forms\frmProdutoAdicionarProduto.Designer.cs">
       <DependentUpon>frmProdutoAdicionarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmVendaConcluirVenda.cs">
+    <Compile Include="Forms\frmVendaResumoVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmVendaConcluirVenda.Designer.cs">
-      <DependentUpon>frmVendaConcluirVenda.cs</DependentUpon>
+    <Compile Include="Forms\frmVendaResumoVenda.Designer.cs">
+      <DependentUpon>frmVendaResumoVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmVendaEditarItemProduto.cs">
       <SubType>Form</SubType>
@@ -219,14 +235,20 @@
     <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFacturaCancelarFatura.resx">
+      <DependentUpon>frmFacturaCancelarFatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFacturaDetalhes.resx">
       <DependentUpon>frmFacturaDetalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFornecedorEditar.resx">
+      <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaAdicionarCliente.resx">
       <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAdicionarFornecedor.resx">
-      <DependentUpon>frmAdicionarFornecedor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmFornecedorAdicionar.resx">
+      <DependentUpon>frmFornecedorAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaAdicionarItemProduto.resx">
       <DependentUpon>frmVendaAdicionarItemProduto.cs</DependentUpon>
@@ -249,8 +271,8 @@
     <EmbeddedResource Include="Forms\frmProdutoAdicionarProduto.resx">
       <DependentUpon>frmProdutoAdicionarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmVendaConcluirVenda.resx">
-      <DependentUpon>frmVendaConcluirVenda.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmVendaResumoVenda.resx">
+      <DependentUpon>frmVendaResumoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaEditarItemProduto.resx">
       <DependentUpon>frmVendaEditarItemProduto.cs</DependentUpon>

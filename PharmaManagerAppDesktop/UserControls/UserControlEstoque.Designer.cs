@@ -39,9 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEstoqueListaProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEstoqueDetalhesProduto = new Guna.UI2.WinForms.Guna2Button();
             this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +47,9 @@
             this.idFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoMovimentoEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnEstoqueDetalhesProduto = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoqueListaProdutos)).BeginInit();
@@ -68,6 +68,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(20);
             this.panel2.Size = new System.Drawing.Size(1295, 137);
             this.panel2.TabIndex = 136;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnEstoqueNovoProduto
             // 
@@ -184,43 +185,6 @@
             this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.flowLayoutPanel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 681);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1295, 100);
-            this.panel3.TabIndex = 138;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.flowLayoutPanel2.AutoSize = true;
-            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.btnEstoqueDetalhesProduto);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1137, 16);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(138, 61);
-            this.flowLayoutPanel2.TabIndex = 137;
-            // 
-            // btnEstoqueDetalhesProduto
-            // 
-            this.btnEstoqueDetalhesProduto.BorderRadius = 4;
-            this.btnEstoqueDetalhesProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueDetalhesProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueDetalhesProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEstoqueDetalhesProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEstoqueDetalhesProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.btnEstoqueDetalhesProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoqueDetalhesProduto.ForeColor = System.Drawing.Color.White;
-            this.btnEstoqueDetalhesProduto.Location = new System.Drawing.Point(4, 4);
-            this.btnEstoqueDetalhesProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEstoqueDetalhesProduto.Name = "btnEstoqueDetalhesProduto";
-            this.btnEstoqueDetalhesProduto.Size = new System.Drawing.Size(130, 53);
-            this.btnEstoqueDetalhesProduto.TabIndex = 138;
-            this.btnEstoqueDetalhesProduto.Text = "Detalhes";
-            // 
             // selecionarLinhaProduto
             // 
             this.selecionarLinhaProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -282,6 +246,43 @@
             this.quantidadeEstoqueProduto.MinimumWidth = 6;
             this.quantidadeEstoqueProduto.Name = "quantidadeEstoqueProduto";
             this.quantidadeEstoqueProduto.Width = 132;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.flowLayoutPanel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 681);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1295, 100);
+            this.panel3.TabIndex = 138;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.Controls.Add(this.btnEstoqueDetalhesProduto);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1137, 16);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(138, 61);
+            this.flowLayoutPanel2.TabIndex = 137;
+            // 
+            // btnEstoqueDetalhesProduto
+            // 
+            this.btnEstoqueDetalhesProduto.BorderRadius = 4;
+            this.btnEstoqueDetalhesProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstoqueDetalhesProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstoqueDetalhesProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEstoqueDetalhesProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEstoqueDetalhesProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnEstoqueDetalhesProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoqueDetalhesProduto.ForeColor = System.Drawing.Color.White;
+            this.btnEstoqueDetalhesProduto.Location = new System.Drawing.Point(4, 4);
+            this.btnEstoqueDetalhesProduto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEstoqueDetalhesProduto.Name = "btnEstoqueDetalhesProduto";
+            this.btnEstoqueDetalhesProduto.Size = new System.Drawing.Size(130, 53);
+            this.btnEstoqueDetalhesProduto.TabIndex = 138;
+            this.btnEstoqueDetalhesProduto.Text = "Detalhes";
             // 
             // UserControlEstoque
             // 
