@@ -9,7 +9,7 @@ namespace PharmaManagerAppDesktop.BD
 {
     public static class ConexaoBD
     {
-        static string stringDeConexao = @"Data Source=localhost;
+        static string StringConexao = @"Data Source=localhost;
                                           Initial Catalog=PHARMA_MANAGER;
                                           Persist Security Info=False;
                                           User ID=sa;
@@ -20,12 +20,5 @@ namespace PharmaManagerAppDesktop.BD
                                           TrustServerCertificate=True;
                                           Application Name=SQL Server Management Studio";
 
-        // Método para criar a conexão que será reautilizável para todo sistema!
-        public static SqlConnection Conectar()
-        {
-            SqlConnection conexao = new SqlConnection(stringDeConexao);
-            conexao.Open();
-            return conexao;
-        }
     }
 }

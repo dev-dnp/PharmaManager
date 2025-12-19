@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PharmaManagerAppDesktop.BD;
+using PharmaManagerAppDesktop.BaseDeDados;
+using PharmaManagerAppDesktop.Entidades;
 
 namespace PharmaManagerAppDesktop
 {
@@ -21,26 +22,71 @@ namespace PharmaManagerAppDesktop
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            LoginBD login = new LoginBD();
-            var resultado = login.Autenticacao(txtEmail.Text, txtSenha.Text);
 
-            if (resultado == null)
+            // Validar o campo email
+            if(txtEmail.Text.Trim() == String.Empty)
             {
-                MessageBox.Show("Email ou senha incorreta!");
-            } 
-            else
-            {
-                var dadosUsuario = (Dictionary<string, object>)resultado["usuario"];
-                var dadosFuncionario = (Dictionary<string, object>)resultado["funcionario"];
+                MessageBox.Show(
+                    "Campo email obrigatório",
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
-                SessaoUsuario.Funcionario = dadosFuncionario;
-                SessaoUsuario.Usuario = dadosUsuario;
-
-                FormJanelaInicial formJanelaInicial = new FormJanelaInicial();
-                formJanelaInicial.ShowDialog();
-
-                
+                txtEmail.Clear();
+                txtEmail.Focus();
+                return; 
             }
+
+            // Validar o campo senha
+
+            if (txtSenha.Text == String.Empty)
+            {
+                MessageBox.Show(
+                    "Campo senha obrigatório",
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                txtSenha.Focus();
+                return;
+            }
+
+
+            // Buscar usuario na base de dados
+            Usuario usuario = new UsuarioBD().BuscarUsuarioPorEmailESenha(txtEmail.Text, txtSenha.Text);
+
+
+            // Caso o usuário não exista
+            if (usuario == null)
+            {
+                MessageBox.Show(
+                    "Email ou senha incorreto! Tente novamente.",
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
+
+            // Usuário existe! Assinando sua sessão de usuário 
+            FuncionarioDB.TodosDadosFuncionario infoFuncionario = new FuncionarioDB().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
+
+            SessaoUsuario.Usuario = usuario;
+            SessaoUsuario.Funcionario = infoFuncionario.Funcionario;
+            SessaoUsuario.Cargo = infoFuncionario.Cargo;
+            SessaoUsuario.Permissao = infoFuncionario.Permissao;
+            SessaoUsuario.Provincia = infoFuncionario.Provincia;
+            SessaoUsuario.Municipio = infoFuncionario.Municipio;
+            SessaoUsuario.Endereco = infoFuncionario.Endereco;
+
+            DadosReferencia.BuscarMetodosPagamento();
+
+            FormJanelaInicial janela = new FormJanelaInicial();
+            janela.ShowDialog();
+
+
         }
 
     }

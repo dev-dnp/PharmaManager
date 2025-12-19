@@ -415,9 +415,9 @@
             this.flowLayoutPanel4.Controls.Add(this.btnSairSistema);
             this.flowLayoutPanel4.Controls.Add(this.guna2VSeparator1);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(687, 8);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(608, 8);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(534, 57);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(613, 57);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // panel3
@@ -427,7 +427,7 @@
             this.panel3.Controls.Add(this.PictureFotoDePerfil);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 51);
+            this.panel3.Size = new System.Drawing.Size(362, 51);
             this.panel3.TabIndex = 10;
             // 
             // lblNomeUsuario
@@ -458,7 +458,7 @@
             // guna2VSeparator2
             // 
             this.guna2VSeparator2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2VSeparator2.Location = new System.Drawing.Point(292, 10);
+            this.guna2VSeparator2.Location = new System.Drawing.Point(371, 10);
             this.guna2VSeparator2.Name = "guna2VSeparator2";
             this.guna2VSeparator2.Size = new System.Drawing.Size(10, 36);
             this.guna2VSeparator2.TabIndex = 11;
@@ -480,7 +480,7 @@
             this.btnSairSistema.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnSairSistema.Image = global::PharmaManagerAppDesktop.Properties.Resources.power;
             this.btnSairSistema.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSairSistema.Location = new System.Drawing.Point(309, 10);
+            this.btnSairSistema.Location = new System.Drawing.Point(388, 10);
             this.btnSairSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btnSairSistema.Name = "btnSairSistema";
             this.btnSairSistema.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -492,7 +492,7 @@
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(407, 10);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(486, 10);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(10, 36);
             this.guna2VSeparator1.TabIndex = 0;
@@ -505,7 +505,7 @@
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(423, 12);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(502, 12);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(108, 33);
             this.flowLayoutPanel3.TabIndex = 6;

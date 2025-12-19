@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.BaseDeDados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,10 @@ namespace PharmaManagerAppDesktop.Forms
         public frmVendaResumoVenda()
         {
             InitializeComponent();
+
+            cbVendaMetodoPagamento.DataSource = DadosReferencia.MetodosPagamento;
+            cbVendaMetodoPagamento.DisplayMember = "IdMetodoPagamento";
+            cbVendaMetodoPagamento.ValueMember = "IdMetodoPagamento";
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

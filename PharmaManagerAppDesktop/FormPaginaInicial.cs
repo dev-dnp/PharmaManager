@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PharmaManagerAppDesktop.BD;
+using PharmaManagerAppDesktop.BaseDeDados;
 using PharmaManagerAppDesktop.UserControls;
 
 namespace PharmaManagerAppDesktop
@@ -110,7 +110,7 @@ namespace PharmaManagerAppDesktop
 
         private void FormJanelaInicial_Load(object sender, EventArgs e)
         {
-            lblNomeUsuario.Text = "Olá, " + SessaoUsuario.Funcionario["NOME"].ToString() + "!";
+            lblNomeUsuario.Text = "Olá, " + SessaoUsuario.Funcionario.Nome + "!";
         }
     }
 }

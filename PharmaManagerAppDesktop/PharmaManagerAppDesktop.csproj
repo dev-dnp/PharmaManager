@@ -52,10 +52,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDeDados\ConexaoBD.cs" />
+    <Compile Include="BaseDeDados\DadosReferencia.cs" />
+    <Compile Include="BaseDeDados\FuncionarioDB.cs" />
+    <Compile Include="BaseDeDados\SessaoUsuario.cs" />
+    <Compile Include="BaseDeDados\UsuarioBD.cs" />
     <Compile Include="BD\ConexaoBD.cs" />
     <Compile Include="BD\FuncionarioBD.cs" />
     <Compile Include="BD\LoginBD.cs" />
     <Compile Include="BD\SessaoUsuario.cs" />
+    <Compile Include="Entidades\Cargo.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\EstadoFatura.cs" />
+    <Compile Include="Entidades\Estoque.cs" />
+    <Compile Include="Entidades\Fatura.cs" />
+    <Compile Include="Entidades\Fornecedor.cs" />
+    <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="Entidades\ItemFatura.cs" />
+    <Compile Include="Entidades\Lote.cs" />
+    <Compile Include="Entidades\MetodoPagamento.cs" />
+    <Compile Include="Entidades\MovimentoEstoque.cs" />
+    <Compile Include="Entidades\Municipio.cs" />
+    <Compile Include="Entidades\Permissao.cs" />
+    <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\Provincia.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\UsuarioPermissao.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

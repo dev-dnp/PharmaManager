@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PharmaManagerAppDesktop.Modelos
+{
+    public class Fatura
+    {
+        public int IdFatura { get; set; }
+        public int? IdCliente { get; set; }
+        public int IdFuncionario { get; set; }
+        public int IdEstadoFatura { get; set; }
+        public int IdMetodoPagamento { get; set; }
+        public decimal TotalVenda { get; set; }
+        public DateTime DataVenda { get; set; }
+    }
+}
