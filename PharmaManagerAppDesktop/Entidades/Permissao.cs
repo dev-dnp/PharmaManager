@@ -9,6 +9,6 @@ namespace PharmaManagerAppDesktop.Entidades
     public class Permissao
     {
         public int IdPermissao { get; set; }
-        public string NomePermissao { get; set; }
+        public string Nome { get; set; }
     }
 }

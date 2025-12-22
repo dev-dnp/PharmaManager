@@ -21,7 +21,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 conexao.Open();
 
                 string query = @"SELECT TOP 1
-                                ID_USUARIO, EMAIL, SENHA, FOTO, DATA_CRIACAO
+                                ID_USUARIO, EMAIL, SENHA, FOTO
                                 FROM TB_USUARIO
                                 WHERE EMAIL = @email AND SENHA = @senha";
 
@@ -40,7 +40,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 Email = leitor.GetString(1),
                                 Senha = leitor.GetString(2),
                                 Foto = leitor.IsDBNull(3) ? null : leitor.GetString(3),
-                                DataCriacao = leitor.GetDateTime(4),
                             });
                         }
                     }

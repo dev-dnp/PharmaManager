@@ -14,6 +14,5 @@ namespace PharmaManagerAppDesktop.Entidades
         public int Quantidade { get; set; }
         public decimal PrecoVenda { get; set; }
         public decimal Desconto { get; set; }
-        public decimal Subtotal { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace PharmaManagerAppDesktop.Entidades
         public int IdFuncionario { get; set; }
         public int IdEstadoFatura { get; set; }
         public int IdMetodoPagamento { get; set; }
-        public decimal TotalVenda { get; set; }
         public DateTime DataVenda { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace PharmaManagerAppDesktop.Entidades
     public class MetodoPagamento
     {
         public int IdMetodoPagamento { get; set; }
-        public string Metodo { get; set; }
+        public string Nome { get; set; }
     }
 }

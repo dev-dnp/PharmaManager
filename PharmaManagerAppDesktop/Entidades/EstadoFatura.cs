@@ -9,6 +9,6 @@ namespace PharmaManagerAppDesktop.Entidades
     public class EstadoFatura
     {
         public int IdEstadoFatura { get; set; }
-        public string Estado { get; set; }
+        public string Nome { get; set; }
     }
 }

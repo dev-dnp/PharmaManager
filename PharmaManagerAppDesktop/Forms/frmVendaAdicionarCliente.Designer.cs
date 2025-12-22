@@ -31,16 +31,16 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGuardarCliente = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tbTelefone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTelefone = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tbNomeCompleto = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNome = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
@@ -75,29 +75,30 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Controls.Add(this.btnGuardarCliente);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 278);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(470, 94);
             this.panel1.TabIndex = 175;
             // 
-            // guna2Button2
+            // btnGuardarCliente
             // 
-            this.guna2Button2.BorderRadius = 4;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(27, 10);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(412, 55);
-            this.guna2Button2.TabIndex = 172;
-            this.guna2Button2.Text = "Salvar";
+            this.btnGuardarCliente.BorderRadius = 4;
+            this.btnGuardarCliente.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardarCliente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardarCliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGuardarCliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGuardarCliente.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnGuardarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarCliente.Location = new System.Drawing.Point(27, 10);
+            this.btnGuardarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarCliente.Name = "btnGuardarCliente";
+            this.btnGuardarCliente.Size = new System.Drawing.Size(412, 55);
+            this.btnGuardarCliente.TabIndex = 172;
+            this.btnGuardarCliente.Text = "Guardar";
+            this.btnGuardarCliente.Click += new System.EventHandler(this.btnGuardarCliente_Click);
             // 
             // panel2
             // 
@@ -130,7 +131,7 @@
             this.guna2Panel8.BorderRadius = 3;
             this.guna2Panel8.BorderThickness = 1;
             this.guna2Panel8.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel8.Controls.Add(this.tbTelefone);
+            this.guna2Panel8.Controls.Add(this.txtTelefone);
             this.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel8.Location = new System.Drawing.Point(28, 156);
             this.guna2Panel8.Name = "guna2Panel8";
@@ -150,32 +151,32 @@
             this.guna2PictureBox6.TabIndex = 60;
             this.guna2PictureBox6.TabStop = false;
             // 
-            // tbTelefone
+            // txtTelefone
             // 
-            this.tbTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbTelefone.BorderColor = System.Drawing.Color.Gray;
-            this.tbTelefone.BorderRadius = 3;
-            this.tbTelefone.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.tbTelefone.BorderThickness = 0;
-            this.tbTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTelefone.DefaultText = "";
-            this.tbTelefone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbTelefone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbTelefone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTelefone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbTelefone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbTelefone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelefone.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.tbTelefone.ForeColor = System.Drawing.Color.Black;
-            this.tbTelefone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTelefone.Location = new System.Drawing.Point(38, 3);
-            this.tbTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbTelefone.Name = "tbTelefone";
-            this.tbTelefone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbTelefone.PlaceholderText = "+244 999 999 999";
-            this.tbTelefone.SelectedText = "";
-            this.tbTelefone.Size = new System.Drawing.Size(369, 44);
-            this.tbTelefone.TabIndex = 62;
+            this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtTelefone.BorderColor = System.Drawing.Color.Gray;
+            this.txtTelefone.BorderRadius = 3;
+            this.txtTelefone.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtTelefone.BorderThickness = 0;
+            this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTelefone.DefaultText = "";
+            this.txtTelefone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTelefone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTelefone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtTelefone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefone.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtTelefone.ForeColor = System.Drawing.Color.Black;
+            this.txtTelefone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefone.Location = new System.Drawing.Point(38, 3);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTelefone.PlaceholderText = "+244 999 999 999";
+            this.txtTelefone.SelectedText = "";
+            this.txtTelefone.Size = new System.Drawing.Size(369, 44);
+            this.txtTelefone.TabIndex = 62;
             // 
             // label2
             // 
@@ -196,7 +197,7 @@
             this.guna2Panel3.BorderRadius = 3;
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel3.Controls.Add(this.tbNomeCompleto);
+            this.guna2Panel3.Controls.Add(this.txtNome);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel3.Location = new System.Drawing.Point(28, 58);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -216,34 +217,34 @@
             this.guna2PictureBox2.TabIndex = 60;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // tbNomeCompleto
+            // txtNome
             // 
-            this.tbNomeCompleto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbNomeCompleto.BorderColor = System.Drawing.Color.Gray;
-            this.tbNomeCompleto.BorderRadius = 3;
-            this.tbNomeCompleto.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.tbNomeCompleto.BorderThickness = 0;
-            this.tbNomeCompleto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNomeCompleto.DefaultText = "";
-            this.tbNomeCompleto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbNomeCompleto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbNomeCompleto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNomeCompleto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNomeCompleto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbNomeCompleto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNomeCompleto.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.tbNomeCompleto.ForeColor = System.Drawing.Color.Black;
-            this.tbNomeCompleto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNomeCompleto.Location = new System.Drawing.Point(38, 4);
-            this.tbNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbNomeCompleto.Name = "tbNomeCompleto";
-            this.tbNomeCompleto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbNomeCompleto.PlaceholderText = "Informe o nome completo";
-            this.tbNomeCompleto.SelectedText = "";
-            this.tbNomeCompleto.Size = new System.Drawing.Size(365, 44);
-            this.tbNomeCompleto.TabIndex = 62;
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtNome.BorderColor = System.Drawing.Color.Gray;
+            this.txtNome.BorderRadius = 3;
+            this.txtNome.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtNome.BorderThickness = 0;
+            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNome.DefaultText = "";
+            this.txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNome.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtNome.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
+            this.txtNome.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNome.Location = new System.Drawing.Point(38, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNome.PlaceholderText = "Informe o nome completo";
+            this.txtNome.SelectedText = "";
+            this.txtNome.Size = new System.Drawing.Size(365, 44);
+            this.txtNome.TabIndex = 62;
             // 
-            // frmFaturaAdicionarCliente
+            // frmVendaAdicionarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,7 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmFaturaAdicionarCliente";
+            this.Name = "frmVendaAdicionarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Cliente";
             this.panel1.ResumeLayout(false);
@@ -274,15 +275,15 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnGuardarCliente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2TextBox tbTelefone;
+        private Guna.UI2.WinForms.Guna2TextBox txtTelefone;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2TextBox tbNomeCompleto;
+        private Guna.UI2.WinForms.Guna2TextBox txtNome;
     }
 }

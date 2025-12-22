@@ -55,6 +55,7 @@
     <Compile Include="BaseDeDados\ConexaoBD.cs" />
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
     <Compile Include="BaseDeDados\FuncionarioDB.cs" />
+    <Compile Include="BaseDeDados\ProdutoDB.cs" />
     <Compile Include="BaseDeDados\SessaoUsuario.cs" />
     <Compile Include="BaseDeDados\UsuarioBD.cs" />
     <Compile Include="BD\ConexaoBD.cs" />

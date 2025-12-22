@@ -48,7 +48,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 usu.FOTO  AS USUARIO_FOTO,
 
                                 car.ID_CARGO,
-                                car.TITULO  AS CARGO_TITULO,
+                                car.NOME  AS CARGO_NOME,
                                 car.DESCRICAO AS CARGO_DESCRICAO,
 
                                 e.ID_ENDERECO,
@@ -89,7 +89,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 LEFT JOIN (
                                     SELECT
                                         up.ID_USUARIO,
-                                        STRING_AGG(p.NOME_PERMISSAO, ', ') AS PERMISSOES
+                                        STRING_AGG(p.NOME, ', ') AS PERMISSOES
                                     FROM TB_USUARIO_PERMISSAO up
                                     JOIN TB_PERMISSAO p ON up.ID_PERMISSAO = p.ID_PERMISSAO
                                     GROUP BY up.ID_USUARIO
@@ -133,7 +133,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 Cargo = new Cargo
                                 {
                                     IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                    Titulo = leitor.IsDBNull(leitor.GetOrdinal("CARGO_TITULO")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_TITULO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
                                     Descricao = leitor.IsDBNull(leitor.GetOrdinal("CARGO_DESCRICAO")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_DESCRICAO")),
                                 },
 
@@ -160,7 +160,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                                 Permissao = new Permissao
                                 {
-                                    NomePermissao = leitor.IsDBNull(leitor.GetOrdinal("PERMISSOES")) ? null : leitor.GetString(leitor.GetOrdinal("PERMISSOES"))
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PERMISSOES")) ? null : leitor.GetString(leitor.GetOrdinal("PERMISSOES"))
                                 }
 
                             });

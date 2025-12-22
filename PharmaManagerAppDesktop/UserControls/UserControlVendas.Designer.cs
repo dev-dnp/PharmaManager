@@ -47,8 +47,8 @@
             this.btnVendaFinalizar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lbVendaEnderecoCliente = new System.Windows.Forms.Label();
-            this.lbVendaTelefoneCliente = new System.Windows.Forms.Label();
-            this.lbVendaNomeCliente = new System.Windows.Forms.Label();
+            this.lblTelefoneCliente = new System.Windows.Forms.Label();
+            this.lblNomeCliente = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,19 +62,19 @@
             this.btnVendaAdicionarItemProduto = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvVendaListaProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoUnitarioProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descontoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxaImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnFaturaEliminarItemSelecionado = new Guna.UI2.WinForms.Guna2Button();
             this.btnVendaEditarItemProduto = new Guna.UI2.WinForms.Guna2Button();
+            this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colCodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecoUnitarioProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescontoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTaxaImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValorImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubtotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -232,46 +232,46 @@
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.Controls.Add(this.lbVendaEnderecoCliente);
-            this.guna2CustomGradientPanel2.Controls.Add(this.lbVendaTelefoneCliente);
-            this.guna2CustomGradientPanel2.Controls.Add(this.lbVendaNomeCliente);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblTelefoneCliente);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblNomeCliente);
             this.guna2CustomGradientPanel2.Controls.Add(this.label16);
             this.guna2CustomGradientPanel2.Controls.Add(this.label12);
             this.guna2CustomGradientPanel2.Controls.Add(this.label14);
             this.guna2CustomGradientPanel2.Controls.Add(this.label15);
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(13, 29);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(256, 153);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(460, 153);
             this.guna2CustomGradientPanel2.TabIndex = 142;
             // 
             // lbVendaEnderecoCliente
             // 
-            this.lbVendaEnderecoCliente.AutoSize = true;
             this.lbVendaEnderecoCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVendaEnderecoCliente.Location = new System.Drawing.Point(162, 114);
             this.lbVendaEnderecoCliente.Name = "lbVendaEnderecoCliente";
-            this.lbVendaEnderecoCliente.Size = new System.Drawing.Size(84, 23);
+            this.lbVendaEnderecoCliente.Size = new System.Drawing.Size(276, 23);
             this.lbVendaEnderecoCliente.TabIndex = 144;
             this.lbVendaEnderecoCliente.Text = "(nenhum)";
+            this.lbVendaEnderecoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbVendaTelefoneCliente
+            // lblTelefoneCliente
             // 
-            this.lbVendaTelefoneCliente.AutoSize = true;
-            this.lbVendaTelefoneCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVendaTelefoneCliente.Location = new System.Drawing.Point(162, 81);
-            this.lbVendaTelefoneCliente.Name = "lbVendaTelefoneCliente";
-            this.lbVendaTelefoneCliente.Size = new System.Drawing.Size(84, 23);
-            this.lbVendaTelefoneCliente.TabIndex = 143;
-            this.lbVendaTelefoneCliente.Text = "(nenhum)";
+            this.lblTelefoneCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefoneCliente.Location = new System.Drawing.Point(162, 81);
+            this.lblTelefoneCliente.Name = "lblTelefoneCliente";
+            this.lblTelefoneCliente.Size = new System.Drawing.Size(276, 23);
+            this.lblTelefoneCliente.TabIndex = 143;
+            this.lblTelefoneCliente.Text = "(nenhum)";
+            this.lblTelefoneCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbVendaNomeCliente
+            // lblNomeCliente
             // 
-            this.lbVendaNomeCliente.AutoSize = true;
-            this.lbVendaNomeCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVendaNomeCliente.Location = new System.Drawing.Point(162, 45);
-            this.lbVendaNomeCliente.Name = "lbVendaNomeCliente";
-            this.lbVendaNomeCliente.Size = new System.Drawing.Size(84, 23);
-            this.lbVendaNomeCliente.TabIndex = 142;
-            this.lbVendaNomeCliente.Text = "(nenhum)";
+            this.lblNomeCliente.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCliente.Location = new System.Drawing.Point(162, 45);
+            this.lblNomeCliente.Name = "lblNomeCliente";
+            this.lblNomeCliente.Size = new System.Drawing.Size(276, 23);
+            this.lblNomeCliente.TabIndex = 142;
+            this.lblNomeCliente.Text = "(nenhum)";
+            this.lblNomeCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -414,6 +414,9 @@
             // 
             // dgvVendaListaProdutos
             // 
+            this.dgvVendaListaProdutos.AllowUserToAddRows = false;
+            this.dgvVendaListaProdutos.AllowUserToDeleteRows = false;
+            this.dgvVendaListaProdutos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvVendaListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -425,17 +428,16 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVendaListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVendaListaProdutos.ColumnHeadersHeight = 77;
-            this.dgvVendaListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvVendaListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selecionarLinhaProduto,
-            this.codProduto,
-            this.nomeProduto,
-            this.quantidadeProduto,
-            this.precoUnitarioProduto,
-            this.descontoProduto,
-            this.taxaImpostoProduto,
-            this.valorImpostoProduto,
-            this.subtotalProduto});
+            this.colCodProduto,
+            this.colNomeProduto,
+            this.colQuantidadeProduto,
+            this.colPrecoUnitarioProduto,
+            this.colDescontoProduto,
+            this.colTaxaImpostoProduto,
+            this.colValorImpostoProduto,
+            this.colSubtotalProduto});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -450,6 +452,7 @@
             this.dgvVendaListaProdutos.Name = "dgvVendaListaProdutos";
             this.dgvVendaListaProdutos.RowHeadersVisible = false;
             this.dgvVendaListaProdutos.RowHeadersWidth = 51;
+            this.dgvVendaListaProdutos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
@@ -470,7 +473,7 @@
             this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVendaListaProdutos.ThemeStyle.HeaderStyle.Height = 77;
             this.dgvVendaListaProdutos.ThemeStyle.ReadOnly = false;
             this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -480,74 +483,6 @@
             this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.Height = 40;
             this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvVendaListaProdutos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // selecionarLinhaProduto
-            // 
-            this.selecionarLinhaProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.selecionarLinhaProduto.FillWeight = 214.2857F;
-            this.selecionarLinhaProduto.HeaderText = "";
-            this.selecionarLinhaProduto.MinimumWidth = 6;
-            this.selecionarLinhaProduto.Name = "selecionarLinhaProduto";
-            this.selecionarLinhaProduto.Width = 23;
-            // 
-            // codProduto
-            // 
-            this.codProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.codProduto.FillWeight = 108.4522F;
-            this.codProduto.HeaderText = "Cód.";
-            this.codProduto.MinimumWidth = 6;
-            this.codProduto.Name = "codProduto";
-            this.codProduto.Width = 76;
-            // 
-            // nomeProduto
-            // 
-            this.nomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nomeProduto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nomeProduto.FillWeight = 150F;
-            this.nomeProduto.HeaderText = "Produto";
-            this.nomeProduto.MinimumWidth = 6;
-            this.nomeProduto.Name = "nomeProduto";
-            // 
-            // quantidadeProduto
-            // 
-            this.quantidadeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.quantidadeProduto.HeaderText = "Qntd.";
-            this.quantidadeProduto.MinimumWidth = 6;
-            this.quantidadeProduto.Name = "quantidadeProduto";
-            this.quantidadeProduto.Width = 84;
-            // 
-            // precoUnitarioProduto
-            // 
-            this.precoUnitarioProduto.FillWeight = 77.14286F;
-            this.precoUnitarioProduto.HeaderText = "Preço uni.";
-            this.precoUnitarioProduto.MinimumWidth = 6;
-            this.precoUnitarioProduto.Name = "precoUnitarioProduto";
-            // 
-            // descontoProduto
-            // 
-            this.descontoProduto.FillWeight = 77.14286F;
-            this.descontoProduto.HeaderText = "Desconto";
-            this.descontoProduto.MinimumWidth = 6;
-            this.descontoProduto.Name = "descontoProduto";
-            // 
-            // taxaImpostoProduto
-            // 
-            this.taxaImpostoProduto.HeaderText = "Taxa de Imposto (%)";
-            this.taxaImpostoProduto.MinimumWidth = 6;
-            this.taxaImpostoProduto.Name = "taxaImpostoProduto";
-            // 
-            // valorImpostoProduto
-            // 
-            this.valorImpostoProduto.HeaderText = "Valor do Imposto";
-            this.valorImpostoProduto.MinimumWidth = 6;
-            this.valorImpostoProduto.Name = "valorImpostoProduto";
-            // 
-            // subtotalProduto
-            // 
-            this.subtotalProduto.HeaderText = "Subtotal";
-            this.subtotalProduto.MinimumWidth = 6;
-            this.subtotalProduto.Name = "subtotalProduto";
             // 
             // panel5
             // 
@@ -606,6 +541,81 @@
             this.btnVendaEditarItemProduto.Text = "Editar";
             this.btnVendaEditarItemProduto.Click += new System.EventHandler(this.btnVendaEditarItemProduto_Click);
             // 
+            // selecionarLinhaProduto
+            // 
+            this.selecionarLinhaProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.selecionarLinhaProduto.FillWeight = 20F;
+            this.selecionarLinhaProduto.HeaderText = "";
+            this.selecionarLinhaProduto.MinimumWidth = 6;
+            this.selecionarLinhaProduto.Name = "selecionarLinhaProduto";
+            // 
+            // colCodProduto
+            // 
+            this.colCodProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colCodProduto.FillWeight = 108.4522F;
+            this.colCodProduto.HeaderText = "Cód.";
+            this.colCodProduto.MinimumWidth = 6;
+            this.colCodProduto.Name = "colCodProduto";
+            this.colCodProduto.ReadOnly = true;
+            this.colCodProduto.Width = 76;
+            // 
+            // colNomeProduto
+            // 
+            this.colNomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNomeProduto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNomeProduto.FillWeight = 150F;
+            this.colNomeProduto.HeaderText = "Produto";
+            this.colNomeProduto.MinimumWidth = 6;
+            this.colNomeProduto.Name = "colNomeProduto";
+            this.colNomeProduto.ReadOnly = true;
+            // 
+            // colQuantidadeProduto
+            // 
+            this.colQuantidadeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colQuantidadeProduto.HeaderText = "Qntd.";
+            this.colQuantidadeProduto.MinimumWidth = 6;
+            this.colQuantidadeProduto.Name = "colQuantidadeProduto";
+            this.colQuantidadeProduto.ReadOnly = true;
+            this.colQuantidadeProduto.Width = 84;
+            // 
+            // colPrecoUnitarioProduto
+            // 
+            this.colPrecoUnitarioProduto.FillWeight = 77.14286F;
+            this.colPrecoUnitarioProduto.HeaderText = "Preço uni.";
+            this.colPrecoUnitarioProduto.MinimumWidth = 6;
+            this.colPrecoUnitarioProduto.Name = "colPrecoUnitarioProduto";
+            this.colPrecoUnitarioProduto.ReadOnly = true;
+            // 
+            // colDescontoProduto
+            // 
+            this.colDescontoProduto.FillWeight = 77.14286F;
+            this.colDescontoProduto.HeaderText = "Desconto";
+            this.colDescontoProduto.MinimumWidth = 6;
+            this.colDescontoProduto.Name = "colDescontoProduto";
+            this.colDescontoProduto.ReadOnly = true;
+            // 
+            // colTaxaImpostoProduto
+            // 
+            this.colTaxaImpostoProduto.HeaderText = "Taxa de Imposto (%)";
+            this.colTaxaImpostoProduto.MinimumWidth = 6;
+            this.colTaxaImpostoProduto.Name = "colTaxaImpostoProduto";
+            this.colTaxaImpostoProduto.ReadOnly = true;
+            // 
+            // colValorImpostoProduto
+            // 
+            this.colValorImpostoProduto.HeaderText = "Valor do Imposto";
+            this.colValorImpostoProduto.MinimumWidth = 6;
+            this.colValorImpostoProduto.Name = "colValorImpostoProduto";
+            this.colValorImpostoProduto.ReadOnly = true;
+            // 
+            // colSubtotalProduto
+            // 
+            this.colSubtotalProduto.HeaderText = "Subtotal";
+            this.colSubtotalProduto.MinimumWidth = 6;
+            this.colSubtotalProduto.Name = "colSubtotalProduto";
+            this.colSubtotalProduto.ReadOnly = true;
+            // 
             // UserControlVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -617,6 +627,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlVendas";
             this.Size = new System.Drawing.Size(1275, 799);
+            this.Load += new System.EventHandler(this.UserControlVendas_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -652,8 +663,8 @@
         private Guna.UI2.WinForms.Guna2Button btnVendaAdicionarCliente;
         private Guna.UI2.WinForms.Guna2Button btnVendaFinalizar;
         private System.Windows.Forms.Label lbVendaEnderecoCliente;
-        private System.Windows.Forms.Label lbVendaTelefoneCliente;
-        private System.Windows.Forms.Label lbVendaNomeCliente;
+        private System.Windows.Forms.Label lblTelefoneCliente;
+        private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbVendaValorImposto;
         private System.Windows.Forms.Label lbVendaTotalPagar;
@@ -671,13 +682,13 @@
         private Guna.UI2.WinForms.Guna2Button btnFaturaEliminarItemSelecionado;
         private Guna.UI2.WinForms.Guna2Button btnVendaEditarItemProduto;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selecionarLinhaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoUnitarioProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descontoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taxaImpostoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorImpostoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUnitarioProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescontoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTaxaImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValorImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotalProduto;
     }
 }
