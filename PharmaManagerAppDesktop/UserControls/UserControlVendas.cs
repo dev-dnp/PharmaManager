@@ -29,8 +29,16 @@ namespace PharmaManagerAppDesktop.UserControls
             public decimal Desconto { get; set; }
         }
 
-        public  List<ItemProduto> ItensProdutos = new List<ItemProduto>();
+        //List
+        //    <(
+        //        decimal TotalSemImposto, 
+        //        decimal Valor, 
+        //        float Percentual
+        //    )> variavel  = new List();
 
+
+
+        public List<ItemProduto> ItensProdutos = new List<ItemProduto>();
         public List<ProdutoDB.DetalhesProduto> ProdutosDisponiveisNoEstoque;
         public Cliente Cliente = new Cliente();
         
@@ -49,15 +57,6 @@ namespace PharmaManagerAppDesktop.UserControls
 
             if(resultado == DialogResult.OK)
             {
-                //colCodProduto.DataPropertyName = "IdProduto";
-                //colDescontoProduto.DataPropertyName = "Desconto";
-                //colNomeProduto.DataPropertyName = "Nome";
-                //colPrecoUnitarioProduto.DataPropertyName = "PrecoUnitario";
-                //colQuantidadeProduto.DataPropertyName = "Quantidade";
-                //colSubtotalProduto.DataPropertyName = "Subtotal";
-                //colTaxaImpostoProduto.DataPropertyName = "TaxaImposto";
-                //colValorImpostoProduto.DataPropertyName = "ValorTaxaImposto";
-
                 dgvVendaListaProdutos.DataSource = null;
 
                 dgvVendaListaProdutos.DataSource = ItensProdutos;
