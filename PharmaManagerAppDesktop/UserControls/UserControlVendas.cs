@@ -20,7 +20,6 @@ namespace PharmaManagerAppDesktop.UserControls
         public class ItemProduto
         {
             public int IdProduto { get; set; }
-            public int IdLote { get; set; }
             public int Quantidade { get; set; }
             public string Nome { get; set; }
             public decimal PrecoUnitario { get; set; }
@@ -97,7 +96,7 @@ namespace PharmaManagerAppDesktop.UserControls
             {
                 var ItemSelecionado = ItensProdutos.Find(item => item.IdProduto == IdsSelecionados.First());
 
-                frmVendaEditarItemProduto janela = new frmVendaEditarItemProduto(ItemSelecionado, ItensProdutos);
+                frmVendaEditarItemProduto janela = new frmVendaEditarItemProduto(ItemSelecionado, ItensProdutos, ProdutosDisponiveisNoEstoque);
                 
                 var resultado = janela.ShowDialog();
 
@@ -149,9 +148,9 @@ namespace PharmaManagerAppDesktop.UserControls
                     ItemFatura.Add(new ItemFaturaEntidade
                     {
                         Desconto = Item.Desconto,
-                        IdLote = Item.IdLote,
                         PrecoVenda = Item.PrecoUnitario,
                         Quantidade = Item.Quantidade,
+                        IdProduto = Item.IdProduto,
                     });
                 }
 
@@ -197,6 +196,11 @@ namespace PharmaManagerAppDesktop.UserControls
                     lblNomeCliente.Text = "(Nenhum)";
                     lblTelefoneCliente.Text = "(Nenhum)";
 
+                    if(new EstoqueBD().DiminuirEstoque(Dados))
+                    {
+                        ProdutosDisponiveisNoEstoque = new ProdutoBD().BuscarProdutosDisponiveis();
+                    }
+
                 }
                 else
                 {
@@ -223,7 +227,6 @@ namespace PharmaManagerAppDesktop.UserControls
             colValorImpostoProduto.DataPropertyName = "ValorTaxaImposto";
 
             dgvVendaListaProdutos.AutoGenerateColumns = false;
-
             ProdutosDisponiveisNoEstoque = new ProdutoBD().BuscarProdutosDisponiveis();
         }
 

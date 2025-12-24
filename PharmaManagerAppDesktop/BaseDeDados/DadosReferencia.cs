@@ -11,10 +11,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 {
     public static class DadosReferencia
     {
-        public static List<Cargo> Cargos = new List<Cargo>();
+        public static List<CargoEntidade> Cargos = new List<CargoEntidade>();
         public static List<Categoria> CategoriasProduto = new List<Categoria>();
-        public static List<EstadoFatura> EstadosFatura = new List<EstadoFatura>();
-        public static List<MetodoPagamento> MetodosPagamento = new List<MetodoPagamento>();
+        public static List<EstadoFaturaEntidade> EstadosFatura = new List<EstadoFaturaEntidade>();
+        public static List<MetodoPagamentoEntidade> MetodosPagamento = new List<MetodoPagamentoEntidade>();
         public static List<Provincia> Provincias = new List<Provincia>();
         public static List<Municipio> Municipios = new List<Municipio>();
         public static List<Permissao> Permissoes = new List<Permissao>();
@@ -36,7 +36,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while(leitor.Read())
                         {
-                            Cargos.Add(new Cargo
+                            Cargos.Add(new CargoEntidade
                             {
                                 IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
@@ -65,7 +65,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            MetodosPagamento.Add(new MetodoPagamento
+                            MetodosPagamento.Add(new MetodoPagamentoEntidade
                             {
                                 IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
@@ -119,7 +119,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            EstadosFatura.Add(new EstadoFatura
+                            EstadosFatura.Add(new EstadoFaturaEntidade
                             {
                                 IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),

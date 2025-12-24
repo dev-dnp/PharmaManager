@@ -15,8 +15,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public class TodosDadosFuncionario
         {
             public Usuario Usuario;
-            public Funcionario Funcionario;
-            public Cargo Cargo;
+            public FuncionarioEntidade Funcionario;
+            public CargoEntidade Cargo;
             public Endereco Endereco;
             public Provincia Provincia;
             public Municipio Municipio;
@@ -116,7 +116,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     Foto = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_FOTO")),
                                 },
 
-                                Funcionario = new Funcionario 
+                                Funcionario = new FuncionarioEntidade 
                                 {
                                     IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
@@ -130,7 +130,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                                 },
 
-                                Cargo = new Cargo
+                                Cargo = new CargoEntidade
                                 {
                                     IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),

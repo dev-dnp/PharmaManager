@@ -46,7 +46,7 @@ namespace PharmaManagerAppDesktop
 
         private void btnMenuFaturas_Click(object sender, EventArgs e)
         {
-            CarregarControleDeUsuario(new UserControlFacturas());
+            CarregarControleDeUsuario(new UserControlFaturas());
             labelTituloPainelAtual.Text = "Facturas";
         }
 

@@ -22,7 +22,6 @@ namespace PharmaManagerAppDesktop.Forms
         public const string MOEDA = " AOA";
 
         private int _idProduto;
-        private int _idLoteProduto;
         private string _nomeProduto;
         private int _quantidadeProduto;
         private decimal _subtotalProduto;
@@ -33,16 +32,18 @@ namespace PharmaManagerAppDesktop.Forms
         // LISTA DE ITENS DE PRODUTOS ADICIONADOS
         UserControlVendas.ItemProduto Produto;
         List<UserControlVendas.ItemProduto> ListaProdutos;
-
+        List<ProdutoBD.DetalhesProduto> ProdutosDisponiveisNoEstoque;
         public frmVendaEditarItemProduto
         (
             UserControlVendas.ItemProduto itemProduto,
-            List<UserControlVendas.ItemProduto> listaProdutos
+            List<UserControlVendas.ItemProduto> listaProdutos,
+             List<ProdutoBD.DetalhesProduto> produtosDisponiveisNoEstoque
         )
         {
             InitializeComponent();
             Produto = itemProduto;
             ListaProdutos = listaProdutos;
+            ProdutosDisponiveisNoEstoque = produtosDisponiveisNoEstoque;
         }
 
 
@@ -58,7 +59,7 @@ namespace PharmaManagerAppDesktop.Forms
             }
 
 
-            if (_idProduto == 0 || _idLoteProduto == 0) return;
+            if (_idProduto == 0) return;
 
             ListaProdutos.Add(new UserControlVendas.ItemProduto
             {
@@ -70,7 +71,6 @@ namespace PharmaManagerAppDesktop.Forms
                 Quantidade = _quantidadeProduto,
                 TaxaImposto = 14,
                 ValorTaxaImposto = _valorTaxaImposto,
-                IdLote = _idLoteProduto,
 
             });
 
@@ -95,12 +95,26 @@ namespace PharmaManagerAppDesktop.Forms
 
                 txtPrecoUnitario.Text = Produto.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
 
+                var ProdutoEncontrado = ProdutosDisponiveisNoEstoque.Find(p => p.IdProduto == Produto.IdProduto);
+                var QuantidadeTotal = ProdutoEncontrado.QuantidadeProduto;
+
+                if (Quantidade > QuantidadeTotal)
+                {
+                    MessageBox.Show(
+                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {QuantidadeTotal} quantidades deste produto",
+                        "Alerta",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    txtQuantidade.Text = "1";
+                    return;
+                }
 
                 CalcularSubtotal(Quantidade, Produto.PrecoUnitario);
 
                 _idProduto = Produto.IdProduto;
                 _nomeProduto = Produto.Nome;
-                _idLoteProduto = Produto.IdLote;
                 _quantidadeProduto = Quantidade;
                 _precoUnitarioProduto = Produto.PrecoUnitario;
             }

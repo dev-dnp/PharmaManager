@@ -22,9 +22,10 @@ namespace PharmaManagerAppDesktop
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            pictureLoading.Visible = true;
 
             // Validar o campo email
-            if(txtEmail.Text.Trim() == String.Empty)
+            if (txtEmail.Text.Trim() == String.Empty)
             {
                 MessageBox.Show(
                     "Campo email obrigatório",
@@ -35,6 +36,7 @@ namespace PharmaManagerAppDesktop
 
                 txtEmail.Clear();
                 txtEmail.Focus();
+                pictureLoading.Visible = false;
                 return; 
             }
 
@@ -50,6 +52,7 @@ namespace PharmaManagerAppDesktop
                 );
 
                 txtSenha.Focus();
+                pictureLoading.Visible = false;
                 return;
             }
 
@@ -67,6 +70,7 @@ namespace PharmaManagerAppDesktop
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+                pictureLoading.Visible = false;
                 return;
             }
 

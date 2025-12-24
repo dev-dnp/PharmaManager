@@ -14,5 +14,6 @@ namespace PharmaManagerAppDesktop.Entidades
         public int IdEstadoFatura { get; set; }
         public int IdMetodoPagamento { get; set; }
         public DateTime DataVenda { get; set; }
+        public decimal TotalPagamento { get; set; }
     }
 }

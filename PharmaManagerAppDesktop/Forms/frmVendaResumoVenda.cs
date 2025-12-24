@@ -18,7 +18,7 @@ namespace PharmaManagerAppDesktop.Forms
     {
 
         UserControlVendas FormVenda;
-        public MetodoPagamento MetodoPagamento;
+        public MetodoPagamentoEntidade MetodoPagamento;
 
         public frmVendaResumoVenda(UserControlVendas formulario)
         {
@@ -50,7 +50,7 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void cbMetodoPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MetodoPagamento = cbMetodoPagamento.SelectedItem as MetodoPagamento;
+            MetodoPagamento = cbMetodoPagamento.SelectedItem as MetodoPagamentoEntidade;
         }
 
         private void btnConcluirVenda_Click(object sender, EventArgs e)

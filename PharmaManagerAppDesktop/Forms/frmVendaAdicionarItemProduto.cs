@@ -20,7 +20,6 @@ namespace PharmaManagerAppDesktop.Forms
         public const string MOEDA = " AOA";
 
         private int _idProduto;
-        private int _idLoteProduto;
         private string _nomeProduto;
         private int _quantidadeProduto;
         private decimal _subtotalProduto;
@@ -48,7 +47,7 @@ namespace PharmaManagerAppDesktop.Forms
             cbListaProdutos.Items.Clear();
             cbListaProdutos.DataSource = ProdutosDisponiveisNoEstoque;
             cbListaProdutos.DisplayMember = "NomeProduto";
-            cbListaProdutos.ValueMember = "IdLote";
+            cbListaProdutos.ValueMember = "IdProduto";
             
             this.RestaurarFormulario();
         }
@@ -56,11 +55,11 @@ namespace PharmaManagerAppDesktop.Forms
         private void cbListaProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int Indice = cbListaProdutos.SelectedIndex;
-            if (Indice == -1) return;
+            int Posicao = cbListaProdutos.SelectedIndex;
+            if (Posicao == -1) return;
 
             // Buscar dados do produto
-            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Indice];
+            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Posicao];
            
             txtQuantidade.Text = "1";
 
@@ -73,7 +72,6 @@ namespace PharmaManagerAppDesktop.Forms
 
                 _idProduto = ProdutoSelecionado.IdProduto;
                 _nomeProduto = ProdutoSelecionado.NomeProduto;
-                _idLoteProduto = ProdutoSelecionado.IdLote;
                 _quantidadeProduto = _quantidade;
                 _precoUnitarioProduto = ProdutoSelecionado.PrecoUnitario;
             }
@@ -110,7 +108,6 @@ namespace PharmaManagerAppDesktop.Forms
             this.txtValorImposto.Clear();
             this.cbListaProdutos.SelectedIndex = -1;
 
-            _idLoteProduto = 0;
             _idProduto = 0;
             _nomeProduto = null;
             _precoUnitarioProduto = 0;
@@ -120,23 +117,35 @@ namespace PharmaManagerAppDesktop.Forms
         }
         private void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
-            int _Indice = cbListaProdutos.SelectedIndex;
-            if (_Indice == -1) return;
+            int Posicao = cbListaProdutos.SelectedIndex;
+            if (Posicao == -1) return;
 
             // Buscar dados do produto
-            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[_Indice];
+            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Posicao];
 
             try
             {
-                int _quantidade = int.Parse(txtQuantidade.Text);
+                int Quantidade = int.Parse(txtQuantidade.Text);
+
+                if(Quantidade > ProdutoSelecionado.QuantidadeProduto)
+                {
+                    MessageBox.Show(
+                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {ProdutoSelecionado.QuantidadeProduto} deste produto",
+                        "Alerta",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    txtQuantidade.Text = "1";
+                    return;
+                }
 
                 txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
-                CalcularSubtotal(_quantidade, ProdutoSelecionado.PrecoUnitario);
+                CalcularSubtotal(Quantidade, ProdutoSelecionado.PrecoUnitario);
 
                 _idProduto = ProdutoSelecionado.IdProduto;
                 _nomeProduto = ProdutoSelecionado.NomeProduto;
-                _idLoteProduto = ProdutoSelecionado.IdLote;
-                _quantidadeProduto = _quantidade;
+                _quantidadeProduto = Quantidade;
                 _precoUnitarioProduto = ProdutoSelecionado.PrecoUnitario;
             }
             catch (Exception ex)
@@ -160,7 +169,7 @@ namespace PharmaManagerAppDesktop.Forms
                 if(produtoEncontrado.Count > 0)
                 {
                     txtPrecoUnitario.Text = produtoEncontrado[0].PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
-                    cbListaProdutos.SelectedValue = produtoEncontrado[0].IdLote;
+                    cbListaProdutos.SelectedValue = produtoEncontrado[0].IdProduto;
                     txtQuantidade.Text = "1";
                     CalcularSubtotal(1, produtoEncontrado[0].PrecoUnitario);
                 }
@@ -187,8 +196,7 @@ namespace PharmaManagerAppDesktop.Forms
                                     _precoUnitarioProduto > 0 &&
                                     _subtotalProduto > 0 &&
                                     _quantidadeProduto > 0 &&
-                                    _valorTaxaImposto >= 0 &&
-                                    _idLoteProduto > 0;
+                                    _valorTaxaImposto >= 0;
 
             if(todasPreenchidas == false)
             {
@@ -196,7 +204,7 @@ namespace PharmaManagerAppDesktop.Forms
                 return;
             }
 
-            var ProdutoExistente = Produtos.Where(p => p.IdLote == _idLoteProduto);
+            var ProdutoExistente = Produtos.Where(p => p.IdProduto == _idProduto);
 
             if(ProdutoExistente.Count() > 0)
             {
@@ -204,7 +212,7 @@ namespace PharmaManagerAppDesktop.Forms
                 return;
             }
 
-            if (_idProduto == 0 || _idLoteProduto == 0) return;
+            if (_idProduto == 0) return;
 
             Produtos.Add( new UserControlVendas.ItemProduto
             {
@@ -216,7 +224,6 @@ namespace PharmaManagerAppDesktop.Forms
                 Quantidade = _quantidadeProduto,
                 TaxaImposto = 14,
                 ValorTaxaImposto = _valorTaxaImposto,
-                IdLote = _idLoteProduto,
 
             });
 

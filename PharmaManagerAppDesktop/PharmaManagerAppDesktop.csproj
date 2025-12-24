@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BaseDeDados\ConexaoBD.cs" />
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
+    <Compile Include="BaseDeDados\EstoqueBD.cs" />
     <Compile Include="BaseDeDados\FaturaBD.cs" />
     <Compile Include="BaseDeDados\FuncionarioBD.cs" />
     <Compile Include="BaseDeDados\ProdutoBD.cs" />
@@ -63,18 +64,18 @@
     <Compile Include="BD\FuncionarioBD.cs" />
     <Compile Include="BD\LoginBD.cs" />
     <Compile Include="BD\SessaoUsuario.cs" />
-    <Compile Include="Entidades\Cargo.cs" />
+    <Compile Include="Entidades\CargoEntidade.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\ClienteEntidade.cs" />
     <Compile Include="Entidades\Endereco.cs" />
-    <Compile Include="Entidades\EstadoFatura.cs" />
-    <Compile Include="Entidades\Estoque.cs" />
+    <Compile Include="Entidades\EstadoFaturaEntidade.cs" />
+    <Compile Include="Entidades\EstoqueEntidade.cs" />
     <Compile Include="Entidades\FaturaEntidade.cs" />
     <Compile Include="Entidades\Fornecedor.cs" />
-    <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="Entidades\FuncionarioEntidade.cs" />
     <Compile Include="Entidades\ItemFaturaEntidade.cs" />
     <Compile Include="Entidades\Lote.cs" />
-    <Compile Include="Entidades\MetodoPagamento.cs" />
+    <Compile Include="Entidades\MetodoPagamentoEntidade.cs" />
     <Compile Include="Entidades\MovimentoEstoque.cs" />
     <Compile Include="Entidades\Municipio.cs" />
     <Compile Include="Entidades\Permissao.cs" />
@@ -216,11 +217,11 @@
     <Compile Include="UserControls\UserControlEstoque.Designer.cs">
       <DependentUpon>UserControlEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlFacturas.cs">
+    <Compile Include="UserControls\UserControlFaturas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlFacturas.Designer.cs">
-      <DependentUpon>UserControlFacturas.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlFaturas.Designer.cs">
+      <DependentUpon>UserControlFaturas.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlFornecedores.cs">
       <SubType>UserControl</SubType>
@@ -328,8 +329,8 @@
     <EmbeddedResource Include="UserControls\UserControlEstoque.resx">
       <DependentUpon>UserControlEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlFacturas.resx">
-      <DependentUpon>UserControlFacturas.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlFaturas.resx">
+      <DependentUpon>UserControlFaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlFornecedores.resx">
       <DependentUpon>UserControlFornecedores.cs</DependentUpon>
@@ -545,6 +546,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gif-luz-vermelha-alerta.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-gif1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_icon.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
