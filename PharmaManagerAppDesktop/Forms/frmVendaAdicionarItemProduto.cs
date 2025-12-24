@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,7 @@ namespace PharmaManagerAppDesktop.Forms
 {
     public partial class frmVendaAdicionarItemProduto : Form
     {
-
         // CONSTANTES REUTILIZAVÉIS
-
         public const decimal TAXA_IMPOSTO = 14;
         public const string MOEDA = " AOA";
 
@@ -30,15 +29,13 @@ namespace PharmaManagerAppDesktop.Forms
 
 
         // LISTA DE ITENS DE PRODUTOS ADICIONADOS
-
         List<UserControlVendas.ItemProduto> Produtos;
-        List<ProdutoDB.DetalhesProduto> ProdutosDisponiveisNoEstoque;
-
+        List<ProdutoBD.DetalhesProduto> ProdutosDisponiveisNoEstoque;
 
         public frmVendaAdicionarItemProduto
         (
             List<UserControlVendas.ItemProduto> listaItensProdutos,
-            List<ProdutoDB.DetalhesProduto> listaProdutosDisponiveisNoEstoque
+            List<ProdutoBD.DetalhesProduto> listaProdutosDisponiveisNoEstoque
         )
         {
             InitializeComponent();
@@ -71,7 +68,7 @@ namespace PharmaManagerAppDesktop.Forms
             {
                 int _quantidade= int.Parse(txtQuantidade.Text);
 
-                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString() + MOEDA;
+                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
                 CalcularSubtotal(_quantidade, ProdutoSelecionado.PrecoUnitario);
 
                 _idProduto = ProdutoSelecionado.IdProduto;
@@ -97,8 +94,8 @@ namespace PharmaManagerAppDesktop.Forms
 
             Subtotal = (quantidadeProduto * precoUnitarioproduto) + ValorTaxaImposto;
 
-            txtValorImposto.Text = ValorTaxaImposto.ToString("N2") + MOEDA;
-            txtSubtotal.Text = Subtotal.ToString("N2") + MOEDA;
+            txtValorImposto.Text = ValorTaxaImposto.ToString("C2", new CultureInfo("pt-AO"));
+            txtSubtotal.Text = Subtotal.ToString("C2", new CultureInfo("pt-AO"));
 
             _subtotalProduto = Subtotal;
             _valorTaxaImposto = ValorTaxaImposto;
@@ -133,7 +130,7 @@ namespace PharmaManagerAppDesktop.Forms
             {
                 int _quantidade = int.Parse(txtQuantidade.Text);
 
-                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString() + MOEDA;
+                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
                 CalcularSubtotal(_quantidade, ProdutoSelecionado.PrecoUnitario);
 
                 _idProduto = ProdutoSelecionado.IdProduto;
@@ -162,7 +159,7 @@ namespace PharmaManagerAppDesktop.Forms
 
                 if(produtoEncontrado.Count > 0)
                 {
-                    txtPrecoUnitario.Text = produtoEncontrado[0].PrecoUnitario.ToString() + MOEDA;
+                    txtPrecoUnitario.Text = produtoEncontrado[0].PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
                     cbListaProdutos.SelectedValue = produtoEncontrado[0].IdLote;
                     txtQuantidade.Text = "1";
                     CalcularSubtotal(1, produtoEncontrado[0].PrecoUnitario);
@@ -184,14 +181,6 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
-
-            Console.WriteLine("_idProduto: " + _idProduto);
-            Console.WriteLine("_nomeProduto: " + _nomeProduto);
-            Console.WriteLine("_precoUnitarioProduto: " + _precoUnitarioProduto);
-            Console.WriteLine("_subtotalProduto: " + _subtotalProduto);
-            Console.WriteLine("_quantidadeProduto: " + _quantidadeProduto);
-            Console.WriteLine("_valorTaxaImposto: " + _valorTaxaImposto);
-            Console.WriteLine("_idLoteProduto: " + _idLoteProduto);
 
             bool todasPreenchidas = _idProduto > 0 &&
                                     !string.IsNullOrEmpty(_nomeProduto) &&

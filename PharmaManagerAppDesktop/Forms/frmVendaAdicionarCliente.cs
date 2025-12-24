@@ -15,10 +15,11 @@ namespace PharmaManagerAppDesktop.Forms
     public partial class frmVendaAdicionarCliente : Form
     {
 
-        public Cliente Cliente = new Cliente();
-        public frmVendaAdicionarCliente()
+        public ClienteEntidade Cliente;
+        public frmVendaAdicionarCliente(ClienteEntidade cliente)
         {
             InitializeComponent();
+            Cliente = cliente;
         }
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)

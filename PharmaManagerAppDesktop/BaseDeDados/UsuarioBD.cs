@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
@@ -18,7 +19,17 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
             {
-                conexao.Open();
+                try
+                {
+                    conexao.Open();
+
+                } catch(Exception ex)
+                {
+                    MessageBox.Show("Falha ao conectar com a base de dados! Verifique a ligação.");
+                    Console.WriteLine(ex.Message);
+                    conexao.Close();
+                    return null;
+                }
 
                 string query = @"SELECT TOP 1
                                 ID_USUARIO, EMAIL, SENHA, FOTO

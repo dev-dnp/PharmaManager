@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
 {
-    public class ProdutoDB
+    public class ProdutoBD
     {
         public class DetalhesProduto
         {

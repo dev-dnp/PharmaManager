@@ -71,7 +71,7 @@ namespace PharmaManagerAppDesktop
             }
 
             // Usuário existe! Assinando sua sessão de usuário 
-            FuncionarioDB.TodosDadosFuncionario infoFuncionario = new FuncionarioDB().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
+            FuncionarioBD.TodosDadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
 
             SessaoUsuario.Usuario = usuario;
             SessaoUsuario.Funcionario = infoFuncionario.Funcionario;

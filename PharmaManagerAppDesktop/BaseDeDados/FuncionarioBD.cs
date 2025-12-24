@@ -9,7 +9,7 @@ using PharmaManagerAppDesktop.Entidades;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
 {
-    public class FuncionarioDB
+    public class FuncionarioBD
     {
 
         public class TodosDadosFuncionario

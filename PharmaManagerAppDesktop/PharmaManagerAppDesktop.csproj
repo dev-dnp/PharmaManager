@@ -54,8 +54,9 @@
   <ItemGroup>
     <Compile Include="BaseDeDados\ConexaoBD.cs" />
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
-    <Compile Include="BaseDeDados\FuncionarioDB.cs" />
-    <Compile Include="BaseDeDados\ProdutoDB.cs" />
+    <Compile Include="BaseDeDados\FaturaBD.cs" />
+    <Compile Include="BaseDeDados\FuncionarioBD.cs" />
+    <Compile Include="BaseDeDados\ProdutoBD.cs" />
     <Compile Include="BaseDeDados\SessaoUsuario.cs" />
     <Compile Include="BaseDeDados\UsuarioBD.cs" />
     <Compile Include="BD\ConexaoBD.cs" />
@@ -64,14 +65,14 @@
     <Compile Include="BD\SessaoUsuario.cs" />
     <Compile Include="Entidades\Cargo.cs" />
     <Compile Include="Entidades\Categoria.cs" />
-    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\ClienteEntidade.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Entidades\EstadoFatura.cs" />
     <Compile Include="Entidades\Estoque.cs" />
-    <Compile Include="Entidades\Fatura.cs" />
+    <Compile Include="Entidades\FaturaEntidade.cs" />
     <Compile Include="Entidades\Fornecedor.cs" />
     <Compile Include="Entidades\Funcionario.cs" />
-    <Compile Include="Entidades\ItemFatura.cs" />
+    <Compile Include="Entidades\ItemFaturaEntidade.cs" />
     <Compile Include="Entidades\Lote.cs" />
     <Compile Include="Entidades\MetodoPagamento.cs" />
     <Compile Include="Entidades\MovimentoEstoque.cs" />
