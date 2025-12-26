@@ -35,18 +35,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEstoqueEliminarProduto = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEstoqueEditarProduto = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEstoqueDetalhesProduto = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEliminarProdutos = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditarProduto = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvEstoqueListaProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataValidadeEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoEstoqueProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvListaProdutos = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colIdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoriaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,7 +58,7 @@
             this.panel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoqueListaProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdutos)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -81,80 +79,66 @@
             this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.btnEstoqueEliminarProduto);
-            this.flowLayoutPanel2.Controls.Add(this.btnEstoqueEditarProduto);
-            this.flowLayoutPanel2.Controls.Add(this.btnEstoqueDetalhesProduto);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(820, 16);
+            this.flowLayoutPanel2.Controls.Add(this.btnEliminarProdutos);
+            this.flowLayoutPanel2.Controls.Add(this.btnEditarProduto);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(958, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(414, 61);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 61);
             this.flowLayoutPanel2.TabIndex = 137;
             // 
-            // btnEstoqueEliminarProduto
+            // btnEliminarProdutos
             // 
-            this.btnEstoqueEliminarProduto.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEstoqueEliminarProduto.BorderRadius = 4;
-            this.btnEstoqueEliminarProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueEliminarProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueEliminarProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEstoqueEliminarProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEstoqueEliminarProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
-            this.btnEstoqueEliminarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoqueEliminarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnEstoqueEliminarProduto.Location = new System.Drawing.Point(4, 4);
-            this.btnEstoqueEliminarProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEstoqueEliminarProduto.Name = "btnEstoqueEliminarProduto";
-            this.btnEstoqueEliminarProduto.Size = new System.Drawing.Size(130, 53);
-            this.btnEstoqueEliminarProduto.TabIndex = 136;
-            this.btnEstoqueEliminarProduto.Text = "Eliminar";
+            this.btnEliminarProdutos.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarProdutos.BorderRadius = 4;
+            this.btnEliminarProdutos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEliminarProdutos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEliminarProdutos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEliminarProdutos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEliminarProdutos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
+            this.btnEliminarProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProdutos.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarProdutos.Location = new System.Drawing.Point(4, 4);
+            this.btnEliminarProdutos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarProdutos.Name = "btnEliminarProdutos";
+            this.btnEliminarProdutos.Size = new System.Drawing.Size(130, 53);
+            this.btnEliminarProdutos.TabIndex = 136;
+            this.btnEliminarProdutos.Text = "Eliminar";
+            this.btnEliminarProdutos.Click += new System.EventHandler(this.btnEliminarProdutos_Click);
             // 
-            // btnEstoqueEditarProduto
+            // btnEditarProduto
             // 
-            this.btnEstoqueEditarProduto.BorderRadius = 4;
-            this.btnEstoqueEditarProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueEditarProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueEditarProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEstoqueEditarProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEstoqueEditarProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(151)))), ((int)(((byte)(34)))));
-            this.btnEstoqueEditarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoqueEditarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnEstoqueEditarProduto.Location = new System.Drawing.Point(142, 4);
-            this.btnEstoqueEditarProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEstoqueEditarProduto.Name = "btnEstoqueEditarProduto";
-            this.btnEstoqueEditarProduto.Size = new System.Drawing.Size(130, 53);
-            this.btnEstoqueEditarProduto.TabIndex = 137;
-            this.btnEstoqueEditarProduto.Text = "Editar";
-            // 
-            // btnEstoqueDetalhesProduto
-            // 
-            this.btnEstoqueDetalhesProduto.BorderRadius = 4;
-            this.btnEstoqueDetalhesProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueDetalhesProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEstoqueDetalhesProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEstoqueDetalhesProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEstoqueDetalhesProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.btnEstoqueDetalhesProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoqueDetalhesProduto.ForeColor = System.Drawing.Color.White;
-            this.btnEstoqueDetalhesProduto.Location = new System.Drawing.Point(280, 4);
-            this.btnEstoqueDetalhesProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEstoqueDetalhesProduto.Name = "btnEstoqueDetalhesProduto";
-            this.btnEstoqueDetalhesProduto.Size = new System.Drawing.Size(130, 53);
-            this.btnEstoqueDetalhesProduto.TabIndex = 138;
-            this.btnEstoqueDetalhesProduto.Text = "Detalhes";
+            this.btnEditarProduto.BorderRadius = 4;
+            this.btnEditarProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditarProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditarProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(151)))), ((int)(((byte)(34)))));
+            this.btnEditarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnEditarProduto.Location = new System.Drawing.Point(142, 4);
+            this.btnEditarProduto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarProduto.Name = "btnEditarProduto";
+            this.btnEditarProduto.Size = new System.Drawing.Size(130, 53);
+            this.btnEditarProduto.TabIndex = 137;
+            this.btnEditarProduto.Text = "Editar";
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvEstoqueListaProdutos);
+            this.panel1.Controls.Add(this.dgvListaProdutos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 137);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(1254, 632);
+            this.panel1.Size = new System.Drawing.Size(1254, 532);
             this.panel1.TabIndex = 140;
             // 
-            // dgvEstoqueListaProdutos
+            // dgvListaProdutos
             // 
+            this.dgvListaProdutos.AllowUserToAddRows = false;
+            this.dgvListaProdutos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvEstoqueListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,17 +146,16 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstoqueListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEstoqueListaProdutos.ColumnHeadersHeight = 77;
-            this.dgvEstoqueListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvEstoqueListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.selecionarLinhaProduto,
-            this.codEstoqueProduto,
-            this.nomeEstoqueProduto,
-            this.categoriaEstoqueProduto,
-            this.dataValidadeEstoqueProduto,
-            this.quantidadeEstoqueProduto,
-            this.precoEstoqueProduto});
+            this.dgvListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaProdutos.ColumnHeadersHeight = 77;
+            this.dgvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.check,
+            this.colIdProduto,
+            this.colNomeProduto,
+            this.colCategoriaProduto,
+            this.colQuantidadeProduto,
+            this.colPrecoProduto});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,100 +163,98 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEstoqueListaProdutos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEstoqueListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEstoqueListaProdutos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvEstoqueListaProdutos.Location = new System.Drawing.Point(20, 20);
-            this.dgvEstoqueListaProdutos.Name = "dgvEstoqueListaProdutos";
-            this.dgvEstoqueListaProdutos.RowHeadersVisible = false;
-            this.dgvEstoqueListaProdutos.RowHeadersWidth = 51;
+            this.dgvListaProdutos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListaProdutos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaProdutos.Location = new System.Drawing.Point(20, 20);
+            this.dgvListaProdutos.Name = "dgvListaProdutos";
+            this.dgvListaProdutos.RowHeadersVisible = false;
+            this.dgvListaProdutos.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.dgvEstoqueListaProdutos.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEstoqueListaProdutos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvEstoqueListaProdutos.RowTemplate.Height = 40;
-            this.dgvEstoqueListaProdutos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvEstoqueListaProdutos.Size = new System.Drawing.Size(1214, 592);
-            this.dgvEstoqueListaProdutos.TabIndex = 133;
-            this.dgvEstoqueListaProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvEstoqueListaProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvEstoqueListaProdutos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvEstoqueListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvEstoqueListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvEstoqueListaProdutos.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvEstoqueListaProdutos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvEstoqueListaProdutos.ThemeStyle.HeaderStyle.Height = 77;
-            this.dgvEstoqueListaProdutos.ThemeStyle.ReadOnly = false;
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvEstoqueListaProdutos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvListaProdutos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvListaProdutos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaProdutos.RowTemplate.Height = 40;
+            this.dgvListaProdutos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvListaProdutos.Size = new System.Drawing.Size(1214, 492);
+            this.dgvListaProdutos.TabIndex = 134;
+            this.dgvListaProdutos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaProdutos.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvListaProdutos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvListaProdutos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvListaProdutos.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaProdutos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvListaProdutos.ThemeStyle.HeaderStyle.Height = 77;
+            this.dgvListaProdutos.ThemeStyle.ReadOnly = false;
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaProdutos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // selecionarLinhaProduto
+            // check
             // 
-            this.selecionarLinhaProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.selecionarLinhaProduto.FillWeight = 214.2857F;
-            this.selecionarLinhaProduto.HeaderText = "";
-            this.selecionarLinhaProduto.MinimumWidth = 6;
-            this.selecionarLinhaProduto.Name = "selecionarLinhaProduto";
-            this.selecionarLinhaProduto.Width = 23;
+            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.check.FillWeight = 10F;
+            this.check.HeaderText = "#";
+            this.check.MinimumWidth = 10;
+            this.check.Name = "check";
+            this.check.Width = 27;
             // 
-            // codEstoqueProduto
+            // colIdProduto
             // 
-            this.codEstoqueProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.codEstoqueProduto.FillWeight = 108.4522F;
-            this.codEstoqueProduto.HeaderText = "Cód.";
-            this.codEstoqueProduto.MinimumWidth = 6;
-            this.codEstoqueProduto.Name = "codEstoqueProduto";
-            this.codEstoqueProduto.Width = 76;
+            this.colIdProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colIdProduto.FillWeight = 108.4522F;
+            this.colIdProduto.HeaderText = "Cód.";
+            this.colIdProduto.MinimumWidth = 6;
+            this.colIdProduto.Name = "colIdProduto";
+            this.colIdProduto.ReadOnly = true;
+            this.colIdProduto.Width = 76;
             // 
-            // nomeEstoqueProduto
+            // colNomeProduto
             // 
-            this.nomeEstoqueProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nomeEstoqueProduto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nomeEstoqueProduto.FillWeight = 150F;
-            this.nomeEstoqueProduto.HeaderText = "Produto";
-            this.nomeEstoqueProduto.MinimumWidth = 6;
-            this.nomeEstoqueProduto.Name = "nomeEstoqueProduto";
+            this.colNomeProduto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNomeProduto.FillWeight = 150F;
+            this.colNomeProduto.HeaderText = "Produto";
+            this.colNomeProduto.MinimumWidth = 6;
+            this.colNomeProduto.Name = "colNomeProduto";
+            this.colNomeProduto.ReadOnly = true;
             // 
-            // categoriaEstoqueProduto
+            // colCategoriaProduto
             // 
-            this.categoriaEstoqueProduto.FillWeight = 77.14286F;
-            this.categoriaEstoqueProduto.HeaderText = "Categoria";
-            this.categoriaEstoqueProduto.MinimumWidth = 6;
-            this.categoriaEstoqueProduto.Name = "categoriaEstoqueProduto";
+            this.colCategoriaProduto.FillWeight = 77.14286F;
+            this.colCategoriaProduto.HeaderText = "Categoria";
+            this.colCategoriaProduto.MinimumWidth = 6;
+            this.colCategoriaProduto.Name = "colCategoriaProduto";
+            this.colCategoriaProduto.ReadOnly = true;
             // 
-            // dataValidadeEstoqueProduto
+            // colQuantidadeProduto
             // 
-            this.dataValidadeEstoqueProduto.FillWeight = 77.14286F;
-            this.dataValidadeEstoqueProduto.HeaderText = "Data de validade";
-            this.dataValidadeEstoqueProduto.MinimumWidth = 6;
-            this.dataValidadeEstoqueProduto.Name = "dataValidadeEstoqueProduto";
+            this.colQuantidadeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colQuantidadeProduto.HeaderText = "Quantidade";
+            this.colQuantidadeProduto.MinimumWidth = 6;
+            this.colQuantidadeProduto.Name = "colQuantidadeProduto";
+            this.colQuantidadeProduto.ReadOnly = true;
+            this.colQuantidadeProduto.Width = 132;
             // 
-            // quantidadeEstoqueProduto
+            // colPrecoProduto
             // 
-            this.quantidadeEstoqueProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.quantidadeEstoqueProduto.HeaderText = "Quantidade";
-            this.quantidadeEstoqueProduto.MinimumWidth = 6;
-            this.quantidadeEstoqueProduto.Name = "quantidadeEstoqueProduto";
-            this.quantidadeEstoqueProduto.Width = 132;
-            // 
-            // precoEstoqueProduto
-            // 
-            this.precoEstoqueProduto.FillWeight = 77.14286F;
-            this.precoEstoqueProduto.HeaderText = "Preço";
-            this.precoEstoqueProduto.MinimumWidth = 6;
-            this.precoEstoqueProduto.Name = "precoEstoqueProduto";
+            this.colPrecoProduto.FillWeight = 77.14286F;
+            this.colPrecoProduto.HeaderText = "Preço";
+            this.colPrecoProduto.MinimumWidth = 6;
+            this.colPrecoProduto.Name = "colPrecoProduto";
+            this.colPrecoProduto.ReadOnly = true;
             // 
             // panel2
             // 
@@ -434,16 +415,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "UserControlProdutos";
             this.Size = new System.Drawing.Size(1254, 769);
+            this.Load += new System.EventHandler(this.UserControlProdutos_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoqueListaProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdutos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -458,11 +440,9 @@
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2Button btnEstoqueEliminarProduto;
-        private Guna.UI2.WinForms.Guna2Button btnEstoqueEditarProduto;
-        private Guna.UI2.WinForms.Guna2Button btnEstoqueDetalhesProduto;
+        private Guna.UI2.WinForms.Guna2Button btnEliminarProdutos;
+        private Guna.UI2.WinForms.Guna2Button btnEditarProduto;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvEstoqueListaProdutos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -473,12 +453,12 @@
         private Guna.UI2.WinForms.Guna2Button btnProdutoNovo;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selecionarLinhaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codEstoqueProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeEstoqueProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaEstoqueProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataValidadeEstoqueProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeEstoqueProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoEstoqueProduto;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvListaProdutos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoriaProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoProduto;
     }
 }

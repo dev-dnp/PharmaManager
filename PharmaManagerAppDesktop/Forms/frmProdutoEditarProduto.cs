@@ -12,45 +12,50 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmProdutoAdicionarProduto : Form
+    public partial class frmProdutoEditarProduto : Form
     {
-        public frmProdutoAdicionarProduto()
+        public ProdutoEntidade Produto;
+        public frmProdutoEditarProduto(ProdutoEntidade produto)
         {
             InitializeComponent();
+            Produto = produto;
         }
-
-        private void label11_Click(object sender, EventArgs e)
+        
+        private void frmProdutoEditar_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmProdutoAdicionarProduto_Load(object sender, EventArgs e)
-        {
+            // 1️⃣ Carregar ComboBox
             cmbCategoria.DataSource = DadosReferencia.CategoriasProduto;
             cmbCategoria.DisplayMember = "Nome";
             cmbCategoria.ValueMember = "IdCategoria";
+
+            // (opcional) força refresh do binding
+            cmbCategoria.SelectedIndex = -1;
+
+            // 2️⃣ Preencher campos
+            txtNome.Text = Produto.Nome;
+            txtCodigoBarras.Text = Produto.CodigoBarras;
+            txtPrecoVenda.Text = Produto.PrecoVenda.ToString();
+
+            // 3️⃣ Selecionar categoria pelo ID
+            cmbCategoria.SelectedValue = Produto.IdCategoria;
         }
 
-        private void btnAdicionarProduto_Click(object sender, EventArgs e)
+        private void btnEditarProduto_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtNome.Text.Length > 0 && txtCodigoBarras.Text.Length > 0 && txtNome.Text.Length > 0 && Convert.ToInt32(cmbCategoria.SelectedValue) != -1)
+                if (txtNome.Text.Length > 0 && txtCodigoBarras.Text.Length > 0 && txtNome.Text.Length > 0 && cmbCategoria.SelectedIndex != -1)
                 {
                     var DadosProduto = new ProdutoEntidade()
                     {
+                        IdProduto = Produto.IdProduto,
                         CodigoBarras = txtCodigoBarras.Text,
                         IdCategoria = Convert.ToInt32(cmbCategoria.SelectedValue),
                         Nome = txtNome.Text,
                         PrecoVenda = Convert.ToDecimal(txtPrecoVenda.Text),
                     };
 
-                    new ProdutoBD().AdicionarProduto(DadosProduto);
+                    new ProdutoBD().EditarProduto(DadosProduto);
 
                     DialogResult = DialogResult.OK;
                     this.Close();
@@ -61,11 +66,10 @@ namespace PharmaManagerAppDesktop.Forms
                 }
 
             }
-            catch  (Exception ex)
-            { 
-                MessageBox.Show("Valores inválidos! Preencha corretamento os dados");
+            catch (Exception ex)
+            {
+                MessageBox.Show("Valores inválidos! Preencha corretamento os campos");
             }
-
         }
     }
 }

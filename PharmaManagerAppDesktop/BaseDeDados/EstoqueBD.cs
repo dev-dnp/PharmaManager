@@ -1,4 +1,5 @@
-﻿using PharmaManagerAppDesktop.Entidades;
+﻿using PharmaManagerAppDesktop.BD;
+using PharmaManagerAppDesktop.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -72,11 +73,11 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
         }
     
-        public bool DiminuirEstoque(FaturaBD.DadosFatura dados)
+        public bool DiminuirEstoque(FaturaBD.DadosFatura dados, int idFatura)
         {
 
             var LotesDisponiveis = BuscarTodosLotesDisponiveis();
-            var ModificarQuantidade = new List<(int IdLote, int Quantidade)>();
+            var ModificarQuantidade = new List<(int IdLote, int QuantidadeAnterior, int QuantidadeAtual)>();
 
             foreach (var Item in dados.ItemFaturaEntidade)
             {
@@ -89,12 +90,12 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                     if(Quantidade <= 0)
                     {
-                        ModificarQuantidade.Add((IdLote: lote.IdLote, Quantidade: Math.Abs(Quantidade)));
+                        ModificarQuantidade.Add((IdLote: lote.IdLote, QuantidadeAnterior: lote.Quantidade, QuantidadeAtual: Math.Abs(Quantidade)));
                         break;
                     } 
                     else
                     {
-                        ModificarQuantidade.Add((IdLote: lote.IdLote, Quantidade: 0));
+                        ModificarQuantidade.Add((IdLote: lote.IdLote, QuantidadeAnterior: lote.Quantidade, QuantidadeAtual: 0));
                     }
                 }
             }
@@ -103,24 +104,60 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             {
                 conexao.Open();
 
-                string query = @"UPDATE TB_ESTOQUE
+                string queryAtualizarQuantidade = @"UPDATE TB_ESTOQUE
                                  SET QUANTIDADE = @quantidade
                                  WHERE ID_LOTE = @idLote";
 
-                using(SqlTransaction transacao = conexao.BeginTransaction())
+                string QueryAssinarMovimento = @"INSERT INTO TB_MOVIMENTO_ESTOQUE
+                                                    (ID_FUNCIONARIO, TIPO, ID_FATURA)
+                                                 VALUES
+                                                     (@idFuncionario, @tipo, @idFatura);
+                                                 SELECT SCOPE_IDENTITY();
+                                                ";
+
+                string QueryAssinarDetalhesMovimento = @"INSERT INTO TB_DETALHES_MOVIMENTO_ESTOQUE
+                                                            (ID_LOTE, ID_MOVIMENTO, QUANTIDADE_ANTERIOR, QUANTIDADE_ATUAL)
+                                                        VALUES
+                                                            (@idLote, @idMovimento, @quantidadeAnterior, @quantidadeAtual)
+                                                        ";
+
+                int IdMovimento = 0;
+
+                using (SqlTransaction transacao = conexao.BeginTransaction())
                 {
                     try
                     {
                         foreach(var item in ModificarQuantidade)
                         {
-                            using(SqlCommand cmd = new SqlCommand(query, conexao, transacao))
+                            using(SqlCommand cmd = new SqlCommand(queryAtualizarQuantidade, conexao, transacao))
                             {
-                                cmd.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                                cmd.Parameters.AddWithValue("@quantidade", item.QuantidadeAtual);
                                 cmd.Parameters.AddWithValue("@idLote", item.IdLote);
 
                                 cmd.ExecuteNonQuery();
                             }
+                        }
 
+                        using (SqlCommand cmd2 = new SqlCommand(QueryAssinarMovimento, conexao, transacao))
+                        {
+                            cmd2.Parameters.AddWithValue("@idFuncionario", SessaoUsuario.Funcionario.IdFuncionario);
+                            cmd2.Parameters.AddWithValue("@tipo", "SAÍDA");
+                            cmd2.Parameters.AddWithValue("@idFatura", idFatura);
+
+                            IdMovimento = Convert.ToInt32(cmd2.ExecuteScalar());
+                        }
+
+                        foreach (var item in ModificarQuantidade)
+                        {
+                            using (SqlCommand cmd3 = new SqlCommand(QueryAssinarDetalhesMovimento, conexao, transacao))
+                            {
+                                cmd3.Parameters.AddWithValue("@idLote", item.IdLote);
+                                cmd3.Parameters.AddWithValue("@idMovimento", IdMovimento);
+                                cmd3.Parameters.AddWithValue("@quantidadeAnterior", item.QuantidadeAnterior);
+                                cmd3.Parameters.AddWithValue("@quantidadeAtual", item.QuantidadeAtual);
+
+                                cmd3.ExecuteNonQuery();
+                            }
                         }
 
                         transacao.Commit();
@@ -136,7 +173,105 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
 
         }
-    
-    
+
+        public bool Devolucao(int idFatura, string motivo)
+        {
+
+            var Lotes = new List<(int IdLote, int QuantidadeAnterior, int QuantidadeAtual)>();
+
+            string query = @"SELECT
+                              det_mov_e.ID_LOTE,
+                              det_mov_e.QUANTIDADE_ANTERIOR,
+                              det_mov_e.QUANTIDADE_ATUAL,
+                              mov_e.ID_FATURA
+                            FROM TB_MOVIMENTO_ESTOQUE mov_e 
+                            JOIN TB_DETALHES_MOVIMENTO_ESTOQUE det_mov_e 
+                              ON mov_e.ID_MOVIMENTO = det_mov_e.ID_MOVIMENTO
+                            WHERE mov_e.ID_FATURA = @idFatura";
+
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                {
+                    conexao.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@idFatura", idFatura);
+
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
+                        {
+                            while (leitor.Read())
+                            {
+                                Lotes.Add
+                                    ((
+                                        IdLote: leitor.IsDBNull(leitor.GetOrdinal("ID_LOTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_LOTE")),
+                                        QuantidadeAnterior: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")),
+                                        QuantidadeAtual: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ATUAL")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ATUAL"))
+                                    ));
+                            }
+                        }
+                    }
+
+                    string queryAtualizarLote = @"UPDATE  TB_ESTOQUE
+                                                    SET QUANTIDADE = @quantidadeDevolvida
+                                                    WHERE ID_LOTE = @idLote
+                                                 ";
+                    string queryBuscarLote = @"SELECT TOP 1 QUANTIDADE FROM TB_ESTOQUE WHERE ID_LOTE = @idLote;";
+
+                    foreach (var Lote in Lotes)
+                    {
+                        int QuantidadeAtualEstoque = 0;
+
+                        using (SqlCommand cmd = new SqlCommand(queryBuscarLote, conexao))
+                        {
+                            cmd.Parameters.AddWithValue("@idLote", Lote.IdLote);
+
+                            using(SqlDataReader leitor = cmd.ExecuteReader())
+                            {
+                                while (leitor.Read())
+                                {
+                                    QuantidadeAtualEstoque = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE"));
+                                }
+                            }
+                        }
+
+                        int QuantidadeADevolver = QuantidadeAtualEstoque + Lote.QuantidadeAnterior - Lote.QuantidadeAtual;
+
+                        using (SqlCommand cmd2 = new SqlCommand(queryAtualizarLote, conexao))
+                        {
+                            cmd2.Parameters.AddWithValue("@quantidadeDevolvida", QuantidadeADevolver);
+                            cmd2.Parameters.AddWithValue("@idLote", Lote.IdLote);
+
+                            cmd2.ExecuteNonQuery();
+                        }
+                    }
+
+                    string QueryAssinarMovimento = @"INSERT INTO TB_MOVIMENTO_ESTOQUE
+                                                        (ID_FUNCIONARIO, TIPO, ID_FATURA, MOTIVO)
+                                                     VALUES
+                                                         (@idFuncionario, @tipo, @idFatura, @motivo)
+                                                ";
+
+                    using (SqlCommand cmd3 = new SqlCommand(QueryAssinarMovimento, conexao))
+                    {
+                        cmd3.Parameters.AddWithValue("@idFuncionario", SessaoUsuario.Funcionario.IdFuncionario);
+                        cmd3.Parameters.AddWithValue("@tipo", "DEVOLUÇÃO");
+                        cmd3.Parameters.AddWithValue("@idFatura", idFatura);
+                        cmd3.Parameters.AddWithValue("@motivo", motivo);
+
+                        cmd3.ExecuteNonQuery();
+                    }
+
+                }
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Erro ao devolver a quantidade no estoque: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

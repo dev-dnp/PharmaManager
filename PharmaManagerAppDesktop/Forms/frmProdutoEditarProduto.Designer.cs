@@ -1,6 +1,6 @@
 ﻿namespace PharmaManagerAppDesktop.Forms
 {
-    partial class frmProdutoAdicionarProduto
+    partial class frmProdutoEditarProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAdicionarProduto = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditarProduto = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtPrecoVenda = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +49,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtNome = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -60,6 +60,19 @@
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Teal;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(494, 55);
+            this.label12.TabIndex = 221;
+            this.label12.Text = "EDITAR PRODUTO";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -77,34 +90,34 @@
             this.panel1.Location = new System.Drawing.Point(0, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(494, 559);
-            this.panel1.TabIndex = 221;
+            this.panel1.TabIndex = 222;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnAdicionarProduto);
+            this.panel2.Controls.Add(this.btnEditarProduto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 473);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(494, 86);
             this.panel2.TabIndex = 243;
             // 
-            // btnAdicionarProduto
+            // btnEditarProduto
             // 
-            this.btnAdicionarProduto.BorderRadius = 4;
-            this.btnAdicionarProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdicionarProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdicionarProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdicionarProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdicionarProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.btnAdicionarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(35, 10);
-            this.btnAdicionarProduto.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
-            this.btnAdicionarProduto.Size = new System.Drawing.Size(422, 55);
-            this.btnAdicionarProduto.TabIndex = 172;
-            this.btnAdicionarProduto.Text = "Adicionar";
-            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
+            this.btnEditarProduto.BorderRadius = 4;
+            this.btnEditarProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditarProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditarProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnEditarProduto.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnEditarProduto.Location = new System.Drawing.Point(35, 10);
+            this.btnEditarProduto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarProduto.Name = "btnEditarProduto";
+            this.btnEditarProduto.Size = new System.Drawing.Size(422, 55);
+            this.btnEditarProduto.TabIndex = 172;
+            this.btnEditarProduto.Text = "Guardar";
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
             // 
             // guna2Panel5
             // 
@@ -229,7 +242,6 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(378, 36);
             this.cmbCategoria.TabIndex = 31;
-            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbProvincia_SelectedIndexChanged);
             // 
             // guna2Panel4
             // 
@@ -374,32 +386,16 @@
             this.txtNome.Size = new System.Drawing.Size(382, 44);
             this.txtNome.TabIndex = 62;
             // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Teal;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(494, 55);
-            this.label12.TabIndex = 220;
-            this.label12.Text = "ADICIONAR PRODUTO";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // frmProdutoAdicionarProduto
+            // frmProdutoEditarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 614);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmProdutoAdicionarProduto";
+            this.Name = "frmProdutoEditarProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registar Produto";
-            this.Load += new System.EventHandler(this.frmProdutoAdicionarProduto_Load);
+            this.Load += new System.EventHandler(this.frmProdutoEditar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -417,7 +413,10 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btnEditarProduto;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private Guna.UI2.WinForms.Guna2TextBox txtPrecoVenda;
@@ -435,8 +434,5 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtNome;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button btnAdicionarProduto;
     }
 }

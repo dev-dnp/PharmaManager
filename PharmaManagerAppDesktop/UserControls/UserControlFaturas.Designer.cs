@@ -45,11 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnFacturaCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancelarFatura = new Guna.UI2.WinForms.Guna2Button();
             this.btnFacturaDetalhes = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvFaturaLista = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.checkFactura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colIdFatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNomeClienteFatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDataEmissaoFatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,31 +218,31 @@
             this.flowLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel2.Controls.Add(this.btnFacturaCancelar);
+            this.flowLayoutPanel2.Controls.Add(this.btnCancelarFatura);
             this.flowLayoutPanel2.Controls.Add(this.btnFacturaDetalhes);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(762, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(441, 61);
             this.flowLayoutPanel2.TabIndex = 137;
             // 
-            // btnFacturaCancelar
+            // btnCancelarFatura
             // 
-            this.btnFacturaCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFacturaCancelar.BorderRadius = 4;
-            this.btnFacturaCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFacturaCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFacturaCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFacturaCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFacturaCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
-            this.btnFacturaCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacturaCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnFacturaCancelar.Location = new System.Drawing.Point(4, 4);
-            this.btnFacturaCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFacturaCancelar.Name = "btnFacturaCancelar";
-            this.btnFacturaCancelar.Size = new System.Drawing.Size(228, 53);
-            this.btnFacturaCancelar.TabIndex = 136;
-            this.btnFacturaCancelar.Text = "Cancelar Fatura";
-            this.btnFacturaCancelar.Click += new System.EventHandler(this.btnFacturaCancelar_Click);
+            this.btnCancelarFatura.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelarFatura.BorderRadius = 4;
+            this.btnCancelarFatura.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelarFatura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelarFatura.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelarFatura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelarFatura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
+            this.btnCancelarFatura.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarFatura.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarFatura.Location = new System.Drawing.Point(4, 4);
+            this.btnCancelarFatura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelarFatura.Name = "btnCancelarFatura";
+            this.btnCancelarFatura.Size = new System.Drawing.Size(228, 53);
+            this.btnCancelarFatura.TabIndex = 136;
+            this.btnCancelarFatura.Text = "Cancelar Fatura";
+            this.btnCancelarFatura.Click += new System.EventHandler(this.btnCancelarFatura_Click);
             // 
             // btnFacturaDetalhes
             // 
@@ -289,7 +289,7 @@
             this.dgvFaturaLista.ColumnHeadersHeight = 77;
             this.dgvFaturaLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvFaturaLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkFactura,
+            this.check,
             this.colIdFatura,
             this.colNomeClienteFatura,
             this.colDataEmissaoFatura,
@@ -309,7 +309,6 @@
             this.dgvFaturaLista.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvFaturaLista.Location = new System.Drawing.Point(20, 20);
             this.dgvFaturaLista.Name = "dgvFaturaLista";
-            this.dgvFaturaLista.ReadOnly = true;
             this.dgvFaturaLista.RowHeadersVisible = false;
             this.dgvFaturaLista.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -334,7 +333,7 @@
             this.dgvFaturaLista.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvFaturaLista.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvFaturaLista.ThemeStyle.HeaderStyle.Height = 77;
-            this.dgvFaturaLista.ThemeStyle.ReadOnly = true;
+            this.dgvFaturaLista.ThemeStyle.ReadOnly = false;
             this.dgvFaturaLista.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvFaturaLista.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvFaturaLista.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,16 +342,15 @@
             this.dgvFaturaLista.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvFaturaLista.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // checkFactura
+            // check
             // 
-            this.checkFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.checkFactura.FillWeight = 214.2857F;
-            this.checkFactura.Frozen = true;
-            this.checkFactura.HeaderText = "";
-            this.checkFactura.MinimumWidth = 6;
-            this.checkFactura.Name = "checkFactura";
-            this.checkFactura.ReadOnly = true;
-            this.checkFactura.Width = 6;
+            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.check.FillWeight = 214.2857F;
+            this.check.Frozen = true;
+            this.check.HeaderText = "";
+            this.check.MinimumWidth = 6;
+            this.check.Name = "check";
+            this.check.Width = 6;
             // 
             // colIdFatura
             // 
@@ -363,30 +361,30 @@
             this.colIdFatura.MinimumWidth = 6;
             this.colIdFatura.Name = "colIdFatura";
             this.colIdFatura.ReadOnly = true;
+            this.colIdFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colIdFatura.Width = 76;
             // 
             // colNomeClienteFatura
             // 
-            this.colNomeClienteFatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colNomeClienteFatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colNomeClienteFatura.DefaultCellStyle = dataGridViewCellStyle3;
             this.colNomeClienteFatura.FillWeight = 150F;
-            this.colNomeClienteFatura.Frozen = true;
             this.colNomeClienteFatura.HeaderText = "Cliente";
             this.colNomeClienteFatura.MinimumWidth = 6;
             this.colNomeClienteFatura.Name = "colNomeClienteFatura";
             this.colNomeClienteFatura.ReadOnly = true;
-            this.colNomeClienteFatura.Width = 92;
+            this.colNomeClienteFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // colDataEmissaoFatura
             // 
             this.colDataEmissaoFatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colDataEmissaoFatura.FillWeight = 77.14286F;
-            this.colDataEmissaoFatura.Frozen = true;
             this.colDataEmissaoFatura.HeaderText = "Data de emissão";
             this.colDataEmissaoFatura.MinimumWidth = 6;
             this.colDataEmissaoFatura.Name = "colDataEmissaoFatura";
             this.colDataEmissaoFatura.ReadOnly = true;
+            this.colDataEmissaoFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colDataEmissaoFatura.Width = 169;
             // 
             // colFuncionarioFatura
@@ -397,6 +395,7 @@
             this.colFuncionarioFatura.MinimumWidth = 6;
             this.colFuncionarioFatura.Name = "colFuncionarioFatura";
             this.colFuncionarioFatura.ReadOnly = true;
+            this.colFuncionarioFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colFuncionarioFatura.Width = 170;
             // 
             // colMetodoPagamentoFatura
@@ -406,18 +405,19 @@
             this.colMetodoPagamentoFatura.MinimumWidth = 6;
             this.colMetodoPagamentoFatura.Name = "colMetodoPagamentoFatura";
             this.colMetodoPagamentoFatura.ReadOnly = true;
+            this.colMetodoPagamentoFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // colEstadoFatura
             // 
-            this.colEstadoFatura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colEstadoFatura.HeaderText = "Estado";
             this.colEstadoFatura.MinimumWidth = 6;
             this.colEstadoFatura.Name = "colEstadoFatura";
             this.colEstadoFatura.ReadOnly = true;
-            this.colEstadoFatura.Width = 93;
+            this.colEstadoFatura.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // colValorPago
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "N2";
             this.colValorPago.DefaultCellStyle = dataGridViewCellStyle4;
             this.colValorPago.FillWeight = 77.14286F;
@@ -425,6 +425,7 @@
             this.colValorPago.MinimumWidth = 6;
             this.colValorPago.Name = "colValorPago";
             this.colValorPago.ReadOnly = true;
+            this.colValorPago.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // UserControlFaturas
             // 
@@ -465,11 +466,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Guna.UI2.WinForms.Guna2Button btnFacturaCancelar;
+        private Guna.UI2.WinForms.Guna2Button btnCancelarFatura;
         private Guna.UI2.WinForms.Guna2Button btnFacturaDetalhes;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvFaturaLista;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkFactura;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdFatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNomeClienteFatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDataEmissaoFatura;

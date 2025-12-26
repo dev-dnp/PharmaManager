@@ -176,9 +176,9 @@ namespace PharmaManagerAppDesktop.UserControls
 
                 FaturaBD Fatura = new FaturaBD();
                 
-                bool resultado = Fatura.CriarFatura(Dados);
+                int IdFatura = Fatura.CriarFatura(Dados);
 
-                if(resultado)
+                if(IdFatura > 0)
                 {
                     MessageBox.Show(
                         "Operação realizada com sucesso!",
@@ -196,7 +196,7 @@ namespace PharmaManagerAppDesktop.UserControls
                     lblNomeCliente.Text = "(Nenhum)";
                     lblTelefoneCliente.Text = "(Nenhum)";
 
-                    if(new EstoqueBD().DiminuirEstoque(Dados))
+                    if(new EstoqueBD().DiminuirEstoque(Dados, IdFatura))
                     {
                         ProdutosDisponiveisNoEstoque = new ProdutoBD().BuscarProdutosDisponiveis();
                     }

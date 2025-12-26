@@ -1,10 +1,12 @@
 ﻿using PharmaManagerAppDesktop.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
 {
@@ -18,6 +20,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             public List<ItemFaturaEntidade> ItemFaturaEntidade;
         }
 
+
+
         public class DetalhesFatura
         {
             public FaturaEntidade Fatura { get; set; } = new FaturaEntidade();
@@ -28,8 +32,18 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             public CargoEntidade Cargo {  get; set; } = new CargoEntidade();
         }
 
+        public class ItemFatura
+        {
+            public ItemFaturaEntidade Item { get; set; } = new ItemFaturaEntidade();
+            public ProdutoEntidade Produto { get; set; }= new ProdutoEntidade();
+            public decimal Subtotal;
+            public decimal ValorImposto;
+            public decimal TaxaImposto;
+        }
 
-        public Boolean CriarFatura(DadosFatura dadosFatura)
+        
+
+        public int CriarFatura(DadosFatura dadosFatura)
         {
 
             using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
@@ -105,17 +119,47 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     // Confirma a transação
                     transacao.Commit();
                     Console.WriteLine("Fatura criada com sucesso!");
-                    return true;
+                    return idFatura;
                 }
                 catch (Exception ex)
                 {
                     transacao.Rollback();
                     Console.WriteLine("Erro ao criar fatura: " + ex.Message);
-                    return false;
+                    return 0;
                 }
             }
         }
 
+        public bool CancelarFatura(int idFatura)
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                {
+                    conexao.Open();
+
+                    string queryAtualizarLote = @"UPDATE  TB_FATURA
+                                                SET ID_ESTADO_FATURA = @idEstado
+                                                WHERE ID_FATURA = @idFatura
+                                            ";
+
+                    using (SqlCommand cmd = new SqlCommand(queryAtualizarLote, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@idEstado", 3);
+                        cmd.Parameters.AddWithValue("@idFatura", idFatura);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Erro ao editar estado da fatura: " + ex.Message);
+                return false;
+            }
+        }
         public List<DetalhesFatura> BuscarTodasFaturas()
         {
 
@@ -254,6 +298,83 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
         }
 
+        public List<ItemFatura> BuscarItensFaturas(int idFatura)
+        {
+            List<ItemFatura> TodosItens = new List<ItemFatura>();
+
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                {
+                    conexao.Open();
+
+                    string query = @"SELECT 
+                                  item_f.ID_PRODUTO,
+                                  item_f.QUANTIDADE,
+                                  item_f.PRECO_VENDA,
+                                  item_f.DESCONTO,
+                                  item_f.TAXA_IMPOSTO,
+                                  ((item_f.QUANTIDADE * item_f.PRECO_VENDA) * (item_f.TAXA_IMPOSTO/100)) AS VALOR_IMPOSTO,
+                                  (item_f.QUANTIDADE * item_f.PRECO_VENDA + (item_f.QUANTIDADE * item_f.PRECO_VENDA) * (item_f.TAXA_IMPOSTO/100) - item_f.DESCONTO) AS SUBTOTAL,
+  
+                                  pdt.NOME AS PRODUTO_NOME,
+                                  pdt.PRECO_VENDA AS PRODUTO_PRECO_VENDA,
+                                  pdt.CODIGO_BARRAS AS PRODUTO_CODIGO_BARRAS,
+                                  pdt.ID_CATEGORIA AS PRODUTO_ID_CATEGORIA,
+                                  pdt.DATA_CRIACAO AS PRODUTO_DATA_CRIACAO
+  
+                                FROM TB_ITEM_FATURA item_f
+                                  JOIN TB_PRODUTO pdt 
+                                    ON item_f.ID_PRODUTO = pdt.ID_PRODUTO
+  
+                                WHERE ID_FATURA = @idFatura";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@idFatura", idFatura);
+
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
+                        {
+                            while (leitor.Read())
+                            {
+                                TodosItens.Add(new ItemFatura
+                                {
+                                    Item =
+                                {
+                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                    IdFatura = idFatura,
+                                    Quantidade = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE")),
+                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                    Desconto = leitor.IsDBNull(leitor.GetOrdinal("DESCONTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("DESCONTO")),
+                                },
+
+                                    Produto =
+                                {
+                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
+                                    CodigoBarras = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")),
+                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                    DataCriacao = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")),
+                                },
+                                    Subtotal = leitor.IsDBNull(leitor.GetOrdinal("SUBTOTAL")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("SUBTOTAL")),
+                                    ValorImposto = leitor.IsDBNull(leitor.GetOrdinal("VALOR_IMPOSTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("VALOR_IMPOSTO")),
+                                    TaxaImposto = leitor.IsDBNull(leitor.GetOrdinal("TAXA_IMPOSTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("TAXA_IMPOSTO")),
+                                });
+
+                            }
+                        }
+                    }
+                }
+
+                return TodosItens;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao buscar os itens da fatura: " + ex.Message);
+                return null;
+            }
+        }
 
         public List<DetalhesFatura> BuscarTodasFaturasPorTextoDePesquisa(string textoDePesquisa)
         {

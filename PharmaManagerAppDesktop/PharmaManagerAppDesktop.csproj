@@ -65,7 +65,7 @@
     <Compile Include="BD\LoginBD.cs" />
     <Compile Include="BD\SessaoUsuario.cs" />
     <Compile Include="Entidades\CargoEntidade.cs" />
-    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\CategoriaEntidade.cs" />
     <Compile Include="Entidades\ClienteEntidade.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Entidades\EstadoFaturaEntidade.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Entidades\MovimentoEstoque.cs" />
     <Compile Include="Entidades\Municipio.cs" />
     <Compile Include="Entidades\Permissao.cs" />
-    <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\ProdutoEntidade.cs" />
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\UsuarioPermissao.cs" />
@@ -118,6 +118,12 @@
     </Compile>
     <Compile Include="Forms\frmFornecedorEditar.Designer.cs">
       <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProdutoEditarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProdutoEditarProduto.Designer.cs">
+      <DependentUpon>frmProdutoEditarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmVendaAdicionarCliente.cs">
       <SubType>Form</SubType>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFornecedorEditar.resx">
       <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProdutoEditarProduto.resx">
+      <DependentUpon>frmProdutoEditarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVendaAdicionarCliente.resx">
       <DependentUpon>frmVendaAdicionarCliente.cs</DependentUpon>

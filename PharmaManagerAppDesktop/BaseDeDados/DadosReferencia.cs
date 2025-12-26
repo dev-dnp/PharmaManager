@@ -12,7 +12,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public static class DadosReferencia
     {
         public static List<CargoEntidade> Cargos = new List<CargoEntidade>();
-        public static List<Categoria> CategoriasProduto = new List<Categoria>();
+        public static List<CategoriaEntidade> CategoriasProduto = new List<CategoriaEntidade>();
         public static List<EstadoFaturaEntidade> EstadosFatura = new List<EstadoFaturaEntidade>();
         public static List<MetodoPagamentoEntidade> MetodosPagamento = new List<MetodoPagamentoEntidade>();
         public static List<Provincia> Provincias = new List<Provincia>();
@@ -92,7 +92,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            CategoriasProduto.Add(new Categoria
+                            CategoriasProduto.Add(new CategoriaEntidade
                             {
                                 IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
