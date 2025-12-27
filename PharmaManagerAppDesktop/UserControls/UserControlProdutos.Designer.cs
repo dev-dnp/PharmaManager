@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEliminarProdutos = new Guna.UI2.WinForms.Guna2Button();
@@ -49,7 +49,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tbEstoqueCampoPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCampoPesquisa = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEstoquePesquisarProduto = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstoqueAtualizarListaProduto = new Guna.UI2.WinForms.Guna2Button();
             this.btnProdutoNovo = new Guna.UI2.WinForms.Guna2Button();
@@ -137,16 +137,16 @@
             // 
             this.dgvListaProdutos.AllowUserToAddRows = false;
             this.dgvListaProdutos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvListaProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvListaProdutos.ColumnHeadersHeight = 77;
             this.dgvListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -156,24 +156,24 @@
             this.colCategoriaProduto,
             this.colQuantidadeProduto,
             this.colPrecoProduto});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaProdutos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaProdutos.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListaProdutos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListaProdutos.Location = new System.Drawing.Point(20, 20);
             this.dgvListaProdutos.Name = "dgvListaProdutos";
             this.dgvListaProdutos.RowHeadersVisible = false;
             this.dgvListaProdutos.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.dgvListaProdutos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.dgvListaProdutos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvListaProdutos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListaProdutos.RowTemplate.Height = 40;
             this.dgvListaProdutos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -223,8 +223,8 @@
             // colNomeProduto
             // 
             this.colNomeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNomeProduto.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNomeProduto.DefaultCellStyle = dataGridViewCellStyle8;
             this.colNomeProduto.FillWeight = 150F;
             this.colNomeProduto.HeaderText = "Produto";
             this.colNomeProduto.MinimumWidth = 6;
@@ -290,7 +290,7 @@
             this.guna2Panel3.BorderRadius = 3;
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel3.Controls.Add(this.tbEstoqueCampoPesquisa);
+            this.guna2Panel3.Controls.Add(this.txtCampoPesquisa);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel3.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -310,32 +310,32 @@
             this.guna2PictureBox2.TabIndex = 60;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // tbEstoqueCampoPesquisa
+            // txtCampoPesquisa
             // 
-            this.tbEstoqueCampoPesquisa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbEstoqueCampoPesquisa.BorderColor = System.Drawing.Color.Gray;
-            this.tbEstoqueCampoPesquisa.BorderRadius = 3;
-            this.tbEstoqueCampoPesquisa.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.tbEstoqueCampoPesquisa.BorderThickness = 0;
-            this.tbEstoqueCampoPesquisa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbEstoqueCampoPesquisa.DefaultText = "";
-            this.tbEstoqueCampoPesquisa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbEstoqueCampoPesquisa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbEstoqueCampoPesquisa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEstoqueCampoPesquisa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEstoqueCampoPesquisa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.tbEstoqueCampoPesquisa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEstoqueCampoPesquisa.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.tbEstoqueCampoPesquisa.ForeColor = System.Drawing.Color.Black;
-            this.tbEstoqueCampoPesquisa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEstoqueCampoPesquisa.Location = new System.Drawing.Point(38, 4);
-            this.tbEstoqueCampoPesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbEstoqueCampoPesquisa.Name = "tbEstoqueCampoPesquisa";
-            this.tbEstoqueCampoPesquisa.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbEstoqueCampoPesquisa.PlaceholderText = "Pesquisar Produto";
-            this.tbEstoqueCampoPesquisa.SelectedText = "";
-            this.tbEstoqueCampoPesquisa.Size = new System.Drawing.Size(308, 44);
-            this.tbEstoqueCampoPesquisa.TabIndex = 62;
+            this.txtCampoPesquisa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtCampoPesquisa.BorderColor = System.Drawing.Color.Gray;
+            this.txtCampoPesquisa.BorderRadius = 3;
+            this.txtCampoPesquisa.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtCampoPesquisa.BorderThickness = 0;
+            this.txtCampoPesquisa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCampoPesquisa.DefaultText = "";
+            this.txtCampoPesquisa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCampoPesquisa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCampoPesquisa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCampoPesquisa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCampoPesquisa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtCampoPesquisa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCampoPesquisa.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtCampoPesquisa.ForeColor = System.Drawing.Color.Black;
+            this.txtCampoPesquisa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCampoPesquisa.Location = new System.Drawing.Point(38, 4);
+            this.txtCampoPesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCampoPesquisa.Name = "txtCampoPesquisa";
+            this.txtCampoPesquisa.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCampoPesquisa.PlaceholderText = "Pesquisar Produto";
+            this.txtCampoPesquisa.SelectedText = "";
+            this.txtCampoPesquisa.Size = new System.Drawing.Size(308, 44);
+            this.txtCampoPesquisa.TabIndex = 62;
             // 
             // btnEstoquePesquisarProduto
             // 
@@ -353,6 +353,7 @@
             this.btnEstoquePesquisarProduto.Size = new System.Drawing.Size(130, 53);
             this.btnEstoquePesquisarProduto.TabIndex = 135;
             this.btnEstoquePesquisarProduto.Text = "Procurar";
+            this.btnEstoquePesquisarProduto.Click += new System.EventHandler(this.btnEstoquePesquisarProduto_Click);
             // 
             // btnEstoqueAtualizarListaProduto
             // 
@@ -373,6 +374,7 @@
             this.btnEstoqueAtualizarListaProduto.Name = "btnEstoqueAtualizarListaProduto";
             this.btnEstoqueAtualizarListaProduto.Size = new System.Drawing.Size(60, 53);
             this.btnEstoqueAtualizarListaProduto.TabIndex = 149;
+            this.btnEstoqueAtualizarListaProduto.Click += new System.EventHandler(this.btnEstoqueAtualizarListaProduto_Click);
             // 
             // btnProdutoNovo
             // 
@@ -447,7 +449,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2TextBox tbEstoqueCampoPesquisa;
+        private Guna.UI2.WinForms.Guna2TextBox txtCampoPesquisa;
         private Guna.UI2.WinForms.Guna2Button btnEstoquePesquisarProduto;
         private Guna.UI2.WinForms.Guna2Button btnEstoqueAtualizarListaProduto;
         private Guna.UI2.WinForms.Guna2Button btnProdutoNovo;

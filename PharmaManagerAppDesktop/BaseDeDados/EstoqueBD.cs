@@ -41,7 +41,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             JOIN TB_LOTE l ON l.ID_PRODUTO = p.ID_PRODUTO
                             JOIN TB_ESTOQUE e ON e.ID_LOTE = l.ID_LOTE
 
-                                WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE()
+                                WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE() AND p.ATIVO = 1
 
                             ORDER BY l.DATA_VALIDADE ASC;";
 

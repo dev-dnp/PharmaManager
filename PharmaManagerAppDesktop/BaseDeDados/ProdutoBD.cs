@@ -41,7 +41,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             JOIN TB_LOTE l ON l.ID_PRODUTO = p.ID_PRODUTO
                             JOIN TB_ESTOQUE e ON e.ID_LOTE = l.ID_LOTE
 
-                                WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE()
+                                WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE() AND p.ATIVO = 1
                             GROUP BY 
                                 p.ID_PRODUTO,
                                 p.NOME,
@@ -72,7 +72,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             return produtosEncontrados;
         }
 
-        public List<ProdutoResposta> BuscarProdutos()
+        public List<ProdutoResposta> BuscarProdutos(string textoDePesquisa = "")
         {
             var ListaProduto = new List<ProdutoResposta>();
 
@@ -102,6 +102,15 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                   LEFT JOIN TB_ESTOQUE est
                                     ON est.ID_LOTE = lot.ID_LOTE
 
+                                WHERE 
+                                    pdt.ATIVO = 1 AND 
+                                    (
+                                        pdt.ID_PRODUTO LIKE @pesquisa OR
+                                        pdt.NOME LIKE @pesquisa OR
+                                        pdt.CODIGO_BARRAS LIKE @pesquisa OR
+                                        pdt.PRECO_VENDA LIKE @pesquisa
+                                    )
+
                                 GROUP BY 
                                   pdt.ID_PRODUTO,
                                   pdt.NOME,
@@ -113,6 +122,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
+                        cmd.Parameters.AddWithValue("@pesquisa", "%" + textoDePesquisa + "%");
+
                         using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
                             while (leitor.Read())
@@ -210,10 +221,13 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         cmd.ExecuteNonQuery();
                     }
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Erro ao editar o produto: " + ex.Message);
+                return false;
             }
         }
     
@@ -221,14 +235,14 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             try
             {
-                using (SqlTransaction conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
                 {
                     conexao.Open();
 
-                    SqlTransaction transacao = conexao.BeginTransaction()
-
-                    string query = @"DELETE FROM
+                    string query = @"UPDATE
                                         TB_PRODUTO
+                                    SET
+                                       ATIVO = 0
                                     WHERE
                                         ID_PRODUTO = @idProduto
                     ";
@@ -249,8 +263,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             catch (SqlException ex)
             {
                 Console.WriteLine("Erro ao eliminar o produto: " + ex.Message);
-
                 if(ex.Number == 547) return false;
+                return false;
             }
         }
 

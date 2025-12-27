@@ -82,7 +82,7 @@ namespace PharmaManagerAppDesktop.UserControls
         {
             DadosTabela = new List<VisualizarProdutoTabela>();
 
-            var Produtos = new ProdutoBD().BuscarProdutos();
+            var Produtos = new ProdutoBD().BuscarProdutos(txtCampoPesquisa.Text);
 
             if (Produtos == null)
             {
@@ -199,6 +199,17 @@ namespace PharmaManagerAppDesktop.UserControls
                     MessageBoxIcon.Warning
                  );
             return;
+        }
+
+        private void btnEstoquePesquisarProduto_Click(object sender, EventArgs e)
+        {
+            Atualizar();
+        }
+
+        private void btnEstoqueAtualizarListaProduto_Click(object sender, EventArgs e)
+        {
+            txtCampoPesquisa.Clear();
+            Atualizar();
         }
     }
 }

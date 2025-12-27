@@ -14,5 +14,6 @@ namespace PharmaManagerAppDesktop.Entidades
         public decimal PrecoVenda { get; set; }
         public int IdCategoria { get; set; }
         public DateTime DataCriacao { get; set; }
+        public bool Ativo { get; set; }
     }
 }
