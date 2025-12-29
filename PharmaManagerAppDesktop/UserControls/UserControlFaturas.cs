@@ -69,10 +69,9 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void UserControlFaturas_Load(object sender, EventArgs e)
         {
-            var ListaFaturas = new FaturaBD().BuscarTodasFaturas();
-            TodasFaturas = ListaFaturas;
+            TodasFaturas = new FaturaBD().BuscarTodasFaturas();
 
-            foreach (var Item in ListaFaturas)
+            foreach (var Item in TodasFaturas)
             {
                 DadosFaturaTabela.Add(new FaturaVisualizacaoTabela
                 {
@@ -103,7 +102,7 @@ namespace PharmaManagerAppDesktop.UserControls
         {
             string Texto = txtCampoPesquisar.Text;
 
-            var ListaFaturas = new FaturaBD().BuscarTodasFaturasPorTextoDePesquisa(Texto);
+            var ListaFaturas = new FaturaBD().BuscarTodasFaturas(Texto);
 
             DadosFaturaTabela.Clear();
 
@@ -127,16 +126,17 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            RestaurarListaDeFaturas();
+            AtualizarLista();
         }
 
-        private void RestaurarListaDeFaturas()
+        private void AtualizarLista()
         {
-            var ListaFaturas = new FaturaBD().BuscarTodasFaturas();
+            TodasFaturas = new FaturaBD().BuscarTodasFaturas();
+
             DadosFaturaTabela.Clear();
             txtCampoPesquisar.Clear();
 
-            foreach (var Item in ListaFaturas)
+            foreach (var Item in TodasFaturas)
             {
                 DadosFaturaTabela.Add(new FaturaVisualizacaoTabela
                 {
@@ -196,7 +196,7 @@ namespace PharmaManagerAppDesktop.UserControls
                     {
                         if(new EstoqueBD().Devolucao(IdsSelecionados[0], janela.MotivoCancelamento))
                         {
-                            RestaurarListaDeFaturas();
+                            AtualizarLista();
                         }
                     }
                 }

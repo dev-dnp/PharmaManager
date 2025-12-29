@@ -160,7 +160,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 return false;
             }
         }
-        public List<DetalhesFatura> BuscarTodasFaturas()
+        public List<DetalhesFatura> BuscarTodasFaturas(string? pesquisa = "")
         {
 
             var TodasFaturas = new List<DetalhesFatura>();
@@ -207,7 +207,14 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                         ON fat.ID_METODO_PAGAMENTO = m_pag.ID_METODO_PAGAMENTO
                                     JOIN TB_ITEM_FATURA i_fat
                                         ON i_fat.ID_FATURA = fat.ID_FATURA
-
+                                    WHERE 
+                                        (
+                                            fat.ID_FATURA LIKE @pesquisa OR 
+                                            fun.NOME LIKE @pesquisa OR 
+                                            fun.ID_FUNCIONARIO LIKE @pesquisa OR 
+                                            cli.NOME LIKE @pesquisa OR
+                                            e_fat.NOME LIKE @pesquisa 
+                                        )
   
                                     GROUP BY 
                                         fat.ID_FATURA,
@@ -231,6 +238,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
+                        cmd.Parameters.AddWithValue("@pesquisa", "%" + pesquisa + "%");
+
                         using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
                             while (leitor.Read())

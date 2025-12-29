@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PharmaManagerAppDesktop.Entidades
 {
-    public class Provincia
+    public class ProvinciaEntidade
     {
         public int IdProvincia { get; set; }
         public string Nome { get; set; }

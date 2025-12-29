@@ -134,15 +134,16 @@ namespace PharmaManagerAppDesktop.UserControls
                     return;
                 }
             }
-
-            MessageBox.Show(
+            else
+            {
+                MessageBox.Show(
                     "Selecione um item por vez",
                     "Alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
-                 );
-            return;
-
+                );
+                return;
+            }
         }
 
         private void btnEliminarProdutos_Click(object sender, EventArgs e)

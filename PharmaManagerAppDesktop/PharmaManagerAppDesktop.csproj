@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,6 +58,7 @@
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
     <Compile Include="BaseDeDados\EstoqueBD.cs" />
     <Compile Include="BaseDeDados\FaturaBD.cs" />
+    <Compile Include="BaseDeDados\FornecedorBD.cs" />
     <Compile Include="BaseDeDados\FuncionarioBD.cs" />
     <Compile Include="BaseDeDados\ProdutoBD.cs" />
     <Compile Include="BaseDeDados\SessaoUsuario.cs" />
@@ -67,20 +70,20 @@
     <Compile Include="Entidades\CargoEntidade.cs" />
     <Compile Include="Entidades\CategoriaEntidade.cs" />
     <Compile Include="Entidades\ClienteEntidade.cs" />
-    <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\EnderecoEntidade.cs" />
     <Compile Include="Entidades\EstadoFaturaEntidade.cs" />
     <Compile Include="Entidades\EstoqueEntidade.cs" />
     <Compile Include="Entidades\FaturaEntidade.cs" />
-    <Compile Include="Entidades\Fornecedor.cs" />
+    <Compile Include="Entidades\FornecedorEntidade.cs" />
     <Compile Include="Entidades\FuncionarioEntidade.cs" />
     <Compile Include="Entidades\ItemFaturaEntidade.cs" />
     <Compile Include="Entidades\Lote.cs" />
     <Compile Include="Entidades\MetodoPagamentoEntidade.cs" />
     <Compile Include="Entidades\MovimentoEstoque.cs" />
-    <Compile Include="Entidades\Municipio.cs" />
+    <Compile Include="Entidades\MunicipioEntidade.cs" />
     <Compile Include="Entidades\Permissao.cs" />
     <Compile Include="Entidades\ProdutoEntidade.cs" />
-    <Compile Include="Entidades\Provincia.cs" />
+    <Compile Include="Entidades\ProvinciaEntidade.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\UsuarioPermissao.cs" />
     <Compile Include="FormLogin.cs">

@@ -15,8 +15,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public static List<CategoriaEntidade> CategoriasProduto = new List<CategoriaEntidade>();
         public static List<EstadoFaturaEntidade> EstadosFatura = new List<EstadoFaturaEntidade>();
         public static List<MetodoPagamentoEntidade> MetodosPagamento = new List<MetodoPagamentoEntidade>();
-        public static List<Provincia> Provincias = new List<Provincia>();
-        public static List<Municipio> Municipios = new List<Municipio>();
+        public static List<ProvinciaEntidade> Provincias = new List<ProvinciaEntidade>();
+        public static List<MunicipioEntidade> Municipios = new List<MunicipioEntidade>();
         public static List<Permissao> Permissoes = new List<Permissao>();
         
 
@@ -146,7 +146,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            Provincias.Add(new Provincia
+                            Provincias.Add(new ProvinciaEntidade
                             {
                                 IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
@@ -173,7 +173,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            Municipios.Add(new Municipio
+                            Municipios.Add(new MunicipioEntidade
                             {
                                 IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),

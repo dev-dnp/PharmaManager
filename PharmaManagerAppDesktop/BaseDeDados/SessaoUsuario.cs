@@ -13,9 +13,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public static FuncionarioEntidade Funcionario { get; set; }
         public static Permissao Permissao { get; set; }
         public static CargoEntidade Cargo { get; set; }
-        public static Municipio Municipio { get; set; }
-        public static Provincia Provincia { get; set; }
-        public static Endereco Endereco { get; set; }
+        public static MunicipioEntidade Municipio { get; set; }
+        public static ProvinciaEntidade Provincia { get; set; }
+        public static EnderecoEntidade Endereco { get; set; }
 
     }
 }

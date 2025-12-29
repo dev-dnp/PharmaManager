@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace PharmaManagerAppDesktop.Entidades
 {
-    public class Endereco
+    public class EnderecoEntidade
     {
         public int IdEndereco { get; set; }
         public string Bairro { get; set; }
-        public string Rua { get; set; }
-        public string Casa { get; set; }
         public int IdMunicipio { get; set; }
-        // public Municipio Municipio { get; set; } // opcional
     }
 }
