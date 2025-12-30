@@ -1,4 +1,5 @@
 ﻿using PharmaManagerAppDesktop.Entidades;
+using PharmaManagerAppDesktop.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,17 +35,41 @@ namespace PharmaManagerAppDesktop.Forms
                     MessageBoxIcon.Error
                 );
 
-                txtNome.Clear();
                 txtNome.Focus();
                 return;
             }
 
+            string tel = null;
+
+            if(txtTelefone.Text.Trim().Length > 0)
+            {
+                tel = ValidarNumeroTelefone.Validar(txtTelefone.Text.Trim());
+                
+                if(String.IsNullOrEmpty(tel))
+                {
+                    MessageBox.Show(
+                        "Número de telefone inválido",
+                        "Mensagem de erro",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+
+                    return;
+                }
+            }
+
 
             Cliente.Nome = txtNome.Text;
-            Cliente.Telefone = txtTelefone.Text;
+            Cliente.Telefone = tel;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void frmVendaAdicionarCliente_Load(object sender, EventArgs e)
+        {
+            txtNome.Text = Cliente.Nome;
+            txtTelefone.Text = Cliente.Telefone;
         }
     }
 }

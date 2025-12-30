@@ -258,6 +258,7 @@
     <Compile Include="UserControls\UserControlVendas.Designer.cs">
       <DependentUpon>UserControlVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\ValidarNumeroTelefone.cs" />
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

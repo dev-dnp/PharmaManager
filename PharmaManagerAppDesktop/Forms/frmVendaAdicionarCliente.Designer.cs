@@ -259,6 +259,7 @@
             this.Name = "frmVendaAdicionarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Cliente";
+            this.Load += new System.EventHandler(this.frmVendaAdicionarCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
