@@ -249,43 +249,43 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 {
                                     Cliente =
                                 {
-                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("CLIENTE_NOME")),
-                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_TELEFONE")) ? "-" : leitor.GetString(leitor.GetOrdinal("CLIENTE_TELEFONE")),
+                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CLIENTE_NOME")),
+                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("CLIENTE_TELEFONE")),
                                 },
                                     Fatura =
                                 {
-                                    IdFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FATURA")),
-                                    TotalPagamento = leitor.IsDBNull(leitor.GetOrdinal("TOTAL_PAGAR")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("TOTAL_PAGAR")),
-                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
-                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
-                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
-                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                    IdFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FATURA")),
+                                    TotalPagamento = leitor.IsDBNull(leitor.GetOrdinal("TOTAL_PAGAR")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("TOTAL_PAGAR")),
+                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
+                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
+                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
                                     DataVenda = leitor.IsDBNull(leitor.GetOrdinal("DATA_VENDA")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("DATA_VENDA")),
                                 },
                                     EstadoFatura =
                                 {
-                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("ESTADO_FATURA_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("ESTADO_FATURA_NOME")),
+                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("ESTADO_FATURA_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("ESTADO_FATURA_NOME")),
                                 },
                                     MetodoPagamento =
                                 {
-                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("METODO_PAGAMENTO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("METODO_PAGAMENTO_NOME"))
+                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("METODO_PAGAMENTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("METODO_PAGAMENTO_NOME"))
                                 },
                                     Funcionario =
                                 {
-                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
-                                    Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
-                                    BilheteIdentidade = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")),
-                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")),
+                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
+                                    Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
+                                    BilheteIdentidade = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")),
+                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")),
                                 },
                                     Cargo =
                                 {
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
                                 }
 
                                 });
@@ -350,25 +350,25 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 {
                                     Item =
                                 {
-                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
                                     IdFatura = idFatura,
-                                    Quantidade = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE")),
-                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
-                                    Desconto = leitor.IsDBNull(leitor.GetOrdinal("DESCONTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("DESCONTO")),
+                                    Quantidade = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE")),
+                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                    Desconto = leitor.IsDBNull(leitor.GetOrdinal("DESCONTO")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("DESCONTO")),
                                 },
 
                                     Produto =
                                 {
-                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
-                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
-                                    CodigoBarras = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")),
-                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("PRODUTO_ID_CATEGORIA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
+                                    CodigoBarras = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")),
+                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
                                     DataCriacao = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")),
                                 },
-                                    Subtotal = leitor.IsDBNull(leitor.GetOrdinal("SUBTOTAL")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("SUBTOTAL")),
-                                    ValorImposto = leitor.IsDBNull(leitor.GetOrdinal("VALOR_IMPOSTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("VALOR_IMPOSTO")),
-                                    TaxaImposto = leitor.IsDBNull(leitor.GetOrdinal("TAXA_IMPOSTO")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("TAXA_IMPOSTO")),
+                                    Subtotal = leitor.IsDBNull(leitor.GetOrdinal("SUBTOTAL")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("SUBTOTAL")),
+                                    ValorImposto = leitor.IsDBNull(leitor.GetOrdinal("VALOR_IMPOSTO")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("VALOR_IMPOSTO")),
+                                    TaxaImposto = leitor.IsDBNull(leitor.GetOrdinal("TAXA_IMPOSTO")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("TAXA_IMPOSTO")),
                                 });
 
                             }
@@ -472,43 +472,43 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 {
                                     Cliente =
                                 {
-                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("CLIENTE_NOME")),
-                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_TELEFONE")) ? "-" : leitor.GetString(leitor.GetOrdinal("CLIENTE_TELEFONE")),
+                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CLIENTE_NOME")),
+                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("CLIENTE_TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("CLIENTE_TELEFONE")),
                                 },
                                     Fatura =
                                 {
-                                    IdFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FATURA")),
-                                    TotalPagamento = leitor.IsDBNull(leitor.GetOrdinal("TOTAL_PAGAR")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("TOTAL_PAGAR")),
-                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
-                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
-                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
-                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                    IdFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FATURA")),
+                                    TotalPagamento = leitor.IsDBNull(leitor.GetOrdinal("TOTAL_PAGAR")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("TOTAL_PAGAR")),
+                                    IdCliente = leitor.IsDBNull(leitor.GetOrdinal("ID_CLIENTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CLIENTE")),
+                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
+                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
                                     DataVenda = leitor.IsDBNull(leitor.GetOrdinal("DATA_VENDA")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("DATA_VENDA")),
                                 },
                                     EstadoFatura =
                                 {
-                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("ESTADO_FATURA_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("ESTADO_FATURA_NOME")),
+                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("ESTADO_FATURA_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("ESTADO_FATURA_NOME")),
                                 },
                                     MetodoPagamento =
                                 {
-                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("METODO_PAGAMENTO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("METODO_PAGAMENTO_NOME"))
+                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("METODO_PAGAMENTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("METODO_PAGAMENTO_NOME"))
                                 },
                                     Funcionario =
                                 {
-                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
-                                    Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
-                                    BilheteIdentidade = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")),
-                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")) ? "-" : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")),
+                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
+                                    Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
+                                    BilheteIdentidade = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")),
+                                    Telefone = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")),
                                 },
                                     Cargo =
                                 {
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
                                 }
 
                                 });

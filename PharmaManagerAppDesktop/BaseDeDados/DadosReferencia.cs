@@ -38,7 +38,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             Cargos.Add(new CargoEntidade
                             {
-                                IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                                 Descricao = leitor.IsDBNull(leitor.GetOrdinal("DESCRICAO")) ? null : leitor.GetString(leitor.GetOrdinal("DESCRICAO")),
                             });
@@ -67,7 +67,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             MetodosPagamento.Add(new MetodoPagamentoEntidade
                             {
-                                IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }
@@ -94,7 +94,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             CategoriasProduto.Add(new CategoriaEntidade
                             {
-                                IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
+                                IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }
@@ -121,7 +121,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             EstadosFatura.Add(new EstadoFaturaEntidade
                             {
-                                IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }
@@ -148,7 +148,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             Provincias.Add(new ProvinciaEntidade
                             {
-                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }
@@ -175,9 +175,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             Municipios.Add(new MunicipioEntidade
                             {
-                                IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
+                                IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
                             });
                         }
                     }
@@ -203,7 +203,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             Permissoes.Add(new Permissao
                             {
-                                IdPermissao = leitor.IsDBNull(leitor.GetOrdinal("ID_PERMISSAO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PERMISSAO")),
+                                IdPermissao = leitor.IsDBNull(leitor.GetOrdinal("ID_PERMISSAO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PERMISSAO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }

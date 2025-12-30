@@ -1,5 +1,4 @@
-﻿using PharmaManagerAppDesktop.BD;
-using PharmaManagerAppDesktop.Entidades;
+﻿using PharmaManagerAppDesktop.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -57,12 +56,12 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             listaEncontrada.Add(new DetalhesLotesDisponiveis
                             {
-                                IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
                                 DataValidade = leitor.IsDBNull(leitor.GetOrdinal("DATA_VALIDADE")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("DATA_VALIDADE")),
-                                IdLote = leitor.IsDBNull(leitor.GetOrdinal("ID_LOTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_LOTE")),
+                                IdLote = leitor.IsDBNull(leitor.GetOrdinal("ID_LOTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_LOTE")),
                                 NomeProduto = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? string.Empty : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
                                 PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0m : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
-                                Quantidade = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE")),
+                                Quantidade = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE")),
 
                             });
                         }
@@ -104,30 +103,19 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             {
                 conexao.Open();
 
-                string queryAtualizarQuantidade = @"UPDATE TB_ESTOQUE
-                                 SET QUANTIDADE = @quantidade
-                                 WHERE ID_LOTE = @idLote";
-
-                string QueryAssinarMovimento = @"INSERT INTO TB_MOVIMENTO_ESTOQUE
-                                                    (ID_FUNCIONARIO, TIPO, ID_FATURA)
-                                                 VALUES
-                                                     (@idFuncionario, @tipo, @idFatura);
-                                                 SELECT SCOPE_IDENTITY();
-                                                ";
-
-                string QueryAssinarDetalhesMovimento = @"INSERT INTO TB_DETALHES_MOVIMENTO_ESTOQUE
-                                                            (ID_LOTE, ID_MOVIMENTO, QUANTIDADE_ANTERIOR, QUANTIDADE_ATUAL)
-                                                        VALUES
-                                                            (@idLote, @idMovimento, @quantidadeAnterior, @quantidadeAtual)
-                                                        ";
-
                 int IdMovimento = 0;
 
                 using (SqlTransaction transacao = conexao.BeginTransaction())
                 {
                     try
                     {
-                        foreach(var item in ModificarQuantidade)
+
+                        string queryAtualizarQuantidade = @"UPDATE TB_ESTOQUE
+                                 SET QUANTIDADE = @quantidade
+                                 WHERE ID_LOTE = @idLote";
+
+
+                        foreach (var item in ModificarQuantidade)
                         {
                             using(SqlCommand cmd = new SqlCommand(queryAtualizarQuantidade, conexao, transacao))
                             {
@@ -138,14 +126,28 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             }
                         }
 
+                        string QueryAssinarMovimento = @"INSERT INTO TB_MOVIMENTO_ESTOQUE
+                                                            (ID_FUNCIONARIO, TIPO, ID_FATURA, MOTIVO)
+                                                         VALUES
+                                                             (@idFuncionario, @tipo, @idFatura, @motivo);
+                                                         SELECT SCOPE_IDENTITY();
+                                                        ";
+
                         using (SqlCommand cmd2 = new SqlCommand(QueryAssinarMovimento, conexao, transacao))
                         {
                             cmd2.Parameters.AddWithValue("@idFuncionario", SessaoUsuario.Funcionario.IdFuncionario);
                             cmd2.Parameters.AddWithValue("@tipo", "SAÍDA");
                             cmd2.Parameters.AddWithValue("@idFatura", idFatura);
+                            cmd2.Parameters.AddWithValue("@motivo", $"Venda realizada");
 
                             IdMovimento = Convert.ToInt32(cmd2.ExecuteScalar());
                         }
+
+                        string QueryAssinarDetalhesMovimento = @"INSERT INTO TB_DETALHES_MOVIMENTO_ESTOQUE
+                                                            (ID_LOTE, ID_MOVIMENTO, QUANTIDADE_ANTERIOR, QUANTIDADE_ATUAL)
+                                                        VALUES
+                                                            (@idLote, @idMovimento, @quantidadeAnterior, @quantidadeAtual)
+                                                        ";
 
                         foreach (var item in ModificarQuantidade)
                         {
@@ -205,9 +207,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             {
                                 Lotes.Add
                                     ((
-                                        IdLote: leitor.IsDBNull(leitor.GetOrdinal("ID_LOTE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_LOTE")),
-                                        QuantidadeAnterior: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")),
-                                        QuantidadeAtual: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ATUAL")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ATUAL"))
+                                        IdLote: leitor.IsDBNull(leitor.GetOrdinal("ID_LOTE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_LOTE")),
+                                        QuantidadeAnterior: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ANTERIOR")),
+                                        QuantidadeAtual: leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_ATUAL")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_ATUAL"))
                                     ));
                             }
                         }
@@ -231,7 +233,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             {
                                 while (leitor.Read())
                                 {
-                                    QuantidadeAtualEstoque = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE"));
+                                    QuantidadeAtualEstoque = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE"));
                                 }
                             }
                         }

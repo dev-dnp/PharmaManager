@@ -112,22 +112,23 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void Atualizar(string pesquisa = "")
         {
-            var Dados = new FornecedorBD().BuscarTodosFornecedores(pesquisa);
+            var FornecedoresBuscados = new FornecedorBD().BuscarTodosFornecedores(pesquisa);
 
             DadosTabela.Clear();
 
-            foreach (var Dado in Dados)
+            foreach (var f in FornecedoresBuscados)
             {
-                string Endereco = Dado.Endereco.Bairro + ", " + Dado.Municipio.Nome + ", " + Dado.Provincia.Nome;
+
+                string EnderecoCompleto = f.Endereco.Bairro + ", " + f.Municipio.Nome + ", " + f.Provincia.Nome;
 
                 DadosTabela.Add(new VisualizacaoTabela
                 {
-                    Id = Dado.Fornecedor.IdFornecedor,
-                    Nome = Dado.Fornecedor.Nome,
-                    Nif = Dado.Fornecedor.NIF,
-                    Tel = Dado.Fornecedor.Telefone,
-                    Email = Dado.Fornecedor.Email,
-                    Endereco = Endereco,
+                    Id = f.Fornecedor.IdFornecedor,
+                    Nome = f.Fornecedor.Nome,
+                    Nif = f.Fornecedor.NIF,
+                    Tel = f.Fornecedor.Telefone,
+                    Email = f.Fornecedor.Email,
+                    Endereco = f.Municipio.Nome == null ? "-" : EnderecoCompleto
                 });
             }
         }
@@ -146,13 +147,19 @@ namespace PharmaManagerAppDesktop.UserControls
 
             if (Ids.Count > 0)
             {
-                var Fornecedores = new FornecedorBD().BuscarTodosFornecedores();
 
-                var Fornecedor = Fornecedores.Find(f => f.Fornecedor.IdFornecedor == Ids.First());
+                var Opcao = MessageBox.Show(
+                    "Tem certeza que quer eliminar os produtos selecionados",
+                    "Alerta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                 );
 
-                frmFornecedorEditar janela = new frmFornecedorEditar(Fornecedor);
+                if (Opcao == DialogResult.No) return;
 
-                if (janela.ShowDialog() == DialogResult.OK)
+                var retorno = new FornecedorBD().EliminarFornecedores(Ids);
+
+                if (retorno)
                 {
                     Atualizar();
                 }

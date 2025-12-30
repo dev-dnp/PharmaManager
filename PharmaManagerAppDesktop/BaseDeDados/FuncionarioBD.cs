@@ -116,13 +116,13 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                                 Funcionario = new FuncionarioEntidade 
                                 {
-                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
+                                    IdFuncionario = leitor.IsDBNull(leitor.GetOrdinal("ID_FUNCIONARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FUNCIONARIO")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_NOME")),
                                     BilheteIdentidade = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_BILHETE_IDENTIDADE")),
                                     DataNascimento =  leitor.GetDateTime(leitor.GetOrdinal("FUNCIONARIO_DATA_NASCIMENTO")),
-                                    IdUsuario  = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_USUARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_USUARIO")),
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_CARGO")),
-                                    IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_ENDERECO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_ENDERECO")),
+                                    IdUsuario  = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_USUARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_USUARIO")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_CARGO")),
+                                    IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_ID_ENDERECO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("FUNCIONARIO_ID_ENDERECO")),
                                     Telefone = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_TELEFONE")),
                                     Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
 
@@ -130,7 +130,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                                 Cargo = new CargoEntidade
                                 {
-                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
+                                    IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("CARGO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_NOME")),
                                     Descricao = leitor.IsDBNull(leitor.GetOrdinal("CARGO_DESCRICAO")) ? null : leitor.GetString(leitor.GetOrdinal("CARGO_DESCRICAO")),
                                 },
@@ -138,20 +138,20 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 Endereco = new EnderecoEntidade
                                 {
                                     Bairro = leitor.IsDBNull(leitor.GetOrdinal("ENDERECO_BAIRRO")) ? null : leitor.GetString(leitor.GetOrdinal("ENDERECO_BAIRRO")),
-                                    IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
-                                    IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ENDERECO_ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ENDERECO_ID_MUNICIPIO")),
+                                    IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
+                                    IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ENDERECO_ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ENDERECO_ID_MUNICIPIO")),
                                 },
 
                                 Municipio = new MunicipioEntidade
                                 {
-                                    IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
+                                    IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("MUNICIPIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("MUNICIPIO_NOME")),
-                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("MUNICIPIO_ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("MUNICIPIO_ID_PROVINCIA")),
+                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("MUNICIPIO_ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("MUNICIPIO_ID_PROVINCIA")),
                                 },
 
                                 Provincia = new ProvinciaEntidade
                                 {
-                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
                                     Nome = leitor.IsDBNull(leitor.GetOrdinal("PROVINCIA_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PROVINCIA_NOME")),
                                 },
 

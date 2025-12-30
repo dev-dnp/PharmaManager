@@ -59,10 +59,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             produtosEncontrados.Add(new DetalhesProduto
                             {
-                                IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
                                 NomeProduto = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
-                                PrecoUnitario = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
-                                QuantidadeProduto = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_TOTAL")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_TOTAL")),
+                                PrecoUnitario = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                QuantidadeProduto = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_TOTAL")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_TOTAL")),
                             });
                         }
                     }
@@ -132,17 +132,17 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 {
                                     Produto =
                                 {
-                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
-                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
-                                    CodigoBarras = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")) ? "-" : leitor.GetString(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")),
-                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_PRECO_VENDA")) ? 0 : leitor.GetDecimal(leitor.GetOrdinal("PRODUTO_PRECO_VENDA")),
+                                    IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
+                                    CodigoBarras = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_CODIGO_BARRAS")),
+                                    PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRODUTO_PRECO_VENDA")),
                                     DataCriacao = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")) ? DateTime.Now : leitor.GetDateTime(leitor.GetOrdinal("PRODUTO_DATA_CRIACAO")),
                                 },
                                     Categoria =
                                 {
-                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
-                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CATEGORIA_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("CATEGORIA_NOME")),
+                                    IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("CATEGORIA_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("CATEGORIA_NOME")),
                                 },
                                     QuantidadeTotal = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_TOTAL")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_TOTAL")),
                                 });

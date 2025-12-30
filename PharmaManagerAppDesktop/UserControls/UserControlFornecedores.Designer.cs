@@ -410,12 +410,14 @@
             this.tel.HeaderText = "Telefone";
             this.tel.MinimumWidth = 6;
             this.tel.Name = "tel";
+            this.tel.ReadOnly = true;
             // 
             // endereco
             // 
             this.endereco.HeaderText = "Endereço";
             this.endereco.MinimumWidth = 6;
             this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
             // 
             // UserControlFornecedores
             // 

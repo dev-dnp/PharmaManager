@@ -105,13 +105,15 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                         ON mun.ID_MUNICIPIO = ende.ID_MUNICIPIO
                                     LEFT JOIN TB_PROVINCIA prov
                                         ON mun.ID_PROVINCIA = prov.ID_PROVINCIA
-                                    WHERE
-                                    forn.ID_FORNECEDOR LIKE @pesquisa OR
-                                    forn.NOME LIKE @pesquisa OR
-                                    forn.NIF LIKE @pesquisa OR
-                                    forn.EMAIL LIKE @pesquisa OR
-                                    forn.TELEFONE LIKE @pesquisa
-";
+                                    WHERE ATIVO = 1
+                                        AND (
+                                                forn.ID_FORNECEDOR LIKE @pesquisa OR
+                                                forn.NOME LIKE @pesquisa OR
+                                                forn.NIF LIKE @pesquisa OR
+                                                forn.EMAIL LIKE @pesquisa OR
+                                                forn.TELEFONE LIKE @pesquisa
+                                            )
+                                    ";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
@@ -125,29 +127,29 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 {
                                     Fornecedor =
                                     {
-                                        IdFornecedor = leitor.IsDBNull(leitor.GetOrdinal("ID_FORNECEDOR")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_FORNECEDOR")),
-                                        IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
-                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("NOME")),
-                                        NIF = leitor.IsDBNull(leitor.GetOrdinal("NIF")) ? "-" : leitor.GetString(leitor.GetOrdinal("NIF")),
-                                        Email = leitor.IsDBNull(leitor.GetOrdinal("EMAIL")) ? "-" : leitor.GetString(leitor.GetOrdinal("EMAIL")),
-                                        Telefone = leitor.IsDBNull(leitor.GetOrdinal("TELEFONE")) ? "-" : leitor.GetString(leitor.GetOrdinal("TELEFONE")),
+                                        IdFornecedor = leitor.IsDBNull(leitor.GetOrdinal("ID_FORNECEDOR")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_FORNECEDOR")),
+                                        IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
+                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                        NIF = leitor.IsDBNull(leitor.GetOrdinal("NIF")) ? null : leitor.GetString(leitor.GetOrdinal("NIF")),
+                                        Email = leitor.IsDBNull(leitor.GetOrdinal("EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("EMAIL")),
+                                        Telefone = leitor.IsDBNull(leitor.GetOrdinal("TELEFONE")) ? null : leitor.GetString(leitor.GetOrdinal("TELEFONE")),
                                     },
                                     Endereco =
                                     {
-                                        Bairro = leitor.IsDBNull(leitor.GetOrdinal("ENDERECO_BAIRRO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("ENDERECO_BAIRRO_NOME")),
-                                        IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
-                                        IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
+                                        Bairro = leitor.IsDBNull(leitor.GetOrdinal("ENDERECO_BAIRRO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("ENDERECO_BAIRRO_NOME")),
+                                        IdEndereco = leitor.IsDBNull(leitor.GetOrdinal("ID_ENDERECO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ENDERECO")),
+                                        IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
                                     },
                                     Municipio =
                                     {
-                                        IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
-                                        IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
-                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("MUNICIPIO_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("MUNICIPIO_NOME")),
+                                        IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
+                                        IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("MUNICIPIO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("MUNICIPIO_NOME")),
                                     },
                                     Provincia =
                                     {
-                                        IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
-                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("PROVINCIA_NOME")) ? "-" : leitor.GetString(leitor.GetOrdinal("PROVINCIA_NOME")),
+                                        IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("PROVINCIA_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PROVINCIA_NOME")),
                                     }
 
                                 });
@@ -225,7 +227,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
         }
     
-        public void EliminarFornecedores(List<int> idsFornecedores)
+        public bool EliminarFornecedores(List<int> idsFornecedores)
         {
             try
             {
@@ -234,11 +236,11 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     conexao.Open();
 
                     string query = @"UPDATE
-                                        TB_PRODUTO
+                                        TB_FORNECEDOR
                                     SET
                                        ATIVO = 0
                                     WHERE
-                                        ID_PRODUTO = @idProduto
+                                        ID_FORNECEDOR = @idFornecedor
                     ";
 
 
@@ -246,7 +248,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         using (SqlCommand cmd = new SqlCommand(query, conexao))
                         {
-                            cmd.Parameters.AddWithValue("@idProduto", id);
+                            cmd.Parameters.AddWithValue("@idFornecedor", id);
                             cmd.ExecuteNonQuery();
                         }
                     }
