@@ -86,6 +86,13 @@ namespace PharmaManagerAppDesktop
             SessaoUsuario.Endereco = infoFuncionario.Endereco;
 
             DadosReferencia.BuscarMetodosPagamento();
+            DadosReferencia.BuscarProvincias();
+            DadosReferencia.BuscarMunicipios();
+            DadosReferencia.BuscarCargos();
+            DadosReferencia.BuscarCategoriasProdutos();
+            DadosReferencia.BuscarEstadoFatura();
+            DadosReferencia.BuscarPermissoes();
+
 
             FormJanelaInicial janela = new FormJanelaInicial();
             janela.ShowDialog();

@@ -17,15 +17,15 @@ namespace PharmaManagerAppDesktop.UserControls
 
         public class VisualizacaoTabela
         {
-            public int id { get; set; }
-            public string nome { get; set; }
-            public string nif { get; set; }
-            public string tel{ get; set; }
-            public string email { get; set; }
-            public string endereco { get; set; }
+            public int Id { get; set; }
+            public string Nome { get; set; }
+            public string Nif { get; set; }
+            public string Tel{ get; set; }
+            public string Email { get; set; }
+            public string Endereco { get; set; }
         }
 
-        List<VisualizacaoTabela> DadosTabela = new List<VisualizacaoTabela>();
+        BindingList<VisualizacaoTabela> DadosTabela = new BindingList<VisualizacaoTabela>();
         public UserControlFornecedores()
         {
             InitializeComponent();
@@ -34,108 +34,139 @@ namespace PharmaManagerAppDesktop.UserControls
         private void btnAdicionarFornecedor_Click(object sender, EventArgs e)
         {
             frmFornecedorAdicionar frmAddFornecedor = new frmFornecedorAdicionar();
-            frmAddFornecedor.ShowDialog();
+            
+            if(frmAddFornecedor.ShowDialog()  == DialogResult.OK)
+            {
+                Atualizar();
+            } 
+
         }
 
         private void btnEditarFornecedor_Click(object sender, EventArgs e)
         {
-            frmFornecedorEditar janela = new frmFornecedorEditar();
-            janela.ShowDialog();
+            List<int> Ids = new List<int>();
+
+            foreach(DataGridViewRow linha in dgvListaDeFornecedores.Rows)
+            {
+                if(Convert.ToBoolean(linha.Cells["check"].Value))
+                {
+                    Ids.Add(Convert.ToInt32(linha.Cells["id"].Value));
+                }
+            }
+
+            if (Ids.Count == 1)
+            {
+                var Fornecedores = new FornecedorBD().BuscarTodosFornecedores();
+
+                var Fornecedor = Fornecedores.Find(f => f.Fornecedor.IdFornecedor == Ids.First());
+
+                frmFornecedorEditar janela = new frmFornecedorEditar(Fornecedor);
+                
+                if(janela.ShowDialog() == DialogResult.OK)
+                {
+                    Atualizar();
+                }
+            } 
+            else
+            {
+                MessageBox.Show(
+                    "Selecione um item por vez",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+
+            
         }
 
         private void UserControlFornecedores_Load(object sender, EventArgs e)
         {
-            var Dados = new FornecedorBD().BuscarTodosFornecedores();
-
-            foreach(var Dado in Dados)
-            {
-                string Endereco = Dado.Endereco.Bairro + ", " + Dado.Municipio.Nome + ", " + Dado.Provincia.Nome;
-
-                DadosTabela.Add(new VisualizacaoTabela
-                {
-                    id = Dado.Fornecedor.IdFornecedor,
-                    email = Dado.Fornecedor.Email,
-                    nome = Dado.Fornecedor.Nome,
-                    endereco = Endereco,
-                    tel= Dado.Fornecedor.Telefone,
-                    nif = Dado.Fornecedor.NIF,
-                    
-                });
-            }
-
+            Atualizar();
 
             dgvListaDeFornecedores.AutoGenerateColumns = false;
 
-            id.DataPropertyName = "id";
-            email.DataPropertyName = "email";
-            nome.DataPropertyName = "nome";
-            endereco.DataPropertyName = "endereco";
-            tel.DataPropertyName = "tel";
-            nif.DataPropertyName = "nif";
+            id.DataPropertyName = "Id";
+            nome.DataPropertyName = "Nome";
+            nif.DataPropertyName = "Nif";
+            tel.DataPropertyName = "Tel";
+            email.DataPropertyName = "Email";
+            endereco.DataPropertyName = "Endereco";
 
-            dgvListaDeFornecedores.DataSource = null;
             dgvListaDeFornecedores.DataSource = DadosTabela;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             string texto = txtCampoPesquisa.Text.Trim();
-
-            var Dados = new FornecedorBD().BuscarTodosFornecedores(texto);
-
-            DadosTabela.Clear();
-
-            foreach (var Dado in Dados)
-            {
-                string Endereco = Dado.Endereco.Bairro + ", " + Dado.Municipio.Nome + ", " + Dado.Provincia.Nome;
-
-                DadosTabela.Add(new VisualizacaoTabela
-                {
-                    id = Dado.Fornecedor.IdFornecedor,
-                    email = Dado.Fornecedor.Email,
-                    nome = Dado.Fornecedor.Nome,
-                    endereco = Endereco,
-                    tel = Dado.Fornecedor.Telefone,
-                    nif = Dado.Fornecedor.NIF,
-
-                });
-            }
-
-            dgvListaDeFornecedores.DataSource = null;
-            dgvListaDeFornecedores.DataSource = DadosTabela;
-        }
-
-        private void Atualizar()
-        {
-            txtCampoPesquisa.Clear();
-
-            var Dados = new FornecedorBD().BuscarTodosFornecedores();
-
-            DadosTabela.Clear();
-
-            foreach (var Dado in Dados)
-            {
-                string Endereco = Dado.Endereco.Bairro + ", " + Dado.Municipio.Nome + ", " + Dado.Provincia.Nome;
-
-                DadosTabela.Add(new VisualizacaoTabela
-                {
-                    id = Dado.Fornecedor.IdFornecedor,
-                    email = Dado.Fornecedor.Email,
-                    nome = Dado.Fornecedor.Nome,
-                    endereco = Endereco,
-                    tel = Dado.Fornecedor.Telefone,
-                    nif = Dado.Fornecedor.NIF,
-
-                });
-            }
-
-            dgvListaDeFornecedores.DataSource = null;
-            dgvListaDeFornecedores.DataSource = DadosTabela;
+            Atualizar(texto);
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            txtCampoPesquisa.Clear();
             Atualizar();
+        }
+
+        private void Atualizar(string pesquisa = "")
+        {
+            var Dados = new FornecedorBD().BuscarTodosFornecedores(pesquisa);
+
+            DadosTabela.Clear();
+
+            foreach (var Dado in Dados)
+            {
+                string Endereco = Dado.Endereco.Bairro + ", " + Dado.Municipio.Nome + ", " + Dado.Provincia.Nome;
+
+                DadosTabela.Add(new VisualizacaoTabela
+                {
+                    Id = Dado.Fornecedor.IdFornecedor,
+                    Nome = Dado.Fornecedor.Nome,
+                    Nif = Dado.Fornecedor.NIF,
+                    Tel = Dado.Fornecedor.Telefone,
+                    Email = Dado.Fornecedor.Email,
+                    Endereco = Endereco,
+                });
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            List<int> Ids = new List<int>();
+
+            foreach (DataGridViewRow linha in dgvListaDeFornecedores.Rows)
+            {
+                if (Convert.ToBoolean(linha.Cells["check"].Value))
+                {
+                    Ids.Add(Convert.ToInt32(linha.Cells["id"].Value));
+                }
+            }
+
+            if (Ids.Count > 0)
+            {
+                var Fornecedores = new FornecedorBD().BuscarTodosFornecedores();
+
+                var Fornecedor = Fornecedores.Find(f => f.Fornecedor.IdFornecedor == Ids.First());
+
+                frmFornecedorEditar janela = new frmFornecedorEditar(Fornecedor);
+
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    Atualizar();
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Selecione um item por vez",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
         }
     }
 }

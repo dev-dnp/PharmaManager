@@ -63,10 +63,6 @@
     <Compile Include="BaseDeDados\ProdutoBD.cs" />
     <Compile Include="BaseDeDados\SessaoUsuario.cs" />
     <Compile Include="BaseDeDados\UsuarioBD.cs" />
-    <Compile Include="BD\ConexaoBD.cs" />
-    <Compile Include="BD\FuncionarioBD.cs" />
-    <Compile Include="BD\LoginBD.cs" />
-    <Compile Include="BD\SessaoUsuario.cs" />
     <Compile Include="Entidades\CargoEntidade.cs" />
     <Compile Include="Entidades\CategoriaEntidade.cs" />
     <Compile Include="Entidades\ClienteEntidade.cs" />

@@ -339,7 +339,7 @@
             this.cmbMunicipio.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMunicipio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMunicipio.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cmbMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbMunicipio.ForeColor = System.Drawing.Color.Black;
             this.cmbMunicipio.ItemHeight = 30;
             this.cmbMunicipio.Location = new System.Drawing.Point(42, 8);
             this.cmbMunicipio.Margin = new System.Windows.Forms.Padding(4);
@@ -386,7 +386,7 @@
             this.cmbProvincia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbProvincia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbProvincia.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cmbProvincia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbProvincia.ForeColor = System.Drawing.Color.Black;
             this.cmbProvincia.ItemHeight = 30;
             this.cmbProvincia.Location = new System.Drawing.Point(42, 8);
             this.cmbProvincia.Margin = new System.Windows.Forms.Padding(4);

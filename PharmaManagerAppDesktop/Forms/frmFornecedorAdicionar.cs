@@ -14,7 +14,6 @@ namespace PharmaManagerAppDesktop.Forms
 {
     public partial class frmFornecedorAdicionar : Form
     {
-        private List<MunicipioEntidade> Municipios;
         public frmFornecedorAdicionar()
         {
             InitializeComponent();
@@ -22,32 +21,28 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void frmFornecedorAdicionar_Load(object sender, EventArgs e)
         {
-            DadosReferencia.BuscarProvincias();
-            DadosReferencia.BuscarMunicipios();
-
             cmbProvincia.ValueMember = "IdProvincia";
             cmbProvincia.DisplayMember = "Nome";
             cmbProvincia.DataSource = DadosReferencia.Provincias;
             cmbProvincia.SelectedIndex = -1;
-
-            cmbMunicipio.ValueMember = "IdMunicipio";
-            cmbMunicipio.DisplayMember = "Nome";
-            cmbMunicipio.DataSource = Municipios;
-            cmbMunicipio.SelectedIndex = -1;
-
-
         }
 
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbProvincia.SelectedValue == null || cmbProvincia.SelectedIndex == -1) return;
+            if (cmbProvincia.SelectedValue == null || cmbProvincia.SelectedIndex == -1)
+            {
+                cmbMunicipio.SelectedIndex = -1;
+                cmbMunicipio.DataSource = null;
+                return;
+            }
 
             int IdProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
 
             cmbMunicipio.DataSource = null;
             cmbMunicipio.ValueMember = "IdMunicipio";
             cmbMunicipio.DisplayMember = "Nome";
-            Municipios = DadosReferencia.Municipios.FindAll(mun => mun.IdProvincia == IdProvincia);
+            
+            var Municipios = DadosReferencia.Municipios.FindAll(mun => mun.IdProvincia == IdProvincia);
             cmbMunicipio.DataSource = Municipios;
         }
 
@@ -98,14 +93,7 @@ namespace PharmaManagerAppDesktop.Forms
                     MessageBoxIcon.Information
                 );
 
-                txtBairro.Clear();
-                txtEmail.Clear();
-                txtNif.Clear();
-                txtNome.Clear();
-                txtTelefone.Clear();
-                cmbProvincia.SelectedIndex = -1;
-                cmbMunicipio.SelectedIndex = -1;
-
+                DialogResult = DialogResult.OK;
                 this.Close();
             } 
             else
@@ -119,5 +107,6 @@ namespace PharmaManagerAppDesktop.Forms
             }
                 
         }
+
     }
 }

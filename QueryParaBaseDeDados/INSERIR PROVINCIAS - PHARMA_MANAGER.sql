@@ -1,0 +1,23 @@
+
+INSERT INTO TB_PROVINCIA (NOME) VALUES
+('Cubango'),
+('Namibe'),
+('Cunene'),
+('Huíla'),
+('Benguela'),
+('Cuanza-Norte'),
+('Cuanza-Sul'),
+('Huambo'),
+('Cuando'),
+('Moxico'),
+('Moxico Leste'),
+('Malanje'),
+('Cabinda'),
+('Zaire'),
+('Uíge'),
+('Bengo'),
+('Lunda-Norte'),
+('Lunda-Sul'),
+('Bié'),
+('Icolo e Bengo'),
+('Luanda');

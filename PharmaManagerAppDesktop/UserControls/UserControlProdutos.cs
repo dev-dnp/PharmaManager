@@ -44,8 +44,6 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void UserControlProdutos_Load(object sender, EventArgs e)
         {
-            DadosReferencia.BuscarCategoriasProdutos();
-
             var Produtos = new ProdutoBD().BuscarProdutos();
 
             if( Produtos == null )

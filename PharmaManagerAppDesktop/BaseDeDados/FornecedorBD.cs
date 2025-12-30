@@ -166,5 +166,100 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 return null;
             }
         }
+    
+        public bool EditarFornecedor(DadosFornecedor dados)
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                {
+                    conexao.Open();
+
+                    string query = @"UPDATE TB_FORNECEDOR 
+                                     SET
+                                        NOME = @nome,
+                                        NIF = @nif,
+                                        TELEFONE = @telefone,
+                                        EMAIL = @email
+                                     WHERE
+                                        ID_FORNECEDOR = @idFornecedor
+                    ";
+
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@idFornecedor", dados.Fornecedor.IdFornecedor);
+                        cmd.Parameters.AddWithValue("@nome", dados.Fornecedor.Nome);
+                        cmd.Parameters.AddWithValue("@nif", dados.Fornecedor.NIF);
+                        cmd.Parameters.AddWithValue("@telefone", dados.Fornecedor.Telefone);
+                        cmd.Parameters.AddWithValue("@email", dados.Fornecedor.Email);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    string query2 = @"UPDATE TB_ENDERECO 
+                                     SET
+                                        BAIRRO = @bairro,
+                                        ID_MUNICIPIO = @idMunicipio
+                                     WHERE
+                                        ID_ENDERECO = @idEndereco
+                    ";
+
+                    using (SqlCommand cmd2 = new SqlCommand(query2, conexao))
+                    {
+                        cmd2.Parameters.AddWithValue("@bairro", dados.Endereco.Bairro);
+                        cmd2.Parameters.AddWithValue("@idMunicipio", dados.Endereco.IdMunicipio);
+                        cmd2.Parameters.AddWithValue("@idEndereco", dados.Endereco.IdEndereco);
+
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Erro ao editar o fornecedor: " + ex.Message);
+                return false;
+            }
+
+        }
+    
+        public void EliminarFornecedores(List<int> idsFornecedores)
+        {
+            try
+            {
+                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                {
+                    conexao.Open();
+
+                    string query = @"UPDATE
+                                        TB_PRODUTO
+                                    SET
+                                       ATIVO = 0
+                                    WHERE
+                                        ID_PRODUTO = @idProduto
+                    ";
+
+
+                    foreach (int id in idsFornecedores)
+                    {
+                        using (SqlCommand cmd = new SqlCommand(query, conexao))
+                        {
+                            cmd.Parameters.AddWithValue("@idProduto", id);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Erro ao eliminar o produto: " + ex.Message);
+                if (ex.Number == 547) return false;
+                return false;
+            }
+        }
     }
 }
