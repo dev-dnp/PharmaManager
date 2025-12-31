@@ -46,7 +46,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public int CriarFatura(DadosFatura dadosFatura)
         {
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -134,7 +134,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -167,7 +167,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -313,7 +313,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -392,7 +392,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 

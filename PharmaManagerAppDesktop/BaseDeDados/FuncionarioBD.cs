@@ -27,7 +27,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             List<TodosDadosFuncionario> funcionarios = new List<TodosDadosFuncionario>();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 

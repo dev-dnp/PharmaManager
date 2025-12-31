@@ -24,7 +24,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             Cargos.Clear();
 
-            using(SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using(SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
                 
@@ -53,7 +53,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             MetodosPagamento.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -80,7 +80,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             CategoriasProduto.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -107,7 +107,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             EstadosFatura.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -134,7 +134,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             Provincias.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -161,7 +161,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             Municipios.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -189,7 +189,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             Permissoes.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 

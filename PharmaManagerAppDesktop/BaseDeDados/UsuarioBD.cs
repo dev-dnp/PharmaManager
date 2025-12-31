@@ -17,7 +17,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             List<Usuario> usuarios = new List<Usuario>();
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 try
                 {

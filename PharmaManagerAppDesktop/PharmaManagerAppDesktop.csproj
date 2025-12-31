@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDeDados\ConexaoBD.cs" />
+    <Compile Include="BaseDeDados\ConfigBD.cs" />
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
     <Compile Include="BaseDeDados\EstoqueBD.cs" />
     <Compile Include="BaseDeDados\FaturaBD.cs" />

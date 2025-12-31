@@ -47,7 +47,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 p.NOME,
                                 p.PRECO_VENDA";
 
-            using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -78,7 +78,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -164,7 +164,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -194,7 +194,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
@@ -235,7 +235,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 

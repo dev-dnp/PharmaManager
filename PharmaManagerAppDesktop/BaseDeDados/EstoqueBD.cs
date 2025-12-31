@@ -44,7 +44,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
                             ORDER BY l.DATA_VALIDADE ASC;";
 
-            using(SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using(SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -99,7 +99,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 }
             }
 
-            using(SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+            using(SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
                 conexao.Open();
 
@@ -193,7 +193,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
             try
             {
-                using (SqlConnection conexao = new SqlConnection(ConexaoBD.StringConexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
 
