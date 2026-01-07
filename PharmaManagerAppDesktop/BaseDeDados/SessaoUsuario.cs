@@ -9,9 +9,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 {
     public static class SessaoUsuario
     {
-        public static Usuario Usuario { get; set; }
+        public static UsuarioEntidade Usuario { get; set; }
         public static FuncionarioEntidade Funcionario { get; set; }
-        public static Permissao Permissao { get; set; }
+        public static PermissaoEntidade Permissao { get; set; }
         public static CargoEntidade Cargo { get; set; }
         public static MunicipioEntidade Municipio { get; set; }
         public static ProvinciaEntidade Provincia { get; set; }

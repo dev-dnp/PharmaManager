@@ -19,9 +19,9 @@ namespace PharmaManagerAppDesktop.Utilitarios
             {
                 int posicao = NumeroRecebido.Length - 9;
                 string PrefixoNumeroTelefone = NumeroRecebido.Substring(0, posicao);
-                bool PrefixoValido = false;
-
                 int NumeroTelefone = Convert.ToInt32(NumeroRecebido.Substring(posicao));
+                
+                bool PrefixoValido = false;
 
                 foreach (string PossivelComeco in PossiveisComecos)
                 {

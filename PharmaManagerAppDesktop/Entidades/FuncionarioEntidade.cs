@@ -17,9 +17,6 @@ namespace PharmaManagerAppDesktop.Entidades
         public int? IdEndereco { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        // Navegações opcionais
-        // public Usuario Usuario { get; set; }
-        // public Cargo Cargo { get; set; }
-        // public Endereco Endereco { get; set; }
+        public bool Ativo { get; set; }
     }
 }

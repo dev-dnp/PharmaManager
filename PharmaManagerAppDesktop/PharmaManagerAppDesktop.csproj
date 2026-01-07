@@ -77,10 +77,10 @@
     <Compile Include="Entidades\MetodoPagamentoEntidade.cs" />
     <Compile Include="Entidades\MovimentoEstoque.cs" />
     <Compile Include="Entidades\MunicipioEntidade.cs" />
-    <Compile Include="Entidades\Permissao.cs" />
+    <Compile Include="Entidades\PermissaoEntidade.cs" />
     <Compile Include="Entidades\ProdutoEntidade.cs" />
     <Compile Include="Entidades\ProvinciaEntidade.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\UsuarioEntidade.cs" />
     <Compile Include="Entidades\UsuarioPermissao.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>

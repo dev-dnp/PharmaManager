@@ -36,9 +36,6 @@
             this.btnMenuEstoque = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFornecedores = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFuncionarios = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnMenuNotificacoes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuConfiguracoes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuProdutos = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -61,8 +58,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelConteudoPrincipal = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -80,12 +75,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnMenuDashboard);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuVendas);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFaturas);
+            this.flowLayoutPanel1.Controls.Add(this.btnMenuProdutos);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuEstoque);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFornecedores);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuFuncionarios);
-            this.flowLayoutPanel1.Controls.Add(this.guna2Panel3);
             this.flowLayoutPanel1.Controls.Add(this.btnMenuConfiguracoes);
-            this.flowLayoutPanel1.Controls.Add(this.btnMenuProdutos);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(40, 46);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -207,7 +201,7 @@
             this.btnMenuEstoque.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuEstoque.Image = global::PharmaManagerAppDesktop.Properties.Resources.package;
             this.btnMenuEstoque.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuEstoque.Location = new System.Drawing.Point(4, 256);
+            this.btnMenuEstoque.Location = new System.Drawing.Point(4, 327);
             this.btnMenuEstoque.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.btnMenuEstoque.Name = "btnMenuEstoque";
             this.btnMenuEstoque.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -215,6 +209,7 @@
             this.btnMenuEstoque.TabIndex = 6;
             this.btnMenuEstoque.Text = "Estoque";
             this.btnMenuEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenuEstoque.Visible = false;
             this.btnMenuEstoque.Click += new System.EventHandler(this.btnMenuEstoque_Click);
             // 
             // btnMenuFornecedores
@@ -235,7 +230,7 @@
             this.btnMenuFornecedores.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuFornecedores.Image = global::PharmaManagerAppDesktop.Properties.Resources.truck;
             this.btnMenuFornecedores.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuFornecedores.Location = new System.Drawing.Point(4, 327);
+            this.btnMenuFornecedores.Location = new System.Drawing.Point(4, 398);
             this.btnMenuFornecedores.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.btnMenuFornecedores.Name = "btnMenuFornecedores";
             this.btnMenuFornecedores.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -263,7 +258,7 @@
             this.btnMenuFuncionarios.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuFuncionarios.Image = global::PharmaManagerAppDesktop.Properties.Resources.briefcase_business;
             this.btnMenuFuncionarios.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuFuncionarios.Location = new System.Drawing.Point(4, 398);
+            this.btnMenuFuncionarios.Location = new System.Drawing.Point(4, 469);
             this.btnMenuFuncionarios.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.btnMenuFuncionarios.Name = "btnMenuFuncionarios";
             this.btnMenuFuncionarios.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -272,57 +267,6 @@
             this.btnMenuFuncionarios.Text = "Funcionários";
             this.btnMenuFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenuFuncionarios.Click += new System.EventHandler(this.btnMenuFuncionarios_Click);
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.AutoSize = true;
-            this.guna2Panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel3.Controls.Add(this.btnMenuNotificacoes);
-            this.guna2Panel3.Location = new System.Drawing.Point(4, 469);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(283, 65);
-            this.guna2Panel3.TabIndex = 14;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::PharmaManagerAppDesktop.Properties.Resources.gif_luz_vermelha_alerta;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(243, 18);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(23, 30);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // btnMenuNotificacoes
-            // 
-            this.btnMenuNotificacoes.BackColor = System.Drawing.Color.White;
-            this.btnMenuNotificacoes.BorderColor = System.Drawing.Color.Teal;
-            this.btnMenuNotificacoes.BorderRadius = 4;
-            this.btnMenuNotificacoes.BorderThickness = 1;
-            this.btnMenuNotificacoes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuNotificacoes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuNotificacoes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenuNotificacoes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenuNotificacoes.FillColor = System.Drawing.Color.White;
-            this.btnMenuNotificacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnMenuNotificacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnMenuNotificacoes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.btnMenuNotificacoes.Image = global::PharmaManagerAppDesktop.Properties.Resources.bell__1_;
-            this.btnMenuNotificacoes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuNotificacoes.Location = new System.Drawing.Point(0, 4);
-            this.btnMenuNotificacoes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMenuNotificacoes.Name = "btnMenuNotificacoes";
-            this.btnMenuNotificacoes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnMenuNotificacoes.Size = new System.Drawing.Size(279, 57);
-            this.btnMenuNotificacoes.TabIndex = 13;
-            this.btnMenuNotificacoes.Text = "Notificação";
-            this.btnMenuNotificacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuNotificacoes.Click += new System.EventHandler(this.btnMenuNotificacoes_Click);
             // 
             // btnMenuConfiguracoes
             // 
@@ -342,7 +286,7 @@
             this.btnMenuConfiguracoes.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuConfiguracoes.Image = global::PharmaManagerAppDesktop.Properties.Resources.settings;
             this.btnMenuConfiguracoes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuConfiguracoes.Location = new System.Drawing.Point(4, 548);
+            this.btnMenuConfiguracoes.Location = new System.Drawing.Point(4, 540);
             this.btnMenuConfiguracoes.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.btnMenuConfiguracoes.Name = "btnMenuConfiguracoes";
             this.btnMenuConfiguracoes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -370,7 +314,7 @@
             this.btnMenuProdutos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnMenuProdutos.Image = global::PharmaManagerAppDesktop.Properties.Resources.package;
             this.btnMenuProdutos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuProdutos.Location = new System.Drawing.Point(4, 619);
+            this.btnMenuProdutos.Location = new System.Drawing.Point(4, 256);
             this.btnMenuProdutos.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
             this.btnMenuProdutos.Name = "btnMenuProdutos";
             this.btnMenuProdutos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -626,8 +570,6 @@
             this.Load += new System.EventHandler(this.FormJanelaInicial_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -657,9 +599,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox PictureFotoDePerfil;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2Button btnMenuNotificacoes;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel2;
@@ -675,7 +615,6 @@
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnMenuProdutos;
     }
 }

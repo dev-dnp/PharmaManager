@@ -58,7 +58,7 @@ namespace PharmaManagerAppDesktop
 
 
             // Buscar usuario na base de dados
-            Usuario usuario = new UsuarioBD().BuscarUsuarioPorEmailESenha(txtEmail.Text, txtSenha.Text);
+            UsuarioEntidade usuario = new UsuarioBD().BuscarUsuarioPorEmailESenha(txtEmail.Text, txtSenha.Text);
 
 
             // Caso o usuário não exista
@@ -75,7 +75,7 @@ namespace PharmaManagerAppDesktop
             }
 
             // Usuário existe! Assinando sua sessão de usuário 
-            FuncionarioBD.TodosDadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
+            FuncionarioBD.DadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
 
             SessaoUsuario.Usuario = usuario;
             SessaoUsuario.Funcionario = infoFuncionario.Funcionario;

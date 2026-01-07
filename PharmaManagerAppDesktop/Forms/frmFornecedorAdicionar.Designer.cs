@@ -346,6 +346,7 @@
             this.cmbMunicipio.Name = "cmbMunicipio";
             this.cmbMunicipio.Size = new System.Drawing.Size(322, 36);
             this.cmbMunicipio.TabIndex = 31;
+            this.cmbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cmbMunicipio_SelectedIndexChanged);
             // 
             // guna2Panel1
             // 

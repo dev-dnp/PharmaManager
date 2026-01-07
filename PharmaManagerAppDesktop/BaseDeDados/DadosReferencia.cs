@@ -17,7 +17,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public static List<MetodoPagamentoEntidade> MetodosPagamento = new List<MetodoPagamentoEntidade>();
         public static List<ProvinciaEntidade> Provincias = new List<ProvinciaEntidade>();
         public static List<MunicipioEntidade> Municipios = new List<MunicipioEntidade>();
-        public static List<Permissao> Permissoes = new List<Permissao>();
+        public static List<PermissaoEntidade> Permissoes = new List<PermissaoEntidade>();
         
 
         public static void BuscarCargos()
@@ -201,7 +201,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while (leitor.Read())
                         {
-                            Permissoes.Add(new Permissao
+                            Permissoes.Add(new PermissaoEntidade
                             {
                                 IdPermissao = leitor.IsDBNull(leitor.GetOrdinal("ID_PERMISSAO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PERMISSAO")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),

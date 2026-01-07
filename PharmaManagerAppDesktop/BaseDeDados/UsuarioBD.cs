@@ -13,9 +13,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public class UsuarioBD
     {
 
-        public Usuario BuscarUsuarioPorEmailESenha(string email, string senha)
+        public UsuarioEntidade BuscarUsuarioPorEmailESenha(string email, string senha)
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            List<UsuarioEntidade> usuarios = new List<UsuarioEntidade>();
 
             using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
             {
@@ -45,7 +45,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         while(leitor.Read())
                         {
-                            usuarios.Add(new Usuario
+                            usuarios.Add(new UsuarioEntidade
                             {
                                 IdUsuario = leitor.GetInt32(0),
                                 Email = leitor.GetString(1),

@@ -108,5 +108,9 @@ namespace PharmaManagerAppDesktop.Forms
                 
         }
 
+        private void cmbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -50,14 +50,14 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListaItemProduto = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.selecionarLinhaProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codigoProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeProdutoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargoFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loteProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataValidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBilheteIdentidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -309,45 +309,45 @@
             // 
             // dgvListaItemProduto
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvListaItemProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaItemProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListaItemProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaItemProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaItemProduto.ColumnHeadersHeight = 77;
             this.dgvListaItemProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvListaItemProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.selecionarLinhaProduto,
-            this.codigoProdutoItem,
-            this.quantidadeProdutoItem,
-            this.cargoFuncionario,
-            this.categoriaProduto,
-            this.loteProduto,
-            this.dataValidadeProduto,
-            this.quantidadeProduto});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaItemProduto.DefaultCellStyle = dataGridViewCellStyle14;
+            this.check,
+            this.colId,
+            this.colNome,
+            this.colBilheteIdentidade,
+            this.colCargo,
+            this.colTelefone,
+            this.colEmail,
+            this.colEndereco});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaItemProduto.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaItemProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListaItemProduto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListaItemProduto.Location = new System.Drawing.Point(20, 20);
             this.dgvListaItemProduto.Name = "dgvListaItemProduto";
             this.dgvListaItemProduto.RowHeadersVisible = false;
             this.dgvListaItemProduto.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.dgvListaItemProduto.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.dgvListaItemProduto.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaItemProduto.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListaItemProduto.RowTemplate.Height = 40;
             this.dgvListaItemProduto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -375,68 +375,66 @@
             this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListaItemProduto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // selecionarLinhaProduto
+            // check
             // 
-            this.selecionarLinhaProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.selecionarLinhaProduto.FillWeight = 214.2857F;
-            this.selecionarLinhaProduto.HeaderText = "";
-            this.selecionarLinhaProduto.MinimumWidth = 6;
-            this.selecionarLinhaProduto.Name = "selecionarLinhaProduto";
-            this.selecionarLinhaProduto.Width = 23;
+            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.check.FillWeight = 214.2857F;
+            this.check.HeaderText = "";
+            this.check.MinimumWidth = 6;
+            this.check.Name = "check";
+            this.check.Width = 23;
             // 
-            // codigoProdutoItem
+            // colId
             // 
-            this.codigoProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.codigoProdutoItem.FillWeight = 108.4522F;
-            this.codigoProdutoItem.HeaderText = "Cód.";
-            this.codigoProdutoItem.MinimumWidth = 6;
-            this.codigoProdutoItem.Name = "codigoProdutoItem";
-            this.codigoProdutoItem.Width = 76;
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colId.FillWeight = 108.4522F;
+            this.colId.HeaderText = "Cód.";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.Width = 76;
             // 
-            // quantidadeProdutoItem
+            // colNome
             // 
-            this.quantidadeProdutoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantidadeProdutoItem.DefaultCellStyle = dataGridViewCellStyle13;
-            this.quantidadeProdutoItem.FillWeight = 150F;
-            this.quantidadeProdutoItem.HeaderText = "Nome completo";
-            this.quantidadeProdutoItem.MinimumWidth = 6;
-            this.quantidadeProdutoItem.Name = "quantidadeProdutoItem";
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNome.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNome.FillWeight = 150F;
+            this.colNome.HeaderText = "Nome";
+            this.colNome.MinimumWidth = 6;
+            this.colNome.Name = "colNome";
             // 
-            // cargoFuncionario
+            // colBilheteIdentidade
             // 
-            this.cargoFuncionario.HeaderText = "Cargo";
-            this.cargoFuncionario.MinimumWidth = 6;
-            this.cargoFuncionario.Name = "cargoFuncionario";
+            this.colBilheteIdentidade.HeaderText = "Bilhete de Identidade";
+            this.colBilheteIdentidade.MinimumWidth = 6;
+            this.colBilheteIdentidade.Name = "colBilheteIdentidade";
             // 
-            // categoriaProduto
+            // colCargo
             // 
-            this.categoriaProduto.FillWeight = 77.14286F;
-            this.categoriaProduto.HeaderText = "Telefone";
-            this.categoriaProduto.MinimumWidth = 6;
-            this.categoriaProduto.Name = "categoriaProduto";
+            this.colCargo.HeaderText = "Cargo";
+            this.colCargo.MinimumWidth = 6;
+            this.colCargo.Name = "colCargo";
             // 
-            // loteProduto
+            // colTelefone
             // 
-            this.loteProduto.FillWeight = 77.14286F;
-            this.loteProduto.HeaderText = "Email";
-            this.loteProduto.MinimumWidth = 6;
-            this.loteProduto.Name = "loteProduto";
+            this.colTelefone.FillWeight = 77.14286F;
+            this.colTelefone.HeaderText = "Telefone";
+            this.colTelefone.MinimumWidth = 6;
+            this.colTelefone.Name = "colTelefone";
             // 
-            // dataValidadeProduto
+            // colEmail
             // 
-            this.dataValidadeProduto.FillWeight = 77.14286F;
-            this.dataValidadeProduto.HeaderText = "Endereço";
-            this.dataValidadeProduto.MinimumWidth = 6;
-            this.dataValidadeProduto.Name = "dataValidadeProduto";
+            this.colEmail.FillWeight = 77.14286F;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 6;
+            this.colEmail.Name = "colEmail";
             // 
-            // quantidadeProduto
+            // colEndereco
             // 
-            this.quantidadeProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.quantidadeProduto.HeaderText = "Status";
-            this.quantidadeProduto.MinimumWidth = 6;
-            this.quantidadeProduto.Name = "quantidadeProduto";
-            this.quantidadeProduto.Width = 87;
+            this.colEndereco.FillWeight = 77.14286F;
+            this.colEndereco.HeaderText = "Endereço";
+            this.colEndereco.MinimumWidth = 6;
+            this.colEndereco.Name = "colEndereco";
             // 
             // UserControlFuncionarios
             // 
@@ -484,13 +482,13 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvListaItemProduto;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selecionarLinhaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProdutoItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProdutoItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargoFuncionario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loteProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataValidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeProduto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBilheteIdentidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEndereco;
     }
 }
