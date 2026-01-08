@@ -64,8 +64,8 @@ namespace PharmaManagerAppDesktop
 
         private void btnMenuClientes_Click(object sender, EventArgs e)
         {
-            CarregarControleDeUsuario(new UserControlListaClientes());
-            labelTituloPainelAtual.Text = "Clientes";
+            //CarregarControleDeUsuario(new UserControlListaClientes());
+            //labelTituloPainelAtual.Text = "Clientes";
         }
 
         private void btnMenuFuncionarios_Click(object sender, EventArgs e)
@@ -76,8 +76,8 @@ namespace PharmaManagerAppDesktop
 
         private void btnMenuNotificacoes_Click(object sender, EventArgs e)
         {
-            CarregarControleDeUsuario(new UserControlNotificacoes());
-            labelTituloPainelAtual.Text = "Notificações";
+            //CarregarControleDeUsuario(new UserControlNotificacoes());
+            //labelTituloPainelAtual.Text = "Notificações";
         }
 
         private void btnMenuConfiguracoes_Click(object sender, EventArgs e)

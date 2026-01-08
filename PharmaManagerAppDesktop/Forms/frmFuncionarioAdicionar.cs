@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.UserControls
 {
-    public partial class frmAdicionarFuncionario : Form
+    public partial class frmFuncionarioAdicionar : Form
     {
         private FuncionarioBD.DadosFuncionario DadosFuncionario = new FuncionarioBD.DadosFuncionario();
-        public frmAdicionarFuncionario()
+        public frmFuncionarioAdicionar()
         {
             InitializeComponent();
         }
@@ -102,6 +102,11 @@ namespace PharmaManagerAppDesktop.UserControls
 
             var Municipios = DadosReferencia.Municipios.FindAll(mun => mun.IdProvincia == IdProvincia);
             cmbMunicipio.DataSource = Municipios;
+        }
+
+        private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

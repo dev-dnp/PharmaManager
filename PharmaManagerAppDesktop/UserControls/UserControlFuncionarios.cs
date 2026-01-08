@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.BaseDeDados;
+using PharmaManagerAppDesktop.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,20 @@ namespace PharmaManagerAppDesktop.UserControls
 {
     public partial class UserControlFuncionarios : UserControl
     {
+
+        public class VisualizacaoTabelaFuncionarios
+        {
+            public int Id { get; set; }
+            public string Nome { get; set; }
+            public string BilheteIdentidade { get; set; }
+            public string Cargo { get; set; }
+            public string Telefone { get; set; }
+            public string Email { get; set; }
+        }
+
+        List<VisualizacaoTabelaFuncionarios> DadosTabela = new List<VisualizacaoTabelaFuncionarios>();
+
+
         public UserControlFuncionarios()
         {
             InitializeComponent();
@@ -19,8 +35,174 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAdicionarFuncionario_Click(object sender, EventArgs e)
         {
-            frmAdicionarFuncionario frmAddFuncionario = new frmAdicionarFuncionario();
+            frmFuncionarioAdicionar frmAddFuncionario = new frmFuncionarioAdicionar();
             frmAddFuncionario.ShowDialog();
+        }
+
+        private void UserControlFuncionarios_Load(object sender, EventArgs e)
+        {
+
+            var Funcionarios = new FuncionarioBD().BuscarTodosFuncionarios();
+
+            foreach(var Funcionario in  Funcionarios)
+            {
+                DadosTabela.Add(new VisualizacaoTabelaFuncionarios
+                {
+                    Nome = Funcionario.Funcionario.Nome,
+                    BilheteIdentidade = Funcionario.Funcionario.BilheteIdentidade,
+                    Cargo = Funcionario.Cargo.Nome,
+                    Email = Funcionario.Funcionario.Email,
+                    Id = Funcionario.Funcionario.IdFuncionario,
+                    Telefone = Funcionario.Funcionario.Telefone,
+
+                });
+            }
+
+
+            dgvListaFuncionarios.AutoGenerateColumns = false;
+
+            colId.DataPropertyName = "Id";
+            colNome.DataPropertyName = "Nome";
+            colBilheteIdentidade.DataPropertyName = "BilheteIdentidade";
+            colCargo.DataPropertyName = "Cargo";
+            colTelefone.DataPropertyName = "Telefone";
+            colEmail.DataPropertyName = "Email";
+
+            dgvListaFuncionarios.DataSource = null;
+            dgvListaFuncionarios.DataSource = DadosTabela;
+        }
+
+        private void Atualizar()
+        {
+            DadosTabela.Clear();
+
+            string pesquisa = txtCampoPesquisa.Text.Trim();
+
+            var Funcionarios = new FuncionarioBD().BuscarTodosFuncionarios(pesquisa);
+
+            foreach (var Funcionario in Funcionarios)
+            {
+                DadosTabela.Add(new VisualizacaoTabelaFuncionarios
+                {
+                    Nome = Funcionario.Funcionario.Nome,
+                    BilheteIdentidade = Funcionario.Funcionario.BilheteIdentidade,
+                    Cargo = Funcionario.Cargo.Nome,
+                    Email = Funcionario.Funcionario.Email,
+                    Id = Funcionario.Funcionario.IdFuncionario,
+                    Telefone = Funcionario.Funcionario.Telefone,
+
+                });
+            }
+
+            dgvListaFuncionarios.DataSource = null;
+            dgvListaFuncionarios.DataSource = DadosTabela;
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            Atualizar();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            txtCampoPesquisa.Clear();
+            Atualizar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var IdsSelecionados = new List<int>();
+
+            foreach (DataGridViewRow linha in dgvListaFuncionarios.Rows)
+            {
+                bool selecionado = Convert.ToBoolean(linha.Cells["check"].Value);
+
+                if (selecionado)
+                {
+                    IdsSelecionados.Add(Convert.ToInt32(linha.Cells["colId"].Value));
+                }
+            }
+
+            if (IdsSelecionados.Count == 1)
+            {
+                var Funcionario = new FuncionarioBD().BuscarFuncionarioPorId(IdsSelecionados.First());
+
+                //var ProdutoSelecionado = Produtos.Find(p => p.Produto.IdProduto == IdsSelecionados.First());
+
+                frmFuncionarioEditar janela = new frmFuncionarioEditar(Funcionario);
+
+                if (janela.ShowDialog() == DialogResult.OK)
+                {
+                    //Atualizar();
+                    //MessageBox.Show("Operação realizada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Selecione um item por vez",
+                    "Alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var IdsSelecionados = new List<int>();
+
+            foreach (DataGridViewRow linha in dgvListaFuncionarios.Rows)
+            {
+                bool selecionado = Convert.ToBoolean(linha.Cells["check"].Value);
+
+                if (selecionado)
+                {
+                    IdsSelecionados.Add(Convert.ToInt32(linha.Cells["colId"].Value));
+                }
+            }
+
+            if (IdsSelecionados.Count > 0)
+            {
+
+                var resposta = MessageBox.Show(
+                    "Tem certeza que quer eliminar os registos selecionados?",
+                    "Informação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if(resposta == DialogResult.No ) return;
+
+                bool retorno = new FuncionarioBD().EliminarFuncionario(IdsSelecionados);
+
+                if (retorno)
+                {
+                    MessageBox.Show(
+                        "Registo eliminado com sucesso!",
+                        "Informação",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    Atualizar();
+
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Selecione pelo menos um item",
+                    "Alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
         }
     }
 }

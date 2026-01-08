@@ -118,6 +118,12 @@
     <Compile Include="Forms\frmFornecedorEditar.Designer.cs">
       <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmFuncionarioEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFuncionarioEditar.Designer.cs">
+      <DependentUpon>frmFuncionarioEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProdutoEditarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,17 +198,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\frmAdicionarFuncionario.cs">
+    <Compile Include="Forms\frmFuncionarioAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAdicionarFuncionario.Designer.cs">
-      <DependentUpon>frmAdicionarFuncionario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlListaClientes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlListaClientes.Designer.cs">
-      <DependentUpon>UserControlListaClientes.cs</DependentUpon>
+    <Compile Include="Forms\frmFuncionarioAdicionar.Designer.cs">
+      <DependentUpon>frmFuncionarioAdicionar.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlConfiguracoes.cs">
       <SubType>UserControl</SubType>
@@ -246,12 +246,6 @@
     <Compile Include="UserControls\UserControlProdutos.Designer.cs">
       <DependentUpon>UserControlProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlNotificacoes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlNotificacoes.Designer.cs">
-      <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlVendas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFornecedorEditar.resx">
       <DependentUpon>frmFornecedorEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFuncionarioEditar.resx">
+      <DependentUpon>frmFuncionarioEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProdutoEditarProduto.resx">
       <DependentUpon>frmProdutoEditarProduto.cs</DependentUpon>
@@ -323,11 +320,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\frmAdicionarFuncionario.resx">
-      <DependentUpon>frmAdicionarFuncionario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlListaClientes.resx">
-      <DependentUpon>UserControlListaClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmFuncionarioAdicionar.resx">
+      <DependentUpon>frmFuncionarioAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlConfiguracoes.resx">
       <DependentUpon>UserControlConfiguracoes.cs</DependentUpon>
@@ -349,9 +343,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlProdutos.resx">
       <DependentUpon>UserControlProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlNotificacoes.resx">
-      <DependentUpon>UserControlNotificacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlVendas.resx">
       <DependentUpon>UserControlVendas.cs</DependentUpon>

@@ -254,14 +254,14 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     }
                 }
 
-                return true;
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("Erro ao eliminar o produto: " + ex.Message);
-                if (ex.Number == 547) return false;
-                return false;
-            }
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Erro ao eliminar o produto: " + ex.Message);
+                    if (ex.Number == 547) return false;
+                    return false;
+                }
         }
     }
 }

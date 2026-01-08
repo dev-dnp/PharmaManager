@@ -13,7 +13,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         DADOS PARA SE CONECTAR À BASE DE DADOS
         ======================================================================================== */
 
-        private static string Source= "localhost";
+        private static string Source= "localhost,1500";
         private static string NomeBaseDeDados= "PHARMA_MANAGER";
         private static string Usuario= "sa";
         private static string Senha = "MinhaSenha!123";

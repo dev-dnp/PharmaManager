@@ -33,11 +33,11 @@
             this.btnMenuDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuVendas = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFaturas = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMenuProdutos = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuEstoque = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFornecedores = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuFuncionarios = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuConfiguracoes = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMenuProdutos = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -183,6 +183,34 @@
             this.btnMenuFaturas.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenuFaturas.Click += new System.EventHandler(this.btnMenuFaturas_Click);
             // 
+            // btnMenuProdutos
+            // 
+            this.btnMenuProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenuProdutos.BackColor = System.Drawing.Color.White;
+            this.btnMenuProdutos.BorderColor = System.Drawing.Color.Teal;
+            this.btnMenuProdutos.BorderRadius = 4;
+            this.btnMenuProdutos.BorderThickness = 1;
+            this.btnMenuProdutos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenuProdutos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenuProdutos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMenuProdutos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMenuProdutos.FillColor = System.Drawing.Color.White;
+            this.btnMenuProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuProdutos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnMenuProdutos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.btnMenuProdutos.Image = global::PharmaManagerAppDesktop.Properties.Resources.package;
+            this.btnMenuProdutos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenuProdutos.Location = new System.Drawing.Point(4, 256);
+            this.btnMenuProdutos.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
+            this.btnMenuProdutos.Name = "btnMenuProdutos";
+            this.btnMenuProdutos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnMenuProdutos.Size = new System.Drawing.Size(279, 57);
+            this.btnMenuProdutos.TabIndex = 15;
+            this.btnMenuProdutos.Text = "Produtos";
+            this.btnMenuProdutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenuProdutos.Click += new System.EventHandler(this.btnMenuProdutos_Click);
+            // 
             // btnMenuEstoque
             // 
             this.btnMenuEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -209,7 +237,6 @@
             this.btnMenuEstoque.TabIndex = 6;
             this.btnMenuEstoque.Text = "Estoque";
             this.btnMenuEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuEstoque.Visible = false;
             this.btnMenuEstoque.Click += new System.EventHandler(this.btnMenuEstoque_Click);
             // 
             // btnMenuFornecedores
@@ -295,34 +322,6 @@
             this.btnMenuConfiguracoes.Text = "Configurações";
             this.btnMenuConfiguracoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMenuConfiguracoes.Click += new System.EventHandler(this.btnMenuConfiguracoes_Click);
-            // 
-            // btnMenuProdutos
-            // 
-            this.btnMenuProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenuProdutos.BackColor = System.Drawing.Color.White;
-            this.btnMenuProdutos.BorderColor = System.Drawing.Color.Teal;
-            this.btnMenuProdutos.BorderRadius = 4;
-            this.btnMenuProdutos.BorderThickness = 1;
-            this.btnMenuProdutos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuProdutos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenuProdutos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenuProdutos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenuProdutos.FillColor = System.Drawing.Color.White;
-            this.btnMenuProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuProdutos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnMenuProdutos.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.btnMenuProdutos.Image = global::PharmaManagerAppDesktop.Properties.Resources.package;
-            this.btnMenuProdutos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuProdutos.Location = new System.Drawing.Point(4, 256);
-            this.btnMenuProdutos.Margin = new System.Windows.Forms.Padding(4, 10, 4, 4);
-            this.btnMenuProdutos.Name = "btnMenuProdutos";
-            this.btnMenuProdutos.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnMenuProdutos.Size = new System.Drawing.Size(279, 57);
-            this.btnMenuProdutos.TabIndex = 15;
-            this.btnMenuProdutos.Text = "Produtos";
-            this.btnMenuProdutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenuProdutos.Click += new System.EventHandler(this.btnMenuProdutos_Click);
             // 
             // guna2Panel2
             // 
