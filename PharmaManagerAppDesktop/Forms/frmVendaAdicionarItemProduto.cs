@@ -56,6 +56,7 @@ namespace PharmaManagerAppDesktop.Forms
         {
 
             int Posicao = cbListaProdutos.SelectedIndex;
+
             if (Posicao == -1) return;
 
             // Buscar dados do produto

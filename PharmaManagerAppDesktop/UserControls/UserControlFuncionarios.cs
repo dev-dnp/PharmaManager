@@ -35,8 +35,19 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAdicionarFuncionario_Click(object sender, EventArgs e)
         {
-            frmFuncionarioAdicionar frmAddFuncionario = new frmFuncionarioAdicionar();
-            frmAddFuncionario.ShowDialog();
+            frmFuncionarioAdicionar frm = new frmFuncionarioAdicionar();
+
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(
+                    "Adicionado com sucesso!",
+                    "Mensagem de confirmação",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                Atualizar();
+            }
         }
 
         private void UserControlFuncionarios_Load(object sender, EventArgs e)
@@ -127,23 +138,25 @@ namespace PharmaManagerAppDesktop.UserControls
             {
                 var Funcionario = new FuncionarioBD().BuscarFuncionarioPorId(IdsSelecionados.First());
 
-                //var ProdutoSelecionado = Produtos.Find(p => p.Produto.IdProduto == IdsSelecionados.First());
+                frmFuncionarioEditar frm = new frmFuncionarioEditar(Funcionario);
 
-                frmFuncionarioEditar janela = new frmFuncionarioEditar(Funcionario);
-
-                if (janela.ShowDialog() == DialogResult.OK)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    //Atualizar();
-                    //MessageBox.Show("Operação realizada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                    return;
+                    MessageBox.Show(
+                        "Editado com sucesso!",
+                        "Mensagem de confirmação",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    Atualizar();
                 }
             }
             else
             {
                 MessageBox.Show(
                     "Selecione um item por vez",
-                    "Alerta",
+                    "Mensagem de alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
@@ -170,12 +183,12 @@ namespace PharmaManagerAppDesktop.UserControls
 
                 var resposta = MessageBox.Show(
                     "Tem certeza que quer eliminar os registos selecionados?",
-                    "Informação",
+                    "Mensagem de alerta",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );
 
-                if(resposta == DialogResult.No ) return;
+                if(resposta == DialogResult.No) return;
 
                 bool retorno = new FuncionarioBD().EliminarFuncionario(IdsSelecionados);
 
@@ -183,13 +196,12 @@ namespace PharmaManagerAppDesktop.UserControls
                 {
                     MessageBox.Show(
                         "Registo eliminado com sucesso!",
-                        "Informação",
+                        "Mensagem de confirmação",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
+                        MessageBoxIcon.Information
                     );
 
                     Atualizar();
-
                     return;
                 }
             }
@@ -197,7 +209,7 @@ namespace PharmaManagerAppDesktop.UserControls
             {
                 MessageBox.Show(
                     "Selecione pelo menos um item",
-                    "Alerta",
+                    "Mensagem de alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );

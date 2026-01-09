@@ -1,97 +1,61 @@
 ﻿using PharmaManagerAppDesktop.BaseDeDados;
+using PharmaManagerAppDesktop.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PharmaManagerAppDesktop.BaseDeDados.EstoqueBD;
+using static PharmaManagerAppDesktop.Forms.frmEstoqueAdicionarQuantidade;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmEstoqueAdicionarQuantidade : Form
+    public partial class frmEstoqueEditar : Form
     {
-        public frmEstoqueAdicionarQuantidade()
+        class ComboBoxValor
+        {
+            public int Id { get; set; }
+            public string Nome { get; set; }
+        }
+
+        DetalheProdutoDisponivel DadosEstoque;
+
+        List<ComboBoxValor> FornecedoresRegistados = new List<ComboBoxValor>();
+        public frmEstoqueEditar(EstoqueBD.DetalheProdutoDisponivel dados)
         {
             InitializeComponent();
-        }
 
-        public class ProdutoDetalhes
-        {
-            public int Id { get; set; }
-            public string Nome { get; set; }
-        }
+            DadosEstoque = dados;
 
-        public class FornecedorDetalhes
-        {
-            public int Id { get; set; }
-            public string Nome { get; set; }
-        }
-
-        public List<ProdutoDetalhes> ProdutosRegistados = new List<ProdutoDetalhes>();
-        public List<FornecedorDetalhes> FornecedoresRegistados = new List<FornecedorDetalhes>();
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int codigo = int.Parse(txtCodigoProduto.Text.Trim());
-
-                if (codigo <= 0) throw new Exception();
-
-                var produtoEncontrado = ProdutosRegistados.Find(p => p.Id == codigo);
-
-                if(produtoEncontrado == null)
-                {
-                    MessageBox.Show("Código não encontrado!"); 
-                    return;
-                }
-
-                cmbProdutos.SelectedValue = produtoEncontrado.Id;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Código inválido! Use um número maior que zero.");
-                Console.WriteLine("Informação do erro: \n" + ex);
-            }
-        }
-
-        private void frmEstoqueAdicionarQuantidade_Load(object sender, EventArgs e)
-        {
-            var Produtos = new ProdutoBD().BuscarProdutos();
             var Fornecedores = new FornecedorBD().BuscarTodosFornecedores();
 
-            foreach (var Produto in Produtos)
-            {
-                ProdutosRegistados.Add(new ProdutoDetalhes
-                {
-                    Id = Produto.Produto.IdProduto,
-                    Nome = Produto.Produto.Nome,
-                });
-            }
 
             foreach (var Fornecedor in Fornecedores)
             {
-                FornecedoresRegistados.Add(new FornecedorDetalhes
+                FornecedoresRegistados.Add(new ComboBoxValor
                 {
                     Id = Fornecedor.Fornecedor.IdFornecedor,
-                    Nome = Fornecedor.Fornecedor.Nome,
+                    Nome = Fornecedor.Fornecedor.Nome
                 });
             }
+        }
 
-            cmbProdutos.ValueMember = "Id";
-            cmbProdutos.DisplayMember = "Nome";
+        private void frmEstoqueEditar_Load(object sender, EventArgs e)
+        {
+            txtLote.Text = DadosEstoque.Lote.IdLote.ToString();
+            txtNomeProduto.Text = DadosEstoque.Produto.Nome;
+            dtpDataValidade.Value = DadosEstoque.Lote.DataValidade;
+            txtQuantidade.Text = DadosEstoque.Estoque.Quantidade.ToString();
 
             cmbFornecedor.ValueMember = "Id";
             cmbFornecedor.DisplayMember = "Nome";
-
-            cmbProdutos.DataSource = ProdutosRegistados;
             cmbFornecedor.DataSource = FornecedoresRegistados;
 
-            dtpDataValidade.MinDate = DateTime.Now.AddDays(1);
+            cmbFornecedor.SelectedValue = DadosEstoque.Lote.IdFornecedor;
 
         }
 
@@ -99,14 +63,14 @@ namespace PharmaManagerAppDesktop.Forms
         {
             try
             {
-                int IdProduto = Convert.ToInt32(cmbProdutos.SelectedValue);
+                int IdProduto = DadosEstoque.Produto.IdProduto;
                 int Quantidade = Convert.ToInt32(txtQuantidade.Text.Trim());
                 DateTime DataValidade = dtpDataValidade.Value;
                 int IdFornecedor = Convert.ToInt32(cmbFornecedor.SelectedValue);
                 int IdLote = Convert.ToInt32(txtLote.Text.Trim());
 
 
-                if (cmbProdutos.SelectedValue == null || cmbFornecedor.SelectedValue == null || string.IsNullOrWhiteSpace(txtQuantidade.Text) || string.IsNullOrWhiteSpace(txtLote.Text) || Quantidade <= 0)
+                if (cmbFornecedor.SelectedValue == null || string.IsNullOrWhiteSpace(txtQuantidade.Text) || string.IsNullOrWhiteSpace(txtLote.Text) || Quantidade <= 0)
                 {
                     MessageBox.Show(
                         "Preencha corretamente todos os campos!",
@@ -118,7 +82,7 @@ namespace PharmaManagerAppDesktop.Forms
                 }
 
 
-                var retorno = new EstoqueBD().AdicionarQuantidadeEstoque(new EstoqueBD.DetalheProdutoDisponivel
+                var retorno = new EstoqueBD().AtualizarEstoque(new EstoqueBD.DetalheProdutoDisponivel
                 {
                     Produto = new Entidades.ProdutoEntidade
                     {
@@ -126,6 +90,7 @@ namespace PharmaManagerAppDesktop.Forms
                     },
                     Estoque = new Entidades.EstoqueEntidade
                     {
+                        IdEstoque = DadosEstoque.Estoque.IdEstoque,
                         Quantidade = Quantidade,
                     },
                     Lote = new Entidades.LoteEntidade
@@ -134,7 +99,10 @@ namespace PharmaManagerAppDesktop.Forms
                         DataValidade = DataValidade,
                         IdFornecedor = IdFornecedor,
                     },
-
+                    Fornecedor = new Entidades.FornecedorEntidade
+                    {
+                        Nome = cmbFornecedor.GetItemText(cmbFornecedor.SelectedItem)
+                    }
 
                 });
 
@@ -152,8 +120,6 @@ namespace PharmaManagerAppDesktop.Forms
                         MessageBoxIcon.Error
                     );
                 }
-
-
             }
             catch (Exception ex)
             {

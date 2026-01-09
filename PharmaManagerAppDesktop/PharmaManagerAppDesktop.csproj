@@ -73,7 +73,7 @@
     <Compile Include="Entidades\FornecedorEntidade.cs" />
     <Compile Include="Entidades\FuncionarioEntidade.cs" />
     <Compile Include="Entidades\ItemFaturaEntidade.cs" />
-    <Compile Include="Entidades\Lote.cs" />
+    <Compile Include="Entidades\LoteEntidade.cs" />
     <Compile Include="Entidades\MetodoPagamentoEntidade.cs" />
     <Compile Include="Entidades\MovimentoEstoque.cs" />
     <Compile Include="Entidades\MunicipioEntidade.cs" />
@@ -99,6 +99,12 @@
     </Compile>
     <Compile Include="Forms\frmEstoqueAdicionarQuantidade.Designer.cs">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEstoqueEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEstoqueEditar.Designer.cs">
+      <DependentUpon>frmEstoqueEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmFacturaCancelarFatura.cs">
       <SubType>Form</SubType>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEstoqueEditar.resx">
+      <DependentUpon>frmEstoqueEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFacturaCancelarFatura.resx">
       <DependentUpon>frmFacturaCancelarFatura.cs</DependentUpon>

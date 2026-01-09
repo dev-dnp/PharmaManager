@@ -123,14 +123,16 @@ namespace PharmaManagerAppDesktop.Forms
 
             if(retorno)
             {
+                this.DialogResult = DialogResult.OK;
+
                 this.Close();
 
-                MessageBox.Show(
-                    "Editado com sucesso!",
-                    "Mensagem de confirmação",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                //MessageBox.Show(
+                //    "Editado com sucesso!",
+                //    "Mensagem de confirmação",
+                //    MessageBoxButtons.OK,
+                //    MessageBoxIcon.Information
+                //);
                 return;
             }
             else

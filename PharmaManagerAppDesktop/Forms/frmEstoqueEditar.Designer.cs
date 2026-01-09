@@ -1,6 +1,6 @@
 ﻿namespace PharmaManagerAppDesktop.Forms
 {
-    partial class frmEstoqueAdicionarQuantidade
+    partial class frmEstoqueEditar
     {
         /// <summary>
         /// Required designer variable.
@@ -40,22 +40,14 @@
             this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cmbFornecedor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnPesquisar = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtQuantidade = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtNomeProduto = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cmbProdutos = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtCodigoProduto = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVendaExecutarEditarItemProduto = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,10 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,25 +72,21 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.guna2Panel6);
             this.panel2.Controls.Add(this.guna2Panel8);
-            this.panel2.Controls.Add(this.btnPesquisar);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.guna2Panel3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.guna2Panel4);
-            this.panel2.Controls.Add(this.guna2Panel2);
-            this.panel2.Controls.Add(this.guna2Panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(669, 576);
-            this.panel2.TabIndex = 181;
+            this.panel2.Size = new System.Drawing.Size(672, 462);
+            this.panel2.TabIndex = 184;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(222, 241);
+            this.label8.Location = new System.Drawing.Point(222, 139);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 23);
             this.label8.TabIndex = 248;
@@ -117,7 +101,7 @@
             this.dtpDataValidade.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.dtpDataValidade.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpDataValidade.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDataValidade.Location = new System.Drawing.Point(226, 279);
+            this.dtpDataValidade.Location = new System.Drawing.Point(226, 177);
             this.dtpDataValidade.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataValidade.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDataValidade.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -130,7 +114,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(29, 452);
+            this.label6.Location = new System.Drawing.Point(29, 350);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 23);
             this.label6.TabIndex = 246;
@@ -147,7 +131,7 @@
             this.guna2Panel7.Controls.Add(this.guna2PictureBox7);
             this.guna2Panel7.Controls.Add(this.txtLote);
             this.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel7.Location = new System.Drawing.Point(33, 484);
+            this.guna2Panel7.Location = new System.Drawing.Point(33, 382);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(601, 53);
             this.guna2Panel7.TabIndex = 245;
@@ -188,6 +172,7 @@
             this.txtLote.Name = "txtLote";
             this.txtLote.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtLote.PlaceholderText = "Código";
+            this.txtLote.ReadOnly = true;
             this.txtLote.SelectedText = "";
             this.txtLote.Size = new System.Drawing.Size(559, 44);
             this.txtLote.TabIndex = 62;
@@ -196,7 +181,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(33, 347);
+            this.label5.Location = new System.Drawing.Point(33, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 23);
             this.label5.TabIndex = 244;
@@ -212,7 +197,7 @@
             this.guna2Panel6.Controls.Add(this.guna2PictureBox8);
             this.guna2Panel6.Controls.Add(this.cmbFornecedor);
             this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel6.Location = new System.Drawing.Point(35, 380);
+            this.guna2Panel6.Location = new System.Drawing.Point(35, 278);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(599, 55);
             this.guna2Panel6.TabIndex = 243;
@@ -241,7 +226,7 @@
             this.cmbFornecedor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbFornecedor.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cmbFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbFornecedor.ForeColor = System.Drawing.Color.Black;
             this.cmbFornecedor.ItemHeight = 30;
             this.cmbFornecedor.Location = new System.Drawing.Point(42, 8);
             this.cmbFornecedor.Margin = new System.Windows.Forms.Padding(4);
@@ -254,37 +239,17 @@
             this.guna2Panel8.AutoSize = true;
             this.guna2Panel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.guna2Panel8.Location = new System.Drawing.Point(630, 377);
+            this.guna2Panel8.Location = new System.Drawing.Point(630, 275);
             this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(0, 0);
             this.guna2Panel8.TabIndex = 242;
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.White;
-            this.btnPesquisar.BackgroundImage = global::PharmaManagerAppDesktop.Properties.Resources.magnifying_glass_fill__1_;
-            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPesquisar.BorderRadius = 4;
-            this.btnPesquisar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPesquisar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPesquisar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPesquisar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPesquisar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Image = global::PharmaManagerAppDesktop.Properties.Resources.search__1_;
-            this.btnPesquisar.Location = new System.Drawing.Point(570, 63);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(60, 53);
-            this.btnPesquisar.TabIndex = 165;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(30, 241);
+            this.label4.Location = new System.Drawing.Point(30, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 23);
             this.label4.TabIndex = 156;
@@ -301,7 +266,7 @@
             this.guna2Panel3.Controls.Add(this.guna2PictureBox3);
             this.guna2Panel3.Controls.Add(this.txtQuantidade);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(34, 279);
+            this.guna2Panel3.Location = new System.Drawing.Point(34, 177);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(170, 53);
             this.guna2Panel3.TabIndex = 155;
@@ -350,21 +315,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(30, 131);
+            this.label3.Location = new System.Drawing.Point(30, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 23);
             this.label3.TabIndex = 154;
             this.label3.Text = "Nome do produto";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(29, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 23);
-            this.label1.TabIndex = 153;
-            this.label1.Text = "Código do produto";
             // 
             // guna2Panel4
             // 
@@ -373,13 +328,41 @@
             this.guna2Panel4.BorderColor = System.Drawing.Color.Gray;
             this.guna2Panel4.BorderRadius = 3;
             this.guna2Panel4.BorderThickness = 1;
+            this.guna2Panel4.Controls.Add(this.txtNomeProduto);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
-            this.guna2Panel4.Controls.Add(this.cmbProdutos);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(34, 163);
+            this.guna2Panel4.Location = new System.Drawing.Point(34, 61);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(600, 55);
             this.guna2Panel4.TabIndex = 152;
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtNomeProduto.BorderColor = System.Drawing.Color.Gray;
+            this.txtNomeProduto.BorderRadius = 3;
+            this.txtNomeProduto.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtNomeProduto.BorderThickness = 0;
+            this.txtNomeProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNomeProduto.DefaultText = "";
+            this.txtNomeProduto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNomeProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNomeProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNomeProduto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNomeProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtNomeProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNomeProduto.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtNomeProduto.ForeColor = System.Drawing.Color.Black;
+            this.txtNomeProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNomeProduto.Location = new System.Drawing.Point(43, 5);
+            this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNomeProduto.PlaceholderText = "Nome do produto";
+            this.txtNomeProduto.ReadOnly = true;
+            this.txtNomeProduto.SelectedText = "";
+            this.txtNomeProduto.Size = new System.Drawing.Size(553, 44);
+            this.txtNomeProduto.TabIndex = 63;
             // 
             // guna2PictureBox4
             // 
@@ -394,145 +377,14 @@
             this.guna2PictureBox4.TabIndex = 60;
             this.guna2PictureBox4.TabStop = false;
             // 
-            // cmbProdutos
-            // 
-            this.cmbProdutos.BackColor = System.Drawing.Color.Transparent;
-            this.cmbProdutos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.cmbProdutos.BorderRadius = 3;
-            this.cmbProdutos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbProdutos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProdutos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.cmbProdutos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbProdutos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbProdutos.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cmbProdutos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbProdutos.ItemHeight = 30;
-            this.cmbProdutos.Location = new System.Drawing.Point(42, 8);
-            this.cmbProdutos.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbProdutos.Name = "cmbProdutos";
-            this.cmbProdutos.Size = new System.Drawing.Size(554, 36);
-            this.cmbProdutos.TabIndex = 31;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.AutoSize = true;
-            this.guna2Panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel2.BorderRadius = 3;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel2.Controls.Add(this.txtCodigoProduto);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(33, 63);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(519, 53);
-            this.guna2Panel2.TabIndex = 150;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::PharmaManagerAppDesktop.Properties.Resources.hash_fill;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(14, 17);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 60;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // txtCodigoProduto
-            // 
-            this.txtCodigoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.txtCodigoProduto.BorderColor = System.Drawing.Color.Gray;
-            this.txtCodigoProduto.BorderRadius = 3;
-            this.txtCodigoProduto.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtCodigoProduto.BorderThickness = 0;
-            this.txtCodigoProduto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodigoProduto.DefaultText = "";
-            this.txtCodigoProduto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCodigoProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCodigoProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCodigoProduto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCodigoProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.txtCodigoProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCodigoProduto.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtCodigoProduto.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCodigoProduto.Location = new System.Drawing.Point(39, 4);
-            this.txtCodigoProduto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCodigoProduto.Name = "txtCodigoProduto";
-            this.txtCodigoProduto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCodigoProduto.PlaceholderText = "Código do produto";
-            this.txtCodigoProduto.SelectedText = "";
-            this.txtCodigoProduto.Size = new System.Drawing.Size(476, 44);
-            this.txtCodigoProduto.TabIndex = 62;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.AutoSize = true;
-            this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.BorderRadius = 3;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(33, 63);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(232, 53);
-            this.guna2Panel1.TabIndex = 151;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::PharmaManagerAppDesktop.Properties.Resources.user_fill;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(14, 17);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 60;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.BorderRadius = 3;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.guna2TextBox1.BorderThickness = 0;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(38, 4);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox1.PlaceholderText = "Código do produto";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(190, 44);
-            this.guna2TextBox1.TabIndex = 62;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnVendaExecutarEditarItemProduto);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 631);
+            this.panel1.Location = new System.Drawing.Point(0, 517);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 86);
-            this.panel1.TabIndex = 180;
+            this.panel1.Size = new System.Drawing.Size(672, 86);
+            this.panel1.TabIndex = 183;
             // 
             // btnVendaExecutarEditarItemProduto
             // 
@@ -549,7 +401,7 @@
             this.btnVendaExecutarEditarItemProduto.Name = "btnVendaExecutarEditarItemProduto";
             this.btnVendaExecutarEditarItemProduto.Size = new System.Drawing.Size(599, 55);
             this.btnVendaExecutarEditarItemProduto.TabIndex = 172;
-            this.btnVendaExecutarEditarItemProduto.Text = "Adicionar";
+            this.btnVendaExecutarEditarItemProduto.Text = "Editar";
             this.btnVendaExecutarEditarItemProduto.Click += new System.EventHandler(this.btnVendaExecutarEditarItemProduto_Click);
             // 
             // label2
@@ -560,25 +412,24 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(669, 55);
-            this.label2.TabIndex = 179;
-            this.label2.Text = "ADICIONAR QUANTIDADE NO ESTOQUE";
+            this.label2.Size = new System.Drawing.Size(672, 55);
+            this.label2.TabIndex = 182;
+            this.label2.Text = "EDITAR ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // frmEstoqueAdicionarQuantidade
+            // frmEstoqueEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 717);
+            this.ClientSize = new System.Drawing.Size(672, 603);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmEstoqueAdicionarQuantidade";
+            this.Name = "frmEstoqueEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aidiconar quantidade no Estoque";
-            this.Load += new System.EventHandler(this.frmEstoqueAdicionarQuantidade_Load);
+            this.Load += new System.EventHandler(this.frmEstoqueEditar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
@@ -589,10 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -601,6 +448,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataValidade;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
+        private Guna.UI2.WinForms.Guna2TextBox txtLote;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbFornecedor;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
@@ -608,28 +466,9 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbProdutos;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnVendaExecutarEditarItemProduto;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button btnPesquisar;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2TextBox txtCodigoProduto;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbFornecedor;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
-        private Guna.UI2.WinForms.Guna2TextBox txtLote;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDataValidade;
+        private Guna.UI2.WinForms.Guna2TextBox txtNomeProduto;
     }
 }
