@@ -31,13 +31,13 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            frmAlterarSenha frmSenha = new frmAlterarSenha();
+            frmConfiguracaoAlterarSenha frmSenha = new frmConfiguracaoAlterarSenha();
             frmSenha.ShowDialog();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            frmAtribuirUsuario frmAddAtribuirUsuario = new frmAtribuirUsuario();
+            frmConfiguracaoAtribuirUsuario frmAddAtribuirUsuario = new frmConfiguracaoAtribuirUsuario();
             frmAddAtribuirUsuario.ShowDialog();
         }
 
@@ -48,7 +48,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnConfiguracaoAtivarDesativarUsuario_Click(object sender, EventArgs e)
         {
-            frmAtivarDesativarUsuario frmAddDesativarAtivarUsuario = new frmAtivarDesativarUsuario();
+            frmConfiguracaoAtivarDesativarUsuario frmAddDesativarAtivarUsuario = new frmConfiguracaoAtivarDesativarUsuario();
             frmAddDesativarAtivarUsuario.ShowDialog();
         }
     }

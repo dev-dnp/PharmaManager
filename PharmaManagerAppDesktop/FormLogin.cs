@@ -14,7 +14,6 @@ namespace PharmaManagerAppDesktop
 {
     public partial class FormLogin : Form
     {
-
         public FormLogin()
         {
             InitializeComponent();
@@ -56,10 +55,8 @@ namespace PharmaManagerAppDesktop
                 return;
             }
 
-
             // Buscar usuario na base de dados
-            UsuarioEntidade usuario = new UsuarioBD().BuscarUsuarioPorEmailESenha(txtEmail.Text, txtSenha.Text);
-
+            UsuarioEntidade usuario = new UsuarioBD().AutenticarUsuario(txtEmail.Text, txtSenha.Text);
 
             // Caso o usuário não exista
             if (usuario == null)
@@ -70,6 +67,19 @@ namespace PharmaManagerAppDesktop
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+                pictureLoading.Visible = false;
+                return;
+            }
+
+            if(!usuario.Ativo)
+            {
+                MessageBox.Show(
+                    "Acesso bloqueado! Contacte o Administrador",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
                 pictureLoading.Visible = false;
                 return;
             }

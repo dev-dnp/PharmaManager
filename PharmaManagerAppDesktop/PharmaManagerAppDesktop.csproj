@@ -154,23 +154,23 @@
     <Compile Include="Forms\frmVendaAdicionarItemProduto.Designer.cs">
       <DependentUpon>frmVendaAdicionarItemProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAlterarSenha.cs">
+    <Compile Include="Forms\frmConfiguracaoAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAlterarSenha.Designer.cs">
-      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    <Compile Include="Forms\frmConfiguracaoAlterarSenha.Designer.cs">
+      <DependentUpon>frmConfiguracaoAlterarSenha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAtivarDesativarUsuario.cs">
+    <Compile Include="Forms\frmConfiguracaoAtivarDesativarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAtivarDesativarUsuario.Designer.cs">
-      <DependentUpon>frmAtivarDesativarUsuario.cs</DependentUpon>
+    <Compile Include="Forms\frmConfiguracaoAtivarDesativarUsuario.Designer.cs">
+      <DependentUpon>frmConfiguracaoAtivarDesativarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAtribuirUsuario.cs">
+    <Compile Include="Forms\frmConfiguracaoAtribuirUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAtribuirUsuario.Designer.cs">
-      <DependentUpon>frmAtribuirUsuario.cs</DependentUpon>
+    <Compile Include="Forms\frmConfiguracaoAtribuirUsuario.Designer.cs">
+      <DependentUpon>frmConfiguracaoAtribuirUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDadosOrganizacao.cs">
       <SubType>Form</SubType>
@@ -295,14 +295,14 @@
     <EmbeddedResource Include="Forms\frmVendaAdicionarItemProduto.resx">
       <DependentUpon>frmVendaAdicionarItemProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAlterarSenha.resx">
-      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmConfiguracaoAlterarSenha.resx">
+      <DependentUpon>frmConfiguracaoAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAtivarDesativarUsuario.resx">
-      <DependentUpon>frmAtivarDesativarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmConfiguracaoAtivarDesativarUsuario.resx">
+      <DependentUpon>frmConfiguracaoAtivarDesativarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAtribuirUsuario.resx">
-      <DependentUpon>frmAtribuirUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmConfiguracaoAtribuirUsuario.resx">
+      <DependentUpon>frmConfiguracaoAtribuirUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDadosOrganizacao.resx">
       <DependentUpon>frmDadosOrganizacao.cs</DependentUpon>

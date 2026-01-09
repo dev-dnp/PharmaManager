@@ -12,7 +12,7 @@ namespace PharmaManagerAppDesktop.Entidades
         public string Nome { get; set; }
         public string BilheteIdentidade { get; set; }
         public DateTime DataNascimento { get; set; }
-        public int? IdUsuario { get; set; }
+        public int IdUsuario { get; set; }
         public int IdCargo { get; set; }
         public int? IdEndereco { get; set; }
         public string Telefone { get; set; }
