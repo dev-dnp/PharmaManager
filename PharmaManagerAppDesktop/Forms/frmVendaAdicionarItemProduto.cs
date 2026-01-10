@@ -126,7 +126,7 @@ namespace PharmaManagerAppDesktop.Forms
 
             try
             {
-                int Quantidade = int.Parse(txtQuantidade.Text);
+                int Quantidade = String.IsNullOrWhiteSpace(txtQuantidade.Text.Trim()) ? 0 : int.Parse(txtQuantidade.Text);
 
                 if(Quantidade > ProdutoSelecionado.QuantidadeProduto)
                 {

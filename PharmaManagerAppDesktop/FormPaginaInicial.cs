@@ -108,6 +108,28 @@ namespace PharmaManagerAppDesktop
         private void FormJanelaInicial_Load(object sender, EventArgs e)
         {
             lblNomeUsuario.Text = "Olá, " + SessaoUsuario.Funcionario.Nome + "!";
+
+            GerirPermissoes();
+
+        }
+
+        private void GerirPermissoes()
+        {
+            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+
+            var resposta = IdsPermissao.Contains("1");
+
+            if (resposta == false)
+            {
+                btnMenuEstoque.Visible = false;
+                btnMenuEstoque.Enabled = false;
+
+                btnMenuFuncionarios.Visible = false;
+                btnMenuFuncionarios.Enabled = false;
+
+                btnMenuFornecedores.Visible = false;
+                btnMenuFornecedores.Enabled = false;
+            }
         }
 
         public void SelecionarMenu(string opcaoMenu)
@@ -153,6 +175,38 @@ namespace PharmaManagerAppDesktop
             else
                 btnMenuFuncionarios.FillColor = System.Drawing.Color.FromArgb(255, 255, 255);
 
+        }
+
+        private void btnFecharAplicacao_Click(object sender, EventArgs e)
+        {
+            FecharAplicacao();
+        }
+
+        private void FecharAplicacao()
+        {
+            
+
+        }
+
+        private void btnSairSistema_Click(object sender, EventArgs e)
+        {
+            var resposta = MessageBox.Show(
+                "Tens a certeza que queres abandonar o sistema?",
+                "Mensagem de alerta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resposta == DialogResult.No)
+            {
+                return;
+
+            }
+            else
+            {
+                this.Close();
+
+            }
         }
     }
 }

@@ -87,6 +87,20 @@ namespace PharmaManagerAppDesktop
             // Usuário existe! Assinando sua sessão de usuário 
             FuncionarioBD.DadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
 
+            if(infoFuncionario.Permissao.Nome == null)
+            {
+                MessageBox.Show(
+                    "Não existe nenhuma permissão para este usuário! Contacte o Administrador para atribui-lo.",
+                    "Mensagem",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                pictureLoading.Visible = false;
+                return;
+            }
+
+
             SessaoUsuario.Usuario = usuario;
             SessaoUsuario.Funcionario = infoFuncionario.Funcionario;
             SessaoUsuario.Cargo = infoFuncionario.Cargo;

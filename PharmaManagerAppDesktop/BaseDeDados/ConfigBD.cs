@@ -9,25 +9,20 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public static class ConfigBD
     {
 
-    /*  ========================================================================================
-        DADOS PARA SE CONECTAR À BASE DE DADOS
-        ======================================================================================== */
-
-        private static string Source= "localhost,1500";
-        private static string NomeBaseDeDados= "PHARMA_MANAGER";
-        private static string Usuario= "sa";
-        private static string Senha = "MinhaSenha!123";
+       /*  ========================================================================================
+            EXEMPLO STRING CONEXAO: @$"Server=NOME_SERVIDOR; Database = NOME_BASE_DE_DADOS; Integrated security=True;"
+           ======================================================================================== */
 
 
-    /*  ========================================================================================
-        STRING DE CONEXÃO
-        ======================================================================================== */
+        /*  ========================================================================================
+            STRING DE CONEXÃO
+            ======================================================================================== */
 
         public static string StringConexao { get; set; } = @$"
-                                                            Data Source={Source};
-                                                            Initial Catalog={NomeBaseDeDados};
-                                                            User ID={Usuario};
-                                                            Password={Senha};
+                                                            Data Source=localhost,1500;
+                                                            Initial Catalog=PHARMA_MANAGER;
+                                                            User ID=sa;
+                                                            Password=MinhaSenha!123;
                                                             Persist Security Info=False;
                                                             Pooling=False;
                                                             MultipleActiveResultSets=False;

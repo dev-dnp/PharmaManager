@@ -86,14 +86,14 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 LEFT JOIN (
                                     SELECT
                                         up.ID_USUARIO,
-                                        STRING_AGG(p.NOME, ', ') AS PERMISSOES
+                                        STRING_AGG(p.ID_PERMISSAO, ', ') AS PERMISSOES
                                     FROM TB_USUARIO_PERMISSAO up
                                     JOIN TB_PERMISSAO p ON up.ID_PERMISSAO = p.ID_PERMISSAO
                                     GROUP BY up.ID_USUARIO
                                 ) perm ON perm.ID_USUARIO = usu.ID_USUARIO
 
   
-                                WHERE fun.ID_USUARIO = @idUsuario;";
+                                WHERE fun.ID_USUARIO = @idUsuario";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexao))
                 {

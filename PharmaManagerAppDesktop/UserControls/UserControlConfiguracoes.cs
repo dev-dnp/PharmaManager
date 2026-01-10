@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.BaseDeDados;
+using PharmaManagerAppDesktop.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PharmaManagerAppDesktop.Forms;
 
 namespace PharmaManagerAppDesktop.UserControls
 {
@@ -45,6 +46,42 @@ namespace PharmaManagerAppDesktop.UserControls
         private void btnConfigurarCargo_Click(object sender, EventArgs e)
         {
             frmConfiguracaoCargo frm = new frmConfiguracaoCargo();
+            frm.ShowDialog();
+        }
+
+        private void UserControlConfiguracoes_Load(object sender, EventArgs e)
+        {
+            GerirPermissoes();
+        }
+
+        private void GerirPermissoes()
+        {
+            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+
+            var resposta = IdsPermissao.Contains("1");
+
+            if (resposta == false)
+            {
+                btnAtivarDesativarUsuario.Visible = false;
+                btnAtivarDesativarUsuario.Enabled = false;
+
+                btnAtribuirUsuario.Visible = false;
+                btnAtribuirUsuario.Enabled = false;
+
+                btnConfigurarCargo.Visible = false;
+                btnConfigurarCargo.Enabled = false;
+
+                btnConfigurarCategoria.Visible = false;
+                btnConfigurarCategoria.Enabled = false;
+
+                btnPermissoes.Visible = false;
+                btnPermissoes.Enabled = false;
+            }
+        }
+
+        private void btnPermissoes_Click(object sender, EventArgs e)
+        {
+            frmConfiguracaoPermissao frm = new frmConfiguracaoPermissao();
             frm.ShowDialog();
         }
     }

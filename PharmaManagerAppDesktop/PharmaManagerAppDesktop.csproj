@@ -62,6 +62,7 @@
     <Compile Include="BaseDeDados\FaturaBD.cs" />
     <Compile Include="BaseDeDados\FornecedorBD.cs" />
     <Compile Include="BaseDeDados\FuncionarioBD.cs" />
+    <Compile Include="BaseDeDados\PermissaoBD.cs" />
     <Compile Include="BaseDeDados\ProdutoBD.cs" />
     <Compile Include="BaseDeDados\SessaoUsuario.cs" />
     <Compile Include="BaseDeDados\UsuarioBD.cs" />
@@ -131,6 +132,12 @@
     </Compile>
     <Compile Include="Forms\frmConfiguracaoCategoriaEliminar.Designer.cs">
       <DependentUpon>frmConfiguracaoCategoriaEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoPermissao.Designer.cs">
+      <DependentUpon>frmConfiguracaoPermissao.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEstoqueAdicionarQuantidade.cs">
       <SubType>Form</SubType>
@@ -320,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfiguracaoCategoriaEliminar.resx">
       <DependentUpon>frmConfiguracaoCategoriaEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoPermissao.resx">
+      <DependentUpon>frmConfiguracaoPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>

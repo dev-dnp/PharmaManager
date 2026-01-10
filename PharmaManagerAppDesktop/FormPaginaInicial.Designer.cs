@@ -49,7 +49,6 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.labelTituloPainelAtual = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -356,9 +355,9 @@
             this.flowLayoutPanel4.Controls.Add(this.btnSairSistema);
             this.flowLayoutPanel4.Controls.Add(this.guna2VSeparator1);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(608, 8);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(644, 8);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(613, 57);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(577, 57);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // panel3
@@ -413,6 +412,7 @@
             this.btnSairSistema.TabIndex = 15;
             this.btnSairSistema.Text = "Sair";
             this.btnSairSistema.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSairSistema.Click += new System.EventHandler(this.btnSairSistema_Click);
             // 
             // guna2VSeparator1
             // 
@@ -429,10 +429,9 @@
             this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
-            this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox1);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(502, 12);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(108, 33);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(72, 33);
             this.flowLayoutPanel3.TabIndex = 6;
             // 
             // guna2ControlBox2
@@ -458,17 +457,6 @@
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(28, 25);
             this.guna2ControlBox3.TabIndex = 6;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(76, 4);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(28, 25);
-            this.guna2ControlBox1.TabIndex = 4;
             // 
             // labelTituloPainelAtual
             // 
@@ -576,7 +564,6 @@
         private Guna.UI2.WinForms.Guna2Button btnMenuConfiguracoes;
         private Guna.UI2.WinForms.Guna2PictureBox ImagemLogotipo;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;

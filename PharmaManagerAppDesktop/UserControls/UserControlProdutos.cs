@@ -44,6 +44,8 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void UserControlProdutos_Load(object sender, EventArgs e)
         {
+            GerirPermissoes();
+
             var Produtos = new ProdutoBD().BuscarProdutos();
 
             if( Produtos == null )
@@ -209,6 +211,22 @@ namespace PharmaManagerAppDesktop.UserControls
         {
             txtCampoPesquisa.Clear();
             Atualizar();
+        }
+
+        private void GerirPermissoes()
+        {
+            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+
+            var resposta = IdsPermissao.Contains("1");
+
+            if (resposta == false)
+            {
+                btnProdutoNovo.Visible = false;
+                btnProdutoNovo.Enabled = false;
+
+                btnGrupoAlteracao.Visible = false;
+                btnGrupoAlteracao.Enabled = false;
+            }
         }
     }
 }
