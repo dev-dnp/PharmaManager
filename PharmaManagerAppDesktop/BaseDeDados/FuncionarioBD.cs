@@ -45,7 +45,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 usu.ID_USUARIO,
                                 usu.EMAIL  AS USUARIO_EMAIL,
                                 usu.SENHA  AS USUARIO_SENHA,
-                                usu.FOTO  AS USUARIO_FOTO,
 
                                 car.ID_CARGO,
                                 car.NOME  AS CARGO_NOME,
@@ -111,7 +110,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ?  0 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                     Email = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_EMAIL")),
                                     Senha = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_SENHA")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_SENHA")),
-                                    Foto = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_FOTO")),
                                 },
 
                                 Funcionario = new FuncionarioEntidade 
@@ -195,7 +193,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                 usu.ID_USUARIO,
                                 usu.EMAIL  AS USUARIO_EMAIL,
                                 usu.SENHA  AS USUARIO_SENHA,
-                                usu.FOTO  AS USUARIO_FOTO,
 
                                 car.ID_CARGO,
                                 car.NOME  AS CARGO_NOME,
@@ -261,7 +258,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                     Email = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_EMAIL")),
                                     Senha = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_SENHA")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_SENHA")),
-                                    Foto = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_FOTO")),
                                 },
 
                                 Funcionario = new FuncionarioEntidade
@@ -348,7 +344,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     usu.ID_USUARIO,
                                     usu.EMAIL  AS USUARIO_EMAIL,
                                     usu.SENHA  AS USUARIO_SENHA,
-                                    usu.FOTO  AS USUARIO_FOTO,
 
                                     car.ID_CARGO,
                                     car.NOME  AS CARGO_NOME,
@@ -414,7 +409,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                         IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                         Email = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_EMAIL")),
                                         Senha = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_SENHA")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_SENHA")),
-                                        Foto = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_FOTO")),
                                     },
 
                                     Funcionario = new FuncionarioEntidade
@@ -516,8 +510,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                   prov.ID_PROVINCIA,
                                   prov.NOME AS PROVINCIA_NOME,
 
-                                  usu.ATIVO AS USUARIO_ATIVO,
-                                  usu.FOTO AS USUARIO_FOTO
+                                  usu.ATIVO AS USUARIO_ATIVO
 
                                 FROM TB_FUNCIONARIO fun
                                 JOIN TB_CARGO cg
@@ -560,7 +553,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     {
                                         IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ? 0 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                         Email = leitor.IsDBNull(leitor.GetOrdinal("FUNCIONARIO_EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("FUNCIONARIO_EMAIL")),
-                                        Foto = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("USUARIO_FOTO")),
                                         Ativo = leitor.IsDBNull(leitor.GetOrdinal("USUARIO_ATIVO")) ? false : leitor.GetBoolean(leitor.GetOrdinal("USUARIO_ATIVO"))
                                     },
 

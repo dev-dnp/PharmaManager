@@ -106,8 +106,6 @@ namespace PharmaManagerAppDesktop
 
             FormJanelaInicial janela = new FormJanelaInicial();
             janela.ShowDialog();
-
-
         }
 
     }

@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdicionarCliente = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfigurarCategoria = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnConfiguracaoAtivarDesativarUsuario = new Guna.UI2.WinForms.Guna2Button();
+            this.btnConfigurarCargo = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
-            // btnAdicionarCliente
+            // btnConfigurarCategoria
             // 
-            this.btnAdicionarCliente.BorderRadius = 4;
-            this.btnAdicionarCliente.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdicionarCliente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdicionarCliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdicionarCliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdicionarCliente.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            this.btnAdicionarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarCliente.Location = new System.Drawing.Point(402, 351);
-            this.btnAdicionarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdicionarCliente.Name = "btnAdicionarCliente";
-            this.btnAdicionarCliente.Size = new System.Drawing.Size(278, 53);
-            this.btnAdicionarCliente.TabIndex = 217;
-            this.btnAdicionarCliente.Text = "Dados da organização";
-            this.btnAdicionarCliente.Click += new System.EventHandler(this.btnAdicionarCliente_Click);
+            this.btnConfigurarCategoria.BorderRadius = 4;
+            this.btnConfigurarCategoria.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfigurarCategoria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfigurarCategoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfigurarCategoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfigurarCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnConfigurarCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigurarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnConfigurarCategoria.Location = new System.Drawing.Point(402, 351);
+            this.btnConfigurarCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfigurarCategoria.Name = "btnConfigurarCategoria";
+            this.btnConfigurarCategoria.Size = new System.Drawing.Size(278, 53);
+            this.btnConfigurarCategoria.TabIndex = 217;
+            this.btnConfigurarCategoria.Text = "Categoria dos produtos";
+            this.btnConfigurarCategoria.Click += new System.EventHandler(this.btnConfigurarCategoria_Click);
             // 
             // guna2Button1
             // 
@@ -106,27 +107,46 @@
             this.btnConfiguracaoAtivarDesativarUsuario.Text = "Ativar/desativar usuário";
             this.btnConfiguracaoAtivarDesativarUsuario.Click += new System.EventHandler(this.btnConfiguracaoAtivarDesativarUsuario_Click);
             // 
+            // btnConfigurarCargo
+            // 
+            this.btnConfigurarCargo.BorderRadius = 4;
+            this.btnConfigurarCargo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfigurarCargo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfigurarCargo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfigurarCargo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfigurarCargo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnConfigurarCargo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigurarCargo.ForeColor = System.Drawing.Color.White;
+            this.btnConfigurarCargo.Location = new System.Drawing.Point(402, 290);
+            this.btnConfigurarCargo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfigurarCargo.Name = "btnConfigurarCargo";
+            this.btnConfigurarCargo.Size = new System.Drawing.Size(278, 53);
+            this.btnConfigurarCargo.TabIndex = 221;
+            this.btnConfigurarCargo.Text = "Cargos";
+            this.btnConfigurarCargo.Click += new System.EventHandler(this.btnConfigurarCargo_Click);
+            // 
             // UserControlConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnConfigurarCargo);
             this.Controls.Add(this.btnConfiguracaoAtivarDesativarUsuario);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.btnAdicionarCliente);
+            this.Controls.Add(this.btnConfigurarCategoria);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlConfiguracoes";
             this.Size = new System.Drawing.Size(1213, 889);
-            this.Load += new System.EventHandler(this.UserControlConfiguracoes_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnAdicionarCliente;
+        private Guna.UI2.WinForms.Guna2Button btnConfigurarCategoria;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btnConfiguracaoAtivarDesativarUsuario;
+        private Guna.UI2.WinForms.Guna2Button btnConfigurarCargo;
     }
 }

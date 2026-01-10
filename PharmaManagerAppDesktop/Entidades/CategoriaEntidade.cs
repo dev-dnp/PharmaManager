@@ -10,5 +10,6 @@ namespace PharmaManagerAppDesktop.Entidades
     {
         public int IdCategoria { get; set; }
         public string Nome { get; set; }
+        public bool Ativo { get; set; }
     }
 }

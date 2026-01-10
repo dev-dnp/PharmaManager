@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDeDados\CargoBD.cs" />
+    <Compile Include="BaseDeDados\CategoriaProdutoBD.cs" />
     <Compile Include="BaseDeDados\ConfigBD.cs" />
     <Compile Include="BaseDeDados\DadosReferencia.cs" />
     <Compile Include="BaseDeDados\EstoqueBD.cs" />
@@ -93,6 +95,42 @@
     </Compile>
     <Compile Include="FormPaginaInicial.Designer.cs">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargo.Designer.cs">
+      <DependentUpon>frmConfiguracaoCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargoAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargoAdicionar.Designer.cs">
+      <DependentUpon>frmConfiguracaoCargoAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargoEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCargoEliminar.Designer.cs">
+      <DependentUpon>frmConfiguracaoCargoEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoria.Designer.cs">
+      <DependentUpon>frmConfiguracaoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoriaAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoriaAdicionar.Designer.cs">
+      <DependentUpon>frmConfiguracaoCategoriaAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoriaEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoCategoriaEliminar.Designer.cs">
+      <DependentUpon>frmConfiguracaoCategoriaEliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEstoqueAdicionarQuantidade.cs">
       <SubType>Form</SubType>
@@ -264,6 +302,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCargo.resx">
+      <DependentUpon>frmConfiguracaoCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCargoAdicionar.resx">
+      <DependentUpon>frmConfiguracaoCargoAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCargoEliminar.resx">
+      <DependentUpon>frmConfiguracaoCargoEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCategoria.resx">
+      <DependentUpon>frmConfiguracaoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCategoriaAdicionar.resx">
+      <DependentUpon>frmConfiguracaoCategoriaAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoCategoriaEliminar.resx">
+      <DependentUpon>frmConfiguracaoCategoriaEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
       <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>

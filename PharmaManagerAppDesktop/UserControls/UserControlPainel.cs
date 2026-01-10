@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.BaseDeDados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,10 @@ namespace PharmaManagerAppDesktop.UserControls
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+
+        private void UserControlPainel_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            lblNomeFuncionario.Text = SessaoUsuario.Funcionario.Nome;
         }
     }
 }

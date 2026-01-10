@@ -43,7 +43,6 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
-            this.PictureFotoDePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btnSairSistema = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
@@ -62,7 +61,6 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).BeginInit();
@@ -367,7 +365,6 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.lblNomeUsuario);
-            this.panel3.Controls.Add(this.PictureFotoDePerfil);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(362, 51);
@@ -377,26 +374,11 @@
             // 
             this.lblNomeUsuario.AutoSize = true;
             this.lblNomeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeUsuario.Location = new System.Drawing.Point(65, 15);
+            this.lblNomeUsuario.Location = new System.Drawing.Point(182, 13);
             this.lblNomeUsuario.Name = "lblNomeUsuario";
             this.lblNomeUsuario.Size = new System.Drawing.Size(177, 23);
             this.lblNomeUsuario.TabIndex = 4;
             this.lblNomeUsuario.Text = "Olá, Domingos Pedro!";
-            // 
-            // PictureFotoDePerfil
-            // 
-            this.PictureFotoDePerfil.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PictureFotoDePerfil.BackColor = System.Drawing.Color.Transparent;
-            this.PictureFotoDePerfil.Image = global::PharmaManagerAppDesktop.Properties.Resources.imagem0012;
-            this.PictureFotoDePerfil.ImageRotate = 0F;
-            this.PictureFotoDePerfil.Location = new System.Drawing.Point(4, 7);
-            this.PictureFotoDePerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.PictureFotoDePerfil.Name = "PictureFotoDePerfil";
-            this.PictureFotoDePerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PictureFotoDePerfil.Size = new System.Drawing.Size(42, 40);
-            this.PictureFotoDePerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureFotoDePerfil.TabIndex = 3;
-            this.PictureFotoDePerfil.TabStop = false;
             // 
             // guna2VSeparator2
             // 
@@ -575,7 +557,6 @@
             this.flowLayoutPanel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureFotoDePerfil)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();
@@ -594,7 +575,6 @@
         private Guna.UI2.WinForms.Guna2Button btnMenuVendas;
         private Guna.UI2.WinForms.Guna2Button btnMenuConfiguracoes;
         private Guna.UI2.WinForms.Guna2PictureBox ImagemLogotipo;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox PictureFotoDePerfil;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

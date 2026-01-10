@@ -55,7 +55,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 {
                     conexao.Open();
 
-                    string query = @"SELECT TOP 1 tb_u.ID_USUARIO, tb_u.EMAIL, tb_u.SENHA, tb_u.FOTO, tb_u.ATIVO
+                    string query = @"SELECT TOP 1 tb_u.ID_USUARIO, tb_u.EMAIL, tb_u.SENHA, tb_u.ATIVO
                                     FROM TB_USUARIO tb_u
                                     JOIN TB_FUNCIONARIO tb_f ON tb_f.ID_USUARIO = tb_u.ID_USUARIO
                                     WHERE  
@@ -76,7 +76,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                     IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                     Email = leitor.IsDBNull(leitor.GetOrdinal("EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("EMAIL")),
                                     Senha = leitor.IsDBNull(leitor.GetOrdinal("SENHA")) ? null : leitor.GetString(leitor.GetOrdinal("SENHA")),
-                                    Foto = leitor.IsDBNull(leitor.GetOrdinal("FOTO")) ? null : leitor.GetString(leitor.GetOrdinal("FOTO")),
                                     Ativo = leitor.IsDBNull(leitor.GetOrdinal("ATIVO")) ? false : leitor.GetBoolean(leitor.GetOrdinal("ATIVO"))
                                 });
                             }

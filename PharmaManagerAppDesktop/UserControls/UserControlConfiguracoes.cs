@@ -18,17 +18,6 @@ namespace PharmaManagerAppDesktop.UserControls
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnAdicionarCliente_Click(object sender, EventArgs e)
-        {
-            frmDadosOrganizacao frmAddDadosOrganizacao = new frmDadosOrganizacao();
-            frmAddDadosOrganizacao.ShowDialog();
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             frmConfiguracaoAlterarSenha frmSenha = new frmConfiguracaoAlterarSenha();
@@ -41,15 +30,22 @@ namespace PharmaManagerAppDesktop.UserControls
             frmAddAtribuirUsuario.ShowDialog();
         }
 
-        private void UserControlConfiguracoes_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfiguracaoAtivarDesativarUsuario_Click(object sender, EventArgs e)
         {
             frmConfiguracaoAtivarDesativarUsuario frmAddDesativarAtivarUsuario = new frmConfiguracaoAtivarDesativarUsuario();
             frmAddDesativarAtivarUsuario.ShowDialog();
+        }
+
+        private void btnConfigurarCategoria_Click(object sender, EventArgs e)
+        {
+            frmConfiguracaoCategoria frm = new frmConfiguracaoCategoria();
+            frm.ShowDialog();
+        }
+
+        private void btnConfigurarCargo_Click(object sender, EventArgs e)
+        {
+            frmConfiguracaoCargo frm = new frmConfiguracaoCargo();
+            frm.ShowDialog();
         }
     }
 }

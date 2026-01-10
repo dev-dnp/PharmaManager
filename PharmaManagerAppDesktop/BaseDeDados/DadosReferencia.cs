@@ -22,31 +22,12 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
         public static void BuscarCargos()
         {
-            Cargos.Clear();
+            Cargos = new CargoBD().BuscarTodos();
+        }
 
-            using(SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
-            {
-                conexao.Open();
-                
-                string query = "SELECT ID_CARGO, NOME, DESCRICAO FROM TB_CARGO";
-
-                using(SqlCommand cmd = new SqlCommand(query, conexao))
-                {
-                    using(SqlDataReader leitor = cmd.ExecuteReader())
-                    {
-                        while(leitor.Read())
-                        {
-                            Cargos.Add(new CargoEntidade
-                            {
-                                IdCargo = leitor.IsDBNull(leitor.GetOrdinal("ID_CARGO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CARGO")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                                Descricao = leitor.IsDBNull(leitor.GetOrdinal("DESCRICAO")) ? null : leitor.GetString(leitor.GetOrdinal("DESCRICAO")),
-                            });
-                        }
-                    }
-                }
-            }
-
+        public static void BuscarCategoriasProdutos()
+        {
+            CategoriasProduto = new CategoriaProdutoBD().BuscarTodas();
         }
 
         public static void BuscarMetodosPagamento()
@@ -68,33 +49,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             MetodosPagamento.Add(new MetodoPagamentoEntidade
                             {
                                 IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                            });
-                        }
-                    }
-                }
-            }
-        }
-
-        public static void BuscarCategoriasProdutos()
-        {
-            CategoriasProduto.Clear();
-
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
-            {
-                conexao.Open();
-
-                string query = "SELECT ID_CATEGORIA, NOME FROM TB_CATEGORIA";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
-                {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
-                    {
-                        while (leitor.Read())
-                        {
-                            CategoriasProduto.Add(new CategoriaEntidade
-                            {
-                                IdCategoria = leitor.IsDBNull(leitor.GetOrdinal("ID_CATEGORIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_CATEGORIA")),
                                 Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
                             });
                         }
