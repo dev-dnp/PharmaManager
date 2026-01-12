@@ -168,7 +168,6 @@ CREATE TABLE TB_LOTE (
     ID_PRODUTO INT NOT NULL,
     ID_FORNECEDOR INT NOT NULL,
     DATA_VALIDADE DATE NOT NULL,
-    PRECO_COMPRA DECIMAL(18,2),
     FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO(ID_PRODUTO),
     FOREIGN KEY (ID_FORNECEDOR) REFERENCES TB_FORNECEDOR(ID_FORNECEDOR),
     UNIQUE(ID_LOTE, ID_PRODUTO)
@@ -701,11 +700,11 @@ CRIAR FUNCIONARIOS PREDEFINIDOS
 INSERT INTO TB_FUNCIONARIO
 (NOME, BILHETE_IDENTIDADE, DATA_NASCIMENTO, ID_USUARIO, ID_CARGO, ID_ENDERECO, TELEFONE, EMAIL)
 VALUES
-('Evaney Matadi', '123456789LA001', '1985-03-12', 1, 1, 1, '912345678', 'evaney@pharma.com'),
+('Evaney Francisco Matadi Gonçalo', '123456789LA001', '1985-03-12', 1, 1, 1, '912345678', 'evaney@pharma.com'),
 ('Domingos Nkula Pedro', '234567890LU002', '1990-07-21', 2, 2, 2, '923456789', 'dnp@pharma.com'),
-('Aristides Muhongo', '345678901BE003', '1982-11-05', 3, 3, 3, '934567890', 'aristides@pharma.com'),
-('Severina Elísio', '456789012HU004', '1988-01-18', 4, 4, 4, '945678901', 'severina@pharma.com'),
-('Gelson António', '567890123CA005', '1995-06-30', 5, 5, 5, '956789012', 'gelson@pharma.com');
+('Aristides Muhongo Félix', '345678901BE003', '1982-11-05', 3, 3, 3, '934567890', 'aristides@pharma.com'),
+('Severina Arão Elísio', '456789012HU004', '1988-01-18', 4, 4, 4, '945678901', 'severina@pharma.com'),
+('Gelson Antonio Clemente', '567890123CA005', '1995-06-30', 5, 5, 5, '956789012', 'gelson@pharma.com');
 
 
 /*
@@ -774,7 +773,12 @@ INSERT INTO TB_CATEGORIA (ID_CATEGORIA, NOME) VALUES
 (7,'Materiais de Curativo'),
 (8,'Equipamentos Médicos'),
 (9,'Infantis e Bebês'),
-(10,'Produtos Naturais');
+(10,'Produtos Naturais'),
+(11,'Medicamentos Isentos de Prescrição'),
+(12,'Produtos Ortopédicos'),
+(13,'Produtos para Saúde Sexual'),
+(14,'Produtos para Diabéticos'),
+(15,'Produtos de Higiene Oral');
 
 SET IDENTITY_INSERT TB_CATEGORIA OFF;
 
@@ -784,6 +788,7 @@ SET IDENTITY_INSERT TB_CATEGORIA OFF;
 CRIAR PRODUTOS
 ==============================
 */
+
 SET IDENTITY_INSERT TB_PRODUTO ON;
 
 INSERT INTO TB_PRODUTO
@@ -798,7 +803,12 @@ VALUES
 (7,'Álcool Gel 70%','789100000007',1500.00,5,GETDATE()),
 (8,'Máscara Cirúrgica','789100000008',150.00,8,GETDATE()),
 (9,'Pomada Antisséptica','789100000009',3500.00,7,GETDATE()),
-(10,'Chá Natural Relaxante','789100000010',2800.00,10,GETDATE());
+(10,'Chá Natural Relaxante','789100000010',2800.00,10,GETDATE()),
+(11,'Antiácido Mastigável','789100000011',2200.00,11,GETDATE()),
+(12,'Joelheira Ortopédica','789100000012',18500.00,12,GETDATE()),
+(13,'Preservativo Masculino','789100000013',1200.00,13,GETDATE()),
+(14,'Glicosímetro Digital','789100000014',32000.00,14,GETDATE()),
+(15,'Pasta Dental Medicinal','789100000015',1800.00,15,GETDATE());
 
 SET IDENTITY_INSERT TB_PRODUTO OFF;
 
@@ -810,18 +820,18 @@ CRIAR LOTES
 */
 
 INSERT INTO TB_LOTE
-(ID_LOTE, ID_PRODUTO, ID_FORNECEDOR, DATA_VALIDADE, PRECO_COMPRA)
+(ID_LOTE, ID_PRODUTO, ID_FORNECEDOR, DATA_VALIDADE)
 VALUES
-(1,1,1,'2026-12-31',1.50),
-(2,2,2,'2025-11-30',2.00),
-(3,3,3,'2027-01-15',3.50),
-(4,4,4,'2026-08-20',8.00),
-(5,5,5,'2026-10-10',5.00),
-(6,6,6,'2025-12-31',10.00),
-(7,7,7,'2026-06-30',2.50),
-(8,8,8,'2025-09-30',1.00),
-(9,9,9,'2026-03-15',4.00),
-(10,10,10,'2026-12-31',4.50);
+(1,1,1,'2026-12-31'),
+(2,2,2,'2029-11-30'),
+(3,3,3,'2027-01-15'),
+(4,4,4,'2026-08-20'),
+(5,5,5,'2026-10-10'),
+(6,6,6,'2028-12-31'),
+(7,7,7,'2026-06-30'),
+(8,8,8,'2027-09-30'),
+(9,9,9,'2026-03-15'),
+(10,10,10,'2026-12-31');
 
 /*
 ==============================
