@@ -38,7 +38,7 @@ namespace PharmaManagerAppDesktop.Utilitarios
                 }
                 else
                 {
-                    throw new Exception("Prefixo inválido, use +244 ou 244, a seguir o seu número de telemóvel");
+                    throw new Exception("Prefixo inválido ou começo inválido! Use 244 9... ou +244 9... ou 9...");
                 }
             }
             catch (Exception ex)

@@ -48,7 +48,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 293);
+            this.panel2.Size = new System.Drawing.Size(533, 285);
             this.panel2.TabIndex = 188;
             // 
             // label2
@@ -65,21 +65,21 @@
             // 
             this.guna2Panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
-            this.guna2Panel3.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel3.BorderRadius = 3;
-            this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.White;
+            this.guna2Panel3.BorderRadius = 5;
+            this.guna2Panel3.BorderThickness = 2;
             this.guna2Panel3.Controls.Add(this.txtMotivoCancelamento);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel3.Location = new System.Drawing.Point(32, 60);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2Panel3.Size = new System.Drawing.Size(666, 209);
+            this.guna2Panel3.Size = new System.Drawing.Size(460, 209);
             this.guna2Panel3.TabIndex = 220;
             // 
             // txtMotivoCancelamento
             // 
-            this.txtMotivoCancelamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.txtMotivoCancelamento.BorderColor = System.Drawing.Color.Gray;
+            this.txtMotivoCancelamento.BackColor = System.Drawing.Color.White;
+            this.txtMotivoCancelamento.BorderColor = System.Drawing.Color.White;
             this.txtMotivoCancelamento.BorderRadius = 3;
             this.txtMotivoCancelamento.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtMotivoCancelamento.BorderThickness = 0;
@@ -90,7 +90,6 @@
             this.txtMotivoCancelamento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMotivoCancelamento.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMotivoCancelamento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMotivoCancelamento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtMotivoCancelamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMotivoCancelamento.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtMotivoCancelamento.ForeColor = System.Drawing.Color.Black;
@@ -103,7 +102,7 @@
             this.txtMotivoCancelamento.PlaceholderText = "Escreva aqui...";
             this.txtMotivoCancelamento.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMotivoCancelamento.SelectedText = "";
-            this.txtMotivoCancelamento.Size = new System.Drawing.Size(646, 189);
+            this.txtMotivoCancelamento.Size = new System.Drawing.Size(440, 189);
             this.txtMotivoCancelamento.TabIndex = 62;
             // 
             // panel1
@@ -111,9 +110,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnAprovarCancelamentoFatura);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 348);
+            this.panel1.Location = new System.Drawing.Point(0, 340);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 86);
+            this.panel1.Size = new System.Drawing.Size(533, 86);
             this.panel1.TabIndex = 187;
             // 
             // btnAprovarCancelamentoFatura
@@ -127,12 +126,12 @@
             this.btnAprovarCancelamentoFatura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(126)))), ((int)(((byte)(112)))));
             this.btnAprovarCancelamentoFatura.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAprovarCancelamentoFatura.ForeColor = System.Drawing.Color.White;
-            this.btnAprovarCancelamentoFatura.Location = new System.Drawing.Point(221, 15);
+            this.btnAprovarCancelamentoFatura.Location = new System.Drawing.Point(32, 18);
             this.btnAprovarCancelamentoFatura.Margin = new System.Windows.Forms.Padding(4);
             this.btnAprovarCancelamentoFatura.Name = "btnAprovarCancelamentoFatura";
-            this.btnAprovarCancelamentoFatura.Size = new System.Drawing.Size(304, 55);
+            this.btnAprovarCancelamentoFatura.Size = new System.Drawing.Size(460, 55);
             this.btnAprovarCancelamentoFatura.TabIndex = 172;
-            this.btnAprovarCancelamentoFatura.Text = "Aprovar o cancelamento";
+            this.btnAprovarCancelamentoFatura.Text = "Cancelar";
             this.btnAprovarCancelamentoFatura.Click += new System.EventHandler(this.btnAprovarCancelamentoFatura_Click);
             // 
             // label13
@@ -143,7 +142,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(746, 55);
+            this.label13.Size = new System.Drawing.Size(533, 55);
             this.label13.TabIndex = 186;
             this.label13.Text = "CANCELAR FACTURA";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 434);
+            this.ClientSize = new System.Drawing.Size(533, 426);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label13);

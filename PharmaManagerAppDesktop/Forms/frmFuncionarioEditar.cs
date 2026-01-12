@@ -80,25 +80,70 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            // Recuperar valores do formulário
+
             string Nome = txtNome.Text.Trim();
             string BilheteIdentidade = txtBilheteIdentidade.Text.Trim();
-            DateTime DataNascimento = dtDataNascimento.Value;
-            int IdCargo = Convert.ToInt32(cmbCargo.SelectedValue);
+            DateTime DataNascimento = dtDataNascimento.Value.Date;
+            int IdCargo = cmbCargo.SelectedValue != null ? Convert.ToInt32(cmbCargo.SelectedValue) : 0;
+            int IdMunicipio = cmbMunicipio.SelectedValue != null ? Convert.ToInt32(cmbMunicipio.SelectedValue) : 0;
             string Telefone = txtTelefone.Text.Trim();
             string Email = txtEmail.Text.Trim();
-            int IdMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
             string Bairro = txtBairro.Text.Trim();
 
-            if(String.IsNullOrEmpty(Nome) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Telefone) || String.IsNullOrEmpty(BilheteIdentidade) || cmbProvincia.SelectedIndex == -1 || cmbMunicipio.SelectedIndex == -1)
+            // Validação
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(Nome))
+                erros.Add("O nome é obrigatório.");
+
+
+            if (string.IsNullOrWhiteSpace(BilheteIdentidade))
+                erros.Add("O Bilhete de Identidade é obrigatório.");
+            else
             {
-                MessageBox.Show(
-                    "Preencha corretamente todos os campos",
-                    "Mensagem de erro",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                var Validar = Utilitarios.ValidarNumeroBilheteIdentidade.Validar(BilheteIdentidade);
+                if (!Validar.Valido) erros.Add(Validar.MsgErro);
+                else BilheteIdentidade = Validar.NumeroBilheteIdentidade;
+            }
+
+            if (DataNascimento == default || DataNascimento > DateTime.Today)
+                erros.Add("Data de nascimento inválida.");
+
+            if (IdCargo <= 0)
+                erros.Add("Selecione um cargo válido.");
+
+            if (IdMunicipio <= 0)
+                erros.Add("Selecione um município válido.");
+
+            if (!string.IsNullOrWhiteSpace(Telefone))
+            {
+                Telefone = Utilitarios.ValidarNumeroTelefone.Validar(Telefone);
+
+                if (Telefone == null)
+                    erros.Add("O Número de telefone informado é inválido.");
+            }
+            else
+            {
+                erros.Add("Número de telefone é obrigatório!");
+            }
+
+            if (string.IsNullOrWhiteSpace(Email))
+                erros.Add("O email é obrigatório.");
+            else if (!Utilitarios.ValidarEmail.Validar(Email))
+                erros.Add("O email informado é inválido.");
+
+
+            if (string.IsNullOrWhiteSpace(Bairro))
+                erros.Add("O bairro é obrigatório.");
+
+            if (erros.Count > 0)
+            {
+                string msgErro = string.Join("\n", erros);
+                MessageBox.Show(msgErro, "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
 
             bool retorno = new FuncionarioBD().EditarFuncionario(new FuncionarioBD.DadosFuncionario
             {
@@ -124,15 +169,7 @@ namespace PharmaManagerAppDesktop.Forms
             if(retorno)
             {
                 this.DialogResult = DialogResult.OK;
-
                 this.Close();
-
-                //MessageBox.Show(
-                //    "Editado com sucesso!",
-                //    "Mensagem de confirmação",
-                //    MessageBoxButtons.OK,
-                //    MessageBoxIcon.Information
-                //);
                 return;
             }
             else

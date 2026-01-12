@@ -95,7 +95,7 @@ namespace PharmaManagerAppDesktop.Forms
 
             var AlterarEstado = new UsuarioBD().AtivarDesativarUsuario(IdUsuario, IdEstado);
 
-            if(AlterarEstado == null)
+            if(!AlterarEstado)
             {
                 MessageBox.Show(
                     "Não foi possível alterar o estado do usuário! Tente novamente, ou contacte o programador!",

@@ -56,11 +56,9 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void GerirPermissoes()
         {
-            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
 
-            var resposta = IdsPermissao.Contains("1");
-
-            if (resposta == false)
+            if (Administrador == false)
             {
                 btnAtivarDesativarUsuario.Visible = false;
                 btnAtivarDesativarUsuario.Enabled = false;
@@ -76,12 +74,21 @@ namespace PharmaManagerAppDesktop.UserControls
 
                 btnPermissoes.Visible = false;
                 btnPermissoes.Enabled = false;
+
+                btnAlterarSenhaDeUsuario.Visible = false;
+                btnAlterarSenhaDeUsuario.Enabled = false;
             }
         }
 
         private void btnPermissoes_Click(object sender, EventArgs e)
         {
             frmConfiguracaoPermissao frm = new frmConfiguracaoPermissao();
+            frm.ShowDialog();
+        }
+
+        private void btnAlterarSenhaDeUsuario_Click(object sender, EventArgs e)
+        {
+            frmConfiguracaoAlterarSenhaFuncionario frm = new frmConfiguracaoAlterarSenhaFuncionario();
             frm.ShowDialog();
         }
     }

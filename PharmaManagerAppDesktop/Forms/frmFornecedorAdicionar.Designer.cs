@@ -660,9 +660,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label13);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFornecedorAdicionar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Fornecedor";
             this.Load += new System.EventHandler(this.frmFornecedorAdicionar_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

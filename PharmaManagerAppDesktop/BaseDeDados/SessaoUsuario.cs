@@ -17,5 +17,16 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         public static ProvinciaEntidade Provincia { get; set; }
         public static EnderecoEntidade Endereco { get; set; }
 
+        public static void Limpar()
+        {
+            Usuario = null;
+            Funcionario = null;
+            Permissao = null;
+            Cargo = null;
+            Municipio = null;
+            Provincia = null;
+            Endereco = null;
+        }
+
     }
 }

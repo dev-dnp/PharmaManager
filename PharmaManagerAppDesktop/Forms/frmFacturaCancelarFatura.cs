@@ -21,11 +21,21 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void btnAprovarCancelamentoFatura_Click(object sender, EventArgs e)
         {
-            if(txtMotivoCancelamento.Text.Length <= 0)
+
+            if (txtMotivoCancelamento.Text.Length <= 0)
             {
                 MessageBox.Show("Descreva o motivo do cancelamento!");
                 return;
             }
+
+            var resposta = MessageBox.Show(
+                "Está ação é irreversível! Tem certeza que quer cancelar a fatura?",
+                "Mensagem de alerta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resposta == DialogResult.No) return;
 
             MotivoCancelamento = txtMotivoCancelamento.Text;
             this.DialogResult = DialogResult.OK;

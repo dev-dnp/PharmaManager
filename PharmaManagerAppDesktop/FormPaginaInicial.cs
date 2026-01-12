@@ -21,8 +21,11 @@ namespace PharmaManagerAppDesktop
         {
             InitializeComponent();
 
+
             CarregarControleDeUsuario(new UserControlPainel());
+
             labelTituloPainelAtual.Text = "Painel Inicial";
+
             SelecionarMenu("Painel Inicial");
         }
 
@@ -108,18 +111,14 @@ namespace PharmaManagerAppDesktop
         private void FormJanelaInicial_Load(object sender, EventArgs e)
         {
             lblNomeUsuario.Text = "Olá, " + SessaoUsuario.Funcionario.Nome + "!";
-
             GerirPermissoes();
-
         }
 
         private void GerirPermissoes()
         {
-            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
 
-            var resposta = IdsPermissao.Contains("1");
-
-            if (resposta == false)
+            if (Administrador == false)
             {
                 btnMenuEstoque.Visible = false;
                 btnMenuEstoque.Enabled = false;
@@ -177,17 +176,6 @@ namespace PharmaManagerAppDesktop
 
         }
 
-        private void btnFecharAplicacao_Click(object sender, EventArgs e)
-        {
-            FecharAplicacao();
-        }
-
-        private void FecharAplicacao()
-        {
-            
-
-        }
-
         private void btnSairSistema_Click(object sender, EventArgs e)
         {
             var resposta = MessageBox.Show(
@@ -198,15 +186,10 @@ namespace PharmaManagerAppDesktop
             );
 
             if (resposta == DialogResult.No)
-            {
                 return;
 
-            }
-            else
-            {
-                this.Close();
-
-            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

@@ -12,6 +12,5 @@ namespace PharmaManagerAppDesktop.Entidades
         public int IdProduto { get; set; }
         public int IdFornecedor { get; set; }
         public DateTime DataValidade { get; set; }
-        public decimal PrecoCompra { get; set; }
     }
 }

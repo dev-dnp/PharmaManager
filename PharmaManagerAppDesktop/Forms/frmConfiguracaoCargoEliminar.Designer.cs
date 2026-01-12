@@ -157,6 +157,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConfiguracaoCargoEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmConfiguracaoCargoEliminar_Load);

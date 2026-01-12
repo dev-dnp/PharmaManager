@@ -35,6 +35,7 @@
             this.btnConfigurarCargo = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPermissoes = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAlterarSenhaDeUsuario = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,9 +137,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnConfigurarCategoria);
             this.flowLayoutPanel1.Controls.Add(this.btnConfigurarCargo);
             this.flowLayoutPanel1.Controls.Add(this.btnPermissoes);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(27, 27);
+            this.flowLayoutPanel1.Controls.Add(this.btnAlterarSenhaDeUsuario);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 59);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(871, 222);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(871, 192);
             this.flowLayoutPanel1.TabIndex = 222;
             // 
             // btnPermissoes
@@ -158,6 +160,24 @@
             this.btnPermissoes.TabIndex = 223;
             this.btnPermissoes.Text = "Permissões";
             this.btnPermissoes.Click += new System.EventHandler(this.btnPermissoes_Click);
+            // 
+            // btnAlterarSenhaDeUsuario
+            // 
+            this.btnAlterarSenhaDeUsuario.BorderRadius = 4;
+            this.btnAlterarSenhaDeUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAlterarSenhaDeUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAlterarSenhaDeUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAlterarSenhaDeUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAlterarSenhaDeUsuario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            this.btnAlterarSenhaDeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarSenhaDeUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnAlterarSenhaDeUsuario.Location = new System.Drawing.Point(4, 126);
+            this.btnAlterarSenhaDeUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterarSenhaDeUsuario.Name = "btnAlterarSenhaDeUsuario";
+            this.btnAlterarSenhaDeUsuario.Size = new System.Drawing.Size(564, 53);
+            this.btnAlterarSenhaDeUsuario.TabIndex = 224;
+            this.btnAlterarSenhaDeUsuario.Text = "Alterar senha do funcionário";
+            this.btnAlterarSenhaDeUsuario.Click += new System.EventHandler(this.btnAlterarSenhaDeUsuario_Click);
             // 
             // UserControlConfiguracoes
             // 
@@ -182,5 +202,6 @@
         private Guna.UI2.WinForms.Guna2Button btnConfigurarCargo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button btnPermissoes;
+        private Guna.UI2.WinForms.Guna2Button btnAlterarSenhaDeUsuario;
     }
 }

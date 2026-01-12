@@ -21,45 +21,34 @@ namespace PharmaManagerAppDesktop
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            pictureLoading.Visible = true;
+            imagemCarregamento.Visible = true;
 
-            // Validar o campo email
-            if (txtEmail.Text.Trim() == String.Empty)
+            var Email = txtEmail.Text.Trim();
+            var Senha = txtSenha.Text.Trim();
+
+
+            // VALIDANDO OS CAMPOS EMAIL E SENHA SE ESTÃO VAZIOS OU NULOS
+
+            if (String.IsNullOrWhiteSpace(Email) || String.IsNullOrWhiteSpace(Email))
             {
                 MessageBox.Show(
-                    "Campo email obrigatório",
-                    "Erro",
+                    "Preencha corretamente todos os campos",
+                    "Mensagem de alerta",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
+                    MessageBoxIcon.Warning
                 );
 
-                txtEmail.Clear();
-                txtEmail.Focus();
-                pictureLoading.Visible = false;
+                imagemCarregamento.Visible = false;
                 return; 
             }
 
-            // Validar o campo senha
+            // BUSCAR USUÁRIO NA BASE DE DADOS
 
-            if (txtSenha.Text == String.Empty)
-            {
-                MessageBox.Show(
-                    "Campo senha obrigatório",
-                    "Erro",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+            UsuarioEntidade Usuario = new UsuarioBD().AutenticarUsuario(txtEmail.Text, txtSenha.Text);
 
-                txtSenha.Focus();
-                pictureLoading.Visible = false;
-                return;
-            }
+            // CASO O USUÁRIO NÃO EXISTA 
 
-            // Buscar usuario na base de dados
-            UsuarioEntidade usuario = new UsuarioBD().AutenticarUsuario(txtEmail.Text, txtSenha.Text);
-
-            // Caso o usuário não exista
-            if (usuario == null)
+            if (Usuario == null)
             {
                 MessageBox.Show(
                     "Email ou senha incorreto! Tente novamente.",
@@ -67,11 +56,11 @@ namespace PharmaManagerAppDesktop
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
-                pictureLoading.Visible = false;
+                imagemCarregamento.Visible = false;
                 return;
             }
 
-            if(!usuario.Ativo)
+            if(!Usuario.Ativo)
             {
                 MessageBox.Show(
                     "Acesso bloqueado! Contacte o Administrador",
@@ -80,12 +69,16 @@ namespace PharmaManagerAppDesktop
                     MessageBoxIcon.Warning
                 );
 
-                pictureLoading.Visible = false;
+                imagemCarregamento.Visible = false;
                 return;
             }
 
-            // Usuário existe! Assinando sua sessão de usuário 
-            FuncionarioBD.DadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(usuario.IdUsuario); 
+            // USUÁRIO EXISTE! PEGANDO OS SEUS DADOS COMO FUNCIONÁRIO
+
+            FuncionarioBD.DadosFuncionario infoFuncionario = new FuncionarioBD().BuscarUmFuncionarioPorIdUsuario(Usuario.IdUsuario); 
+
+
+            // CASO O USUÁRIO AINDA NÃO TENHA NENHUMA PERMISSÃO NO SISTEMA
 
             if(infoFuncionario.Permissao.Nome == null)
             {
@@ -96,30 +89,37 @@ namespace PharmaManagerAppDesktop
                     MessageBoxIcon.Information
                 );
 
-                pictureLoading.Visible = false;
+                imagemCarregamento.Visible = false;
                 return;
             }
 
+            // USUARIO ENTROU NO SISTEMMA. ASSINANDO SUA SESSÃO DE USUÁRIO
 
-            SessaoUsuario.Usuario = usuario;
+            SessaoUsuario.Usuario = Usuario;
             SessaoUsuario.Funcionario = infoFuncionario.Funcionario;
             SessaoUsuario.Cargo = infoFuncionario.Cargo;
             SessaoUsuario.Permissao = infoFuncionario.Permissao;
             SessaoUsuario.Provincia = infoFuncionario.Provincia;
             SessaoUsuario.Municipio = infoFuncionario.Municipio;
             SessaoUsuario.Endereco = infoFuncionario.Endereco;
-
-            DadosReferencia.BuscarMetodosPagamento();
-            DadosReferencia.BuscarProvincias();
-            DadosReferencia.BuscarMunicipios();
-            DadosReferencia.BuscarCargos();
-            DadosReferencia.BuscarCategoriasProdutos();
-            DadosReferencia.BuscarEstadoFatura();
-            DadosReferencia.BuscarPermissoes();
+            
+            DadosReferencia.AtualizarTodasReferencias();
 
 
-            FormJanelaInicial janela = new FormJanelaInicial();
-            janela.ShowDialog();
+            // ABRINDO A JANELA INICIAL
+
+            FormJanelaInicial frm = new FormJanelaInicial();
+            this.Hide();
+            frm.ShowDialog();
+            
+            // USUARIO SAIU DO SISTEMA. DESTRUINDO OS DADOS DE SESSÃO
+
+            SessaoUsuario.Limpar();
+            txtEmail.Clear();
+            txtSenha.Clear();
+            txtEmail.Focus();
+            imagemCarregamento.Visible = false;
+            this.Show();
         }
 
     }

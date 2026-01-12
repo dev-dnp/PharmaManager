@@ -36,21 +36,21 @@ namespace PharmaManagerAppDesktop.Forms
         public frmVendaEditarItemProduto
         (
             UserControlVendas.ItemProduto itemProduto,
-            List<UserControlVendas.ItemProduto> listaProdutos,
-             List<ProdutoBD.DetalhesProduto> produtosDisponiveisNoEstoque
+            List<UserControlVendas.ItemProduto> listaProdutos
         )
         {
             InitializeComponent();
             Produto = itemProduto;
             ListaProdutos = listaProdutos;
-            ProdutosDisponiveisNoEstoque = produtosDisponiveisNoEstoque;
+            ProdutosDisponiveisNoEstoque = new ProdutoBD().BuscarProdutosDisponiveis();
         }
 
 
         private void btnVendaExecutarEditarItemProduto_Click(object sender, EventArgs e)
         {
-            ListaProdutos.RemoveAll(item => item.IdProduto == Produto.IdProduto);
+            // ELIMINAR O REGISTO EXISTENTE COM O MESMO ID PRODUTO A SER EDITADO
 
+            ListaProdutos.RemoveAll(item => item.IdProduto == Produto.IdProduto);
 
             if (_quantidadeProduto <= 0)
             {
@@ -85,26 +85,34 @@ namespace PharmaManagerAppDesktop.Forms
             this.txtSubtotal.Text = Produto.Subtotal.ToString("C2", new CultureInfo("pt-AO"));
             this.txtValorImposto.Text = Produto.ValorTaxaImposto.ToString("C2", new CultureInfo("pt-AO"));
             this.txtNomeProduto.Text = Produto.Nome;
+
+            _idProduto = Produto.IdProduto;
+            _nomeProduto = Produto.Nome;
+            _quantidadeProduto = Produto.Quantidade;
+            _subtotalProduto = Produto.Subtotal;
+            _valorTaxaImposto = Produto.ValorTaxaImposto;
+            _precoUnitarioProduto = Produto.PrecoUnitario;
         }
 
         private void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
+
             try
             {
-                int Quantidade = int.Parse(txtQuantidade.Text);
+                int Quantidade = String.IsNullOrWhiteSpace(txtQuantidade.Text.Trim()) ? 0 : int.Parse(txtQuantidade.Text);
 
                 txtPrecoUnitario.Text = Produto.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
 
-                var ProdutoEncontrado = ProdutosDisponiveisNoEstoque.Find(p => p.IdProduto == Produto.IdProduto);
-                var QuantidadeTotal = ProdutoEncontrado.QuantidadeProduto;
+                var ProdutoEncontrado = ProdutosDisponiveisNoEstoque.Find(p => p.Produto.IdProduto == Produto.IdProduto);
+                var QuantidadeTotal = ProdutoEncontrado.QuantidadeTotal;
 
                 if (Quantidade > QuantidadeTotal)
                 {
                     MessageBox.Show(
-                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {QuantidadeTotal} quantidades deste produto",
-                        "Alerta",
+                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {QuantidadeTotal} quantidade(s) deste produto",
+                        "Mensagem de alerta",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
+                        MessageBoxIcon.Information
                     );
 
                     txtQuantidade.Text = "1";
@@ -120,7 +128,13 @@ namespace PharmaManagerAppDesktop.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A quantide deve ser um número maior que zero (0)");
+                MessageBox.Show(
+                    $"A quantide deve ser um número maior que zero (0)",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                txtQuantidade.Text = "1";
                 Console.WriteLine("Informação do erro: \n" + ex);
             }
         }

@@ -294,6 +294,8 @@
             // 
             // dgvListaFuncionarios
             // 
+            this.dgvListaFuncionarios.AllowUserToAddRows = false;
+            this.dgvListaFuncionarios.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvListaFuncionarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -367,7 +369,7 @@
             this.check.HeaderText = "";
             this.check.MinimumWidth = 6;
             this.check.Name = "check";
-            this.check.Width = 23;
+            this.check.Width = 6;
             // 
             // colId
             // 
@@ -376,6 +378,7 @@
             this.colId.HeaderText = "Cód.";
             this.colId.MinimumWidth = 6;
             this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
             this.colId.Width = 76;
             // 
             // colNome
@@ -387,18 +390,21 @@
             this.colNome.HeaderText = "Nome";
             this.colNome.MinimumWidth = 6;
             this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
             // 
             // colBilheteIdentidade
             // 
             this.colBilheteIdentidade.HeaderText = "Bilhete de Identidade";
             this.colBilheteIdentidade.MinimumWidth = 6;
             this.colBilheteIdentidade.Name = "colBilheteIdentidade";
+            this.colBilheteIdentidade.ReadOnly = true;
             // 
             // colCargo
             // 
             this.colCargo.HeaderText = "Cargo";
             this.colCargo.MinimumWidth = 6;
             this.colCargo.Name = "colCargo";
+            this.colCargo.ReadOnly = true;
             // 
             // colTelefone
             // 
@@ -406,6 +412,7 @@
             this.colTelefone.HeaderText = "Telefone";
             this.colTelefone.MinimumWidth = 6;
             this.colTelefone.Name = "colTelefone";
+            this.colTelefone.ReadOnly = true;
             // 
             // colEmail
             // 
@@ -413,6 +420,7 @@
             this.colEmail.HeaderText = "Email";
             this.colEmail.MinimumWidth = 6;
             this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
             // 
             // colEndereco
             // 
@@ -420,6 +428,7 @@
             this.colEndereco.HeaderText = "Endereço";
             this.colEndereco.MinimumWidth = 6;
             this.colEndereco.Name = "colEndereco";
+            this.colEndereco.ReadOnly = true;
             // 
             // UserControlFuncionarios
             // 

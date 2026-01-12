@@ -14,6 +14,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public class CategoriaProdutoBD
     {
 
+        /* ---------------------------------------
+            BUSCAR TODAS CATEGORIAS DE PRODUTOS
+           --------------------------------------- */
         public List<CategoriaEntidade> BuscarTodas()
         {
             List<CategoriaEntidade> CategoriasProduto = new List<CategoriaEntidade>();
@@ -52,7 +55,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 return null;
             }
         }
-      
+
+        /* ---------------------------------------
+            ADICIONAR CATEGORIA
+           --------------------------------------- */
         public string Adicionar(string nomeCategoria)
         {
             try
@@ -79,6 +85,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 return null;
             }
         }
+
+        /* ---------------------------------------
+            ELIMINAR CATEGORIA
+           --------------------------------------- */
 
         public string Eliminar(int idCategoria)
         {

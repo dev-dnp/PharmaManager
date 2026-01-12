@@ -103,7 +103,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            frmEstoqueAdicionarQuantidade frm = new frmEstoqueAdicionarQuantidade();
+            frmEstoqueAdicionar frm = new frmEstoqueAdicionar();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {

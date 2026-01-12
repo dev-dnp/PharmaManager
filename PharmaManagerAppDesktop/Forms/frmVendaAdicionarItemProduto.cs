@@ -15,9 +15,15 @@ namespace PharmaManagerAppDesktop.Forms
 {
     public partial class frmVendaAdicionarItemProduto : Form
     {
+
+        public class ProdutosCombobox
+        {
+            public int IdProduto { get; set; }
+            public string Nome { get; set; }
+        }
+
         // CONSTANTES REUTILIZAVÉIS
         public const decimal TAXA_IMPOSTO = 14;
-        public const string MOEDA = " AOA";
 
         private int _idProduto;
         private string _nomeProduto;
@@ -30,24 +36,37 @@ namespace PharmaManagerAppDesktop.Forms
         // LISTA DE ITENS DE PRODUTOS ADICIONADOS
         List<UserControlVendas.ItemProduto> Produtos;
         List<ProdutoBD.DetalhesProduto> ProdutosDisponiveisNoEstoque;
+        public List<ProdutosCombobox> ProdutosCombo = new List<ProdutosCombobox>();
 
         public frmVendaAdicionarItemProduto
         (
-            List<UserControlVendas.ItemProduto> listaItensProdutos,
-            List<ProdutoBD.DetalhesProduto> listaProdutosDisponiveisNoEstoque
+            List<UserControlVendas.ItemProduto> listaItensProdutos
         )
         {
             InitializeComponent();
+
+            var ProdutosDisponiveisEstoque = new ProdutoBD().BuscarProdutosDisponiveis();
+
             Produtos = listaItensProdutos;
-            ProdutosDisponiveisNoEstoque = listaProdutosDisponiveisNoEstoque.ToList();
+
+            ProdutosDisponiveisNoEstoque = ProdutosDisponiveisEstoque;
+            
+            foreach(var ProdutoDisponivel in ProdutosDisponiveisEstoque)
+            {
+                ProdutosCombo.Add(new ProdutosCombobox
+                {
+                    IdProduto = ProdutoDisponivel.Produto.IdProduto,
+                    Nome = ProdutoDisponivel.Produto.Nome
+                });
+            }
         }
 
         private void frmAdicionarItemProduto_Load(object sender, EventArgs e)
         {
             cbListaProdutos.Items.Clear();
-            cbListaProdutos.DataSource = ProdutosDisponiveisNoEstoque;
-            cbListaProdutos.DisplayMember = "NomeProduto";
+            cbListaProdutos.DisplayMember = "Nome";
             cbListaProdutos.ValueMember = "IdProduto";
+            cbListaProdutos.DataSource = ProdutosCombo;
             
             this.RestaurarFormulario();
         }
@@ -55,40 +74,50 @@ namespace PharmaManagerAppDesktop.Forms
         private void cbListaProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int Posicao = cbListaProdutos.SelectedIndex;
+            int Indice = cbListaProdutos.SelectedIndex;
 
-            if (Posicao == -1) return;
+            if (Indice == -1) return;
 
             // Buscar dados do produto
-            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Posicao];
-           
+            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Indice];
+
+            var IdProduto = ProdutoSelecionado.Produto.IdProduto;
+            var NomeProduto = ProdutoSelecionado.Produto.Nome;
+            var PrecoUnitario = ProdutoSelecionado.Produto.PrecoVenda;
+
+
             txtQuantidade.Text = "1";
 
             try
             {
-                int _quantidade= int.Parse(txtQuantidade.Text);
+                int QuantidadeSelecionada = int.Parse(txtQuantidade.Text.Trim());
 
-                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
-                CalcularSubtotal(_quantidade, ProdutoSelecionado.PrecoUnitario);
+                txtPrecoUnitario.Text = PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
+                
+                CalcularSubtotal(QuantidadeSelecionada, PrecoUnitario);
 
-                _idProduto = ProdutoSelecionado.IdProduto;
-                _nomeProduto = ProdutoSelecionado.NomeProduto;
-                _quantidadeProduto = _quantidade;
-                _precoUnitarioProduto = ProdutoSelecionado.PrecoUnitario;
+                _idProduto = IdProduto;
+                _nomeProduto = NomeProduto;
+                _quantidadeProduto = QuantidadeSelecionada;
+                _precoUnitarioProduto = PrecoUnitario;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A quantide deve ser um número maior que zero (0)");
-                Console.WriteLine("Informação do erro: \n" + ex);
+                MessageBox.Show(
+                    "A quantide deve ser um número maior que zero (0)",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                Console.WriteLine("Mensagem do erro: \n" + ex);
             }
         }
 
         private void CalcularSubtotal(int quantidadeProduto, decimal precoUnitarioproduto)
         {
-            if (txtQuantidade.Text.Trim() == String.Empty) return;
+            if (String.IsNullOrWhiteSpace(txtQuantidade.Text.Trim())) return;
 
             decimal Subtotal = 0;
-            
             decimal ValorTaxaImposto = (TAXA_IMPOSTO/100) * (precoUnitarioproduto * quantidadeProduto);
 
             Subtotal = (quantidadeProduto * precoUnitarioproduto) + ValorTaxaImposto;
@@ -118,40 +147,60 @@ namespace PharmaManagerAppDesktop.Forms
         }
         private void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
-            int Posicao = cbListaProdutos.SelectedIndex;
-            if (Posicao == -1) return;
+            int Indice = cbListaProdutos.SelectedIndex;
+            if (Indice == -1)
+            {
+                MessageBox.Show(
+                    "Selecione primeiro um produto",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                return;
+            }
 
             // Buscar dados do produto
-            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Posicao];
+            var ProdutoSelecionado = ProdutosDisponiveisNoEstoque[Indice];
 
             try
             {
                 int Quantidade = String.IsNullOrWhiteSpace(txtQuantidade.Text.Trim()) ? 0 : int.Parse(txtQuantidade.Text);
 
-                if(Quantidade > ProdutoSelecionado.QuantidadeProduto)
+                if(Quantidade > ProdutoSelecionado.QuantidadeTotal)
                 {
                     MessageBox.Show(
-                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {ProdutoSelecionado.QuantidadeProduto} deste produto",
-                        "Alerta",
+                        $"Ultrapassaste o limite da quantidade presente no Estoque. Existem apenas {ProdutoSelecionado.QuantidadeTotal} quantidade(s) deste produto",
+                        "Mensagem de alerta",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
+                        MessageBoxIcon.Information
                     );
 
                     txtQuantidade.Text = "1";
                     return;
                 }
 
-                txtPrecoUnitario.Text = ProdutoSelecionado.PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
-                CalcularSubtotal(Quantidade, ProdutoSelecionado.PrecoUnitario);
+                var IdProduto = ProdutoSelecionado.Produto.IdProduto;
+                var NomeProduto = ProdutoSelecionado.Produto.Nome;
+                var PrecoUnitario = ProdutoSelecionado.Produto.PrecoVenda;
 
-                _idProduto = ProdutoSelecionado.IdProduto;
-                _nomeProduto = ProdutoSelecionado.NomeProduto;
+                txtPrecoUnitario.Text = ProdutoSelecionado.Produto.PrecoVenda.ToString("C2", new CultureInfo("pt-AO"));
+                CalcularSubtotal(Quantidade, ProdutoSelecionado.Produto.PrecoVenda);
+
+                _idProduto = IdProduto;
+                _nomeProduto = NomeProduto;
                 _quantidadeProduto = Quantidade;
-                _precoUnitarioProduto = ProdutoSelecionado.PrecoUnitario;
+                _precoUnitarioProduto = PrecoUnitario;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A quantide deve ser um número maior que zero (0)");
+                MessageBox.Show(
+                    $"A quantide deve ser um número maior que zero (0)",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                txtQuantidade.Text = "1";
+
                 Console.WriteLine("Informação do erro: \n" + ex);
             }
 
@@ -165,25 +214,37 @@ namespace PharmaManagerAppDesktop.Forms
 
                 if (codigo <= 0) throw new Exception();
 
-                var produtoEncontrado = ProdutosDisponiveisNoEstoque.Where(p => p.IdProduto == codigo).ToList();
+                var produtoEncontrado = ProdutosDisponiveisNoEstoque.Find(p => p.Produto.IdProduto == codigo);
 
-                if(produtoEncontrado.Count > 0)
+                if(produtoEncontrado != null)
                 {
-                    txtPrecoUnitario.Text = produtoEncontrado[0].PrecoUnitario.ToString("C2", new CultureInfo("pt-AO"));
-                    cbListaProdutos.SelectedValue = produtoEncontrado[0].IdProduto;
+                    txtPrecoUnitario.Text = produtoEncontrado.Produto.PrecoVenda.ToString("C2", new CultureInfo("pt-AO"));
+                    cbListaProdutos.SelectedValue = produtoEncontrado.Produto.IdProduto;
                     txtQuantidade.Text = "1";
-                    CalcularSubtotal(1, produtoEncontrado[0].PrecoUnitario);
+                    CalcularSubtotal(1, produtoEncontrado.Produto.PrecoVenda);
                 }
                 else
                 {
-                    MessageBox.Show("Código não encontrado!");
+                    MessageBox.Show(
+                        "Código não encontrado",
+                        "Mensagem de erro",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+
                     RestaurarFormulario();
                 }
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Código inválido! Use um número maior que zero.");
+                MessageBox.Show(
+                    "Código inválido! Use um número maior que zero.",
+                    "Mensagem de erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
                 Console.WriteLine("Informação do erro: \n" + ex);
             }
 
@@ -192,24 +253,29 @@ namespace PharmaManagerAppDesktop.Forms
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
 
-            bool todasPreenchidas = _idProduto > 0 &&
-                                    !string.IsNullOrEmpty(_nomeProduto) &&
-                                    _precoUnitarioProduto > 0 &&
-                                    _subtotalProduto > 0 &&
-                                    _quantidadeProduto > 0 &&
-                                    _valorTaxaImposto >= 0;
+            bool CamposPreenchidos = _idProduto > 0 && !string.IsNullOrWhiteSpace(_nomeProduto.Trim()) && _precoUnitarioProduto > 0 && _subtotalProduto > 0 && _quantidadeProduto > 0 && _valorTaxaImposto >= 0;
 
-            if(todasPreenchidas == false)
+            if(!CamposPreenchidos)
             {
-                MessageBox.Show("Preencha corretamente todos os campos!");
+                MessageBox.Show(
+                    "Preencha corretamente todos os campos!",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 
-            var ProdutoExistente = Produtos.Where(p => p.IdProduto == _idProduto);
+            var ProdutoExistente = Produtos.Find(p => p.IdProduto == _idProduto);
 
-            if(ProdutoExistente.Count() > 0)
+            if(ProdutoExistente != null)
             {
-                MessageBox.Show("Este produto já foi registado na fatura!");
+                MessageBox.Show(
+                    "Este produto já foi registado na fatura!",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 

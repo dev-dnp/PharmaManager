@@ -9,15 +9,17 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public static class ConfigBD
     {
 
-       /*  ========================================================================================
-            EXEMPLO STRING CONEXAO: @$"Server=NOME_SERVIDOR; Database = NOME_BASE_DE_DADOS; Integrated security=True;"
-           ======================================================================================== */
+        /*  
+             EXEMPLO STRING CONEXAO: 
 
+             @$"Server = NOME_SERVIDOR; 
+             Database = NOME_BASE_DE_DADOS; 
+             Integrated security=True;"
+        */
 
-        /*  ========================================================================================
-            STRING DE CONEXÃO
-            ======================================================================================== */
-
+        /* ----------------------------------------------------------------------
+            ATRIBUTO ESTÁTICO QUE SERÁ PARTILHANDO IGUALMENTE POR TODO SISTEMA
+           ---------------------------------------------------------------------- */
         public static string StringConexao { get; set; } = @$"
                                                             Data Source=localhost,1500;
                                                             Initial Catalog=PHARMA_MANAGER;

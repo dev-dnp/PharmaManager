@@ -69,7 +69,12 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void UserControlFaturas_Load(object sender, EventArgs e)
         {
+            GerirPermissoes();
+
             TodasFaturas = new FaturaBD().BuscarTodasFaturas();
+
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
+            if (Administrador == false) TodasFaturas = TodasFaturas.FindAll(f => f.Funcionario.IdFuncionario == SessaoUsuario.Funcionario.IdFuncionario);
 
             foreach (var Item in TodasFaturas)
             {
@@ -126,12 +131,17 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            AtualizarLista();
+            Atualizar();
         }
 
-        private void AtualizarLista()
+        private void Atualizar()
         {
             TodasFaturas = new FaturaBD().BuscarTodasFaturas();
+
+
+            // VERIFICANDO SE É USUARIO ADMINISTRADOR
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
+            if (Administrador == false) TodasFaturas = TodasFaturas.FindAll(f => f.Funcionario.IdFuncionario == SessaoUsuario.Funcionario.IdFuncionario);
 
             DadosFaturaTabela.Clear();
             txtCampoPesquisar.Clear();
@@ -196,7 +206,7 @@ namespace PharmaManagerAppDesktop.UserControls
                     {
                         if(new EstoqueBD().Devolucao(IdsSelecionados[0], janela.MotivoCancelamento))
                         {
-                            AtualizarLista();
+                            Atualizar();
                         }
                     }
                 }
@@ -212,6 +222,17 @@ namespace PharmaManagerAppDesktop.UserControls
                 return;
             }
 
+        }
+
+        private void GerirPermissoes()
+        {
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
+
+            if (Administrador == false)
+            {
+                btnCancelarFatura.Visible = false;
+                btnCancelarFatura.Enabled = false;
+            }
         }
     }
 }

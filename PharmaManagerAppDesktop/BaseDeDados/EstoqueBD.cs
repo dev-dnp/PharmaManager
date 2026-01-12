@@ -322,6 +322,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
         }
     
+
         public bool DiminuirEstoque(FaturaBD.DadosFatura dados, int idFatura)
         {
 
@@ -428,6 +429,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
 
         }
+
 
         public bool Devolucao(int idFatura, string motivo)
         {

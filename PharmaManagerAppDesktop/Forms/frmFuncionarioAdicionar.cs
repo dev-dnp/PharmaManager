@@ -34,15 +34,84 @@ namespace PharmaManagerAppDesktop.UserControls
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            string Nome = txtNome.Text;
-            string BilheteIdentidade = txtBilheteIdentidade.Text;
+            // Recuperar valores do formulário
+
+            string Nome = txtNome.Text.Trim();
+            string BilheteIdentidade = txtBilheteIdentidade.Text.Trim();
             DateTime DataNascimento = dtDataNascimento.Value.Date;
-            int IdCargo = Convert.ToInt32(cmbCargo.SelectedValue);
-            int IdMunicipio = Convert.ToInt32(cmbMunicipio.SelectedValue);
-            string Telefone = txtTelefone.Text;
-            string Email = txtEmail.Text;
-            string Senha = txtSenha.Text.Trim().Length > 0 ? txtSenha.Text.Trim() : null;
-            string Bairro = txtBairro.Text;
+            int IdCargo = cmbCargo.SelectedValue != null ? Convert.ToInt32(cmbCargo.SelectedValue) : 0;
+            int IdMunicipio = cmbMunicipio.SelectedValue != null ? Convert.ToInt32(cmbMunicipio.SelectedValue) : 0;
+            string Telefone = txtTelefone.Text.Trim();
+            string Email = txtEmail.Text.Trim();
+            string Senha = !string.IsNullOrWhiteSpace(txtSenha.Text) ? txtSenha.Text.Trim() : null;
+            string Bairro = txtBairro.Text.Trim();
+
+            // Validação
+            List<string> erros = new List<string>();
+
+            if(IdCargo == 0)
+                erros.Add("Selecione um cargo");
+
+            if (IdMunicipio == 0)
+                erros.Add("Selecione um municipio");
+
+            if (string.IsNullOrWhiteSpace(Nome))
+                erros.Add("O nome é obrigatório.");
+
+            if (string.IsNullOrWhiteSpace(BilheteIdentidade))
+                erros.Add("O Bilhete de Identidade é obrigatório.");
+            else
+            {
+                var Validar = Utilitarios.ValidarNumeroBilheteIdentidade.Validar(BilheteIdentidade);
+                if (!Validar.Valido) erros.Add(Validar.MsgErro);
+                else BilheteIdentidade = Validar.NumeroBilheteIdentidade;
+            }
+
+            if (DataNascimento == default || DataNascimento > DateTime.Today)
+                erros.Add("Data de nascimento inválida.");
+
+            if (IdCargo <= 0)
+                erros.Add("Selecione um cargo válido.");
+
+            if (IdMunicipio <= 0)
+                erros.Add("Selecione um município válido.");
+
+            if (!string.IsNullOrWhiteSpace(Telefone))
+            {
+                Telefone = Utilitarios.ValidarNumeroTelefone.Validar(Telefone);
+                
+                if(Telefone == null)
+                    erros.Add("O Número de telefone informado é inválido.");
+            }
+            else
+            {
+                erros.Add("Número de telefone é obrigatório!");
+            }
+
+            if (string.IsNullOrWhiteSpace(Email))
+                erros.Add("O email é obrigatório.");
+            else if (!Utilitarios.ValidarEmail.Validar(Email))
+                erros.Add("O email informado é inválido.");
+
+            if(checkUsuario.Checked == true)
+            {
+                 if (string.IsNullOrWhiteSpace(Senha))
+                    erros.Add("A senha é obrigatória!");
+            }
+            else
+            {
+                Senha = null;
+            }
+
+            if (string.IsNullOrWhiteSpace(Bairro))
+                erros.Add("O bairro é obrigatório.");
+
+            if (erros.Count > 0)
+            {
+                string msgErro = string.Join("\n", erros);
+                MessageBox.Show(msgErro, "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             DadosFuncionario.Funcionario.Nome = Nome;
             DadosFuncionario.Funcionario.BilheteIdentidade = BilheteIdentidade;
@@ -59,9 +128,9 @@ namespace PharmaManagerAppDesktop.UserControls
             DadosFuncionario.Cargo.IdCargo = IdCargo;
 
 
-            bool retorno = new FuncionarioBD().AdicionarFuncionario(DadosFuncionario);
+            bool AdicionarFuncionario = new FuncionarioBD().AdicionarFuncionario(DadosFuncionario);
 
-            if(retorno)
+            if(AdicionarFuncionario)
             {
                 DialogResult = DialogResult.OK;
                 this.Close();

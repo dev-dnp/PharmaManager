@@ -9,8 +9,14 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
 {
+
     public static class DadosReferencia
     {
+        /* --------------------------------------------------------------------------
+            DADOS ESTÁTICOS QUE SERÃO CONSUMIDOS CONSTANTEMENTE POR TODA APLICAÇÃO
+           --------------------------------------------------------------------------- */
+
+
         public static List<CargoEntidade> Cargos = new List<CargoEntidade>();
         public static List<CategoriaEntidade> CategoriasProduto = new List<CategoriaEntidade>();
         public static List<EstadoFaturaEntidade> EstadosFatura = new List<EstadoFaturaEntidade>();
@@ -34,137 +40,195 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         {
             MetodosPagamento.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            try
             {
-                conexao.Open();
-
-                string query = "SELECT ID_METODO_PAGAMENTO, NOME FROM TB_METODO_PAGAMENTO";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    string query = "SELECT ID_METODO_PAGAMENTO, NOME FROM TB_METODO_PAGAMENTO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while (leitor.Read())
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            MetodosPagamento.Add(new MetodoPagamentoEntidade
+                            while (leitor.Read())
                             {
-                                IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                            });
+                                MetodosPagamento.Add(new MetodoPagamentoEntidade
+                                {
+                                    IdMetodoPagamento = leitor.IsDBNull(leitor.GetOrdinal("ID_METODO_PAGAMENTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_METODO_PAGAMENTO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                });
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Não foi possível buscar os metodos de pagamentos disponiveis");
+                Console.WriteLine("Mensagem de erro: " + ex);
             }
         }
 
         public static void BuscarEstadoFatura()
         {
-            EstadosFatura.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            try
             {
-                conexao.Open();
+                EstadosFatura.Clear();
 
-                string query = "SELECT ID_ESTADO_FATURA, NOME FROM TB_ESTADO_FATURA";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    string query = "SELECT ID_ESTADO_FATURA, NOME FROM TB_ESTADO_FATURA";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while (leitor.Read())
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            EstadosFatura.Add(new EstadoFaturaEntidade
+                            while (leitor.Read())
                             {
-                                IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                            });
+                                EstadosFatura.Add(new EstadoFaturaEntidade
+                                {
+                                    IdEstadoFatura = leitor.IsDBNull(leitor.GetOrdinal("ID_ESTADO_FATURA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_ESTADO_FATURA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                });
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Não foi possível buscar os estados da fatura");
+                Console.WriteLine("Mensagem de erro: " + ex);
+            }
+
         }
 
         public static void BuscarProvincias()
         {
-            Provincias.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            try
             {
-                conexao.Open();
+                Provincias.Clear();
 
-                string query = "SELECT ID_PROVINCIA, NOME FROM TB_PROVINCIA";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    string query = "SELECT ID_PROVINCIA, NOME FROM TB_PROVINCIA";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while (leitor.Read())
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            Provincias.Add(new ProvinciaEntidade
+                            while (leitor.Read())
                             {
-                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                            });
+                                Provincias.Add(new ProvinciaEntidade
+                                {
+                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                });
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Não foi possível buscar todas as províncias");
+                Console.WriteLine("Mensagem de erro: " + ex);
+            }
+
         }
 
         public static void BuscarMunicipios()
         {
-            Municipios.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            try
             {
-                conexao.Open();
+                Municipios.Clear();
 
-                string query = "SELECT ID_MUNICIPIO, NOME, ID_PROVINCIA FROM TB_MUNICIPIO";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    string query = "SELECT ID_MUNICIPIO, NOME, ID_PROVINCIA FROM TB_MUNICIPIO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while (leitor.Read())
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            Municipios.Add(new MunicipioEntidade
+                            while (leitor.Read())
                             {
-                                IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                                IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
-                            });
+                                Municipios.Add(new MunicipioEntidade
+                                {
+                                    IdMunicipio = leitor.IsDBNull(leitor.GetOrdinal("ID_MUNICIPIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_MUNICIPIO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                    IdProvincia = leitor.IsDBNull(leitor.GetOrdinal("ID_PROVINCIA")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PROVINCIA")),
+                                });
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Não foi possível buscar todos municípios");
+                Console.WriteLine("Mensagem de erro: " + ex);
+            }
+
         }
 
         public static void BuscarPermissoes()
         {
-            Permissoes.Clear();
 
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            try
             {
-                conexao.Open();
+                Permissoes.Clear();
 
-                string query = "SELECT ID_PERMISSAO, NOME FROM TB_PERMISSAO";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using (SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    string query = "SELECT ID_PERMISSAO, NOME FROM TB_PERMISSAO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while (leitor.Read())
+                        using (SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            Permissoes.Add(new PermissaoEntidade
+                            while (leitor.Read())
                             {
-                                IdPermissao = leitor.IsDBNull(leitor.GetOrdinal("ID_PERMISSAO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PERMISSAO")),
-                                Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
-                            });
+                                Permissoes.Add(new PermissaoEntidade
+                                {
+                                    IdPermissao = leitor.IsDBNull(leitor.GetOrdinal("ID_PERMISSAO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PERMISSAO")),
+                                    Nome = leitor.IsDBNull(leitor.GetOrdinal("NOME")) ? null : leitor.GetString(leitor.GetOrdinal("NOME")),
+                                });
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Não foi possível buscar todas permissões");
+                Console.WriteLine("Mensagem de erro: " + ex);
+            }
+
         }
     
+        public static void AtualizarTodasReferencias()
+        {
+            DadosReferencia.BuscarMetodosPagamento();
+            DadosReferencia.BuscarProvincias();
+            DadosReferencia.BuscarMunicipios();
+            DadosReferencia.BuscarCargos();
+            DadosReferencia.BuscarCategoriasProdutos();
+            DadosReferencia.BuscarEstadoFatura();
+            DadosReferencia.BuscarPermissoes();
+        }
     }
 }

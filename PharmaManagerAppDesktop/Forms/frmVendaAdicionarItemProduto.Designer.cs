@@ -204,7 +204,7 @@
             this.txtValorImposto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtValorImposto.Name = "txtValorImposto";
             this.txtValorImposto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtValorImposto.PlaceholderText = "0,00 AOA";
+            this.txtValorImposto.PlaceholderText = "0,00 Kz";
             this.txtValorImposto.ReadOnly = true;
             this.txtValorImposto.SelectedText = "";
             this.txtValorImposto.Size = new System.Drawing.Size(195, 44);
@@ -282,7 +282,7 @@
             this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSubtotal.PlaceholderText = "0,00 AOA";
+            this.txtSubtotal.PlaceholderText = "0,00 Kz";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.SelectedText = "";
             this.txtSubtotal.Size = new System.Drawing.Size(453, 44);
@@ -437,7 +437,7 @@
             this.txtPrecoUnitario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
             this.txtPrecoUnitario.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecoUnitario.PlaceholderText = "0,00 AOA";
+            this.txtPrecoUnitario.PlaceholderText = "0,00 Kz";
             this.txtPrecoUnitario.ReadOnly = true;
             this.txtPrecoUnitario.SelectedText = "";
             this.txtPrecoUnitario.Size = new System.Drawing.Size(195, 44);
@@ -732,7 +732,6 @@
             this.MinimizeBox = false;
             this.Name = "frmVendaAdicionarItemProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pharma Manager";
             this.Load += new System.EventHandler(this.frmAdicionarItemProduto_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

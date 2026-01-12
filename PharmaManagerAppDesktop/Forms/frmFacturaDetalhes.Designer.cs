@@ -38,7 +38,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEstadoFatura = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblVendaValorImposto = new System.Windows.Forms.Label();
+            this.lblVendaTotalPagar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblVendaTotalDesconto = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblVendaTotalSemDescontosEImpostos = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvListaDetalhesItens = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblTelefoneCliente = new System.Windows.Forms.Label();
@@ -49,8 +62,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFecharDetalhesFactura = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.dgvListaDetalhesItens = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.checkItemProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colCodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantidadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,24 +70,12 @@
             this.colTaxaImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colValorImpostoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubtotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblVendaValorImposto = new System.Windows.Forms.Label();
-            this.lblVendaTotalPagar = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblVendaTotalDesconto = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblVendaTotalSemDescontosEImpostos = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblEstadoFatura = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDetalhesItens)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDetalhesItens)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -94,6 +93,140 @@
             this.panel2.Size = new System.Drawing.Size(1310, 606);
             this.panel2.TabIndex = 185;
             // 
+            // lblEstadoFatura
+            // 
+            this.lblEstadoFatura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEstadoFatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(202)))), ((int)(((byte)(146)))));
+            this.lblEstadoFatura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoFatura.ForeColor = System.Drawing.Color.White;
+            this.lblEstadoFatura.Location = new System.Drawing.Point(191, 150);
+            this.lblEstadoFatura.Name = "lblEstadoFatura";
+            this.lblEstadoFatura.Size = new System.Drawing.Size(248, 44);
+            this.lblEstadoFatura.TabIndex = 234;
+            this.lblEstadoFatura.Text = "PAGA";
+            this.lblEstadoFatura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label7.Location = new System.Drawing.Point(21, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(161, 28);
+            this.label7.TabIndex = 233;
+            this.label7.Text = "Estado da Fatura:";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lblVendaValorImposto);
+            this.panel5.Controls.Add(this.lblVendaTotalPagar);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.lblVendaTotalDesconto);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.lblVendaTotalSemDescontosEImpostos);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(789, 6);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(509, 186);
+            this.panel5.TabIndex = 232;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 23);
+            this.label1.TabIndex = 149;
+            this.label1.Text = "Resumo das contas:";
+            // 
+            // lblVendaValorImposto
+            // 
+            this.lblVendaValorImposto.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblVendaValorImposto.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblVendaValorImposto.Location = new System.Drawing.Point(357, 69);
+            this.lblVendaValorImposto.Name = "lblVendaValorImposto";
+            this.lblVendaValorImposto.Size = new System.Drawing.Size(150, 36);
+            this.lblVendaValorImposto.TabIndex = 146;
+            this.lblVendaValorImposto.Text = "0,00 Kz";
+            this.lblVendaValorImposto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblVendaTotalPagar
+            // 
+            this.lblVendaTotalPagar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblVendaTotalPagar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblVendaTotalPagar.Location = new System.Drawing.Point(356, 145);
+            this.lblVendaTotalPagar.Name = "lblVendaTotalPagar";
+            this.lblVendaTotalPagar.Size = new System.Drawing.Size(150, 36);
+            this.lblVendaTotalPagar.TabIndex = 148;
+            this.lblVendaTotalPagar.Text = "0,00 Kz";
+            this.lblVendaTotalPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.Location = new System.Drawing.Point(7, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 23);
+            this.label2.TabIndex = 141;
+            this.label2.Text = "Total sem descontos/imposto:";
+            // 
+            // lblVendaTotalDesconto
+            // 
+            this.lblVendaTotalDesconto.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblVendaTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblVendaTotalDesconto.Location = new System.Drawing.Point(356, 107);
+            this.lblVendaTotalDesconto.Name = "lblVendaTotalDesconto";
+            this.lblVendaTotalDesconto.Size = new System.Drawing.Size(150, 36);
+            this.lblVendaTotalDesconto.TabIndex = 147;
+            this.lblVendaTotalDesconto.Text = "0,00 Kz";
+            this.lblVendaTotalDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(7, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 23);
+            this.label3.TabIndex = 142;
+            this.label3.Text = "Valor do Imposto (IVA):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label4.Location = new System.Drawing.Point(7, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 23);
+            this.label4.TabIndex = 143;
+            this.label4.Text = "Total de Descontos:";
+            // 
+            // lblVendaTotalSemDescontosEImpostos
+            // 
+            this.lblVendaTotalSemDescontosEImpostos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblVendaTotalSemDescontosEImpostos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblVendaTotalSemDescontosEImpostos.Location = new System.Drawing.Point(357, 27);
+            this.lblVendaTotalSemDescontosEImpostos.Name = "lblVendaTotalSemDescontosEImpostos";
+            this.lblVendaTotalSemDescontosEImpostos.Size = new System.Drawing.Size(150, 36);
+            this.lblVendaTotalSemDescontosEImpostos.TabIndex = 145;
+            this.lblVendaTotalSemDescontosEImpostos.Text = "0,00 Kz";
+            this.lblVendaTotalSemDescontosEImpostos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(7, 152);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 23);
+            this.label6.TabIndex = 144;
+            this.label6.Text = "Total a pagar:";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.dgvListaDetalhesItens);
@@ -101,6 +234,78 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1276, 343);
             this.panel4.TabIndex = 231;
+            // 
+            // dgvListaDetalhesItens
+            // 
+            this.dgvListaDetalhesItens.AllowUserToAddRows = false;
+            this.dgvListaDetalhesItens.AllowUserToDeleteRows = false;
+            this.dgvListaDetalhesItens.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListaDetalhesItens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaDetalhesItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaDetalhesItens.ColumnHeadersHeight = 77;
+            this.dgvListaDetalhesItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodProduto,
+            this.colNomeProduto,
+            this.colQuantidadeProduto,
+            this.colPrecoUnitarioProduto,
+            this.colDescontoProduto,
+            this.colTaxaImpostoProduto,
+            this.colValorImpostoProduto,
+            this.colSubtotalProduto});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaDetalhesItens.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvListaDetalhesItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListaDetalhesItens.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaDetalhesItens.Location = new System.Drawing.Point(0, 0);
+            this.dgvListaDetalhesItens.Name = "dgvListaDetalhesItens";
+            this.dgvListaDetalhesItens.ReadOnly = true;
+            this.dgvListaDetalhesItens.RowHeadersVisible = false;
+            this.dgvListaDetalhesItens.RowHeadersWidth = 51;
+            this.dgvListaDetalhesItens.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.dgvListaDetalhesItens.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvListaDetalhesItens.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaDetalhesItens.RowTemplate.Height = 40;
+            this.dgvListaDetalhesItens.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvListaDetalhesItens.Size = new System.Drawing.Size(1276, 343);
+            this.dgvListaDetalhesItens.TabIndex = 135;
+            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvListaDetalhesItens.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaDetalhesItens.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.Height = 77;
+            this.dgvListaDetalhesItens.ThemeStyle.ReadOnly = true;
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2Separator1
             // 
@@ -213,86 +418,6 @@
             this.label13.Text = "DETALHES DA FACTURA";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvListaDetalhesItens
-            // 
-            this.dgvListaDetalhesItens.AllowUserToAddRows = false;
-            this.dgvListaDetalhesItens.AllowUserToDeleteRows = false;
-            this.dgvListaDetalhesItens.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvListaDetalhesItens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(140)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaDetalhesItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvListaDetalhesItens.ColumnHeadersHeight = 77;
-            this.dgvListaDetalhesItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkItemProduto,
-            this.colCodProduto,
-            this.colNomeProduto,
-            this.colQuantidadeProduto,
-            this.colPrecoUnitarioProduto,
-            this.colDescontoProduto,
-            this.colTaxaImpostoProduto,
-            this.colValorImpostoProduto,
-            this.colSubtotalProduto});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaDetalhesItens.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvListaDetalhesItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListaDetalhesItens.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaDetalhesItens.Location = new System.Drawing.Point(0, 0);
-            this.dgvListaDetalhesItens.Name = "dgvListaDetalhesItens";
-            this.dgvListaDetalhesItens.RowHeadersVisible = false;
-            this.dgvListaDetalhesItens.RowHeadersWidth = 51;
-            this.dgvListaDetalhesItens.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.dgvListaDetalhesItens.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvListaDetalhesItens.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaDetalhesItens.RowTemplate.Height = 40;
-            this.dgvListaDetalhesItens.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvListaDetalhesItens.Size = new System.Drawing.Size(1276, 343);
-            this.dgvListaDetalhesItens.TabIndex = 135;
-            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvListaDetalhesItens.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvListaDetalhesItens.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaDetalhesItens.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvListaDetalhesItens.ThemeStyle.HeaderStyle.Height = 77;
-            this.dgvListaDetalhesItens.ThemeStyle.ReadOnly = false;
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvListaDetalhesItens.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // checkItemProduto
-            // 
-            this.checkItemProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkItemProduto.FillWeight = 20F;
-            this.checkItemProduto.HeaderText = "";
-            this.checkItemProduto.MinimumWidth = 6;
-            this.checkItemProduto.Name = "checkItemProduto";
-            // 
             // colCodProduto
             // 
             this.colCodProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -369,140 +494,6 @@
             this.colSubtotalProduto.Name = "colSubtotalProduto";
             this.colSubtotalProduto.ReadOnly = true;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.lblVendaValorImposto);
-            this.panel5.Controls.Add(this.lblVendaTotalPagar);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.lblVendaTotalDesconto);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.lblVendaTotalSemDescontosEImpostos);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(789, 6);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(509, 186);
-            this.panel5.TabIndex = 232;
-            // 
-            // lblVendaValorImposto
-            // 
-            this.lblVendaValorImposto.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblVendaValorImposto.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblVendaValorImposto.Location = new System.Drawing.Point(357, 69);
-            this.lblVendaValorImposto.Name = "lblVendaValorImposto";
-            this.lblVendaValorImposto.Size = new System.Drawing.Size(150, 36);
-            this.lblVendaValorImposto.TabIndex = 146;
-            this.lblVendaValorImposto.Text = "0,00 Kz";
-            this.lblVendaValorImposto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblVendaTotalPagar
-            // 
-            this.lblVendaTotalPagar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblVendaTotalPagar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblVendaTotalPagar.Location = new System.Drawing.Point(356, 145);
-            this.lblVendaTotalPagar.Name = "lblVendaTotalPagar";
-            this.lblVendaTotalPagar.Size = new System.Drawing.Size(150, 36);
-            this.lblVendaTotalPagar.TabIndex = 148;
-            this.lblVendaTotalPagar.Text = "0,00 Kz";
-            this.lblVendaTotalPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(7, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 23);
-            this.label2.TabIndex = 141;
-            this.label2.Text = "Total sem descontos/imposto:";
-            // 
-            // lblVendaTotalDesconto
-            // 
-            this.lblVendaTotalDesconto.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblVendaTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblVendaTotalDesconto.Location = new System.Drawing.Point(356, 107);
-            this.lblVendaTotalDesconto.Name = "lblVendaTotalDesconto";
-            this.lblVendaTotalDesconto.Size = new System.Drawing.Size(150, 36);
-            this.lblVendaTotalDesconto.TabIndex = 147;
-            this.lblVendaTotalDesconto.Text = "0,00 Kz";
-            this.lblVendaTotalDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(7, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 23);
-            this.label3.TabIndex = 142;
-            this.label3.Text = "Valor do Imposto (IVA):";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(7, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 23);
-            this.label4.TabIndex = 143;
-            this.label4.Text = "Total de Descontos:";
-            // 
-            // lblVendaTotalSemDescontosEImpostos
-            // 
-            this.lblVendaTotalSemDescontosEImpostos.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblVendaTotalSemDescontosEImpostos.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblVendaTotalSemDescontosEImpostos.Location = new System.Drawing.Point(357, 27);
-            this.lblVendaTotalSemDescontosEImpostos.Name = "lblVendaTotalSemDescontosEImpostos";
-            this.lblVendaTotalSemDescontosEImpostos.Size = new System.Drawing.Size(150, 36);
-            this.lblVendaTotalSemDescontosEImpostos.TabIndex = 145;
-            this.lblVendaTotalSemDescontosEImpostos.Text = "0,00 Kz";
-            this.lblVendaTotalSemDescontosEImpostos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(7, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 23);
-            this.label6.TabIndex = 144;
-            this.label6.Text = "Total a pagar:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 23);
-            this.label1.TabIndex = 149;
-            this.label1.Text = "Resumo das contas:";
-            // 
-            // lblEstadoFatura
-            // 
-            this.lblEstadoFatura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEstadoFatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(202)))), ((int)(((byte)(146)))));
-            this.lblEstadoFatura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoFatura.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoFatura.Location = new System.Drawing.Point(191, 150);
-            this.lblEstadoFatura.Name = "lblEstadoFatura";
-            this.lblEstadoFatura.Size = new System.Drawing.Size(248, 44);
-            this.lblEstadoFatura.TabIndex = 234;
-            this.lblEstadoFatura.Text = "PAGA";
-            this.lblEstadoFatura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label7.Location = new System.Drawing.Point(21, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 28);
-            this.label7.TabIndex = 233;
-            this.label7.Text = "Estado da Fatura:";
-            // 
             // frmFacturaDetalhes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -518,13 +509,13 @@
             this.Load += new System.EventHandler(this.frmFacturaDetalhes_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDetalhesItens)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDetalhesItens)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -544,15 +535,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2DataGridView dgvListaDetalhesItens;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkItemProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidadeProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUnitarioProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescontoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTaxaImpostoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colValorImpostoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotalProduto;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblVendaValorImposto;
@@ -565,5 +547,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblEstadoFatura;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidadeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecoUnitarioProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescontoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTaxaImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValorImpostoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotalProduto;
     }
 }

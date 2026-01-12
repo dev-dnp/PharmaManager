@@ -84,6 +84,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
             var Produtos = new ProdutoBD().BuscarProdutos(txtCampoPesquisa.Text);
 
+
             if (Produtos == null)
             {
                 return;
@@ -215,11 +216,9 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void GerirPermissoes()
         {
-            var IdsPermissao = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',');
+            var Administrador = SessaoUsuario.Permissao.Nome.Replace(" ", "").Split(',').Contains("1");
 
-            var resposta = IdsPermissao.Contains("1");
-
-            if (resposta == false)
+            if (Administrador == false)
             {
                 btnProdutoNovo.Visible = false;
                 btnProdutoNovo.Enabled = false;

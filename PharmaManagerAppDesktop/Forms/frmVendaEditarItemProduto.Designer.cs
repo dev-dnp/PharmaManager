@@ -148,7 +148,8 @@
             this.txtValorImposto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtValorImposto.Name = "txtValorImposto";
             this.txtValorImposto.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtValorImposto.PlaceholderText = "0,00 AOA";
+            this.txtValorImposto.PlaceholderText = "0,00 Kz";
+            this.txtValorImposto.ReadOnly = true;
             this.txtValorImposto.SelectedText = "";
             this.txtValorImposto.Size = new System.Drawing.Size(195, 44);
             this.txtValorImposto.TabIndex = 62;
@@ -205,7 +206,8 @@
             this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSubtotal.PlaceholderText = "0,00 AOA";
+            this.txtSubtotal.PlaceholderText = "0,00 Kz";
+            this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.SelectedText = "";
             this.txtSubtotal.Size = new System.Drawing.Size(453, 44);
             this.txtSubtotal.TabIndex = 62;
@@ -293,6 +295,7 @@
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2TextBox5.PlaceholderText = "Quantidade";
+            this.guna2TextBox5.ReadOnly = true;
             this.guna2TextBox5.SelectedText = "";
             this.guna2TextBox5.Size = new System.Drawing.Size(167, 44);
             this.guna2TextBox5.TabIndex = 62;
@@ -358,7 +361,8 @@
             this.txtPrecoUnitario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
             this.txtPrecoUnitario.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecoUnitario.PlaceholderText = "0,00 AOA";
+            this.txtPrecoUnitario.PlaceholderText = "0,00 Kz";
+            this.txtPrecoUnitario.ReadOnly = true;
             this.txtPrecoUnitario.SelectedText = "";
             this.txtPrecoUnitario.Size = new System.Drawing.Size(195, 44);
             this.txtPrecoUnitario.TabIndex = 62;
@@ -453,7 +457,7 @@
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtQuantidade.PlaceholderText = "Quantidade";
+            this.txtQuantidade.PlaceholderText = "0";
             this.txtQuantidade.SelectedText = "";
             this.txtQuantidade.Size = new System.Drawing.Size(167, 44);
             this.txtQuantidade.TabIndex = 62;
@@ -573,9 +577,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmVendaEditarItemProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pharma Manager";
             this.Load += new System.EventHandler(this.frmVendaEditarItemProduto_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

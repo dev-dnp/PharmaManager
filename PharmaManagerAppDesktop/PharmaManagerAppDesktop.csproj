@@ -97,6 +97,12 @@
     <Compile Include="FormPaginaInicial.Designer.cs">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmConfiguracaoAlterarSenhaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConfiguracaoAlterarSenhaFuncionario.Designer.cs">
+      <DependentUpon>frmConfiguracaoAlterarSenhaFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmConfiguracaoCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +145,11 @@
     <Compile Include="Forms\frmConfiguracaoPermissao.Designer.cs">
       <DependentUpon>frmConfiguracaoPermissao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEstoqueAdicionarQuantidade.cs">
+    <Compile Include="Forms\frmEstoqueAdicionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmEstoqueAdicionarQuantidade.Designer.cs">
-      <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    <Compile Include="Forms\frmEstoqueAdicionar.Designer.cs">
+      <DependentUpon>frmEstoqueAdicionar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmEstoqueEditar.cs">
       <SubType>Form</SubType>
@@ -223,12 +229,6 @@
     <Compile Include="Forms\frmDadosOrganizacao.Designer.cs">
       <DependentUpon>frmDadosOrganizacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEditarRegistroProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmEditarRegistroProduto.Designer.cs">
-      <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmProdutoAdicionarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,12 +303,17 @@
     <Compile Include="UserControls\UserControlVendas.Designer.cs">
       <DependentUpon>UserControlVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\ValidarEmail.cs" />
+    <Compile Include="Utilitarios\ValidarNumeroBilheteIdentidade.cs" />
     <Compile Include="Utilitarios\ValidarNumeroTelefone.cs" />
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaginaInicial.resx">
       <DependentUpon>FormPaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConfiguracaoAlterarSenhaFuncionario.resx">
+      <DependentUpon>frmConfiguracaoAlterarSenhaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConfiguracaoCargo.resx">
       <DependentUpon>frmConfiguracaoCargo.cs</DependentUpon>
@@ -331,8 +336,8 @@
     <EmbeddedResource Include="Forms\frmConfiguracaoPermissao.resx">
       <DependentUpon>frmConfiguracaoPermissao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEstoqueAdicionarQuantidade.resx">
-      <DependentUpon>frmEstoqueAdicionarQuantidade.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmEstoqueAdicionar.resx">
+      <DependentUpon>frmEstoqueAdicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstoqueEditar.resx">
       <DependentUpon>frmEstoqueEditar.cs</DependentUpon>
@@ -372,9 +377,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDadosOrganizacao.resx">
       <DependentUpon>frmDadosOrganizacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEditarRegistroProduto.resx">
-      <DependentUpon>frmEditarRegistroProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProdutoAdicionarProduto.resx">
       <DependentUpon>frmProdutoAdicionarProduto.cs</DependentUpon>

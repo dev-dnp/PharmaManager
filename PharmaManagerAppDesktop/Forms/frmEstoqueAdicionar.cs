@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.Forms
 {
-    public partial class frmEstoqueAdicionarQuantidade : Form
+    public partial class frmEstoqueAdicionar : Form
     {
-        public frmEstoqueAdicionarQuantidade()
+        public frmEstoqueAdicionar()
         {
             InitializeComponent();
         }
@@ -34,32 +33,7 @@ namespace PharmaManagerAppDesktop.Forms
         public List<ProdutoDetalhes> ProdutosRegistados = new List<ProdutoDetalhes>();
         public List<FornecedorDetalhes> FornecedoresRegistados = new List<FornecedorDetalhes>();
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int codigo = int.Parse(txtCodigoProduto.Text.Trim());
-
-                if (codigo <= 0) throw new Exception();
-
-                var produtoEncontrado = ProdutosRegistados.Find(p => p.Id == codigo);
-
-                if(produtoEncontrado == null)
-                {
-                    MessageBox.Show("Código não encontrado!"); 
-                    return;
-                }
-
-                cmbProdutos.SelectedValue = produtoEncontrado.Id;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Código inválido! Use um número maior que zero.");
-                Console.WriteLine("Informação do erro: \n" + ex);
-            }
-        }
-
-        private void frmEstoqueAdicionarQuantidade_Load(object sender, EventArgs e)
+        private void frmEstoqueAdicionar_Load(object sender, EventArgs e)
         {
             var Produtos = new ProdutoBD().BuscarProdutos();
             var Fornecedores = new FornecedorBD().BuscarTodosFornecedores();
@@ -92,25 +66,66 @@ namespace PharmaManagerAppDesktop.Forms
             cmbFornecedor.DataSource = FornecedoresRegistados;
 
             dtpDataValidade.MinDate = DateTime.Now.AddDays(1);
-
         }
 
-        private void btnVendaExecutarEditarItemProduto_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click(object sender, EventArgs e)
         {
             try
             {
-                int IdProduto = Convert.ToInt32(cmbProdutos.SelectedValue);
-                int Quantidade = Convert.ToInt32(txtQuantidade.Text.Trim());
-                DateTime DataValidade = dtpDataValidade.Value;
-                int IdFornecedor = Convert.ToInt32(cmbFornecedor.SelectedValue);
-                int IdLote = Convert.ToInt32(txtLote.Text.Trim());
+                int IdProduto = cmbProdutos.SelectedValue != null ? Convert.ToInt32(cmbProdutos.SelectedValue) : 0;
+                int IdFornecedor = cmbFornecedor.SelectedValue != null ? Convert.ToInt32(cmbFornecedor.SelectedValue) : 0;
+                string QuantidadeTexto = txtQuantidade.Text.Trim();
+                string LoteTexto = txtLote.Text.Trim();
+                DateTime DataValidade = dtpDataValidade.Value.Date;
 
+                List<string> erros = new List<string>();
 
-                if (cmbProdutos.SelectedValue == null || cmbFornecedor.SelectedValue == null || string.IsNullOrWhiteSpace(txtQuantidade.Text) || string.IsNullOrWhiteSpace(txtLote.Text) || Quantidade <= 0)
+                // Produto
+                if (IdProduto <= 0)
+                    erros.Add("Selecione um produto válido.");
+
+                // Fornecedor
+                if (IdFornecedor <= 0)
+                    erros.Add("Selecione um fornecedor válido.");
+
+                // Quantidade
+                int Quantidade = 0;
+                if (string.IsNullOrWhiteSpace(QuantidadeTexto))
                 {
+                    erros.Add("A quantidade é obrigatória.");
+                }
+                else if (!int.TryParse(QuantidadeTexto, out Quantidade) || Quantidade <= 0)
+                {
+                    erros.Add("Informe uma quantidade válida (maior que zero).");
+                }
+
+                // Lote
+                int IdLote = 0;
+                if (string.IsNullOrWhiteSpace(LoteTexto))
+                {
+                    erros.Add("O número do lote é obrigatório.");
+                }
+                else if (!int.TryParse(LoteTexto, out IdLote) || IdLote <= 0)
+                {
+                    erros.Add("Informe um número de lote válido.");
+                }
+
+                // Data de validade
+                if (DataValidade == default)
+                {
+                    erros.Add("A data de validade é obrigatória.");
+                }
+                else if (DataValidade <= DateTime.Today)
+                {
+                    erros.Add("A data de validade deve ser maior que a data atual.");
+                }
+
+                if (erros.Count > 0)
+                {
+                    string msgErro = string.Join("\n", erros);
                     MessageBox.Show(
-                        "Preencha corretamente todos os campos!",
-                        "Mensagem de alerta",
+                        msgErro,
+                        "Erro de validação",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
                     );
@@ -118,7 +133,7 @@ namespace PharmaManagerAppDesktop.Forms
                 }
 
 
-                var retorno = new EstoqueBD().AdicionarQuantidadeEstoque(new EstoqueBD.DetalheProdutoDisponivel
+                var AdicionarQuantidadeNoEstoque = new EstoqueBD().AdicionarQuantidadeEstoque(new EstoqueBD.DetalheProdutoDisponivel
                 {
                     Produto = new Entidades.ProdutoEntidade
                     {
@@ -135,10 +150,9 @@ namespace PharmaManagerAppDesktop.Forms
                         IdFornecedor = IdFornecedor,
                     },
 
-
                 });
 
-                if (retorno)
+                if (AdicionarQuantidadeNoEstoque)
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -152,8 +166,6 @@ namespace PharmaManagerAppDesktop.Forms
                         MessageBoxIcon.Error
                     );
                 }
-
-
             }
             catch (Exception ex)
             {

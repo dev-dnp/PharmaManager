@@ -23,6 +23,7 @@ namespace PharmaManagerAppDesktop.UserControls
             public string Cargo { get; set; }
             public string Telefone { get; set; }
             public string Email { get; set; }
+            public string Endereco { get; set; }
         }
 
         List<VisualizacaoTabelaFuncionarios> DadosTabela = new List<VisualizacaoTabelaFuncionarios>();
@@ -57,6 +58,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
             foreach(var Funcionario in  Funcionarios)
             {
+                string endereco = Funcionario.Endereco.Bairro + ", " + Funcionario.Municipio.Nome + ", " + Funcionario.Provincia.Nome;
                 DadosTabela.Add(new VisualizacaoTabelaFuncionarios
                 {
                     Nome = Funcionario.Funcionario.Nome,
@@ -65,7 +67,7 @@ namespace PharmaManagerAppDesktop.UserControls
                     Email = Funcionario.Funcionario.Email,
                     Id = Funcionario.Funcionario.IdFuncionario,
                     Telefone = Funcionario.Funcionario.Telefone,
-
+                    Endereco = endereco
                 });
             }
 
@@ -78,6 +80,7 @@ namespace PharmaManagerAppDesktop.UserControls
             colCargo.DataPropertyName = "Cargo";
             colTelefone.DataPropertyName = "Telefone";
             colEmail.DataPropertyName = "Email";
+            colEndereco.DataPropertyName = "Endereco";
 
             dgvListaFuncionarios.DataSource = null;
             dgvListaFuncionarios.DataSource = DadosTabela;
@@ -93,6 +96,8 @@ namespace PharmaManagerAppDesktop.UserControls
 
             foreach (var Funcionario in Funcionarios)
             {
+                string endereco = Funcionario.Endereco.Bairro + ", " + Funcionario.Municipio.Nome + ", " + Funcionario.Provincia.Nome;
+
                 DadosTabela.Add(new VisualizacaoTabelaFuncionarios
                 {
                     Nome = Funcionario.Funcionario.Nome,
@@ -101,7 +106,7 @@ namespace PharmaManagerAppDesktop.UserControls
                     Email = Funcionario.Funcionario.Email,
                     Id = Funcionario.Funcionario.IdFuncionario,
                     Telefone = Funcionario.Funcionario.Telefone,
-
+                    Endereco = endereco
                 });
             }
 

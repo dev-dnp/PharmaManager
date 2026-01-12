@@ -25,8 +25,10 @@ namespace PharmaManagerAppDesktop.Forms
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
+            string NomeCliente = txtNome.Text.Trim();
+            string TelefoneCliente = txtTelefone.Text.Trim();
 
-            if (txtNome.Text.Trim() == String.Empty)
+            if (String.IsNullOrWhiteSpace(NomeCliente))
             {
                 MessageBox.Show(
                     "Campo nome obrigatório",
@@ -39,13 +41,12 @@ namespace PharmaManagerAppDesktop.Forms
                 return;
             }
 
-            string tel = null;
 
-            if(txtTelefone.Text.Trim().Length > 0)
+            if(!String.IsNullOrWhiteSpace(TelefoneCliente))
             {
-                tel = ValidarNumeroTelefone.Validar(txtTelefone.Text.Trim());
+                TelefoneCliente = ValidarNumeroTelefone.Validar(TelefoneCliente);
                 
-                if(String.IsNullOrEmpty(tel))
+                if(String.IsNullOrEmpty(TelefoneCliente))
                 {
                     MessageBox.Show(
                         "Número de telefone inválido",
@@ -59,8 +60,8 @@ namespace PharmaManagerAppDesktop.Forms
             }
 
 
-            Cliente.Nome = txtNome.Text;
-            Cliente.Telefone = tel;
+            Cliente.Nome = NomeCliente;
+            Cliente.Telefone = TelefoneCliente;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

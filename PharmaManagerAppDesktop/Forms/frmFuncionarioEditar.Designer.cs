@@ -764,8 +764,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label13);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFuncionarioEditar";
-            this.Text = "frmFuncionarioEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmFuncionarioEditar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

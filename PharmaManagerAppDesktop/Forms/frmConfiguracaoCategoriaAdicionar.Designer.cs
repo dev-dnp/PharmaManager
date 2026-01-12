@@ -49,7 +49,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(510, 309);
+            this.panel2.Size = new System.Drawing.Size(510, 140);
             this.panel2.TabIndex = 183;
             // 
             // label5
@@ -122,7 +122,7 @@
             // 
             this.panel1.Controls.Add(this.btnAdicionar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 364);
+            this.panel1.Location = new System.Drawing.Point(0, 195);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 86);
             this.panel1.TabIndex = 182;
@@ -142,7 +142,8 @@
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(456, 55);
             this.btnAdicionar.TabIndex = 172;
-            this.btnAdicionar.Text = "Atribuir";
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // label6
             // 
@@ -154,17 +155,19 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(510, 55);
             this.label6.TabIndex = 181;
-            this.label6.Text = "ATRIBUIR PERMISSÃO";
+            this.label6.Text = "ADICIONAR CATEGORIA";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmConfiguracaoCategoriaAdicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 450);
+            this.ClientSize = new System.Drawing.Size(510, 281);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConfiguracaoCategoriaAdicionar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel2.ResumeLayout(false);

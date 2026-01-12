@@ -355,9 +355,9 @@
             this.flowLayoutPanel4.Controls.Add(this.btnSairSistema);
             this.flowLayoutPanel4.Controls.Add(this.guna2VSeparator1);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(644, 8);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(590, 8);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(577, 57);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(631, 57);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // panel3
@@ -366,23 +366,25 @@
             this.panel3.Controls.Add(this.lblNomeUsuario);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(362, 51);
+            this.panel3.Size = new System.Drawing.Size(388, 51);
             this.panel3.TabIndex = 10;
             // 
             // lblNomeUsuario
             // 
-            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNomeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeUsuario.Location = new System.Drawing.Point(182, 13);
+            this.lblNomeUsuario.Location = new System.Drawing.Point(29, 15);
             this.lblNomeUsuario.Name = "lblNomeUsuario";
-            this.lblNomeUsuario.Size = new System.Drawing.Size(177, 23);
+            this.lblNomeUsuario.Size = new System.Drawing.Size(356, 23);
             this.lblNomeUsuario.TabIndex = 4;
-            this.lblNomeUsuario.Text = "Olá, Domingos Pedro!";
+            this.lblNomeUsuario.Text = "Saudação";
+            this.lblNomeUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // guna2VSeparator2
             // 
             this.guna2VSeparator2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2VSeparator2.Location = new System.Drawing.Point(371, 10);
+            this.guna2VSeparator2.Location = new System.Drawing.Point(404, 10);
+            this.guna2VSeparator2.Margin = new System.Windows.Forms.Padding(10);
             this.guna2VSeparator2.Name = "guna2VSeparator2";
             this.guna2VSeparator2.Size = new System.Drawing.Size(10, 36);
             this.guna2VSeparator2.TabIndex = 11;
@@ -404,7 +406,7 @@
             this.btnSairSistema.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.btnSairSistema.Image = global::PharmaManagerAppDesktop.Properties.Resources.power;
             this.btnSairSistema.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSairSistema.Location = new System.Drawing.Point(388, 10);
+            this.btnSairSistema.Location = new System.Drawing.Point(428, 10);
             this.btnSairSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btnSairSistema.Name = "btnSairSistema";
             this.btnSairSistema.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
@@ -417,7 +419,8 @@
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2VSeparator1.Location = new System.Drawing.Point(486, 10);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(533, 10);
+            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(10);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
             this.guna2VSeparator1.Size = new System.Drawing.Size(10, 36);
             this.guna2VSeparator1.TabIndex = 0;
@@ -429,7 +432,7 @@
             this.flowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox2);
             this.flowLayoutPanel3.Controls.Add(this.guna2ControlBox3);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(502, 12);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(556, 12);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(72, 33);
             this.flowLayoutPanel3.TabIndex = 6;
@@ -544,7 +547,6 @@
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImagemLogotipo)).EndInit();

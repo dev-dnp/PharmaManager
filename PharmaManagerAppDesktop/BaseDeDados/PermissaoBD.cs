@@ -10,10 +10,12 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public class PermissaoBD
     {
 
-        public string AtualizarPermissao(int idUsuario, int idPermissao)
+        public bool AtualizarPermissao(int idUsuario, int idPermissao)
         {
             try
             {
+                int LinhasAfetadasNoBanco = 0;
+
                 using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
@@ -48,20 +50,23 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
                             cmd.Parameters.AddWithValue("@idPermissao", idPermissao);
-                            cmd.ExecuteNonQuery();
+                            LinhasAfetadasNoBanco = cmd.ExecuteNonQuery();
                         }
                     }
 
                     
                 }
 
-                return "Permissão atualizada com sucesso";
+                if (LinhasAfetadasNoBanco > 0)
+                    return true;
+                else
+                    return false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Falha atualizar a permissao!");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
-                return null;
+                return false;
             }
         }
     }

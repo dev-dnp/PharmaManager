@@ -1,25 +1,24 @@
-﻿using System;
+﻿using PharmaManagerAppDesktop.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using PharmaManagerAppDesktop.Entidades;
 using System.Web.Management;
+using System.Windows.Forms;
 
 namespace PharmaManagerAppDesktop.BaseDeDados
 {
     public class ProdutoBD
     {
-        public class DetalhesProduto
-        {
-            public int IdProduto { get; set; }
-            public string NomeProduto { get; set; }
-            public int QuantidadeProduto { get; set; }
-            public decimal PrecoUnitario { get; set; }
-        }
+        //public class DetalhesProduto
+        //{
+        //    public ProdutoEntidade Produto { get; set; } = new ProdutoEntidade();
+        //    public int QuantidadeProduto { get; set; }
+        //}
 
-        public class ProdutoResposta
+        public class DetalhesProduto
         {
             public ProdutoEntidade Produto { get; set; } = new ProdutoEntidade();
             public CategoriaEntidade Categoria { get; set; } = new CategoriaEntidade();
@@ -29,52 +28,66 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
         public List<DetalhesProduto> BuscarProdutosDisponiveis()
         {
-            List <DetalhesProduto> produtosEncontrados = new List<DetalhesProduto>();
 
-            string query = @"SELECT 
-                                p.ID_PRODUTO,
-                                p.NOME AS PRODUTO_NOME,
-                                SUM(e.QUANTIDADE) AS QUANTIDADE_TOTAL,
-                                p.PRECO_VENDA
-                            FROM TB_PRODUTO p
-  
-                            JOIN TB_LOTE l ON l.ID_PRODUTO = p.ID_PRODUTO
-                            JOIN TB_ESTOQUE e ON e.ID_LOTE = l.ID_LOTE
-
-                                WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE() AND p.ATIVO = 1
-                            GROUP BY 
-                                p.ID_PRODUTO,
-                                p.NOME,
-                                p.PRECO_VENDA";
-
-            using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
+            List<DetalhesProduto> produtosEncontrados = new List<DetalhesProduto>();
+            
+            try
             {
-                conexao.Open();
 
-                using(SqlCommand cmd = new SqlCommand(query, conexao))
+                string query = @"SELECT 
+                                    p.ID_PRODUTO,
+                                    p.NOME AS PRODUTO_NOME,
+                                    SUM(e.QUANTIDADE) AS QUANTIDADE_TOTAL,
+                                    p.PRECO_VENDA
+                                FROM TB_PRODUTO p
+  
+                                JOIN TB_LOTE l ON l.ID_PRODUTO = p.ID_PRODUTO
+                                JOIN TB_ESTOQUE e ON e.ID_LOTE = l.ID_LOTE
+
+                                    WHERE e.QUANTIDADE > 0 AND l.DATA_VALIDADE >= GETDATE() AND p.ATIVO = 1
+                                GROUP BY 
+                                    p.ID_PRODUTO,
+                                    p.NOME,
+                                    p.PRECO_VENDA";
+
+                using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
-                    using(SqlDataReader leitor = cmd.ExecuteReader())
+                    conexao.Open();
+
+                    using(SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        while(leitor.Read())
+                        using(SqlDataReader leitor = cmd.ExecuteReader())
                         {
-                            produtosEncontrados.Add(new DetalhesProduto
+                            while(leitor.Read())
                             {
-                                IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
-                                NomeProduto = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
-                                PrecoUnitario = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
-                                QuantidadeProduto = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_TOTAL")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_TOTAL")),
-                            });
+                                produtosEncontrados.Add(new DetalhesProduto
+                                {
+                                    Produto =
+                                    {
+                                        IdProduto = leitor.IsDBNull(leitor.GetOrdinal("ID_PRODUTO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_PRODUTO")),
+                                        Nome = leitor.IsDBNull(leitor.GetOrdinal("PRODUTO_NOME")) ? null : leitor.GetString(leitor.GetOrdinal("PRODUTO_NOME")),
+                                        PrecoVenda = leitor.IsDBNull(leitor.GetOrdinal("PRECO_VENDA")) ? -1 : leitor.GetDecimal(leitor.GetOrdinal("PRECO_VENDA")),
+                                    },
+                                    QuantidadeTotal = leitor.IsDBNull(leitor.GetOrdinal("QUANTIDADE_TOTAL")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("QUANTIDADE_TOTAL")),
+                                });
+                            }
                         }
                     }
                 }
-            }
 
-            return produtosEncontrados;
+                return produtosEncontrados;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao buscar produtos disponiveis");
+                Console.WriteLine("Mensagem de erro: " + ex.Message);
+                return null;
+            }
         }
 
-        public List<ProdutoResposta> BuscarProdutos(string textoDePesquisa = "")
+        public List<DetalhesProduto> BuscarProdutos(string textoDePesquisa = "")
         {
-            var ListaProduto = new List<ProdutoResposta>();
+            var ListaProduto = new List<DetalhesProduto>();
 
             try
             {
@@ -128,7 +141,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             while (leitor.Read())
                             {
-                                ListaProduto.Add(new ProdutoResposta
+                                ListaProduto.Add(new DetalhesProduto
                                 {
                                     Produto =
                                 {
@@ -155,7 +168,8 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro ao pegar os produtos: " +  ex.Message);
+                MessageBox.Show("Não foi possível buscar os produtos");
+                Console.WriteLine("Mensagem de erro: " + ex.Message);
                 return null;
             }
         }

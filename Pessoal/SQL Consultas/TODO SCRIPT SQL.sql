@@ -10,6 +10,7 @@
 -- 1. TABELAS SEM DEPENDÊNCIAS (NÍVEL 0)
 -- ==========================================================
 
+-- DROP DATABASE PHARMA_MANAGER;
 -- CREATE DATABASE PHARMA_MANAGER;
 -- USE PHARMA_MANAGER;
 
@@ -634,6 +635,30 @@ INSERT INTO TB_MUNICIPIO (NOME, ID_PROVINCIA) VALUES
 
 
 
+-- Permitir inserção manual do ID
+SET IDENTITY_INSERT TB_ENDERECO ON;
+
+INSERT INTO TB_ENDERECO (ID_ENDERECO, BAIRRO, ID_MUNICIPIO) VALUES
+(1,  'Maianga',        21),
+(2,  'Alvalade',       21),
+(3,  'Samba',          21),
+(4,  'Kilamba',        21),
+(5,  'Talatona',       21),
+(6,  'Benfica',        21),
+(7,  'Cazenga',        21),
+(8,  'Viana',          21),
+(9,  'Zango',          21),
+(10, 'Mutamba',        21),
+(11, 'Rangel',         21),
+(12, 'Golf 2',         21),
+(13, 'Camama',         21),
+(14, 'Patriota',       21),
+(15, 'Hoji-Ya-Henda',  21);
+
+-- Desativar inserção manual do ID
+SET IDENTITY_INSERT TB_ENDERECO OFF;
+
+
 /*
 ==============================
 CRIAR USUARIOS PREDEFINIDOS
@@ -676,11 +701,11 @@ CRIAR FUNCIONARIOS PREDEFINIDOS
 INSERT INTO TB_FUNCIONARIO
 (NOME, BILHETE_IDENTIDADE, DATA_NASCIMENTO, ID_USUARIO, ID_CARGO, ID_ENDERECO, TELEFONE, EMAIL)
 VALUES
-('Evaney Matadi', 'BI12345678', '1985-03-12', 1, 1, NULL, '912345678', 'evaney@pharma.com'),
-('Domingos Nkula Pedro', 'BI23456789', '1990-07-21', 2, 2, NULL, '923456789', 'dnp@pharma.com'),
-('Aristides Muhongo', 'BI34567890', '1982-11-05', 3, 3, NULL, '934567890', 'aristides@pharma.com'),
-('Severina Elísio', 'BI45678901', '1988-01-18', 4, 4, NULL, '945678901', 'severina@pharma.com'),
-('Gelson António', 'BI56789012', '1995-06-30', 5, 5, NULL, '956789012', 'gelson@pharma.com');
+('Evaney Matadi', '123456789LA001', '1985-03-12', 1, 1, 1, '912345678', 'evaney@pharma.com'),
+('Domingos Nkula Pedro', '234567890LU002', '1990-07-21', 2, 2, 2, '923456789', 'dnp@pharma.com'),
+('Aristides Muhongo', '345678901BE003', '1982-11-05', 3, 3, 3, '934567890', 'aristides@pharma.com'),
+('Severina Elísio', '456789012HU004', '1988-01-18', 4, 4, 4, '945678901', 'severina@pharma.com'),
+('Gelson António', '567890123CA005', '1995-06-30', 5, 5, 5, '956789012', 'gelson@pharma.com');
 
 
 /*
@@ -699,13 +724,13 @@ ATRIBUIR PERMISSOES AOS USUARIOS
 ==============================
 */
 INSERT INTO TB_USUARIO_PERMISSAO (ID_USUARIO, ID_PERMISSAO) VALUES
--- Evaney (Admin)
+-- Evaney 
 (1,2),
--- Domingos
+-- Domingos 
 (2,2),
 -- Aristides
 (3,2),
--- Severina
+-- Severina (Admin)
 (4,1),
 -- Gelson
 (5,2);
@@ -718,16 +743,16 @@ CRIAR FORNECEDORES
 SET IDENTITY_INSERT TB_FORNECEDOR ON;
 
 INSERT INTO TB_FORNECEDOR (ID_FORNECEDOR, NOME, NIF, ID_ENDERECO, TELEFONE, EMAIL) VALUES
-(1, 'Farmaco Distribuidora', '123456789', NULL, '912345678', 'contato@farmacodistribuidora.com'),
-(2, 'Saúde Total', '987654321', NULL, '923456789', 'vendas@saudetotal.com'),
-(3, 'Distribuidora Central', '456789123', NULL, '934567890', 'info@distribuidoracentral.com'),
-(4, 'Medicorp', '789123456', NULL, '945678901', 'contato@medicorp.com'),
-(5, 'BioFarm', '321654987', NULL, '956789012', 'vendas@biofarm.com'),
-(6, 'Farmalider', '654987321', NULL, '967890123', 'suporte@farmalider.com'),
-(7, 'MedHealth', '147258369', NULL, '978901234', 'contato@medhealth.com'),
-(8, 'Distribuidora Vida', '258369147', NULL, '989012345', 'info@distribuidoravida.com'),
-(9, 'Saúde e Bem', '369147258', NULL, '991234567', 'vendas@saudeebem.com'),
-(10,'Pharma Supplies', '159357486', NULL, '902345678', 'contato@pharmasupplies.com');
+(1, 'Farmaco Distribuidora', '123456789', 6, '912345678', 'contato@farmacodistribuidora.com'),
+(2, 'Saúde Total', '987654321', 7, '923456789', 'vendas@saudetotal.com'),
+(3, 'Distribuidora Central', '456789123', 8, '934567890', 'info@distribuidoracentral.com'),
+(4, 'Medicorp', '789123456', 9, '945678901', 'contato@medicorp.com'),
+(5, 'BioFarm', '321654987', 10, '956789012', 'vendas@biofarm.com'),
+(6, 'Farmalider', '654987321', 11, '967890123', 'suporte@farmalider.com'),
+(7, 'MedHealth', '147258369', 12, '978901234', 'contato@medhealth.com'),
+(8, 'Distribuidora Vida', '258369147', 13, '989012345', 'info@distribuidoravida.com'),
+(9, 'Saúde e Bem', '369147258', 14, '991234567', 'vendas@saudeebem.com'),
+(10,'Pharma Supplies', '159357486', 15, '902345678', 'contato@pharmasupplies.com');
 
 SET IDENTITY_INSERT TB_FORNECEDOR OFF;
 

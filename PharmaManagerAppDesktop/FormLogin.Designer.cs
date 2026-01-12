@@ -31,7 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureLoading = new System.Windows.Forms.PictureBox();
+            this.imagemCarregamento = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemCarregamento)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelBoxInput.SuspendLayout();
@@ -85,7 +85,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.pictureLoading);
+            this.guna2Panel1.Controls.Add(this.imagemCarregamento);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label1);
@@ -100,16 +100,16 @@
             this.guna2Panel1.Size = new System.Drawing.Size(526, 546);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // pictureLoading
+            // imagemCarregamento
             // 
-            this.pictureLoading.Image = global::PharmaManagerAppDesktop.Properties.Resources.Loading_icon;
-            this.pictureLoading.Location = new System.Drawing.Point(207, 455);
-            this.pictureLoading.Name = "pictureLoading";
-            this.pictureLoading.Size = new System.Drawing.Size(116, 78);
-            this.pictureLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureLoading.TabIndex = 13;
-            this.pictureLoading.TabStop = false;
-            this.pictureLoading.Visible = false;
+            this.imagemCarregamento.Image = global::PharmaManagerAppDesktop.Properties.Resources.Loading_icon;
+            this.imagemCarregamento.Location = new System.Drawing.Point(207, 455);
+            this.imagemCarregamento.Name = "imagemCarregamento";
+            this.imagemCarregamento.Size = new System.Drawing.Size(116, 78);
+            this.imagemCarregamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagemCarregamento.TabIndex = 13;
+            this.imagemCarregamento.TabStop = false;
+            this.imagemCarregamento.Visible = false;
             // 
             // label3
             // 
@@ -181,7 +181,7 @@
             this.txtSenha.BorderColor = System.Drawing.Color.White;
             this.txtSenha.BorderThickness = 0;
             this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSenha.DefaultText = "";
+            this.txtSenha.DefaultText = "123";
             this.txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSenha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -233,7 +233,7 @@
             this.txtEmail.BorderColor = System.Drawing.Color.White;
             this.txtEmail.BorderThickness = 0;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
+            this.txtEmail.DefaultText = "severina@pharma.com";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -292,7 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemCarregamento)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.panelBoxInput.ResumeLayout(false);
@@ -318,7 +318,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureLoading;
+        private System.Windows.Forms.PictureBox imagemCarregamento;
     }
 }
 

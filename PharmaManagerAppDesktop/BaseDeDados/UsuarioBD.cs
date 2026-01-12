@@ -13,7 +13,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public class UsuarioBD
     {
 
-        public string CadastrarUsuario(string email, string senha)
+        public int? CadastrarUsuario(string email, string senha)
         {
             int IdInserido = 0;
 
@@ -34,12 +34,17 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     }
                 }
 
-                return IdInserido.ToString();
+                // APÓS O USUÁRIO SER CADASTRADO, O SEU ID É RETORNADO, CASO TENHA SIDO CADASTRADO COM SUCESSO!
+
+                if (IdInserido > 0)
+                    return IdInserido;
+                else
+                    return null;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao conectar com a base de dados! Verifique a ligação.");
+                MessageBox.Show("Falha ao cadastrar novo usuário");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
                 return null;
             }
@@ -47,7 +52,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 
         public UsuarioEntidade AutenticarUsuario(string email, string senha)
         {
-            List<UsuarioEntidade> usuarios = new List<UsuarioEntidade>();
+            List<UsuarioEntidade> Usuarios = new List<UsuarioEntidade>();
 
             try
             {
@@ -56,11 +61,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     conexao.Open();
 
                     string query = @"SELECT TOP 1 tb_u.ID_USUARIO, tb_u.EMAIL, tb_u.SENHA, tb_u.ATIVO
-                                    FROM TB_USUARIO tb_u
-                                    JOIN TB_FUNCIONARIO tb_f ON tb_f.ID_USUARIO = tb_u.ID_USUARIO
-                                    WHERE  
-                                        tb_u.EMAIL = @email AND tb_u.SENHA = @senha AND tb_f.ATIVO = 1
-";
+                                        FROM TB_USUARIO tb_u
+                                        JOIN TB_FUNCIONARIO tb_f ON tb_f.ID_USUARIO = tb_u.ID_USUARIO
+                                        WHERE  
+                                            tb_u.EMAIL = @email AND tb_u.SENHA = @senha AND tb_f.ATIVO = 1";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
@@ -71,7 +75,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             while (leitor.Read())
                             {
-                                usuarios.Add(new UsuarioEntidade
+                                Usuarios.Add(new UsuarioEntidade
                                 {
                                     IdUsuario = leitor.IsDBNull(leitor.GetOrdinal("ID_USUARIO")) ? -1 : leitor.GetInt32(leitor.GetOrdinal("ID_USUARIO")),
                                     Email = leitor.IsDBNull(leitor.GetOrdinal("EMAIL")) ? null : leitor.GetString(leitor.GetOrdinal("EMAIL")),
@@ -82,28 +86,39 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         }
                     }
 
-                    if (usuarios.Count == 0) return null;
-                    return usuarios.First();
+                    // CASO NÃO ENCONTRE NENHUM USUÁRIO, ENTÃO A AUTENTICAÇÃO FALHA
+                    if (Usuarios.Count == 0) return null;
+
+                    // CASO ENCONTRE UM USUÁRIO, ENTÃO AS SUAS INFORMAÇÕES SÃO RETORNADAS
+                    return Usuarios.First();
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao conectar com a base de dados! Verifique a ligação.");
+                MessageBox.Show("Autenticação do usuário falhou!");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
                 return null;
             }
 
         }
     
-        public string AlterarSenha(string email, string senhaAtual, string senhaNova)
+        public bool AlterarSenha(string email, string senhaAtual, string senhaNova, int idUsuario)
         {
-            var Autenticar = this.AutenticarUsuario(email, senhaAtual);
+            // SE A SENHA ATUAL VIR NULL ENTÃO ELE PRECISA SIMPLESMENTE ALTERAR A SENHA SEM INFORMAR A ATUAL
 
-            if(Autenticar == null) return null;
+            if(senhaAtual != null)
+            {
+                var Autenticar = this.AutenticarUsuario(email, senhaAtual);
+                
+                // SE A SENHA ANTIGA NÃO CONDIZER, ENTÃO NÃO É POSSÍVEL ALTERAR A SENHA
+                if(Autenticar == null) return false;
+            }
 
             try
             {
+                int LinhasAfetadasNoBanco = 0;
+
                 using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
@@ -117,27 +132,34 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
                         cmd.Parameters.AddWithValue("@novaSenha", senhaNova);
-                        cmd.Parameters.AddWithValue("@idUsuario", Autenticar.IdUsuario);
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                        LinhasAfetadasNoBanco = cmd.ExecuteNonQuery();
                     }
 
-                    return "Senha alterada com sucesso!";
+                    if (LinhasAfetadasNoBanco > 0)
+                        return true;
+                    else
+                        return false;
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao conectar com a base de dados! Verifique a ligação.");
+                MessageBox.Show("Não foi possível alterar a senha do usuário!");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
-                return null;
+                return false;
             }
         }
     
-        public string AtribuirUsuario(string email, string senha, int idFuncionario)
+        public bool AtribuirUsuario(string email, string senha, int idFuncionario)
         {
+            // CADASTRAR O USUÁRIO E RETORNAR O ID CADASTRADO
             var IdUsuario = this.CadastrarUsuario(email, senha);
 
-            if(IdUsuario == null)  return null;
+            // CADASTRAR O USUARIO, CASO NÃO FUNCIONE, A OPERAÇÃO FALHA
+            if (IdUsuario == null)  return false;
+            
+            int LinhasAfetadasNoBanco = 0;
 
             try
             {
@@ -155,26 +177,31 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         cmd.Parameters.AddWithValue("@idUsuario", Convert.ToInt32(IdUsuario));
                         cmd.Parameters.AddWithValue("@idFuncionario", idFuncionario);
-                        cmd.ExecuteNonQuery();
+                        LinhasAfetadasNoBanco = cmd.ExecuteNonQuery();
                     }
                 }
 
-                return "Usuario atribuido com sucesso!";
+                if(LinhasAfetadasNoBanco > 0) 
+                    return true; 
+                else 
+                    return false;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha ao atribuir o usuário!");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
-                return null;
+                return false;
             }
 
         }
 
-        public string AtivarDesativarUsuario(int idUsuario, int estado)
+        public bool AtivarDesativarUsuario(int idUsuario, int estado)
         {
             try
             {
+                int LinhasAfetadasNoBanco = 0;
+
                 using (SqlConnection conexao = new SqlConnection(ConfigBD.StringConexao))
                 {
                     conexao.Open();
@@ -189,18 +216,21 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                     {
                         cmd.Parameters.AddWithValue("@ativo", estado);
                         cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
-                        cmd.ExecuteNonQuery();
+                        LinhasAfetadasNoBanco = cmd.ExecuteNonQuery();
                     }
                 }
 
-                return "Estado de usuário alterado com sucesso!";
+                if (LinhasAfetadasNoBanco > 0)
+                    return true;
+                else
+                    return false;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro ao alterar o estado de usuário");
                 Console.WriteLine("Mensagem de erro: " + ex.Message);
-                return null;
+                return false;
             }
         }
     }

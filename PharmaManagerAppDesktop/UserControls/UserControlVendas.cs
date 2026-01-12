@@ -54,7 +54,7 @@ namespace PharmaManagerAppDesktop.UserControls
 
         private void btnFaturaAdicionarItemProduto_Click(object sender, EventArgs e)
         {
-            frmVendaAdicionarItemProduto frmAddItemProduto = new frmVendaAdicionarItemProduto(ItensProdutos, ProdutosDisponiveisNoEstoque);
+            frmVendaAdicionarItemProduto frmAddItemProduto = new frmVendaAdicionarItemProduto(ItensProdutos);
             var resultado = frmAddItemProduto.ShowDialog();
 
             if(resultado == DialogResult.OK)
@@ -92,29 +92,29 @@ namespace PharmaManagerAppDesktop.UserControls
                 }
             }
 
-            if(IdsSelecionados.Count == 1)
+            if(IdsSelecionados.Count != 1)
             {
-                var ItemSelecionado = ItensProdutos.Find(item => item.IdProduto == IdsSelecionados.First());
-
-                frmVendaEditarItemProduto janela = new frmVendaEditarItemProduto(ItemSelecionado, ItensProdutos, ProdutosDisponiveisNoEstoque);
-                
-                var resultado = janela.ShowDialog();
-
-                if (resultado == DialogResult.OK)
-                {
-                    dgvVendaListaProdutos.DataSource = null;
-                    dgvVendaListaProdutos.DataSource = ItensProdutos;
-                    this.CalcularResumoFinanceiro();
-                    return;
-                }
+                MessageBox.Show(
+                    "Selecione apenas uma linha por vez",
+                    "Alerta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
             }
 
-            MessageBox.Show(
-                "Selecione apenas uma linha por vez",
-                "Alerta",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            );
+            var ItemSelecionado = ItensProdutos.Find(item => item.IdProduto == IdsSelecionados.First());
+
+            frmVendaEditarItemProduto janela = new frmVendaEditarItemProduto(ItemSelecionado, ItensProdutos);
+                
+            var resultado = janela.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                dgvVendaListaProdutos.DataSource = null;
+                dgvVendaListaProdutos.DataSource = ItensProdutos;
+                this.CalcularResumoFinanceiro();
+            }
         }
 
         private void btnVendaFinalizar_Click(object sender, EventArgs e)
@@ -280,6 +280,17 @@ namespace PharmaManagerAppDesktop.UserControls
 
             if(IdsSelecionados.Count > 0)
             {
+
+
+                var resposta = MessageBox.Show(
+                    "Tem certeza que quer eliminar?",
+                    "Mensagem de alerta",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resposta == DialogResult.No) return;
+
                 ItensProdutos.RemoveAll(item => IdsSelecionados.Contains(item.IdProduto));
 
                 dgvVendaListaProdutos.DataSource = null;

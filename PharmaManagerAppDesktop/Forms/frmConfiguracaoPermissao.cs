@@ -83,7 +83,7 @@ namespace PharmaManagerAppDesktop.Forms
 
             var AtribuirPermissao = new PermissaoBD().AtualizarPermissao(IdUsuario, IdPermissao);
 
-            if(AtribuirPermissao != null)
+            if(AtribuirPermissao)
             {
                 MessageBox.Show(
                     "Permissão atribuída com sucesso!",

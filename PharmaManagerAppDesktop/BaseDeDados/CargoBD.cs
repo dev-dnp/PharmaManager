@@ -10,6 +10,10 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 {
     public class CargoBD
     {
+
+        /* ---------------------------------------
+           BUSCAR TODOS OS CARGOS ATIVOS 
+           --------------------------------------- */ 
         public List<CargoEntidade> BuscarTodos()
         {
 
@@ -52,6 +56,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
         }
 
 
+        /* ---------------------------------------
+            ADICIONAR CARGOS 
+           --------------------------------------- */
         public string Adicionar(string nome, string descricao)
         {
 
@@ -83,6 +90,9 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
         }
 
+        /* ---------------------------------------
+            ELIMINAR CARGOS
+           --------------------------------------- */
         public string Eliminar(int idCargo)
         {
 

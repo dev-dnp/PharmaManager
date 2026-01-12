@@ -101,6 +101,8 @@
             this.ClientSize = new System.Drawing.Size(485, 174);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConfiguracaoCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);

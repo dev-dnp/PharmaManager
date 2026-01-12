@@ -54,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 304);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 86);
+            this.panel1.Size = new System.Drawing.Size(694, 86);
             this.panel1.TabIndex = 187;
             // 
             // btnAdicionar
@@ -70,7 +70,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(39, 13);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(433, 55);
+            this.btnAdicionar.Size = new System.Drawing.Size(611, 55);
             this.btnAdicionar.TabIndex = 172;
             this.btnAdicionar.Text = "Atribuir";
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -83,7 +83,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 55);
+            this.label2.Size = new System.Drawing.Size(694, 55);
             this.label2.TabIndex = 186;
             this.label2.Text = "PERMISSÃO";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -97,7 +97,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(505, 249);
+            this.panel2.Size = new System.Drawing.Size(694, 249);
             this.panel2.TabIndex = 188;
             // 
             // guna2Panel2
@@ -112,7 +112,7 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel2.Location = new System.Drawing.Point(39, 169);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(433, 55);
+            this.guna2Panel2.Size = new System.Drawing.Size(611, 55);
             this.guna2Panel2.TabIndex = 246;
             // 
             // guna2PictureBox2
@@ -135,7 +135,7 @@
             this.cmbPermissao.BorderRadius = 3;
             this.cmbPermissao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbPermissao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPermissao.DropDownWidth = 500;
+            this.cmbPermissao.DropDownWidth = 300;
             this.cmbPermissao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.cmbPermissao.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbPermissao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -145,7 +145,7 @@
             this.cmbPermissao.Location = new System.Drawing.Point(42, 8);
             this.cmbPermissao.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPermissao.Name = "cmbPermissao";
-            this.cmbPermissao.Size = new System.Drawing.Size(387, 36);
+            this.cmbPermissao.Size = new System.Drawing.Size(565, 36);
             this.cmbPermissao.TabIndex = 31;
             // 
             // label1
@@ -170,7 +170,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.guna2Panel1.Location = new System.Drawing.Point(39, 57);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(433, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(611, 55);
             this.guna2Panel1.TabIndex = 244;
             // 
             // guna2PictureBox1
@@ -202,7 +202,7 @@
             this.cmbFuncionarios.Location = new System.Drawing.Point(42, 8);
             this.cmbFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFuncionarios.Name = "cmbFuncionarios";
-            this.cmbFuncionarios.Size = new System.Drawing.Size(387, 36);
+            this.cmbFuncionarios.Size = new System.Drawing.Size(565, 36);
             this.cmbFuncionarios.TabIndex = 31;
             // 
             // label5
@@ -219,10 +219,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 390);
+            this.ClientSize = new System.Drawing.Size(694, 390);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConfiguracaoPermissao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConfiguracaoPermissao";
@@ -244,13 +246,13 @@
         private Guna.UI2.WinForms.Guna2Button btnAdicionar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbPermissao;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ComboBox cmbFuncionarios;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbPermissao;
+        private System.Windows.Forms.Label label1;
     }
 }

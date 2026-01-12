@@ -48,9 +48,9 @@ namespace PharmaManagerAppDesktop.Forms
                 return;
             }
 
-            var AlterarSenha = new UsuarioBD().AlterarSenha(SessaoUsuario.Usuario.Email, SenhaAtual,SenhaNova);
+            var AlterarSenha = new UsuarioBD().AlterarSenha(SessaoUsuario.Usuario.Email, SenhaAtual,SenhaNova, SessaoUsuario.Usuario.IdUsuario);
 
-            if( AlterarSenha == null )
+            if(!AlterarSenha)
             {
                 MessageBox.Show(
                     "Senha atual incorreta!",

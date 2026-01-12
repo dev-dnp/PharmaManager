@@ -92,7 +92,7 @@ namespace PharmaManagerAppDesktop.Forms
 
             var AtribuirUsuario = new UsuarioBD().AtribuirUsuario(Email, Senha, IdFuncionario);
 
-            if (AtribuirUsuario == null)
+            if (!AtribuirUsuario)
             {
                 MessageBox.Show(
                     "Ocorreu um erro ao atribuir o usuário! Tente novamente ou contacte o programador!",
