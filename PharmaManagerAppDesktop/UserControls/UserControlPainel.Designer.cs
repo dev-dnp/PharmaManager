@@ -39,9 +39,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(46, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(396, 67);
+            this.label1.Size = new System.Drawing.Size(456, 67);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Seja bem-vindo,";
+            this.label1.Text = "Seja bem-vindo(a),";
             // 
             // lblNomeFuncionario
             // 
@@ -50,9 +50,9 @@
             this.lblNomeFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(99)))), ((int)(((byte)(103)))));
             this.lblNomeFuncionario.Location = new System.Drawing.Point(46, 145);
             this.lblNomeFuncionario.Name = "lblNomeFuncionario";
-            this.lblNomeFuncionario.Size = new System.Drawing.Size(49, 67);
+            this.lblNomeFuncionario.Size = new System.Drawing.Size(458, 67);
             this.lblNomeFuncionario.TabIndex = 1;
-            this.lblNomeFuncionario.Text = "-";
+            this.lblNomeFuncionario.Text = "[Nome do usuário]";
             // 
             // guna2Separator1
             // 

@@ -39,7 +39,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                         {
                             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
                             cmd.Parameters.AddWithValue("@idPermissao", idPermissao);
-                            cmd.ExecuteNonQuery();
+                            LinhasAfetadasNoBanco = cmd.ExecuteNonQuery(); cmd.ExecuteNonQuery();
                         }
                     } else
                     {
@@ -53,7 +53,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                             LinhasAfetadasNoBanco = cmd.ExecuteNonQuery();
                         }
                     }
-
                     
                 }
 
