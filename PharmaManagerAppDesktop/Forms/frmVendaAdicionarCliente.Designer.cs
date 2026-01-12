@@ -171,6 +171,7 @@
             this.txtTelefone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefone.Location = new System.Drawing.Point(38, 3);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefone.MaxLength = 16;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefone.PlaceholderText = "+244 999 999 999";
@@ -258,7 +259,6 @@
             this.MinimizeBox = false;
             this.Name = "frmVendaAdicionarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Cliente";
             this.Load += new System.EventHandler(this.frmVendaAdicionarCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
