@@ -9,14 +9,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
     public static class ConfigBD
     {
 
-        /*  
-             EXEMPLO STRING CONEXAO: 
-
-             @$"Server = NOME_SERVIDOR; 
-             Database = NOME_BASE_DE_DADOS; 
-             Integrated security=True;"
-        */
-
         /* ----------------------------------------------------------------------
             ATRIBUTO ESTÁTICO QUE SERÁ PARTILHANDO IGUALMENTE POR TODO SISTEMA
            ---------------------------------------------------------------------- */
@@ -29,6 +21,5 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                                                                 Encrypt=True;
                                                                 TrustServerCertificate=True;
                                                                 Application Name=""SQL Server Management Studio"";";
-
     }
 }

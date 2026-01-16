@@ -185,6 +185,7 @@ namespace PharmaManagerAppDesktop.BaseDeDados
                 return false;
             }
         }
+
         public List<DetalheProdutoDisponivel> BuscarProdutosDisponiveis(string pesquisa = "")
         {
 
@@ -272,7 +273,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
         }
 
-
         public List<DetalhesLotesDisponiveis> BuscarTodosLotesDisponiveis()
         {
 
@@ -322,7 +322,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
         }
     
-
         public bool DiminuirEstoque(FaturaBD.DadosFatura dados, int idFatura)
         {
 
@@ -429,7 +428,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             }
 
         }
-
 
         public bool Devolucao(int idFatura, string motivo)
         {

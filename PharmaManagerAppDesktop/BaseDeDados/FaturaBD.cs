@@ -20,8 +20,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
             public List<ItemFaturaEntidade> ItemFaturaEntidade;
         }
 
-
-
         public class DetalhesFatura
         {
             public FaturaEntidade Fatura { get; set; } = new FaturaEntidade();

@@ -12,12 +12,6 @@ namespace PharmaManagerAppDesktop.BaseDeDados
 {
     public class ProdutoBD
     {
-        //public class DetalhesProduto
-        //{
-        //    public ProdutoEntidade Produto { get; set; } = new ProdutoEntidade();
-        //    public int QuantidadeProduto { get; set; }
-        //}
-
         public class DetalhesProduto
         {
             public ProdutoEntidade Produto { get; set; } = new ProdutoEntidade();
